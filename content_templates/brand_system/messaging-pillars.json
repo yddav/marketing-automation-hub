@@ -1,0 +1,94 @@
+{
+  "id": "messaging-pillars",
+  "type": "brand_guidelines",
+  "platform": ["all"],
+  "audience": {
+    "primary": "internal_team",
+    "secondary": ["content_creators", "sales_team", "customer_support"],
+    "demographics": {
+      "age_range": "all",
+      "interests": ["brand_messaging", "marketing", "communications"],
+      "tech_savviness": "all"
+    }
+  },
+  "content": {
+    "template": "Key messaging pillars framework",
+    "variations": [
+      {
+        "id": "core_messaging_framework",
+        "test_group": "primary_messaging",
+        "template": "# {{company_name}} Key Messaging Pillars\n\n*Strategic messaging framework for consistent communication*\n\n## Brand Promise\n\n**Core Promise:** {{brand_promise}}\n\n**Value Proposition:** {{value_proposition}}\n\n**Brand Tagline:** \"{{brand_tagline}}\"\n\n## Messaging Hierarchy\n\n### Primary Message\n**The Big Idea:** {{primary_message}}\n\n**Proof Points:**\n- {{primary_proof_1}}\n- {{primary_proof_2}}\n- {{primary_proof_3}}\n\n**Target Audience:** {{primary_audience}}\n\n### Secondary Messages\n**Message A:** {{secondary_message_a}}\n**Audience:** {{secondary_audience_a}}\n**Context:** {{secondary_context_a}}\n\n**Message B:** {{secondary_message_b}}\n**Audience:** {{secondary_audience_b}}\n**Context:** {{secondary_context_b}}\n\n## The Four Pillars\n\n### Pillar 1: {{pillar_1_title}}\n\n**Core Message:** {{pillar_1_message}}\n\n**What It Means:** {{pillar_1_definition}}\n\n**Why It Matters:** {{pillar_1_importance}}\n\n**Key Benefits:**\n- {{pillar_1_benefit_1}}\n- {{pillar_1_benefit_2}}\n- {{pillar_1_benefit_3}}\n\n**Supporting Evidence:**\n- {{pillar_1_evidence_1}}\n- {{pillar_1_evidence_2}}\n- {{pillar_1_evidence_3}}\n\n**Message Variations:**\n- **Short Form:** {{pillar_1_short}}\n- **Medium Form:** {{pillar_1_medium}}\n- **Long Form:** {{pillar_1_long}}\n\n**Platform Adaptations:**\n- **Social Media:** {{pillar_1_social}}\n- **Email:** {{pillar_1_email}}\n- **Website:** {{pillar_1_website}}\n- **Sales:** {{pillar_1_sales}}\n\n### Pillar 2: {{pillar_2_title}}\n\n**Core Message:** {{pillar_2_message}}\n\n**What It Means:** {{pillar_2_definition}}\n\n**Why It Matters:** {{pillar_2_importance}}\n\n**Key Benefits:**\n- {{pillar_2_benefit_1}}\n- {{pillar_2_benefit_2}}\n- {{pillar_2_benefit_3}}\n\n**Supporting Evidence:**\n- {{pillar_2_evidence_1}}\n- {{pillar_2_evidence_2}}\n- {{pillar_2_evidence_3}}\n\n**Message Variations:**\n- **Short Form:** {{pillar_2_short}}\n- **Medium Form:** {{pillar_2_medium}}\n- **Long Form:** {{pillar_2_long}}\n\n**Platform Adaptations:**\n- **Social Media:** {{pillar_2_social}}\n- **Email:** {{pillar_2_email}}\n- **Website:** {{pillar_2_website}}\n- **Sales:** {{pillar_2_sales}}\n\n### Pillar 3: {{pillar_3_title}}\n\n**Core Message:** {{pillar_3_message}}\n\n**What It Means:** {{pillar_3_definition}}\n\n**Why It Matters:** {{pillar_3_importance}}\n\n**Key Benefits:**\n- {{pillar_3_benefit_1}}\n- {{pillar_3_benefit_2}}\n- {{pillar_3_benefit_3}}\n\n**Supporting Evidence:**\n- {{pillar_3_evidence_1}}\n- {{pillar_3_evidence_2}}\n- {{pillar_3_evidence_3}}\n\n**Message Variations:**\n- **Short Form:** {{pillar_3_short}}\n- **Medium Form:** {{pillar_3_medium}}\n- **Long Form:** {{pillar_3_long}}\n\n**Platform Adaptations:**\n- **Social Media:** {{pillar_3_social}}\n- **Email:** {{pillar_3_email}}\n- **Website:** {{pillar_3_website}}\n- **Sales:** {{pillar_3_sales}}\n\n### Pillar 4: {{pillar_4_title}}\n\n**Core Message:** {{pillar_4_message}}\n\n**What It Means:** {{pillar_4_definition}}\n\n**Why It Matters:** {{pillar_4_importance}}\n\n**Key Benefits:**\n- {{pillar_4_benefit_1}}\n- {{pillar_4_benefit_2}}\n- {{pillar_4_benefit_3}}\n\n**Supporting Evidence:**\n- {{pillar_4_evidence_1}}\n- {{pillar_4_evidence_2}}\n- {{pillar_4_evidence_3}}\n\n**Message Variations:**\n- **Short Form:** {{pillar_4_short}}\n- **Medium Form:** {{pillar_4_medium}}\n- **Long Form:** {{pillar_4_long}}\n\n**Platform Adaptations:**\n- **Social Media:** {{pillar_4_social}}\n- **Email:** {{pillar_4_email}}\n- **Website:** {{pillar_4_website}}\n- **Sales:** {{pillar_4_sales}}\n\n## Audience-Specific Messaging\n\n### {{audience_1_name}}\n**Primary Pillar:** {{audience_1_primary_pillar}}\n**Secondary Pillar:** {{audience_1_secondary_pillar}}\n**Key Message:** {{audience_1_message}}\n**Pain Points Addressed:** {{audience_1_pain_points}}\n**Desired Outcomes:** {{audience_1_outcomes}}\n\n### {{audience_2_name}}\n**Primary Pillar:** {{audience_2_primary_pillar}}\n**Secondary Pillar:** {{audience_2_secondary_pillar}}\n**Key Message:** {{audience_2_message}}\n**Pain Points Addressed:** {{audience_2_pain_points}}\n**Desired Outcomes:** {{audience_2_outcomes}}\n\n### {{audience_3_name}}\n**Primary Pillar:** {{audience_3_primary_pillar}}\n**Secondary Pillar:** {{audience_3_secondary_pillar}}\n**Key Message:** {{audience_3_message}}\n**Pain Points Addressed:** {{audience_3_pain_points}}\n**Desired Outcomes:** {{audience_3_outcomes}}\n\n## Competitive Differentiation\n\n### Against {{competitor_1}}\n**Our Advantage:** {{competitive_advantage_1}}\n**Key Differentiator:** {{differentiator_1}}\n**Message Focus:** {{competitive_message_1}}\n\n### Against {{competitor_2}}\n**Our Advantage:** {{competitive_advantage_2}}\n**Key Differentiator:** {{differentiator_2}}\n**Message Focus:** {{competitive_message_2}}\n\n### Against {{competitor_3}}\n**Our Advantage:** {{competitive_advantage_3}}\n**Key Differentiator:** {{differentiator_3}}\n**Message Focus:** {{competitive_message_3}}\n\n## Message Testing Framework\n\n### A/B Testing Strategy\n**Primary Tests:**\n- {{test_scenario_1}}\n- {{test_scenario_2}}\n- {{test_scenario_3}}\n\n**Success Metrics:**\n- {{success_metric_1}}: {{metric_1_target}}\n- {{success_metric_2}}: {{metric_2_target}}\n- {{success_metric_3}}: {{metric_3_target}}\n\n### Message Performance Tracking\n**Quantitative Measures:**\n- {{quantitative_measure_1}}\n- {{quantitative_measure_2}}\n- {{quantitative_measure_3}}\n\n**Qualitative Measures:**\n- {{qualitative_measure_1}}\n- {{qualitative_measure_2}}\n- {{qualitative_measure_3}}\n\n## Implementation Guidelines\n\n### Message Hierarchy in Content\n1. **Primary Pillar** (60% of messaging weight)\n2. **Secondary Pillar** (25% of messaging weight)\n3. **Supporting Pillars** (15% of messaging weight)\n\n### Content Creation Checklist\n- [ ] Does the content align with our primary pillar?\n- [ ] Are we addressing the target audience's pain points?\n- [ ] Is the competitive differentiation clear?\n- [ ] Does the message support our brand promise?\n- [ ] Are we using consistent terminology?\n- [ ] Is the tone appropriate for the platform?\n\n### Message Evolution Process\n**Quarterly Review:**\n- {{review_process_1}}\n- {{review_process_2}}\n- {{review_process_3}}\n\n**Annual Strategy Update:**\n- {{annual_update_1}}\n- {{annual_update_2}}\n- {{annual_update_3}}\n\n## Crisis Communication\n\n### Message Consistency During Crisis\n**Core Principles:**\n- {{crisis_principle_1}}\n- {{crisis_principle_2}}\n- {{crisis_principle_3}}\n\n**Key Messages:**\n- {{crisis_message_1}}\n- {{crisis_message_2}}\n- {{crisis_message_3}}\n\n---\n\n*For messaging guidance and questions, contact {{messaging_contact}} at {{messaging_contact_email}}*\n\n*This framework should be reviewed quarterly and updated based on market feedback and business evolution.*",
+        "performance_notes": "Comprehensive messaging framework for consistent communication across all touchpoints"
+      }
+    ],
+    "placeholders": {
+      "company_name": {
+        "type": "string",
+        "description": "Name of the company",
+        "required": true
+      },
+      "brand_promise": {
+        "type": "string",
+        "description": "Core brand promise to customers",
+        "required": true
+      },
+      "value_proposition": {
+        "type": "string",
+        "description": "Primary value proposition",
+        "required": true
+      },
+      "brand_tagline": {
+        "type": "string",
+        "description": "Brand tagline or slogan"
+      },
+      "pillar_1_title": {
+        "type": "string",
+        "description": "Title of first messaging pillar"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T13:00:00Z",
+    "updated_at": "2025-01-25T13:00:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["messaging", "brand_strategy", "communications", "pillars"],
+    "brand_voice": "strategic",
+    "tone": "instructional",
+    "character_limits": {
+      "min": 3000,
+      "max": 15000,
+      "optimal": 8000
+    },
+    "call_to_action": {
+      "primary": "Implement messaging framework",
+      "secondary": "Provide feedback on pillars"
+    },
+    "performance_tracking": {
+      "metrics": ["message_consistency", "audience_resonance", "competitive_differentiation"],
+      "goals": {
+        "consistency_score": 0.90,
+        "resonance_rating": 4.5
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": false,
+      "frequency": "quarterly"
+    },
+    "personalization": {
+      "dynamic_fields": ["audience_data", "competitive_landscape", "performance_metrics"],
+      "segmentation_rules": [
+        {
+          "condition": "team_role == 'sales'",
+          "variation": "sales_focused_messaging"
+        },
+        {
+          "condition": "team_role == 'marketing'",
+          "variation": "marketing_focused_messaging"
+        }
+      ]
+    }
+  }
+}

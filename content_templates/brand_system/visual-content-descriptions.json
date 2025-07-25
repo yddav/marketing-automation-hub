@@ -1,0 +1,94 @@
+{
+  "id": "visual-content-descriptions",
+  "type": "brand_guidelines",
+  "platform": ["all"],
+  "audience": {
+    "primary": "designers",
+    "secondary": ["content_creators", "social_media_team", "marketing_team"],
+    "demographics": {
+      "age_range": "all",
+      "interests": ["design", "visual_content", "brand_consistency"],
+      "tech_savviness": "advanced"
+    }
+  },
+  "content": {
+    "template": "Visual content description framework",
+    "variations": [
+      {
+        "id": "comprehensive_visual_guide",
+        "test_group": "primary_visual_system",
+        "template": "# {{company_name}} Visual Content Guidelines\n\n*Creative brief templates and visual direction for brand consistency*\n\n## Brand Visual Identity\n\n### Color Palette\n\n**Primary Colors:**\n- **{{primary_color_1_name}}** ({{primary_color_1_hex}})\n  - Usage: {{primary_color_1_usage}}\n  - Emotion: {{primary_color_1_emotion}}\n  - Context: {{primary_color_1_context}}\n\n- **{{primary_color_2_name}}** ({{primary_color_2_hex}})\n  - Usage: {{primary_color_2_usage}}\n  - Emotion: {{primary_color_2_emotion}}\n  - Context: {{primary_color_2_context}}\n\n**Secondary Colors:**\n- **{{secondary_color_1_name}}** ({{secondary_color_1_hex}}) - {{secondary_color_1_purpose}}\n- **{{secondary_color_2_name}}** ({{secondary_color_2_hex}}) - {{secondary_color_2_purpose}}\n- **{{secondary_color_3_name}}** ({{secondary_color_3_hex}}) - {{secondary_color_3_purpose}}\n\n**Accent Colors:**\n- **{{accent_color_1_name}}** ({{accent_color_1_hex}}) - {{accent_color_1_usage}}\n- **{{accent_color_2_name}}** ({{accent_color_2_hex}}) - {{accent_color_2_usage}}\n\n### Typography\n\n**Primary Font:** {{primary_font}}\n- Usage: {{primary_font_usage}}\n- Styles: {{primary_font_styles}}\n- Character: {{primary_font_character}}\n\n**Secondary Font:** {{secondary_font}}\n- Usage: {{secondary_font_usage}}\n- Styles: {{secondary_font_styles}}\n- Character: {{secondary_font_character}}\n\n**Display Font:** {{display_font}}\n- Usage: {{display_font_usage}}\n- Context: {{display_font_context}}\n\n### Logo Usage\n\n**Primary Logo:**\n- Minimum size: {{logo_min_size}}\n- Clear space: {{logo_clear_space}}\n- Background requirements: {{logo_background_req}}\n\n**Logo Variations:**\n- **Full Color:** {{full_color_logo_usage}}\n- **Monochrome:** {{monochrome_logo_usage}}\n- **Reversed:** {{reversed_logo_usage}}\n- **Icon Only:** {{icon_only_usage}}\n\n## Content Type Visual Specifications\n\n### Social Media Posts\n\n#### Instagram Feed Posts\n**Dimensions:** 1080x1080px\n**Aspect Ratio:** 1:1\n\n**Visual Style:**\n- **Layout:** {{instagram_layout_style}}\n- **Color Scheme:** {{instagram_color_approach}}\n- **Typography:** {{instagram_typography_style}}\n- **Image Treatment:** {{instagram_image_treatment}}\n\n**Template Description:**\n```\nBackground: {{instagram_background_desc}}\nMain Visual: {{instagram_main_visual}}\nText Placement: {{instagram_text_placement}}\nBranding: {{instagram_branding_placement}}\nCall-to-Action: {{instagram_cta_style}}\n```\n\n**Mood/Tone:** {{instagram_mood}}\n**Key Elements:** {{instagram_key_elements}}\n\n#### Instagram Stories\n**Dimensions:** 1080x1920px\n**Aspect Ratio:** 9:16\n\n**Visual Style:**\n- **Layout:** {{stories_layout_style}}\n- **Animation:** {{stories_animation_style}}\n- **Interactive Elements:** {{stories_interactive_elements}}\n\n**Template Description:**\n```\nBackground: {{stories_background_desc}}\nContent Area: {{stories_content_area}}\nText Style: {{stories_text_style}}\nBranding: {{stories_branding_approach}}\nStickers/Elements: {{stories_sticker_usage}}\n```\n\n#### Twitter Graphics\n**Dimensions:** 1200x675px\n**Aspect Ratio:** 16:9\n\n**Visual Style:**\n- **Layout:** {{twitter_layout_style}}\n- **Text Hierarchy:** {{twitter_text_hierarchy}}\n- **Visual Focus:** {{twitter_visual_focus}}\n\n**Template Description:**\n```\nBackground: {{twitter_background_desc}}\nMain Message: {{twitter_main_message_style}}\nSupporting Elements: {{twitter_supporting_elements}}\nBranding: {{twitter_branding_integration}}\n```\n\n#### LinkedIn Graphics\n**Dimensions:** 1200x627px\n**Aspect Ratio:** 1.91:1\n\n**Visual Style:**\n- **Professional Tone:** {{linkedin_professional_approach}}\n- **Data Visualization:** {{linkedin_data_viz_style}}\n- **Color Palette:** {{linkedin_color_restraint}}\n\n**Template Description:**\n```\nBackground: {{linkedin_background_desc}}\nContent Focus: {{linkedin_content_focus}}\nProfessional Elements: {{linkedin_professional_elements}}\nBranding: {{linkedin_branding_subtlety}}\n```\n\n### Email Graphics\n\n#### Email Headers\n**Dimensions:** 600x200px\n**File Format:** PNG/JPG\n\n**Design Approach:**\n- **Visual Hierarchy:** {{email_header_hierarchy}}\n- **Brand Integration:** {{email_header_branding}}\n- **Message Clarity:** {{email_header_clarity}}\n\n**Template Description:**\n```\nBackground: {{email_header_background}}\nMain Visual: {{email_header_main_visual}}\nText Treatment: {{email_header_text}}\nLogo Placement: {{email_header_logo}}\n```\n\n#### Email CTA Buttons\n**Dimensions:** Variable\n**Style:** {{email_cta_style}}\n\n**Design Specifications:**\n```\nBackground Color: {{cta_background_color}}\nText Color: {{cta_text_color}}\nBorder Style: {{cta_border_style}}\nPadding: {{cta_padding}}\nFont: {{cta_font}}\nHover State: {{cta_hover_effect}}\n```\n\n### Website Graphics\n\n#### Hero Images\n**Dimensions:** 1920x1080px\n**Usage:** {{hero_image_usage}}\n\n**Visual Approach:**\n- **Composition:** {{hero_composition_style}}\n- **Mood:** {{hero_mood_direction}}\n- **Text Integration:** {{hero_text_integration}}\n\n**Template Description:**\n```\nBackground: {{hero_background_treatment}}\nFocal Point: {{hero_focal_point}}\nText Overlay: {{hero_text_overlay}}\nCall-to-Action: {{hero_cta_placement}}\n```\n\n#### Feature Icons\n**Dimensions:** 64x64px, 128x128px\n**Style:** {{feature_icon_style}}\n\n**Design Principles:**\n- **Consistency:** {{icon_consistency_approach}}\n- **Simplicity:** {{icon_simplicity_level}}\n- **Recognition:** {{icon_recognition_factors}}\n\n### App Store Assets\n\n#### App Screenshots\n**Dimensions:** Device-specific\n**Overlay Style:** {{screenshot_overlay_style}}\n\n**Visual Treatment:**\n- **Background:** {{screenshot_background}}\n- **Feature Highlights:** {{screenshot_highlights}}\n- **Text Overlay:** {{screenshot_text_style}}\n- **Device Frame:** {{screenshot_device_frame}}\n\n#### App Icon Variations\n**Sizes:** Multiple (from 16x16 to 1024x1024)\n**Style:** {{app_icon_visual_style}}\n\n**Design Elements:**\n```\nSymbol/Mark: {{app_icon_symbol}}\nColor Treatment: {{app_icon_colors}}\nBackground: {{app_icon_background}}\nScalability: {{app_icon_scalability}}\n```\n\n## Photography Guidelines\n\n### Photo Style\n**Aesthetic:** {{photo_aesthetic_direction}}\n**Lighting:** {{photo_lighting_preference}}\n**Composition:** {{photo_composition_rules}}\n**Color Grading:** {{photo_color_grading}}\n\n### Subject Matter\n**People:**\n- **Demographics:** {{people_demographics}}\n- **Expressions:** {{people_expressions}}\n- **Clothing:** {{people_clothing_style}}\n- **Settings:** {{people_settings}}\n\n**Products:**\n- **Staging:** {{product_staging_approach}}\n- **Backgrounds:** {{product_backgrounds}}\n- **Lighting:** {{product_lighting}}\n- **Angles:** {{product_angles}}\n\n**Lifestyle:**\n- **Environments:** {{lifestyle_environments}}\n- **Activities:** {{lifestyle_activities}}\n- **Mood:** {{lifestyle_mood}}\n- **Props:** {{lifestyle_props}}\n\n### Photo Treatment\n**Filters:** {{photo_filter_approach}}\n**Saturation:** {{photo_saturation_level}}\n**Contrast:** {{photo_contrast_preference}}\n**Brightness:** {{photo_brightness_guidelines}}\n\n## Illustration Guidelines\n\n### Illustration Style\n**Approach:** {{illustration_style_approach}}\n**Line Weight:** {{illustration_line_weight}}\n**Color Application:** {{illustration_color_usage}}\n**Detail Level:** {{illustration_detail_level}}\n\n### Character Design\n**Style:** {{character_design_style}}\n**Diversity:** {{character_diversity_approach}}\n**Expressions:** {{character_expressions}}\n**Clothing/Accessories:** {{character_styling}}\n\n### Scene Composition\n**Perspective:** {{scene_perspective_approach}}\n**Environment:** {{scene_environment_style}}\n**Object Placement:** {{scene_object_placement}}\n**Storytelling:** {{scene_storytelling_elements}}\n\n## Animation Guidelines\n\n### Motion Principles\n**Timing:** {{animation_timing_approach}}\n**Easing:** {{animation_easing_curves}}\n**Duration:** {{animation_duration_ranges}}\n**Looping:** {{animation_looping_strategy}}\n\n### Brand Animation Elements\n**Logo Animation:** {{logo_animation_style}}\n**Transitions:** {{transition_animation_style}}\n**Loading States:** {{loading_animation_approach}}\n**Micro-Interactions:** {{micro_interaction_style}}\n\n## Quality Standards\n\n### Technical Requirements\n**Resolution:** {{technical_resolution_standards}}\n**File Formats:** {{technical_file_formats}}\n**Color Space:** {{technical_color_space}}\n**Compression:** {{technical_compression_guidelines}}\n\n### Brand Compliance Checklist\n- [ ] Uses approved color palette\n- [ ] Follows typography guidelines\n- [ ] Maintains proper logo usage\n- [ ] Aligns with brand personality\n- [ ] Meets technical specifications\n- [ ] Passes accessibility standards\n\n## Approval Process\n\n### Review Stages\n1. **Creative Review:** {{creative_review_focus}}\n2. **Brand Review:** {{brand_review_criteria}}\n3. **Technical Review:** {{technical_review_standards}}\n4. **Final Approval:** {{final_approval_authority}}\n\n### Feedback Framework\n**Creative Feedback:** {{creative_feedback_approach}}\n**Brand Feedback:** {{brand_feedback_priorities}}\n**Revision Process:** {{revision_workflow}}\n\n---\n\n*For visual content questions and approvals, contact {{design_contact}} at {{design_contact_email}}*\n\n*These guidelines should be updated quarterly to reflect brand evolution and design trends.*",
+        "performance_notes": "Comprehensive visual guidelines for consistent brand representation across all mediums"
+      }
+    ],
+    "placeholders": {
+      "company_name": {
+        "type": "string",
+        "description": "Name of the company",
+        "required": true
+      },
+      "primary_color_1_name": {
+        "type": "string",
+        "description": "Name of primary brand color",
+        "required": true
+      },
+      "primary_color_1_hex": {
+        "type": "string",
+        "description": "Hex code for primary color",
+        "required": true
+      },
+      "primary_font": {
+        "type": "string",
+        "description": "Primary brand typeface"
+      },
+      "logo_min_size": {
+        "type": "string",
+        "description": "Minimum logo size specification"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T13:30:00Z",
+    "updated_at": "2025-01-25T13:30:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["visual_design", "brand_guidelines", "creative_direction", "design_systems"],
+    "brand_voice": "instructional",
+    "tone": "professional",
+    "character_limits": {
+      "min": 4000,
+      "max": 20000,
+      "optimal": 10000
+    },
+    "call_to_action": {
+      "primary": "Implement visual guidelines",
+      "secondary": "Review and approve designs"
+    },
+    "performance_tracking": {
+      "metrics": ["brand_consistency_score", "design_approval_time", "visual_engagement"],
+      "goals": {
+        "consistency_score": 0.95,
+        "approval_time_reduction": 0.30
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": false,
+      "frequency": "quarterly"
+    },
+    "personalization": {
+      "dynamic_fields": ["brand_evolution", "design_trends", "platform_updates"],
+      "segmentation_rules": [
+        {
+          "condition": "content_type == 'social_media'",
+          "variation": "social_focused_guidelines"
+        },
+        {
+          "condition": "platform == 'app_store'",
+          "variation": "app_store_focused_guidelines"
+        }
+      ]
+    }
+  }
+}

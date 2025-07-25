@@ -1,0 +1,140 @@
+{
+  "id": "welcome-sequence",
+  "type": "email_template",
+  "platform": ["email"],
+  "audience": {
+    "primary": "app_users",
+    "secondary": ["potential_customers"],
+    "demographics": {
+      "age_range": "25-44",
+      "interests": ["productivity", "mobile apps", "business tools"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "Email sequence template",
+    "variations": [
+      {
+        "id": "welcome_email_1",
+        "test_group": "day_0",
+        "template": "Subject: Welcome to {{app_name}}! Let's get you started 🚀\n\nHi {{first_name}},\n\nWelcome to the {{app_name}} family! 🎉\n\nI'm {{sender_name}}, {{sender_title}} at {{company_name}}. I wanted to personally thank you for downloading {{app_name}} and share what makes our community special.\n\n{{app_name}} has already helped {{user_count}}+ people {{primary_benefit}}. You're joining a community that values {{core_value_1}}, {{core_value_2}}, and {{core_value_3}}.\n\n🎯 Here's what happens next:\n\n• Today: {{immediate_action}}\n• Tomorrow: {{day_1_expectation}}\n• This week: {{week_1_expectation}}\n\n💡 Quick Start Tip:\n{{quick_start_tip}}\n\nThis simple step will {{tip_benefit}}.\n\n{{cta_button}}\n\nQuestions? Just reply to this email - I read every single one.\n\nCheering you on,\n{{sender_name}}\n\nP.S. {{ps_message}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Personal welcome with clear expectations"
+      },
+      {
+        "id": "welcome_email_2",
+        "test_group": "day_1",
+        "template": "Subject: Your first day with {{app_name}} - here's what to focus on\n\nHi {{first_name}},\n\nHow did your first experience with {{app_name}} go yesterday?\n\n{{onboarding_check}}\n\nIf you haven't had a chance to {{core_action}} yet, no worries! Life gets busy.\n\n🎯 Today's Focus: {{day_1_goal}}\n\nHere's exactly how to do it:\n\n1. {{step_1}}\n2. {{step_2}}\n3. {{step_3}}\n\n⏰ This takes about {{time_estimate}} and will {{expected_result}}.\n\n💡 Pro Tip from our community:\n\"{{user_tip}}\" - {{user_name}}, {{user_title}}\n\n{{cta_button}}\n\nStuck on something? Here are the most common questions from new users:\n\nQ: {{faq_1_question}}\nA: {{faq_1_answer}}\n\nQ: {{faq_2_question}}\nA: {{faq_2_answer}}\n\nTomorrow, I'll show you {{tomorrow_preview}}.\n\nTalk soon,\n{{sender_name}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Focuses on single action with social proof"
+      },
+      {
+        "id": "welcome_email_3",
+        "test_group": "day_3",
+        "template": "Subject: The #1 mistake new {{app_name}} users make (and how to avoid it)\n\nHi {{first_name}},\n\nI've been watching how new {{app_name}} users get started, and I've noticed a pattern.\n\nThe people who get the most value do one thing differently: {{key_success_behavior}}.\n\nMost people make this mistake: {{common_mistake}}\n\nInstead, try this: {{better_approach}}\n\n📊 Real example:\n{{case_study_brief}}\n\nThe difference? {{result_comparison}}\n\n🎯 Your Action for Today:\n{{specific_action}}\n\nThis will {{action_benefit}} and takes just {{time_required}}.\n\n{{cta_button}}\n\n💬 What our users say about this approach:\n\n\"{{testimonial_1}}\" - {{user_1_name}}\n\n\"{{testimonial_2}}\" - {{user_2_name}}\n\nNext up: I'll share {{next_email_preview}}.\n\nYour productivity partner,\n{{sender_name}}\n\nP.S. {{ps_tip}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Addresses common mistakes with social proof"
+      },
+      {
+        "id": "welcome_email_4",
+        "test_group": "day_7",
+        "template": "Subject: Your first week with {{app_name}} - let's celebrate! 🎉\n\nHi {{first_name}},\n\nIt's been a week since you joined {{app_name}}!\n\n{{celebration_message}}\n\n📊 Here's what you've accomplished:\n{{user_achievements}}\n\n🚀 Ready for the next level?\n\nNow that you've mastered the basics, here are 3 advanced features that will {{advanced_benefit}}:\n\n1. {{advanced_feature_1}}\n   {{feature_1_description}}\n   → Result: {{feature_1_benefit}}\n\n2. {{advanced_feature_2}}\n   {{feature_2_description}}\n   → Result: {{feature_2_benefit}}\n\n3. {{advanced_feature_3}}\n   {{feature_3_description}}\n   → Result: {{feature_3_benefit}}\n\n{{cta_button}}\n\n💡 Community Spotlight:\n{{community_member_story}}\n\n🎁 Special Bonus:\n{{bonus_offer_or_content}}\n\nKeep up the great work!\n{{sender_name}}\n\nP.S. Got a success story to share? Just reply - I love hearing from our community!\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Celebrates progress and introduces advanced features"
+      },
+      {
+        "id": "welcome_email_5",
+        "test_group": "day_14",
+        "template": "Subject: Two weeks in - are you getting the most from {{app_name}}?\n\nHi {{first_name}},\n\n{{personal_check_in}}\n\nAfter two weeks with {{app_name}}, you're either:\n\n✅ Loving the results and seeing {{positive_outcome}}\n❓ Still figuring out how to make it work for your specific needs\n\nBoth are totally normal!\n\n📈 If you're in the first group:\nYou're ready for {{next_level_content}}. Here's what to focus on next:\n{{advanced_guidance}}\n\n🤔 If you're in the second group:\nNo worries! Here are the 3 most effective ways to {{overcome_common_challenge}}:\n\n1. {{solution_1}}\n2. {{solution_2}}\n3. {{solution_3}}\n\n{{cta_button}}\n\n💬 Either way, I'm here to help. What's your biggest question about {{app_name}} right now?\n\nJust reply to this email and I'll get back to you personally.\n\n🎭 Behind the scenes:\n{{behind_scenes_insight}}\n\nThanks for being part of our community,\n{{sender_name}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Addresses different user journey paths with personal touch"
+      }
+    ],
+    "placeholders": {
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "first_name": {
+        "type": "string",
+        "description": "User's first name",
+        "required": true
+      },
+      "sender_name": {
+        "type": "string", 
+        "description": "Name of email sender",
+        "required": true
+      },
+      "sender_title": {
+        "type": "string",
+        "description": "Title of email sender"
+      },
+      "company_name": {
+        "type": "string",
+        "description": "Name of the company"
+      },
+      "user_count": {
+        "type": "string",
+        "description": "Number of users",
+        "default": "10,000"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T11:30:00Z",
+    "updated_at": "2025-01-25T11:30:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["email", "welcome_sequence", "onboarding", "retention"],
+    "brand_voice": "friendly",
+    "tone": "supportive",
+    "character_limits": {
+      "min": 200,
+      "max": 2000,
+      "optimal": 800
+    },
+    "call_to_action": {
+      "primary": "Get Started Now",
+      "secondary": "Learn More",
+      "url": "{{app_url}}"
+    },
+    "performance_tracking": {
+      "metrics": ["open_rate", "click_through_rate", "conversions"],
+      "goals": {
+        "open_rate": 0.45,
+        "click_through_rate": 0.08,
+        "sequence_completion": 0.35
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "frequency": "campaign",
+      "campaign_duration": 14
+    },
+    "triggers": [
+      {
+        "event": "app_download",
+        "action": "send_email",
+        "delay": 0,
+        "conditions": {"email_provided": true}
+      },
+      {
+        "event": "user_signup",
+        "action": "send_email", 
+        "delay": 1440,
+        "conditions": {"sequence_step": 2}
+      }
+    ],
+    "personalization": {
+      "dynamic_fields": ["user_achievements", "usage_stats", "progress_metrics"],
+      "segmentation_rules": [
+        {
+          "condition": "user_engagement == 'high'",
+          "variation": "welcome_email_4"
+        },
+        {
+          "condition": "user_engagement == 'low'",
+          "variation": "welcome_email_5"
+        }
+      ]
+    }
+  }
+}
