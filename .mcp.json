@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "mcp-server-sequential-thinking",
+      "args": []
+    },
+    "ref-tools": {
+      "command": "ref-tools-mcp",
+      "args": [],
+      "env": {
+        "REF_API_KEY": "ref-aa8a01c9727084014628"
+      }
+    },
+    "puppeteer": {
+      "command": "mcp-server-puppeteer",
+      "args": []
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem"]
+    },
+    "claude-code-router": {
+      "command": "ccr",
+      "args": ["code"],
+      "env": {
+        "CCR_HOST": "0.0.0.0",
+        "CCR_PORT": "8080"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{"level":"info","message":"Validating configuration...","timestamp":"2025-07-26T04:56:49.893Z"}
+{"emailConfigured":true,"level":"info","message":"Configuration validation complete","platforms":["instagram","twitter","facebook"],"socialPlatforms":3,"timestamp":"2025-07-26T04:56:49.894Z"}
+{"emailProvider":"mailchimp","environment":"development","level":"info","message":"Marketing Automation Hub started on port 3000","socialPlatforms":3,"timestamp":"2025-07-26T04:56:49.898Z"}
+{"ip":"127.0.0.1","level":"info","message":"GET /health","timestamp":"2025-07-26T04:59:15.383Z","userAgent":"curl/7.81.0"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/config/validate","timestamp":"2025-07-26T04:59:22.307Z","userAgent":"curl/7.81.0"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/social/test","timestamp":"2025-07-26T04:59:29.878Z","userAgent":"curl/7.81.0"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/social/test","timestamp":"2025-07-26T04:59:37.234Z","userAgent":"curl/7.81.0"}
+{"ip":"127.0.0.1","level":"info","message":"GET /health","timestamp":"2025-07-26T04:59:52.859Z","userAgent":"axios/1.11.0"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/social/post","timestamp":"2025-07-26T04:59:52.889Z","userAgent":"axios/1.11.0"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/analytics/current","timestamp":"2025-07-26T04:59:52.894Z","userAgent":"axios/1.11.0"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/campaign/launch","timestamp":"2025-07-26T04:59:52.900Z","userAgent":"axios/1.11.0"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/social/post","timestamp":"2025-07-26T05:00:12.739Z","userAgent":"curl/7.81.0"}
+{"level":"info","message":"Shutting down Marketing Automation Hub...","timestamp":"2025-07-26T05:00:48.378Z"}
+{"level":"info","message":"Validating configuration...","timestamp":"2025-07-26T05:01:32.352Z"}
+{"emailConfigured":true,"level":"info","message":"Configuration validation complete","platforms":["instagram","twitter","facebook"],"socialPlatforms":3,"timestamp":"2025-07-26T05:01:32.353Z"}
+{"emailProvider":"mailchimp","environment":"development","level":"info","message":"Marketing Automation Hub started on port 3000","socialPlatforms":3,"timestamp":"2025-07-26T05:01:32.358Z"}
+{"level":"info","message":"Validating configuration...","timestamp":"2025-07-27T18:50:51.921Z"}
+{"emailConfigured":true,"level":"info","message":"Configuration validation complete","platforms":["instagram","twitter","facebook"],"socialPlatforms":3,"timestamp":"2025-07-27T18:50:51.923Z"}
+{"emailProvider":"mailchimp","environment":"development","level":"info","message":"Marketing Automation Hub started on port 3000","socialPlatforms":3,"timestamp":"2025-07-27T18:50:51.943Z"}
+{"level":"info","message":"Validating configuration...","timestamp":"2025-07-27T18:55:25.600Z"}
+{"emailConfigured":true,"level":"info","message":"Configuration validation complete","platforms":["instagram","twitter","facebook"],"socialPlatforms":3,"timestamp":"2025-07-27T18:55:25.607Z"}
+{"emailProvider":"mailchimp","environment":"development","level":"info","message":"Marketing Automation Hub started on port 3000","socialPlatforms":3,"timestamp":"2025-07-27T18:55:25.617Z"}
+{"ip":"127.0.0.1","level":"info","message":"GET /health","timestamp":"2025-07-27T18:57:29.968Z","userAgent":"curl/7.81.0"}

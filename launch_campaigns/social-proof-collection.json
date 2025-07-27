@@ -1,0 +1,235 @@
+{
+  "id": "social-proof-collection",
+  "type": "automated_testimonial_system",
+  "platform": ["app_store", "social_media", "email", "website"],
+  "audience": {
+    "primary": "satisfied_users",
+    "secondary": ["potential_customers", "social_followers", "website_visitors"],
+    "demographics": {
+      "age_range": "all",
+      "interests": ["productivity", "app_reviews", "user_testimonials"],
+      "tech_savviness": "all"
+    }
+  },
+  "content": {
+    "template": "Comprehensive social proof collection and display system",
+    "collection_methods": {
+      "automated_review_requests": {
+        "in_app_prompts": {
+          "trigger_conditions": [
+            {
+              "condition": "user_completed_first_task",
+              "delay": "24_hours",
+              "message": "🎉 Congrats on completing your first task with {{app_name}}!\n\nHow was your experience? If you're loving {{app_name}}, would you mind leaving us a quick review? It helps other people discover the productivity boost you just experienced!\n\n⭐ Rate {{app_name}} now",
+              "buttons": ["Rate 5 Stars", "Maybe Later", "No Thanks"]
+            },
+            {
+              "condition": "user_active_7_days",
+              "delay": "immediate",
+              "message": "You've been using {{app_name}} for a week now! 📊\n\nWe'd love to know how it's impacting your productivity. Your review helps us improve and helps others discover {{app_name}}.\n\n💬 Share your experience?",
+              "buttons": ["Write Review", "Not Now"]
+            },
+            {
+              "condition": "high_engagement_session",
+              "delay": "end_of_session",
+              "message": "Wow! You just had an amazing {{app_name}} session! 🚀\n\nIf {{app_name}} is making a difference in your productivity, would you consider leaving a review? It means the world to us!\n\n✨ Help others discover {{app_name}}",
+              "buttons": ["Leave Review", "Later"]
+            }
+          ]
+        },
+        "email_follow_up": {
+          "sequence": [
+            {
+              "trigger": "user_declines_in_app_review",
+              "delay": "3_days",
+              "subject": "Quick favor? Your {{app_name}} experience matters! 🌟",
+              "content": "Hi {{user_name}},\n\nI hope {{app_name}} is helping you stay productive! \n\nI noticed you've been using the app regularly - that's awesome! If you have 30 seconds, would you mind sharing your experience with a quick app store review?\n\nYour feedback helps other productivity enthusiasts discover {{app_name}}, and every review makes a real difference to our small team.\n\n[Leave 5-Star Review - iOS] [Leave 5-Star Review - Android]\n\nThanks for being part of the {{app_name}} community!\n\n{{founder_name}}\nFounder, {{company_name}}\n\nP.S. Having any issues? Just reply to this email - I personally read every message!"
+            },
+            {
+              "trigger": "user_reaches_30_day_milestone", 
+              "delay": "immediate",
+              "subject": "30 days of productivity wins! 🎉 Quick review request",
+              "content": "{{user_name}},\n\nIt's been 30 days since you started using {{app_name}} - congratulations on building a consistent productivity habit!\n\nYour stats this month:\n• {{tasks_completed}} tasks completed ✅\n• {{time_saved}} hours saved ⏰\n• {{productivity_score}} productivity score 📊\n\nThose are some impressive numbers! If {{app_name}} has been valuable for your productivity journey, would you consider leaving a review?\n\nIt takes 30 seconds but helps thousands of people discover the same productivity benefits you're experiencing.\n\n[Share Your Success Story - App Store Review]\n\nThank you for being an amazing {{app_name}} user!\n\n{{founder_name}}"
+            }
+          ]
+        }
+      },
+      "social_media_testimonial_collection": {
+        "hashtag_monitoring": {
+          "tracked_hashtags": [
+            "#{{app_name}}",
+            "#{{app_name}}Review", 
+            "#{{app_name}}Success",
+            "#My{{app_name}}Experience",
+            "#ProductivityWin",
+            "#{{branded_hashtag}}"
+          ],
+          "collection_strategy": {
+            "auto_repost": "user_permission_requested",
+            "testimonial_database": "categorize_by_sentiment_and_feature",
+            "response_protocol": "thank_and_engage_within_2_hours",
+            "amplification": "share_best_testimonials_weekly"
+          }
+        },
+        "user_story_campaigns": {
+          "monthly_contest": {
+            "campaign_name": "#My{{app_name}}Success",
+            "prompt": "Share your biggest productivity win using {{app_name}} this month! Screenshot your progress, tell your story, and tag us for a chance to be featured!",
+            "prizes": [
+              "1st Place: 1-year premium subscription + {{app_name}} merch",
+              "2nd Place: 6-month premium subscription",
+              "3rd Place: 3-month premium subscription",
+              "10 Runner-ups: 1-month premium subscription"
+            ],
+            "judging_criteria": [
+              "Authenticity of story",
+              "Productivity impact demonstrated", 
+              "Creativity of presentation",
+              "Community engagement"
+            ]
+          }
+        }
+      },
+      "website_testimonial_integration": {
+        "review_aggregation": {
+          "sources": [
+            "app_store_reviews",
+            "social_media_mentions",
+            "email_testimonials",
+            "customer_support_feedback"
+          ],
+          "curation_process": {
+            "sentiment_analysis": "positive_reviews_above_4_stars",
+            "authenticity_verification": "real_user_confirmation",
+            "diversity_selection": "varied_use_cases_and_demographics",
+            "legal_compliance": "permission_obtained_for_usage"
+          },
+          "display_rotation": {
+            "homepage_testimonials": "3_rotating_featured_reviews",
+            "feature_page_testimonials": "feature_specific_user_stories",
+            "testimonial_page": "comprehensive_review_showcase",
+            "checkout_page": "conversion_optimized_social_proof"
+          }
+        }
+      }
+    },
+    "testimonial_categories": {
+      "productivity_impact": {
+        "examples": [
+          "Time saved per day/week",
+          "Tasks completed increase",
+          "Workflow efficiency improvements",
+          "Stress reduction testimonials"
+        ],
+        "collection_questions": [
+          "How much time does {{app_name}} save you daily?",
+          "What's your biggest productivity win since using {{app_name}}?",
+          "How has {{app_name}} changed your daily workflow?"
+        ]
+      },
+      "feature_specific": {
+        "examples": [
+          "{{top_feature_1}} success stories",
+          "{{top_feature_2}} use cases",
+          "{{top_feature_3}} benefits",
+          "Integration success stories"
+        ],
+        "collection_questions": [
+          "Which {{app_name}} feature has been most valuable?",
+          "How do you use {{specific_feature}}?",
+          "What surprised you most about {{app_name}}?"
+        ]
+      },
+      "emotional_connection": {
+        "examples": [
+          "Confidence boost stories",
+          "Work-life balance improvements",
+          "Achievement celebration",
+          "Personal growth testimonials"
+        ],
+        "collection_questions": [
+          "How does {{app_name}} make you feel about your productivity?",
+          "What personal goal has {{app_name}} helped you achieve?",
+          "How has your confidence changed since using {{app_name}}?"
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T16:00:00Z",
+    "updated_at": "2025-01-25T16:00:00Z",
+    "version": "3.0.0", 
+    "author": "Agent A - Launch Campaign Execution",
+    "tags": ["social_proof", "testimonials", "reviews", "user_stories", "conversion_optimization"],
+    "success_metrics": {
+      "review_collection_rate": ">15%_of_active_users",
+      "average_rating_maintenance": ">4.5_stars",
+      "testimonial_conversion_impact": ">20%_increase_in_downloads",
+      "user_story_engagement": ">500_hashtag_uses_monthly"
+    }
+  },
+  "automation": {
+    "smart_timing": {
+      "review_request_optimization": {
+        "user_mood_analysis": "request_during_positive_experiences",
+        "session_quality_scoring": "target_high_satisfaction_moments",
+        "timing_personalization": "learn_individual_user_patterns"
+      }
+    },
+    "response_management": {
+      "positive_review_response": {
+        "template": "Thank you {{user_name}} for the amazing {{star_rating}}-star review! 🌟 We're thrilled that {{app_name}} is helping you {{mentioned_benefit}}. Stories like yours inspire our team every day! Keep up the great productivity work! 🚀",
+        "personalization": "reference_specific_review_points",
+        "timing": "respond_within_24_hours"
+      },
+      "constructive_feedback_response": {
+        "template": "Hi {{user_name}}, thank you for the honest feedback about {{mentioned_issue}}. We really appreciate users who help us improve! Our team is actively working on {{improvement_plan}}. We'd love to update you when it's ready - mind if we reach out? 🛠️",
+        "escalation": "forward_to_development_team",
+        "follow_up": "notify_when_issue_resolved"
+      }
+    },
+    "content_generation": {
+      "testimonial_graphics": {
+        "auto_design": "quote_graphics_with_user_permission",
+        "brand_consistency": "company_visual_guidelines",
+        "platform_optimization": "format_for_instagram_twitter_facebook",
+        "user_attribution": "proper_credit_and_permission"
+      },
+      "success_story_compilation": {
+        "monthly_roundup": "best_testimonials_monthly_newsletter",
+        "feature_spotlight": "testimonials_highlighting_specific_features",
+        "milestone_celebrations": "user_achievement_story_sharing"
+      }
+    }
+  },
+  "integration_points": {
+    "agent_b_collaboration": {
+      "user_satisfaction_scoring": "onboarding_success_correlation",
+      "retention_improvement": "testimonial_givers_retention_analysis",
+      "feature_usage_insights": "most_praised_features_promotion"
+    },
+    "agent_c_collaboration": {
+      "conversion_optimization": "testimonial_placement_ab_testing",
+      "social_proof_roi": "testimonial_impact_on_downloads",
+      "user_segmentation": "testimonial_givers_profile_analysis"
+    },
+    "marketing_amplification": {
+      "press_kit_integration": "curated_testimonials_for_media",
+      "influencer_outreach": "user_stories_for_social_proof",
+      "paid_advertising": "testimonial_quotes_in_ad_creative",
+      "website_optimization": "strategic_testimonial_placement"
+    }
+  },
+  "legal_compliance": {
+    "permissions": {
+      "testimonial_usage_consent": "explicit_permission_for_marketing_use",
+      "data_privacy": "gdpr_ccpa_compliant_data_handling",
+      "attribution_rights": "proper_user_credit_and_links"
+    },
+    "authenticity_verification": {
+      "real_user_confirmation": "verified_app_store_purchase_or_account",
+      "fake_review_prevention": "automated_authenticity_checking",
+      "transparent_disclosure": "clearly_mark_incentivized_reviews"
+    }
+  }
+}
