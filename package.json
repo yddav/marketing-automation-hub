@@ -1,11 +1,12 @@
 {
   "name": "app-marketing-automation-hub",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Multi-agent marketing automation system for app launches with email sequences, social media integration, and analytics tracking",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "staging": "node staging-server.js",
+    "dev": "node staging-server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint src/",
