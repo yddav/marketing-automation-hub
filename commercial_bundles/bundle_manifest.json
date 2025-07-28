@@ -1,0 +1,43 @@
+{
+  "generated": "2025-07-28T21:04:16.725Z",
+  "version": "v1.0.0",
+  "timestamp": "20250728_230416",
+  "bundles": {
+    "starter": {
+      "price": {
+        "regular": 297,
+        "launch": 199,
+        "currency": "USD"
+      },
+      "file": "starter_v1.0.0_20250728_230416.zip",
+      "checksum": "starter_v1.0.0_20250728_230416.md5",
+      "target_size": "50MB",
+      "description": "Core content templates, brand system, email sequences, quick start guide"
+    },
+    "professional": {
+      "price": {
+        "regular": 497,
+        "launch": 299,
+        "currency": "USD"
+      },
+      "file": "professional_v1.0.0_20250728_230416.zip",
+      "checksum": "professional_v1.0.0_20250728_230416.md5",
+      "target_size": "200MB",
+      "description": "Complete content system, analytics dashboard, API guides, social automation"
+    },
+    "enterprise": {
+      "price": {
+        "regular": 997,
+        "launch": 597,
+        "currency": "USD"
+      },
+      "file": "enterprise_v1.0.0_20250728_230416.zip",
+      "checksum": "enterprise_v1.0.0_20250728_230416.md5",
+      "target_size": "500MB",
+      "description": "Full source code, multi-agent framework, production configs, consultation materials"
+    }
+  },
+  "launch_ready": true,
+  "emergency_packaging": true,
+  "ready_for_sale": "2025-01-28T00:00:00.000Z"
+}

@@ -1,0 +1,27 @@
+{
+  "totalRevenue": 0,
+  "totalSales": 0,
+  "averageOrderValue": 0,
+  "refundRate": 0,
+  "totalRefunded": 0,
+  "refundCount": 0,
+  "tierBreakdown": {
+    "starter": {
+      "count": 0,
+      "revenue": 0
+    },
+    "professional": {
+      "count": 0,
+      "revenue": 0
+    },
+    "enterprise": {
+      "count": 0,
+      "revenue": 0
+    }
+  },
+  "countryBreakdown": {},
+  "milestonesReached": [],
+  "startDate": "2025-07-28T21:45:04.723Z",
+  "lastUpdated": "2025-07-28T21:45:04.724Z",
+  "lastSale": null
+}

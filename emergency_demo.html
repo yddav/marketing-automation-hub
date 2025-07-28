@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚨 App Marketing Automation Hub - LIVE DEMO</title>
+    <meta name="description" content="Complete marketing automation infrastructure with 17+ content templates, analytics dashboard, and multi-platform campaign management">
+    
+    <style>
+        /* EMERGENCY DEMO STYLES - Mobile-first responsive design */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .emergency-header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .emergency-badge {
+            background: #ff4757;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .main-title {
+            color: white;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            margin-bottom: 2rem;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .quick-access {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .access-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .access-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: #667eea;
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .card-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .demo-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .demo-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .features-showcase {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .features-title {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            transition: background 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #feca57;
+        }
+        
+        .stats-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-item {
+            padding: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #667eea;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-item {
+            text-align: center;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.8rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .nav-icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-container { padding-bottom: 6rem; }
+            .quick-access { grid-template-columns: 1fr; }
+            .access-card { padding: 1.5rem; }
+        }
+        
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .success-message {
+            background: #2ecc71;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Emergency Header -->
+    <header class="emergency-header">
+        <div class="emergency-badge">🚨 LIVE DEMO - EMERGENCY BACKUP SERVER</div>
+        <h1 class="main-title">App Marketing Automation Hub</h1>
+        <p class="subtitle">Complete marketing infrastructure with 17+ templates, analytics dashboard & campaign automation</p>
+    </header>
+
+    <!-- Main Demo Container -->
+    <div class="demo-container">
+        <!-- Quick Access Cards -->
+        <section class="quick-access">
+            <div class="access-card">
+                <span class="card-icon">📊</span>
+                <h2 class="card-title">Analytics Dashboard</h2>
+                <p class="card-description">Real-time performance tracking, A/B testing results, cross-platform correlation analysis with interactive charts</p>
+                <a href="/dashboard" class="demo-button" onclick="trackClick('dashboard')">View Dashboard</a>
+            </div>
+
+            <div class="access-card">
+                <span class="card-icon">🌐</span>
+                <h2 class="card-title">Website Hub</h2>
+                <p class="card-description">Professional website with device security focus, premium design showcase, and integrated marketing</p>
+                <a href="/website" class="demo-button" onclick="trackClick('website')">View Website</a>
+            </div>
+
+            <div class="access-card">
+                <span class="card-icon">📄</span>
+                <h2 class="card-title">Content Templates</h2>
+                <p class="card-description">17+ marketing templates for all platforms: social media, email sequences, app store descriptions, press releases</p>
+                <a href="#content-showcase" class="demo-button" onclick="showContentTemplates()">View Templates</a>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <h2 style="color: #2c3e50; margin-bottom: 1rem;">🚀 Complete Marketing Infrastructure</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">17+</span>
+                    <span class="stat-label">Content Templates</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Platform Integrations</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Email Sequences</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Mobile Responsive</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Showcase -->
+        <section class="features-showcase">
+            <h2 class="features-title">🎯 Marketing Automation Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-number">📱</div>
+                    <strong>Social Media</strong><br>
+                    Instagram, Twitter, Facebook, LinkedIn templates
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">📧</div>
+                    <strong>Email Marketing</strong><br>
+                    Welcome, launch & retention sequences
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">🏪</div>
+                    <strong>App Store</strong><br>
+                    Optimized descriptions with A/B variations
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">📊</div>
+                    <strong>Analytics</strong><br>
+                    Real-time performance tracking
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">🔄</div>
+                    <strong>A/B Testing</strong><br>
+                    Automated testing framework
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">🎨</div>
+                    <strong>Brand System</strong><br>
+                    Consistent voice & messaging
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Templates Preview -->
+        <div id="content-showcase" style="display: none;">
+            <section class="stats-section">
+                <h2 style="color: #2c3e50; margin-bottom: 2rem;">📄 Content Template Library</h2>
+                <div id="template-list"></div>
+                <div class="success-message" id="template-loaded" style="display: none;">
+                    ✅ Content templates loaded successfully! 17+ templates ready for deployment.
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="/" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            Home
+        </a>
+        <a href="/dashboard" class="nav-item">
+            <span class="nav-icon">📊</span>
+            Analytics
+        </a>
+        <a href="/website" class="nav-item">
+            <span class="nav-icon">🌐</span>
+            Website
+        </a>
+        <a href="#content-showcase" class="nav-item" onclick="showContentTemplates()">
+            <span class="nav-icon">📄</span>
+            Templates
+        </a>
+    </nav>
+
+    <script>
+        // Emergency demo tracking and functionality
+        function trackClick(section) {
+            console.log(`🎯 Demo interaction: ${section}`);
+            // Add loading state
+            event.target.classList.add('loading');
+            setTimeout(() => {
+                event.target.classList.remove('loading');
+            }, 1000);
+        }
+
+        function showContentTemplates() {
+            const showcase = document.getElementById('content-showcase');
+            const templateList = document.getElementById('template-list');
+            const loadedMessage = document.getElementById('template-loaded');
+            
+            if (showcase.style.display === 'none') {
+                showcase.style.display = 'block';
+                showcase.scrollIntoView({ behavior: 'smooth' });
+                
+                // Load content templates
+                loadContentTemplates();
+                
+                setTimeout(() => {
+                    loadedMessage.style.display = 'block';
+                }, 1000);
+            }
+        }
+
+        function loadContentTemplates() {
+            const templates = [
+                { name: 'Instagram Templates', count: 7, type: 'Social Media' },
+                { name: 'Twitter Templates', count: 8, type: 'Social Media' },
+                { name: 'Facebook Templates', count: 7, type: 'Social Media' },
+                { name: 'LinkedIn Templates', count: 7, type: 'Social Media' },
+                { name: 'App Store Descriptions', count: 5, type: 'App Store' },
+                { name: 'Welcome Email Sequence', count: 5, type: 'Email Marketing' },
+                { name: 'Launch Email Sequence', count: 5, type: 'Email Marketing' },
+                { name: 'Retention Email Sequence', count: 6, type: 'Email Marketing' },
+                { name: 'Blog Post Templates', count: 4, type: 'Content' },
+                { name: 'Press Release Templates', count: 3, type: 'Media' },
+                { name: 'Brand Voice Guidelines', count: 1, type: 'Brand System' },
+                { name: 'Messaging Pillars', count: 4, type: 'Brand System' },
+                { name: 'Hashtag Strategy', count: 1, type: 'Brand System' },
+                { name: 'Visual Content Guidelines', count: 1, type: 'Brand System' }
+            ];
+
+            const templateList = document.getElementById('template-list');
+            templateList.innerHTML = templates.map(template => `
+                <div style="background: #f8f9fa; margin: 0.5rem 0; padding: 1rem; border-radius: 8px; border-left: 4px solid #667eea;">
+                    <strong>${template.name}</strong> 
+                    <span style="color: #666; font-size: 0.9rem;">(${template.count} variations)</span>
+                    <br>
+                    <small style="color: #888;">${template.type}</small>
+                </div>
+            `).join('');
+        }
+
+        // Auto-demo functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚨 Emergency Demo Server - App Marketing Automation Hub');
+            console.log('📊 Dashboard: /dashboard');
+            console.log('🌐 Website: /website');
+            console.log('📄 Templates: Click "View Templates" button');
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+
+        // Mobile responsive enhancements
+        if (window.innerWidth <= 768) {
+            document.body.classList.add('mobile-view');
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768) {
+                document.body.classList.add('mobile-view');
+            } else {
+                document.body.classList.remove('mobile-view');
+            }
+        });
+    </script>
+</body>
+</html>

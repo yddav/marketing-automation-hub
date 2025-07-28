@@ -1,0 +1,580 @@
+/**
+ * Responsive Styles for Analytics Dashboard
+ * Agent C - Phase 2 Task 2.3
+ */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    padding: var(--spacing-lg);
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .header-controls {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .chart-row {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-content {
+    grid-template-columns: 1fr;
+  }
+
+  .correlation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-tabs {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  .tab-btn {
+    font-size: 0.75rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .test-variants {
+    grid-template-columns: 1fr;
+  }
+
+  .test-metrics {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .metric-summary {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .dashboard-header h1 {
+    font-size: var(--font-xl);
+  }
+
+  .dashboard-main {
+    padding: var(--spacing-md);
+    gap: var(--spacing-lg);
+  }
+
+  .overview-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .metric-card .card-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .card-header {
+    padding: var(--spacing-md);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .card-content {
+    padding: var(--spacing-md);
+  }
+
+  .chart-card .card-content {
+    height: 300px;
+  }
+
+  .platform-heatmap,
+  .correlation-heatmap {
+    height: 250px;
+  }
+
+  .platform-chart {
+    height: 200px;
+  }
+
+  .ab-controls,
+  .content-controls,
+  .correlation-controls,
+  .alert-controls {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: flex-start;
+  }
+
+  .ab-controls select,
+  .content-controls select,
+  .correlation-controls select,
+  .alert-controls select {
+    width: 100%;
+  }
+
+  .new-test-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .platform-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: var(--spacing-xs);
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+    min-width: fit-content;
+  }
+
+  .insight-header {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  .priority-badge {
+    order: -1;
+  }
+
+  .insight-platforms {
+    margin-top: var(--spacing-sm);
+  }
+
+  .test-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .test-status {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .test-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .test-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .variant-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .winner-summary {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: flex-start;
+  }
+
+  .winner-stats {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  /* Content Table Mobile Optimization */
+  .content-table {
+    font-size: var(--font-sm);
+  }
+
+  #topContentTable th,
+  #topContentTable td {
+    padding: var(--spacing-sm);
+  }
+
+  /* Hide less important columns on mobile */
+  #topContentTable th:nth-child(3),
+  #topContentTable td:nth-child(3),
+  #topContentTable th:nth-child(6),
+  #topContentTable td:nth-child(6) {
+    display: none;
+  }
+
+  /* Modal Mobile Optimization */
+  .modal-content {
+    width: 95%;
+    margin: var(--spacing-md);
+    max-height: calc(100vh - 2 * var(--spacing-md));
+    border-radius: var(--radius-md);
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: var(--spacing-md);
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .modal-footer button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Alert Mobile Optimization */
+  .alert-item {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .alert-content h5 {
+    margin-bottom: var(--spacing-xs);
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .overview-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header h1 {
+    font-size: var(--font-lg);
+  }
+
+  .header-controls {
+    width: 100%;
+  }
+
+  .time-selector select {
+    width: 100%;
+  }
+
+  .refresh-control {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .metric-value {
+    font-size: var(--font-2xl);
+  }
+
+  .card-header h3 {
+    font-size: var(--font-base);
+  }
+
+  .platform-tabs {
+    gap: 0;
+  }
+
+  .tab-btn {
+    font-size: 0.6875rem;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+  }
+
+  .chart-card .card-content {
+    height: 250px;
+  }
+
+  .metric-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-item .metric-value {
+    font-size: var(--font-lg);
+  }
+
+  .insight-item {
+    padding: var(--spacing-sm);
+  }
+
+  .insight-header h5 {
+    font-size: 0.75rem;
+  }
+
+  .insight-description,
+  .insight-recommendation {
+    font-size: 0.75rem;
+  }
+
+  .platform-tag {
+    font-size: 0.625rem;
+  }
+
+  .empty-state {
+    padding: var(--spacing-lg);
+  }
+
+  .empty-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .loading-spinner {
+    font-size: var(--font-base);
+  }
+
+  .loading-spinner i {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp borders and shadows on high DPI displays */
+  .card {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .dashboard-header {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .dashboard-header,
+  .loading-overlay,
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .dashboard-main {
+    padding: 0;
+    max-width: none;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid var(--gray-300);
+    break-inside: avoid;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .chart-card .card-content {
+    height: auto;
+    min-height: 300px;
+  }
+
+  .ab-test-card,
+  .insight-item,
+  .alert-item {
+    break-inside: avoid;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-danger,
+  .new-test-btn,
+  .refresh-btn {
+    display: none;
+  }
+
+  /* Hide interactive elements */
+  .tab-btn,
+  .chart-controls,
+  .ab-controls,
+  .content-controls,
+  .correlation-controls,
+  .alert-controls {
+    display: none;
+  }
+
+  /* Optimize text for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+  }
+
+  .metric-value {
+    color: black !important;
+  }
+
+  /* Show all table columns on print */
+  #topContentTable th,
+  #topContentTable td {
+    display: table-cell !important;
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .loading-spinner i {
+    animation: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --gray-50: #ffffff;
+    --gray-100: #f0f0f0;
+    --gray-200: #e0e0e0;
+    --gray-300: #c0c0c0;
+    --gray-400: #808080;
+    --gray-500: #606060;
+    --gray-600: #404040;
+    --gray-700: #202020;
+    --gray-800: #101010;
+    --gray-900: #000000;
+  }
+
+  .card {
+    border: 2px solid var(--gray-300);
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-danger {
+    border: 2px solid transparent;
+  }
+
+  .btn-primary:focus,
+  .btn-secondary:focus,
+  .btn-danger:focus {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gray-50: #1a1a1a;
+    --gray-100: #2d2d2d;
+    --gray-200: #404040;
+    --gray-300: #525252;
+    --gray-400: #737373;
+    --gray-500: #a3a3a3;
+    --gray-600: #d4d4d4;
+    --gray-700: #e5e5e5;
+    --gray-800: #f5f5f5;
+    --gray-900: #ffffff;
+  }
+
+  body {
+    background-color: var(--gray-50);
+    color: var(--gray-900);
+  }
+
+  .card,
+  .dashboard-header {
+    background-color: var(--gray-100);
+    border-color: var(--gray-200);
+  }
+
+  .modal-content {
+    background-color: var(--gray-100);
+  }
+
+  .loading-overlay {
+    background-color: rgba(26, 26, 26, 0.9);
+  }
+
+  /* Adjust chart backgrounds for dark mode */
+  canvas {
+    background-color: transparent;
+  }
+}
+
+/* Focus Styles for Keyboard Navigation */
+button:focus,
+select:focus,
+input:focus,
+.tab-btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Hover States for Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-danger:hover,
+  .refresh-btn:hover,
+  .new-test-btn:hover,
+  .tab-btn:hover {
+    transform: none;
+    background-color: initial;
+  }
+
+  /* Make touch targets larger */
+  .tab-btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-danger {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Loading State Improvements */
+.card.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.card.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Error State Styles */
+.error-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--danger);
+}
+
+.error-state i {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.retry-btn {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--danger);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.retry-btn:hover {
+  background: #dc2626;
+}

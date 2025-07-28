@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent C Analytics Dashboard - Coordination Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .test-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-status {
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin: 8px 0;
+            font-weight: 500;
+        }
+        .test-success {
+            background: #d1fae5;
+            color: #065f46;
+            border-left: 4px solid #10b981;
+        }
+        .test-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border-left: 4px solid #ef4444;
+        }
+        .test-pending {
+            background: #fef3c7;
+            color: #92400e;
+            border-left: 4px solid #f59e0b;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 8px 8px 8px 0;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .agent-status {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .status-card {
+            background: #f1f5f9;
+            padding: 16px;
+            border-radius: 6px;
+            border-left: 4px solid #64748b;
+        }
+        .status-card.agent-a {
+            border-left-color: #10b981;
+        }
+        .status-card.agent-b {
+            border-left-color: #3b82f6;
+        }
+        .status-card.agent-c {
+            border-left-color: #f59e0b;
+        }
+        pre {
+            background: #1f2937;
+            color: #f3f4f6;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        .dashboard-preview {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: white;
+            padding: 16px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Agent C Analytics Dashboard - Coordination Test</h1>
+    <p><strong>Phase 2 Task 2.3</strong> - Testing dashboard functionality and Agent A/B coordination</p>
+
+    <!-- Test Controls -->
+    <div class="test-section">
+        <h2>Test Controls</h2>
+        <button onclick="runAllTests()">Run All Tests</button>
+        <button onclick="testDashboardComponents()">Test Dashboard Components</button>
+        <button onclick="testAgentCoordination()">Test Agent Coordination</button>
+        <button onclick="clearResults()">Clear Results</button>
+        <button onclick="toggleSampleMode()">Toggle Sample Data Mode</button>
+    </div>
+
+    <!-- Dashboard Component Tests -->
+    <div class="test-section">
+        <h2>📊 Dashboard Component Tests</h2>
+        <div id="dashboardTests">
+            <div class="test-status test-pending">Ready to run dashboard component tests...</div>
+        </div>
+
+        <!-- Sample Metrics Preview -->
+        <div class="dashboard-preview">
+            <h3>Sample Analytics Data Preview</h3>
+            <div class="metrics-grid" id="sampleMetrics">
+                <div class="metric-card">
+                    <div class="metric-value">245K</div>
+                    <div class="metric-label">Total Impressions</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4.5%</div>
+                    <div class="metric-label">Engagement Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">1,250</div>
+                    <div class="metric-label">Conversions</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">28.5%</div>
+                    <div class="metric-label">ROI</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agent Coordination Tests -->
+    <div class="test-section">
+        <h2>🤝 Agent Coordination Tests</h2>
+        <div id="coordinationTests">
+            <div class="test-status test-pending">Ready to run agent coordination tests...</div>
+        </div>
+
+        <div class="agent-status">
+            <div class="status-card agent-a">
+                <h4>🎯 Agent A - Social Media Automation</h4>
+                <p><strong>Status:</strong> <span id="agentAStatus">Waiting for coordination test...</span></p>
+                <p><strong>Last Contact:</strong> <span id="agentALastContact">None</span></p>
+                <p><strong>Capabilities:</strong> Social media metrics, A/B test results, content performance</p>
+            </div>
+
+            <div class="status-card agent-b">
+                <h4>🔌 Agent B - API Integration</h4>
+                <p><strong>Status:</strong> <span id="agentBStatus">Waiting for coordination test...</span></p>
+                <p><strong>Last Contact:</strong> <span id="agentBLastContact">None</span></p>
+                <p><strong>Capabilities:</strong> External API data, email metrics, data pipelines</p>
+            </div>
+
+            <div class="status-card agent-c">
+                <h4>📈 Agent C - Analytics Dashboard</h4>
+                <p><strong>Status:</strong> <span id="agentCStatus">Active and Ready</span></p>
+                <p><strong>Components:</strong> Dashboard UI, visualizations, cross-platform correlation</p>
+                <p><strong>Data Sources:</strong> All platforms integrated</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Connectivity Tests -->
+    <div class="test-section">
+        <h2>🌐 API Connectivity Tests</h2>
+        <div id="apiTests">
+            <div class="test-status test-pending">Ready to run API connectivity tests...</div>
+        </div>
+    </div>
+
+    <!-- Real-time Features Test -->
+    <div class="test-section">
+        <h2>⚡ Real-time Features Test</h2>
+        <div id="realtimeTests">
+            <div class="test-status test-pending">Ready to test real-time features...</div>
+        </div>
+        <button onclick="simulateRealTimeUpdate()">Simulate Real-time Update</button>
+        <button onclick="testEngagementTracking()">Test Engagement Tracking</button>
+    </div>
+
+    <!-- Test Results -->
+    <div class="test-section">
+        <h2>📋 Test Results</h2>
+        <div id="testResults">
+            <pre id="testLog">Test log will appear here...</pre>
+        </div>
+    </div>
+
+    <!-- Include Dashboard Scripts -->
+    <script src="js/engagement-tracker.js"></script>
+    <script src="js/analytics-api.js"></script>
+    
+    <script>
+        // Test Coordination Script
+        let testLog = [];
+
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = `[${timestamp}] ${type.toUpperCase()}: ${message}`;
+            testLog.push(logEntry);
+            
+            const logElement = document.getElementById('testLog');
+            logElement.textContent = testLog.join('\n');
+            logElement.scrollTop = logElement.scrollHeight;
+            
+            console.log(logEntry);
+        }
+
+        function updateTestStatus(containerId, message, success) {
+            const container = document.getElementById(containerId);
+            const statusClass = success ? 'test-success' : 'test-error';
+            container.innerHTML = `<div class="test-status ${statusClass}">${message}</div>`;
+        }
+
+        async function runAllTests() {
+            log('Starting comprehensive test suite for Agent C Analytics Dashboard');
+            
+            await testDashboardComponents();
+            await testApiConnectivity();
+            await testAgentCoordination();
+            await testRealTimeFeatures();
+            
+            log('All tests completed! Check individual sections for detailed results.');
+        }
+
+        async function testDashboardComponents() {
+            log('Testing dashboard components...');
+            
+            try {
+                // Test analytics API
+                if (!window.AnalyticsAPI) {
+                    throw new Error('AnalyticsAPI not loaded');
+                }
+                
+                log('✓ Analytics API loaded successfully');
+                
+                // Test engagement tracker
+                if (!window.EngagementTracker) {
+                    throw new Error('EngagementTracker not loaded');
+                }
+                
+                log('✓ Engagement Tracker loaded successfully');
+                
+                // Test data loading
+                const overviewData = await window.AnalyticsAPI.getDashboardOverview();
+                if (overviewData) {
+                    log('✓ Dashboard overview data loaded successfully');
+                    updateSampleMetrics(overviewData);
+                }
+                
+                const performanceData = await window.AnalyticsAPI.getContentPerformance();
+                if (performanceData) {
+                    log('✓ Content performance data loaded successfully');
+                }
+                
+                const abTestData = await window.AnalyticsAPI.getABTests();
+                if (abTestData) {
+                    log(`✓ A/B testing data loaded successfully (${abTestData.length} tests)`);
+                }
+                
+                updateTestStatus('dashboardTests', 'Dashboard components test completed successfully!', true);
+                
+            } catch (error) {
+                log(`Dashboard component test failed: ${error.message}`, 'error');
+                updateTestStatus('dashboardTests', `Dashboard components test failed: ${error.message}`, false);
+            }
+        }
+
+        async function testApiConnectivity() {
+            log('Testing API connectivity...');
+            
+            try {
+                const connectivityTests = await window.AnalyticsAPI.testConnectivity();
+                
+                Object.entries(connectivityTests).forEach(([test, passed]) => {
+                    const status = passed ? '✓' : '✗';
+                    const logType = passed ? 'info' : 'error';
+                    log(`${status} ${test.replace(/_/g, ' ')}: ${passed ? 'PASSED' : 'FAILED'}`, logType);
+                });
+                
+                const allPassed = Object.values(connectivityTests).every(test => test);
+                updateTestStatus('apiTests', 
+                    allPassed ? 'All API connectivity tests passed!' : 'Some API tests failed - check logs for details', 
+                    allPassed
+                );
+                
+            } catch (error) {
+                log(`API connectivity test failed: ${error.message}`, 'error');
+                updateTestStatus('apiTests', `API connectivity test failed: ${error.message}`, false);
+            }
+        }
+
+        async function testAgentCoordination() {
+            log('Testing Agent A/B coordination...');
+            
+            try {
+                // Test Agent A coordination
+                log('Testing Agent A coordination (Social Media Automation)...');
+                const agentAResult = await window.AnalyticsAPI.coordinateWithAgentA('test_connection', {
+                    test_message: 'Analytics Dashboard coordination test',
+                    capabilities_requested: ['social_metrics', 'ab_test_sync', 'content_performance']
+                });
+                
+                if (agentAResult.success) {
+                    log('✓ Agent A coordination successful');
+                    document.getElementById('agentAStatus').textContent = 'Connected and Responsive';
+                    document.getElementById('agentALastContact').textContent = new Date().toLocaleTimeString();
+                } else {
+                    throw new Error('Agent A coordination failed');
+                }
+                
+                // Test Agent B coordination
+                log('Testing Agent B coordination (API Integration)...');
+                const agentBResult = await window.AnalyticsAPI.coordinateWithAgentB('test_connection', {
+                    test_message: 'Analytics Dashboard coordination test',
+                    capabilities_requested: ['api_data', 'email_metrics', 'data_pipeline']
+                });
+                
+                if (agentBResult.success) {
+                    log('✓ Agent B coordination successful');
+                    document.getElementById('agentBStatus').textContent = 'Connected and Responsive';
+                    document.getElementById('agentBLastContact').textContent = new Date().toLocaleTimeString();
+                } else {
+                    throw new Error('Agent B coordination failed');
+                }
+                
+                // Test data exchange
+                log('Testing data exchange capabilities...');
+                const socialMetrics = await window.AnalyticsAPI.coordinateWithAgentA('request_social_metrics', {
+                    platforms: ['instagram', 'twitter', 'facebook'],
+                    date_range: '7d'
+                });
+                
+                if (socialMetrics.success) {
+                    log('✓ Social media metrics exchange successful');
+                }
+                
+                const apiData = await window.AnalyticsAPI.coordinateWithAgentB('request_api_data', {
+                    endpoints: ['email_performance', 'app_store_metrics'],
+                    date_range: '7d'
+                });
+                
+                if (apiData.success) {
+                    log('✓ API data exchange successful');
+                }
+                
+                updateTestStatus('coordinationTests', 'Agent coordination tests completed successfully!', true);
+                
+            } catch (error) {
+                log(`Agent coordination test failed: ${error.message}`, 'error');
+                updateTestStatus('coordinationTests', `Agent coordination test failed: ${error.message}`, false);
+            }
+        }
+
+        async function testRealTimeFeatures() {
+            log('Testing real-time features...');
+            
+            try {
+                // Test engagement tracking
+                if (window.trackEvent) {
+                    window.trackEvent('test_event', {
+                        test_type: 'coordination_test',
+                        timestamp: Date.now()
+                    });
+                    log('✓ Engagement tracking event recorded');
+                }
+                
+                // Test cross-platform correlation
+                if (window.CrossPlatformCorrelationTracker) {
+                    log('✓ Cross-platform correlation tracker active');
+                }
+                
+                // Test A/B testing dashboard
+                if (window.ABTestingDashboard) {
+                    log('✓ A/B testing dashboard component active');
+                }
+                
+                updateTestStatus('realtimeTests', 'Real-time features test completed successfully!', true);
+                
+            } catch (error) {
+                log(`Real-time features test failed: ${error.message}`, 'error');
+                updateTestStatus('realtimeTests', `Real-time features test failed: ${error.message}`, false);
+            }
+        }
+
+        function simulateRealTimeUpdate() {
+            log('Simulating real-time data update...');
+            
+            // Simulate new data coming in
+            const mockUpdate = {
+                platform: 'instagram',
+                content_id: 'test_content_001',
+                metrics: {
+                    impressions: Math.floor(Math.random() * 1000),
+                    engagement_rate: (Math.random() * 0.1).toFixed(3),
+                    clicks: Math.floor(Math.random() * 100)
+                },
+                timestamp: new Date().toISOString()
+            };
+            
+            log(`New performance data received: ${JSON.stringify(mockUpdate)}`);
+            
+            // Track the simulated event
+            if (window.trackEvent) {
+                window.trackEvent('performance_update', mockUpdate);
+                log('✓ Real-time update tracked successfully');
+            }
+        }
+
+        function testEngagementTracking() {
+            log('Testing engagement tracking system...');
+            
+            // Simulate various engagement events
+            const events = [
+                { type: 'content_view', content_id: 'dashboard_overview' },
+                { type: 'click', content_id: 'performance_chart' },
+                { type: 'scroll_checkpoint', properties: { checkpoint: 50 } },
+                { type: 'tab_click', properties: { platform: 'instagram' } }
+            ];
+            
+            events.forEach(event => {
+                if (window.trackEvent) {
+                    window.trackEvent(event.type, event.properties || {}, event.content_id);
+                    log(`✓ Tracked ${event.type} event`);
+                }
+            });
+            
+            log('Engagement tracking test completed');
+        }
+
+        function updateSampleMetrics(data) {
+            // Update the sample metrics display with real data
+            const metricsGrid = document.getElementById('sampleMetrics');
+            if (data && metricsGrid) {
+                metricsGrid.innerHTML = `
+                    <div class="metric-card">
+                        <div class="metric-value">${(data.total_impressions || 0).toLocaleString()}</div>
+                        <div class="metric-label">Total Impressions</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${((data.engagement_rate || 0) * 100).toFixed(1)}%</div>
+                        <div class="metric-label">Engagement Rate</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${(data.total_conversions || 0).toLocaleString()}</div>
+                        <div class="metric-label">Conversions</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">${((data.roi || 0) * 100).toFixed(1)}%</div>
+                        <div class="metric-label">ROI</div>
+                    </div>
+                `;
+            }
+        }
+
+        function clearResults() {
+            testLog = [];
+            document.getElementById('testLog').textContent = 'Test log cleared...';
+            
+            // Reset test status displays
+            ['dashboardTests', 'coordinationTests', 'apiTests', 'realtimeTests'].forEach(id => {
+                updateTestStatus(id, 'Ready to run tests...', null);
+            });
+            
+            // Reset agent status
+            document.getElementById('agentAStatus').textContent = 'Waiting for coordination test...';
+            document.getElementById('agentBStatus').textContent = 'Waiting for coordination test...';
+            document.getElementById('agentALastContact').textContent = 'None';
+            document.getElementById('agentBLastContact').textContent = 'None';
+            
+            log('Test results cleared');
+        }
+
+        function toggleSampleMode() {
+            if (window.AnalyticsAPI) {
+                const newMode = window.AnalyticsAPI.toggleSampleDataMode();
+                log(`Sample data mode ${newMode ? 'enabled' : 'disabled'}`);
+                
+                if (newMode) {
+                    log('Using sample data for testing - suitable for development and demo');
+                } else {
+                    log('Using production API endpoints - requires Agent B API implementation');
+                }
+            }
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            log('Agent C Analytics Dashboard coordination test page loaded');
+            log('Phase 2 Task 2.3 - Ready for testing');
+            
+            // Track page load
+            if (window.trackEvent) {
+                window.trackEvent('coordination_test_page_load', {
+                    page: 'test-coordination',
+                    timestamp: Date.now()
+                });
+            }
+        });
+    </script>
+</body>
+</html>

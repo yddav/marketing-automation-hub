@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Templates Hub - 17+ Professional Templates | Untrapd</title>
+    <meta name="description" content="Boost your app marketing with 17+ proven templates for social media, email, app stores, and more. Ready-to-use content that converts.">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/templates.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <h1>Marketing Hub</h1>
+                        <span class="tagline">Templates That Convert</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="templates.html" class="nav-link active">Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard/index.html" class="nav-link">Analytics Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/pricing.html" class="nav-link">Pricing</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="#buy-now" class="cta-button primary">Buy Now - $97</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="templates-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    17+ Marketing Templates<br>
+                    <span class="highlight">That Actually Convert</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Proven content templates used by successful app launches. Complete with A/B test variations, 
+                    targeting data, and performance insights. Ready to customize and deploy.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>17+</strong>
+                        <span>Templates</span>
+                    </div>
+                    <div class="stat">
+                        <strong>50+</strong>
+                        <span>Variations</span>
+                    </div>
+                    <div class="stat">
+                        <strong>8</strong>
+                        <span>Platforms</span>
+                    </div>
+                    <div class="stat">
+                        <strong>$97</strong>
+                        <span>Complete Bundle</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#buy-now" class="cta-button primary large">
+                        Get All Templates - $97
+                        <span class="cta-subtitle">Instant Download • Commercial License</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Filters -->
+    <section class="template-filters">
+        <div class="container">
+            <div class="filters-header">
+                <h2>Browse Templates</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">Grid</button>
+                    <button class="view-btn" data-view="list">List</button>
+                </div>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Platform:</label>
+                    <select id="platformFilter">
+                        <option value="all">All Platforms</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="twitter">Twitter</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="email">Email Marketing</option>
+                        <option value="app_store">App Store</option>
+                        <option value="blog">Blog Posts</option>
+                        <option value="press">Press Releases</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Type:</label>
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="social_media_post">Social Media</option>
+                        <option value="email_template">Email Marketing</option>
+                        <option value="app_store_description">App Store</option>
+                        <option value="blog_post">Blog Content</option>
+                        <option value="press_release">Press Release</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Search:</label>
+                    <input type="text" id="searchFilter" placeholder="Search templates...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Grid -->
+    <section class="templates-grid">
+        <div class="container">
+            <div id="templatesContainer" class="templates-container">
+                <!-- Templates will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="templates-loading" id="templatesLoading">
+                <div class="loading-spinner">Loading templates...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Modal -->
+    <div id="templateModal" class="template-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Template Details</h3>
+                <button class="modal-close" onclick="closeTemplateModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Template details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary" onclick="closeTemplateModal()">Close</button>
+                <a href="#buy-now" class="btn primary" onclick="closeTemplateModal()">Get This Template - $97</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section id="buy-now" class="pricing-section">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>Get All Marketing Templates</h2>
+                <p>Complete marketing automation system with proven templates, analytics, and deployment tools.</p>
+            </div>
+            
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header-card">
+                    <h3>Complete Marketing Hub</h3>
+                    <div class="pricing-price">
+                        <span class="price-main">$97</span>
+                        <span class="price-period">one-time</span>
+                    </div>
+                    <div class="price-note">
+                        <s>$297 value</s> Launch Special
+                    </div>
+                </div>
+                
+                <div class="pricing-features">
+                    <h4>What's Included:</h4>
+                    <ul>
+                        <li>✅ 17+ Marketing Templates (All Platforms)</li>
+                        <li>✅ 50+ A/B Test Variations</li>
+                        <li>✅ Analytics Dashboard (Live Demo)</li>
+                        <li>✅ Content Management System</li>
+                        <li>✅ Brand Voice Guidelines</li>
+                        <li>✅ Performance Tracking Tools</li>
+                        <li>✅ Commercial License</li>
+                        <li>✅ Instant Download</li>
+                        <li>✅ 30-Day Money Back Guarantee</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-cta">
+                    <button class="cta-button primary large buy-now-btn" onclick="handlePurchase()">
+                        Buy Now - $97
+                        <span class="cta-subtitle">Secure Payment • Instant Access</span>
+                    </button>
+                    <p class="pricing-guarantee">
+                        🔒 30-day money-back guarantee<br>
+                        💳 Secure payment via Stripe
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2>Join 500+ App Developers Already Using These Templates</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "These templates saved me weeks of copywriting. My app launch converted 40% better than my previous attempts."
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Sarah M.</strong> - Mobile App Developer
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "The analytics dashboard helps me track which content performs best. ROI increased by 60% in first month."
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Mike C.</strong> - SaaS Founder
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "Professional-grade templates that actually work. The A/B test variations are gold for optimization."
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Lisa R.</strong> - Marketing Manager
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marketing Templates Hub</h3>
+                    <p>Professional marketing templates for successful app launches.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="templates.html">Browse Templates</a></li>
+                        <li><a href="dashboard/index.html">Analytics Demo</a></li>
+                        <li><a href="pages/pricing.html">Pricing</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="pages/contact.html">Contact Support</a></li>
+                        <li><a href="#" onclick="showRefundPolicy()">Refund Policy</a></li>
+                        <li><a href="#" onclick="showTerms()">Terms of Service</a></li>
+                        <li><a href="#" onclick="showPrivacy()">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Marketing Templates Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/analytics.js"></script>
+</body>
+</html>

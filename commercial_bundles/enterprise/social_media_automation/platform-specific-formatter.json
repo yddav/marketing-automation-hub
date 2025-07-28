@@ -1,0 +1,228 @@
+{
+  "id": "platform-specific-formatter",
+  "type": "content_formatting_system",
+  "platform": ["instagram", "twitter", "facebook", "linkedin"],
+  "audience": {
+    "primary": "automation_system",
+    "secondary": ["content_creators", "social_media_managers"],
+    "demographics": {
+      "age_range": "all",
+      "interests": ["automation", "social_media", "content_optimization"],
+      "tech_savviness": "advanced"
+    }
+  },
+  "content": {
+    "template": "Multi-platform content formatting automation",
+    "formatting_rules": {
+      "instagram": {
+        "character_limits": {
+          "caption": 2200,
+          "bio": 150,
+          "story_text": 2200,
+          "hashtags_recommended": 30
+        },
+        "formatting_style": {
+          "emoji_usage": "encouraged",
+          "line_breaks": "double_line_spacing",
+          "hashtag_placement": "end_of_caption",
+          "cta_placement": "prominent_middle_or_end",
+          "visual_elements": "required"
+        },
+        "content_adaptations": {
+          "feature_showcase": {
+            "structure": "hook_explanation_benefit_cta",
+            "visual_requirement": "feature_screenshot_or_demo",
+            "engagement_elements": ["emoji_bullets", "question_hook", "save_cta"]
+          },
+          "behind_scenes": {
+            "structure": "story_hook_process_insight_personal_touch",
+            "visual_requirement": "candid_photo_or_video",
+            "engagement_elements": ["story_telling", "relatable_content", "comment_encouragement"]
+          },
+          "user_testimonial": {
+            "structure": "user_quote_context_social_proof_cta",
+            "visual_requirement": "user_screenshot_or_photo",
+            "engagement_elements": ["social_proof", "community_celebration", "share_encouragement"]
+          }
+        }
+      },
+      "twitter": {
+        "character_limits": {
+          "tweet": 280,
+          "thread_tweet": 280,
+          "bio": 160,
+          "hashtags_recommended": 3
+        },
+        "formatting_style": {
+          "brevity": "essential",
+          "hashtag_placement": "integrated_naturally",
+          "thread_structure": "numbered_or_connected",
+          "engagement_hooks": "questions_or_controversial_statements"
+        },
+        "content_adaptations": {
+          "quick_tip": {
+            "structure": "hook_tip_application_hashtag",
+            "engagement_elements": ["actionable_advice", "thread_potential", "retweet_worthy"]
+          },
+          "thread_starter": {
+            "structure": "compelling_hook_thread_preview_1_n",
+            "engagement_elements": ["curiosity_gap", "value_promise", "thread_continuation"]
+          },
+          "feature_announcement": {
+            "structure": "news_benefit_visual_link",
+            "engagement_elements": ["breaking_news_feel", "immediate_value", "clear_cta"]
+          }
+        }
+      },
+      "facebook": {
+        "character_limits": {
+          "post": 63206,
+          "optimal_length": 80,
+          "hashtags_recommended": 5
+        },
+        "formatting_style": {
+          "conversational_tone": "friendly_and_personal",
+          "paragraph_structure": "short_digestible_chunks",
+          "visual_emphasis": "photos_videos_preferred",
+          "community_focus": "discussion_encouragement"
+        },
+        "content_adaptations": {
+          "community_question": {
+            "structure": "context_question_engagement_encouragement",
+            "engagement_elements": ["open_ended_questions", "comment_starters", "shareable_content"]
+          },
+          "feature_demo": {
+            "structure": "problem_solution_demo_cta",
+            "visual_requirement": "video_demonstration_preferred",
+            "engagement_elements": ["problem_relatability", "clear_solution", "video_content"]
+          }
+        }
+      },
+      "linkedin": {
+        "character_limits": {
+          "post": 3000,
+          "optimal_length": 150,
+          "hashtags_recommended": 10,
+          "article": 125000
+        },
+        "formatting_style": {
+          "professional_tone": "authoritative_yet_approachable",
+          "industry_insight": "thought_leadership_focus",
+          "networking_emphasis": "professional_connection",
+          "value_driven": "business_benefit_focus"
+        },
+        "content_adaptations": {
+          "thought_leadership": {
+            "structure": "industry_insight_personal_experience_actionable_advice",
+            "engagement_elements": ["professional_credibility", "industry_trends", "actionable_insights"]
+          },
+          "company_update": {
+            "structure": "milestone_context_team_credit_future_vision",
+            "engagement_elements": ["company_growth", "team_appreciation", "industry_impact"]
+          }
+        }
+      }
+    },
+    "cross_platform_adaptation": {
+      "content_repurposing": {
+        "long_form_to_short": {
+          "method": "key_points_extraction",
+          "maintain_elements": ["core_message", "cta", "brand_voice"],
+          "adapt_elements": ["length", "hashtags", "visual_requirements"]
+        },
+        "visual_content_adaptation": {
+          "instagram": "square_1080x1080_carousel_option",
+          "twitter": "horizontal_1200x675_gif_friendly",
+          "facebook": "multiple_formats_video_preferred",
+          "linkedin": "professional_1200x627_industry_relevant"
+        }
+      },
+      "message_consistency": {
+        "core_value_proposition": "maintain_across_platforms",
+        "brand_voice": "adapt_tone_keep_personality",
+        "call_to_action": "platform_specific_optimization",
+        "hashtag_strategy": "platform_appropriate_selection"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T14:30:00Z",
+    "updated_at": "2025-01-25T14:30:00Z",
+    "version": "2.0.0",
+    "author": "Agent A - Social Media Automation",
+    "tags": ["formatting", "multi_platform", "content_optimization", "automation"],
+    "dependencies": {
+      "content_templates": "phase_1_infrastructure",
+      "brand_guidelines": "voice_and_tone_consistency",
+      "hashtag_strategy": "platform_specific_hashtags"
+    }
+  },
+  "automation": {
+    "formatting_engine": {
+      "input_processing": {
+        "template_parsing": "extract_placeholders_and_structure",
+        "content_analysis": "determine_optimal_platform_format",
+        "brand_compliance": "ensure_voice_and_guidelines_adherence"
+      },
+      "platform_transformation": {
+        "character_optimization": "trim_or_expand_based_on_limits",
+        "hashtag_insertion": "platform_appropriate_placement",
+        "visual_requirements": "suggest_or_require_media_types",
+        "engagement_optimization": "add_platform_specific_hooks"
+      },
+      "quality_assurance": {
+        "formatting_validation": "check_platform_requirements",
+        "brand_consistency": "verify_voice_and_messaging",
+        "engagement_prediction": "score_potential_performance",
+        "a_b_variation_generation": "create_test_alternatives"
+      }
+    },
+    "integration_points": {
+      "calendar_system": "receive_scheduled_content_requests",
+      "template_database": "pull_from_phase_1_content_templates",
+      "api_connector": "send_formatted_content_to_agent_b",
+      "analytics_feed": "send_performance_data_to_agent_c"
+    }
+  },
+  "agent_coordination": {
+    "data_flow": {
+      "input_from_calendar": "content_schedule_and_template_ids",
+      "processing": "platform_specific_formatting_and_optimization",
+      "output_to_agent_b": "ready_to_publish_formatted_content",
+      "feedback_to_agent_c": "content_performance_and_engagement_metrics"
+    },
+    "api_requirements_for_agent_b": {
+      "content_delivery_format": {
+        "platform": "target_social_platform",
+        "content": "formatted_text_ready_for_posting",
+        "media_requirements": "image_video_specifications",
+        "scheduling_data": "optimal_posting_time_timezone",
+        "hashtags": "platform_optimized_hashtag_array",
+        "engagement_settings": "comments_sharing_permissions"
+      }
+    },
+    "analytics_data_for_agent_c": {
+      "content_metadata": {
+        "post_id": "unique_content_identifier",
+        "platform": "publishing_platform",
+        "content_type": "template_category_used",
+        "publish_time": "actual_posting_timestamp",
+        "formatting_version": "version_of_formatting_rules_used"
+      },
+      "performance_expectations": {
+        "predicted_engagement_rate": "algorithm_based_prediction",
+        "target_metrics": "engagement_conversion_goals",
+        "a_b_test_group": "testing_variation_identifier"
+      }
+    }
+  },
+  "formatting_examples": {
+    "feature_showcase_cross_platform": {
+      "source_template": "✨ {{feature_name}} is here! ✨\n\n{{feature_description}}\n\n🎯 Perfect for {{target_use_case}}\n💡 Pro tip: {{usage_tip}}\n\n{{call_to_action}}\n\n{{hashtags}}",
+      "instagram_formatted": "✨ Smart Scheduling is here! ✨\n\nNever miss important tasks again with our AI-powered scheduling assistant that learns your habits and optimizes your day.\n\n🎯 Perfect for busy professionals and entrepreneurs\n💡 Pro tip: Enable notifications for 15-min reminders\n\n📱 Download TaskMaster Pro (link in bio)\n🌟 Rate us 5⭐ if you love it!\n\n#TaskMasterPro #ProductivityApp #SmartScheduling #TimeManagement #AIAssistant #WorkLifeBalance #ProductivityHacks #BusinessTools #AppLaunch #EfficiencyExperts",
+      "twitter_formatted": "✨ Smart Scheduling is live!\n\nAI learns your habits → optimizes your day → you get more done\n\nPerfect for entrepreneurs who want time back\n\n💡 Pro tip: 15-min notification reminders = game changer\n\nTry it: [link] \n\n#ProductivityApp #SmartScheduling #AIAssistant",
+      "facebook_formatted": "🎉 We're excited to announce Smart Scheduling is here!\n\nAs busy professionals, we know how challenging it can be to manage your time effectively. That's why we created an AI-powered scheduling assistant that learns your habits and optimizes your day automatically.\n\nThis feature is perfect for entrepreneurs, managers, and anyone juggling multiple priorities. \n\n💡 Pro tip from our team: Enable 15-minute notification reminders - our beta users say it's a complete game changer for staying on track!\n\nReady to take control of your schedule? Download TaskMaster Pro and let us know what you think in the comments below! 👇\n\n#TaskMasterPro #ProductivityApp #SmartScheduling #TimeManagement #AIAssistant",
+      "linkedin_formatted": "Introducing Smart Scheduling: AI-Powered Time Management\n\nAfter months of development and user research, we're proud to launch Smart Scheduling - an AI assistant that learns your work patterns and optimizes your daily schedule for maximum productivity.\n\nKey benefits for professionals:\n→ Reduces scheduling conflicts by 85%\n→ Saves 2+ hours per week on calendar management  \n→ Learns from your habits to suggest optimal work blocks\n→ Integrates seamlessly with existing calendar systems\n\nOur beta users report significant improvements in work-life balance and task completion rates.\n\nWhat scheduling challenges are you facing in your role? I'd love to hear your thoughts in the comments.\n\n#ProductivityApp #TimeManagement #AIAssistant #WorkplaceEfficiency #SmartScheduling #BusinessTools #Leadership #WorkLifeBalance #Innovation #TechSolution"
+    }
+  }
+}

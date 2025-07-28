@@ -21,3 +21,17 @@
 {"emailConfigured":true,"level":"info","message":"Configuration validation complete","platforms":["instagram","twitter","facebook"],"socialPlatforms":3,"timestamp":"2025-07-27T18:55:25.607Z"}
 {"emailProvider":"mailchimp","environment":"development","level":"info","message":"Marketing Automation Hub started on port 3000","socialPlatforms":3,"timestamp":"2025-07-27T18:55:25.617Z"}
 {"ip":"127.0.0.1","level":"info","message":"GET /health","timestamp":"2025-07-27T18:57:29.968Z","userAgent":"curl/7.81.0"}
+{"level":"info","message":"Payment system routes configured","timestamp":"2025-07-28T21:45:04.633Z"}
+{"level":"info","message":"Validating configuration...","timestamp":"2025-07-28T21:45:04.634Z"}
+{"emailConfigured":true,"level":"info","message":"Configuration validation complete","platforms":["instagram","twitter","facebook"],"socialPlatforms":3,"timestamp":"2025-07-28T21:45:04.634Z"}
+{"emailProvider":"mailchimp","environment":"development","level":"info","message":"Marketing Automation Hub started on port 3000","socialPlatforms":3,"timestamp":"2025-07-28T21:45:04.640Z"}
+{"level":"info","message":"Payment system routes configured","timestamp":"2025-07-28T21:47:14.088Z"}
+{"level":"info","message":"Validating configuration...","timestamp":"2025-07-28T21:47:14.089Z"}
+{"emailConfigured":true,"level":"info","message":"Configuration validation complete","platforms":["instagram","twitter","facebook"],"socialPlatforms":3,"timestamp":"2025-07-28T21:47:14.089Z"}
+{"emailProvider":"mailchimp","environment":"development","level":"info","message":"Marketing Automation Hub started on port 3000","socialPlatforms":3,"timestamp":"2025-07-28T21:47:14.096Z"}
+{"level":"info","message":"Payment system routes configured","timestamp":"2025-07-28T22:55:30.097Z"}
+{"level":"info","message":"Validating configuration...","timestamp":"2025-07-28T22:55:30.098Z"}
+{"emailConfigured":true,"level":"info","message":"Configuration validation complete","platforms":["instagram","twitter","facebook"],"socialPlatforms":3,"timestamp":"2025-07-28T22:55:30.099Z"}
+{"emailProvider":"mailchimp","environment":"development","level":"info","message":"Marketing Automation Hub started on port 3000","socialPlatforms":3,"timestamp":"2025-07-28T22:55:30.106Z"}
+{"ip":"127.0.0.1","level":"info","message":"GET /health","timestamp":"2025-07-28T22:57:20.126Z","userAgent":"curl/7.81.0"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/config/validate","timestamp":"2025-07-28T22:57:23.641Z","userAgent":"curl/7.81.0"}

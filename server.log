@@ -1,34 +1,18 @@
-
-> app-marketing-automation-hub@1.0.0 start
-> node src/index.js
-
-{"level":"info","message":"Email service initialized with provider: mailchimp","timestamp":"2025-07-27T18:55:25.436Z"}
-{"level":"info","message":"Instagram service initialized","timestamp":"2025-07-27T18:55:25.442Z"}
-{"level":"info","message":"Twitter service initialized","timestamp":"2025-07-27T18:55:25.447Z"}
-{"level":"info","message":"Facebook service initialized","timestamp":"2025-07-27T18:55:25.448Z"}
-{"level":"info","message":"Social media service ready with platforms: instagram, twitter, facebook","timestamp":"2025-07-27T18:55:25.450Z"}
-{"level":"info","message":"Email service initialized with provider: mailchimp","timestamp":"2025-07-27T18:55:25.454Z"}
-{"level":"info","message":"Email service initialized with provider: mailchimp","timestamp":"2025-07-27T18:55:25.529Z"}
-{"level":"info","message":"Instagram service initialized","timestamp":"2025-07-27T18:55:25.531Z"}
-{"level":"info","message":"Twitter service initialized","timestamp":"2025-07-27T18:55:25.543Z"}
-{"level":"info","message":"Facebook service initialized","timestamp":"2025-07-27T18:55:25.551Z"}
-{"level":"info","message":"Social media service ready with platforms: instagram, twitter, facebook","timestamp":"2025-07-27T18:55:25.558Z"}
-{"level":"info","message":"Validating configuration...","timestamp":"2025-07-27T18:55:25.600Z"}
-{"emailConfigured":true,"level":"info","message":"Configuration validation complete","platforms":["instagram","twitter","facebook"],"socialPlatforms":3,"timestamp":"2025-07-27T18:55:25.607Z"}
-{"emailProvider":"mailchimp","environment":"development","level":"info","message":"Marketing Automation Hub started on port 3000","socialPlatforms":3,"timestamp":"2025-07-27T18:55:25.617Z"}
-\n🚀 App Marketing Automation Hub - Agent B Phase 2 Complete!
-\n📊 Server running at: http://localhost:3000
-\n🔗 Available endpoints:
-   GET  /health                    - Health check
-   GET  /api/config/validate       - Validate API configuration
-   POST /api/email/send            - Send individual email
-   POST /api/social/post           - Post to single platform
-   POST /api/social/multi-post     - Post to multiple platforms
-   POST /api/sequences/deploy-all  - Deploy all email sequences
-   POST /api/analytics/start       - Start analytics collection
-   POST /api/campaign/launch       - Launch complete campaign
-   GET  /api/analytics/current     - Get current analytics
-\n📧 Email Provider: mailchimp
-🌐 Social Platforms: instagram, twitter, facebook
-\n✅ Phase 2 Task 2.2 Complete - Email Marketing & API Integration Ready!
-{"ip":"127.0.0.1","level":"info","message":"GET /health","timestamp":"2025-07-27T18:57:29.968Z","userAgent":"curl/7.81.0"}
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/usr/lib/python3.10/http/server.py", line 1307, in <module>
+    test(
+  File "/usr/lib/python3.10/http/server.py", line 1258, in test
+    with ServerClass(addr, HandlerClass) as httpd:
+  File "/usr/lib/python3.10/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.10/http/server.py", line 1301, in server_bind
+    return super().server_bind()
+  File "/usr/lib/python3.10/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.10/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use

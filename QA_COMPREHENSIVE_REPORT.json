@@ -1,0 +1,924 @@
+{
+  "timestamp": "2025-07-28T22:24:19.194Z",
+  "testSummary": {
+    "totalTests": 38,
+    "criticalIssues": 19,
+    "warnings": 105,
+    "passed": 15
+  },
+  "linkValidation": {
+    "passed": [
+      {
+        "url": "http://localhost:8000/",
+        "text": "Marketing Hub\n                        Templates That Convert",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/",
+        "text": "Home",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/templates.html",
+        "text": "Templates",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/dashboard/index.html",
+        "text": "Analytics Demo",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/templates.html",
+        "text": "Browse Templates\n                        See All 17+ Templates",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/templates.html",
+        "text": "Browse Templates →",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/dashboard/index.html",
+        "text": "View Demo →",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/templates.html",
+        "text": "See All Templates",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/templates.html",
+        "text": "Browse Templates",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/dashboard/index.html",
+        "text": "Analytics Demo",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/templates.html",
+        "text": "Critical page: /templates.html",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/dashboard/index.html",
+        "text": "Critical page: /dashboard/index.html",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/pages/community.html",
+        "text": "Critical page: /pages/community.html",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/pages/designs.html",
+        "text": "Critical page: /pages/designs.html",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8000/pages/security.html",
+        "text": "Critical page: /pages/security.html",
+        "status": 200
+      }
+    ],
+    "failed": [],
+    "warnings": []
+  },
+  "uiIssues": {
+    "visibility": [
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Buy Now - $97",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "17+ Marketing Templates\n                    That A",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Templates",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "A/B Variations",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Platforms",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Happy Users",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Get All Templates - $97\n                        🔒",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "🔒 Instant Download • 30-Day Guarantee",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Get Templates - $97",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "🔒 Secure Payment • Instant Access",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Instant Access • 30-Day Guarantee",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "🔒 Secure Payment",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "⚡ Instant Download",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "🛡️ Money-Back Guarantee",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "🎯 Commercial License",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Marketing Templates Hub",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Resources",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Support",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "issue": "Potentially invisible white text on white background",
+        "element": "Company",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "contrast": [],
+    "typography": [
+      {
+        "issue": "Inconsistent H1 font sizes",
+        "sizes": [
+          "28.8px",
+          "56px"
+        ]
+      }
+    ],
+    "layout": [],
+    "professional": [
+      {
+        "issue": "Slow page load time",
+        "loadTime": "15616ms",
+        "threshold": "3000ms"
+      }
+    ]
+  },
+  "performance": {
+    "loadTimes": {
+      "homepage": 15616
+    },
+    "resourceErrors": [],
+    "scriptErrors": []
+  },
+  "mobile": {
+    "layoutIssues": [],
+    "touchTargets": [
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Home",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Templates",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Analytics Demo",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Pricing",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Buy Now - $97",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Browse Templates →",
+        "size": "160.640625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "View Demo →",
+        "size": "105.515625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "See Variations →",
+        "size": "129.84375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Learn More →",
+        "size": "106.6875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "View Guidelines →",
+        "size": "142.859375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "License Details →",
+        "size": "136.953125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Get Templates - $97",
+        "size": "169.328125x43.046875"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "📷",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "🐦",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "💼",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Browse Templates",
+        "size": "130.4375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Analytics Demo",
+        "size": "111.15625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Pricing",
+        "size": "48.90625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "FAQ",
+        "size": "32.015625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Contact Support",
+        "size": "115.625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Refund Policy",
+        "size": "98.71875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Terms of Service",
+        "size": "119.140625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Privacy Policy",
+        "size": "99.578125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "About Us",
+        "size": "65.8125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Success Stories",
+        "size": "114.71875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Blog",
+        "size": "32.03125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone SE",
+        "text": "Affiliate Program",
+        "size": "117.984375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Home",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Templates",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Analytics Demo",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Pricing",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Buy Now - $97",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Browse Templates →",
+        "size": "160.640625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "View Demo →",
+        "size": "105.515625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "See Variations →",
+        "size": "129.84375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Learn More →",
+        "size": "106.6875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "View Guidelines →",
+        "size": "142.859375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "License Details →",
+        "size": "136.953125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "📷",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "🐦",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "💼",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Browse Templates",
+        "size": "130.4375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Analytics Demo",
+        "size": "111.15625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Pricing",
+        "size": "48.90625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "FAQ",
+        "size": "32.015625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Contact Support",
+        "size": "115.625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Refund Policy",
+        "size": "98.71875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Terms of Service",
+        "size": "119.140625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Privacy Policy",
+        "size": "99.578125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "About Us",
+        "size": "65.8125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Success Stories",
+        "size": "114.71875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Blog",
+        "size": "32.03125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPhone 11",
+        "text": "Affiliate Program",
+        "size": "117.984375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Home",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Templates",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Analytics Demo",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Pricing",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Buy Now - $97",
+        "size": "0x0"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Browse Templates →",
+        "size": "160.640625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "View Demo →",
+        "size": "105.515625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "See Variations →",
+        "size": "129.84375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Learn More →",
+        "size": "106.6875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "View Guidelines →",
+        "size": "142.859375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "License Details →",
+        "size": "136.953125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "📷",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "🐦",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "💼",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Browse Templates",
+        "size": "130.4375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Analytics Demo",
+        "size": "111.15625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Pricing",
+        "size": "48.90625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "FAQ",
+        "size": "32.015625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Contact Support",
+        "size": "115.625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Refund Policy",
+        "size": "98.71875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Terms of Service",
+        "size": "119.140625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Privacy Policy",
+        "size": "99.578125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "About Us",
+        "size": "65.8125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Success Stories",
+        "size": "114.71875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Blog",
+        "size": "32.03125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad",
+        "text": "Affiliate Program",
+        "size": "117.984375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Home",
+        "size": "42.6875x33"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Templates",
+        "size": "72.921875x33"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Analytics Demo",
+        "size": "111.15625x33"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Pricing",
+        "size": "48.90625x33"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Browse Templates →",
+        "size": "160.640625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "View Demo →",
+        "size": "105.515625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "See Variations →",
+        "size": "129.84375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Learn More →",
+        "size": "106.6875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "View Guidelines →",
+        "size": "142.859375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "License Details →",
+        "size": "136.953125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "📷",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "🐦",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "💼",
+        "size": "36x41.59375"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Browse Templates",
+        "size": "130.4375x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Analytics Demo",
+        "size": "111.15625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Pricing",
+        "size": "48.90625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "FAQ",
+        "size": "32.015625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Contact Support",
+        "size": "115.625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Refund Policy",
+        "size": "98.71875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Terms of Service",
+        "size": "119.140625x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Privacy Policy",
+        "size": "99.578125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "About Us",
+        "size": "65.8125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Success Stories",
+        "size": "114.71875x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Blog",
+        "size": "32.03125x17"
+      },
+      {
+        "issue": "Touch target too small (< 44px)",
+        "viewport": "iPad Landscape",
+        "text": "Affiliate Program",
+        "size": "117.984375x17"
+      }
+    ],
+    "responsiveness": [
+      {
+        "issue": "Horizontal scrolling on mobile",
+        "viewport": "iPhone SE",
+        "viewportWidth": 375,
+        "contentWidth": 381
+      },
+      {
+        "issue": "Horizontal scrolling on mobile",
+        "viewport": "iPhone 11",
+        "viewportWidth": 414,
+        "contentWidth": 415
+      }
+    ]
+  },
+  "crossBrowser": {
+    "chromium": {
+      "issues": []
+    },
+    "firefox": {
+      "issues": []
+    },
+    "webkit": {
+      "issues": [
+        {
+          "type": "Browser Launch Error",
+          "message": "browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Please install them with the following command:      ║\n║                                                      ║\n║     sudo npx playwright install-deps                 ║\n║                                                      ║\n║ Alternatively, use apt:                              ║\n║     sudo apt-get install libavif13                   ║\n║                                                      ║\n║ <3 Playwright Team                                   ║\n╚══════════════════════════════════════════════════════╝"
+        }
+      ]
+    }
+  },
+  "screenshots": [
+    "qa_homepage_desktop.png",
+    "qa_iPhone_SE.png",
+    "qa_iPhone_11.png",
+    "qa_iPad.png",
+    "qa_iPad_Landscape.png",
+    "qa_chromium.png",
+    "qa_firefox.png"
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "UI Visibility",
+      "issue": "Text visibility problems",
+      "action": "Fix contrast ratios and ensure all text is readable",
+      "count": 19
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Mobile Responsiveness",
+      "issue": "Mobile layout problems",
+      "action": "Fix responsive design for mobile devices",
+      "count": 2
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Performance",
+      "issue": "Slow page load time",
+      "action": "Optimize images, CSS, and JavaScript for faster loading",
+      "loadTime": 15616
+    }
+  ]
+}

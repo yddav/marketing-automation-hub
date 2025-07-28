@@ -1,0 +1,129 @@
+{
+  "id": "linkedin-templates",
+  "type": "social_media_post",
+  "platform": ["linkedin"],
+  "audience": {
+    "primary": "business_owners",
+    "secondary": ["developers", "potential_customers"],
+    "demographics": {
+      "age_range": "25-54",
+      "interests": ["business", "professional_development", "entrepreneurship", "technology"],
+      "tech_savviness": "advanced"
+    }
+  },
+  "content": {
+    "template": "{{post_type}} template for LinkedIn",
+    "variations": [
+      {
+        "id": "thought_leadership",
+        "test_group": "industry_insights",
+        "template": "{{industry_observation}}\n\nAfter {{experience_context}}, I've noticed {{trend_or_pattern}}.\n\nHere's what this means for {{target_audience}}:\n\n→ {{implication_1}}\n→ {{implication_2}}\n→ {{implication_3}}\n\n{{personal_insight}}\n\nAt {{company_name}}, we've applied this by {{practical_application}}. The result: {{measurable_outcome}}.\n\n{{question_for_network}}\n\n{{hashtags}}",
+        "performance_notes": "Thought leadership builds professional credibility"
+      },
+      {
+        "id": "case_study", 
+        "test_group": "results_driven",
+        "template": "Case Study: {{client_or_user_type}} increased {{key_metric}} by {{percentage_improvement}}\n\nThe Challenge:\n{{problem_description}}\n\nThe Solution:\n{{solution_summary}}\n\nImplementation:\n• {{step_1}}\n• {{step_2}}\n• {{step_3}}\n\nResults:\n📈 {{result_1}}\n⚡ {{result_2}}\n💰 {{result_3}}\n\nKey Takeaways:\n{{lesson_1}}\n{{lesson_2}}\n\n{{app_name}} made this possible by {{specific_contribution}}.\n\nWhat challenges are you facing in {{relevant_area}}?\n\n{{hashtags}}",
+        "performance_notes": "Data-driven results resonate on LinkedIn"
+      },
+      {
+        "id": "founder_journey",
+        "test_group": "personal_story",
+        "template": "{{time_ago}} ago, {{origin_story}}.\n\nI had no idea it would lead to {{current_achievement}}.\n\nThe journey wasn't linear:\n\n🔴 {{challenge_1}}\n✅ {{learning_1}}\n\n🔴 {{challenge_2}}\n✅ {{learning_2}}\n\n🔴 {{challenge_3}}\n✅ {{learning_3}}\n\nToday, {{app_name}} {{current_impact}}.\n\nBut the most rewarding part? {{emotional_reward}}.\n\n{{reflection_or_advice}}\n\nWhat's one lesson from your entrepreneurial journey? Share below 👇\n\n{{hashtags}}",
+        "performance_notes": "Personal stories build authentic connections"
+      },
+      {
+        "id": "industry_analysis",
+        "test_group": "market_insights",
+        "template": "{{industry}} Market Update: {{key_statistic}}\n\n{{context_setting}}\n\nWhat's driving this change?\n\n1️⃣ {{driver_1}}\n{{explanation_1}}\n\n2️⃣ {{driver_2}}\n{{explanation_2}}\n\n3️⃣ {{driver_3}}\n{{explanation_3}}\n\nImplications for {{target_professionals}}:\n\n→ {{opportunity_1}}\n→ {{opportunity_2}}\n→ {{risk_to_watch}}\n\n{{company_perspective}}\n\nHow is your organization adapting to these trends?\n\n{{hashtags}}",
+        "performance_notes": "Market analysis positions as industry expert"
+      },
+      {
+        "id": "team_spotlight",
+        "test_group": "company_culture",
+        "template": "Team Spotlight: Meet {{team_member_name}}\n\n{{team_member_role}} at {{company_name}}\n\n{{team_member_background}}\n\n\"{{team_member_quote}}\"\n\nWhat I love about working with {{team_member_name}}:\n• {{quality_1}}\n• {{quality_2}}\n• {{quality_3}}\n\n{{recent_achievement}}\n\n{{company_culture_message}}\n\nShout out to the amazing professionals in your network! Tag someone who deserves recognition 👏\n\n{{hashtags}}",
+        "performance_notes": "Team spotlights humanize company brand"
+      },
+      {
+        "id": "productivity_insights",
+        "test_group": "professional_tips",
+        "template": "{{productivity_topic}}: {{counterintuitive_headline}}\n\n{{myth_or_common_belief}}\n\nHere's what actually works:\n\n🎯 Strategy #1: {{strategy_1}}\n{{why_it_works_1}}\n\n⚡ Strategy #2: {{strategy_2}}\n{{why_it_works_2}}\n\n🚀 Strategy #3: {{strategy_3}}\n{{why_it_works_3}}\n\nReal example: {{case_example}}\n\n{{app_connection}}\n\nTried any of these approaches? What's worked for you?\n\n{{hashtags}}",
+        "performance_notes": "Actionable business advice gets engagement"
+      },
+      {
+        "id": "milestone_business",
+        "test_group": "achievement",
+        "template": "Business Milestone: {{achievement_statement}}\n\n{{reflection_opening}}\n\nThe path here:\n\n📅 {{timeline_point_1}}\n{{what_happened_1}}\n\n📅 {{timeline_point_2}}\n{{what_happened_2}}\n\n📅 {{timeline_point_3}}\n{{what_happened_3}}\n\nKey lessons learned:\n\n→ {{lesson_1}}\n→ {{lesson_2}}\n→ {{lesson_3}}\n\n{{gratitude_section}}\n\nNext up: {{future_goals}}\n\nTo anyone building something: {{encouragement}}\n\n{{hashtags}}",
+        "performance_notes": "Milestone posts inspire and motivate network"
+      }
+    ],
+    "placeholders": {
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "company_name": {
+        "type": "string",
+        "description": "Name of the company",
+        "required": true
+      },
+      "hashtags": {
+        "type": "string",
+        "description": "Professional LinkedIn hashtags",
+        "default": "#entrepreneurship #productivity #technology #business"
+      },
+      "industry": {
+        "type": "string",
+        "description": "Industry or sector",
+        "default": "technology"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T11:15:00Z",
+    "updated_at": "2025-01-25T11:15:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["linkedin", "professional", "business", "thought_leadership"],
+    "brand_voice": "professional",
+    "tone": "authoritative",
+    "character_limits": {
+      "min": 150,
+      "max": 3000,
+      "optimal": 1300
+    },
+    "hashtags": ["#entrepreneurship", "#productivity", "#technology", "#business", "#leadership"],
+    "call_to_action": {
+      "primary": "What's your experience?",
+      "secondary": "Connect with me to discuss"
+    },
+    "performance_tracking": {
+      "metrics": ["impressions", "engagement_rate", "clicks", "shares", "comments"],
+      "goals": {
+        "engagement_rate": 0.05,
+        "professional_connections": 20
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "optimal_times": ["08:00", "12:00", "17:00"],
+      "frequency": "weekly"
+    },
+    "personalization": {
+      "dynamic_fields": ["industry_data", "milestone_metrics", "team_updates"],
+      "segmentation_rules": [
+        {
+          "condition": "connection_type == 'industry_peer'",
+          "variation": "thought_leadership"
+        },
+        {
+          "condition": "content_type == 'business_results'",
+          "variation": "case_study"
+        }
+      ]
+    }
+  }
+}

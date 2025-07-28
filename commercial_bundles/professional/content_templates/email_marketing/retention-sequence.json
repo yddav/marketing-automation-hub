@@ -1,0 +1,140 @@
+{
+  "id": "retention-sequence",
+  "type": "email_template", 
+  "platform": ["email"],
+  "audience": {
+    "primary": "app_users",
+    "secondary": ["inactive_users", "potential_churners"],
+    "demographics": {
+      "age_range": "25-54",
+      "interests": ["productivity", "habit_formation", "goal_achievement"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "Retention email sequence template",
+    "variations": [
+      {
+        "id": "30_day_milestone",
+        "test_group": "milestone_celebration",
+        "template": "Subject: 🎉 30 days with {{app_name}} - look how far you've come!\n\nHi {{first_name}},\n\n{{celebration_opening}}\n\nIt's been 30 days since you started using {{app_name}}, and I wanted to celebrate your progress!\n\n📊 Your 30-Day Stats:\n• {{usage_stat_1}}\n• {{usage_stat_2}}\n• {{usage_stat_3}}\n• {{achievement_stat}}\n\n🏆 What this means:\n{{impact_explanation}}\n\n🌟 Top achievements:\n1. {{achievement_1}}\n2. {{achievement_2}}\n3. {{achievement_3}}\n\n{{encouragement_message}}\n\n🎯 Ready for the next level?\n\nUsers who reach the 60-day mark typically see {{next_level_benefit}}. Here's how to get there:\n\n→ {{next_step_1}}\n→ {{next_step_2}}\n→ {{next_step_3}}\n\n{{milestone_cta}}\n\n💡 Power User Tip:\n{{power_user_tip}}\n\n{{community_message}}\n\nProud of your progress,\n{{sender_name}}\n\nP.S. {{milestone_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Celebrates progress to reinforce habit formation"
+      },
+      {
+        "id": "inactive_user_reactivation",
+        "test_group": "win_back",
+        "template": "Subject: We miss you! Here's what you've missed in {{app_name}}\n\nHi {{first_name}},\n\n{{personal_touch}}\n\nI noticed you haven't opened {{app_name}} in {{inactive_days}} days, and I wanted to check in.\n\n{{empathy_message}}\n\n🆕 Here's what you've missed:\n\n{{new_feature_1}}\n{{feature_1_benefit}}\n\n{{new_feature_2}}\n{{feature_2_benefit}}\n\n{{improvement_1}}\n{{improvement_1_benefit}}\n\n🎁 Welcome Back Offer:\n{{welcome_back_incentive}}\n\n⏰ Valid for: {{offer_duration}}\n\n{{reactivation_cta}}\n\n💬 What brought you to {{app_name}} originally?\n{{original_motivation_reminder}}\n\nThat goal is still achievable. Let's get you back on track.\n\n📞 Need help getting restarted?\nJust reply to this email - I'm here to help personally.\n\n{{motivational_close}}\n\n{{sender_name}}\n\nP.S. {{reactivation_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Empathetic approach to win back inactive users"
+      },
+      {
+        "id": "feature_discovery",
+        "test_group": "feature_adoption",
+        "template": "Subject: {{first_name}}, are you using {{app_name}}'s most powerful feature?\n\nHi {{first_name}},\n\n{{feature_intro}}\n\nI've been analyzing how {{app_name}} users achieve their best results, and there's one feature that makes the biggest difference: {{key_feature}}.\n\n📊 The data shows:\n• Users who use {{key_feature}} are {{improvement_percentage}} more likely to {{primary_outcome}}\n• They save an average of {{time_saved}} per {{time_period}}\n• {{success_rate}} report {{positive_result}}\n\nYet only {{adoption_percentage}} of users have discovered it!\n\n🎯 Here's how {{key_feature}} works:\n\n{{feature_explanation}}\n\n📋 Quick Setup (takes 2 minutes):\n1. {{setup_step_1}}\n2. {{setup_step_2}}\n3. {{setup_step_3}}\n\n{{setup_cta}}\n\n💡 Pro Tips:\n• {{pro_tip_1}}\n• {{pro_tip_2}}\n• {{pro_tip_3}}\n\n🌟 Success Story:\n\"{{user_testimonial}}\" - {{user_name}}, {{user_description}}\n\n{{feature_adoption_cta}}\n\nQuestions about {{key_feature}}? Just reply - I love helping users unlock {{app_name}}'s full potential.\n\n{{sender_name}}\n\nP.S. {{feature_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Drives adoption of underutilized high-value features"
+      },
+      {
+        "id": "habit_formation_support",
+        "test_group": "behavioral_change",
+        "template": "Subject: The science behind building lasting habits with {{app_name}}\n\nHi {{first_name}},\n\n{{habit_opening}}\n\nBuilding new habits is hard. Research shows that {{habit_statistic}}.\n\nBut here's what's different about {{app_name}} users: {{success_differentiator}}.\n\n🧠 The Science:\n\n{{habit_loop_explanation}}\n\n📈 Your Progress:\nLooking at your {{app_name}} usage, you're {{progress_assessment}}.\n\n{{personalized_encouragement}}\n\n🎯 Habit Optimization Tips:\n\n**Tip 1: {{habit_tip_1}}**\n{{tip_1_explanation}}\nYour action: {{tip_1_action}}\n\n**Tip 2: {{habit_tip_2}}**\n{{tip_2_explanation}}\nYour action: {{tip_2_action}}\n\n**Tip 3: {{habit_tip_3}}**\n{{tip_3_explanation}}\nYour action: {{tip_3_action}}\n\n{{habit_cta}}\n\n📚 Recommended Reading:\n{{resource_recommendation}}\n\n🤝 Accountability Partner:\n{{community_connection_offer}}\n\n{{motivational_close}}\n\n{{sender_name}}\n\nP.S. {{habit_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Supports long-term habit formation with science-backed advice"
+      },
+      {
+        "id": "advanced_user_retention",
+        "test_group": "power_user_engagement",
+        "template": "Subject: {{first_name}}, you're in the top {{percentage}}% of {{app_name}} users!\n\nHi {{first_name}},\n\n{{recognition_opening}}\n\nI wanted to share something exciting: you're in the top {{user_percentile}}% of {{app_name}} users!\n\n🏆 Your Elite Status:\n• {{elite_stat_1}}\n• {{elite_stat_2}}\n• {{elite_stat_3}}\n• {{elite_achievement}}\n\n{{appreciation_message}}\n\n🎁 Exclusive Benefits:\n\nAs a power user, you get access to:\n\n1. {{exclusive_benefit_1}}\n   {{benefit_1_description}}\n\n2. {{exclusive_benefit_2}}\n   {{benefit_2_description}}\n\n3. {{exclusive_benefit_3}}\n   {{benefit_3_description}}\n\n{{exclusive_cta}}\n\n🧪 Beta Testing Invitation:\n{{beta_invitation}}\n\n{{beta_cta}}\n\n💬 Your Feedback Matters:\n{{feedback_request}}\n\n🌟 Success Story Opportunity:\n{{story_sharing_invitation}}\n\n{{power_user_close}}\n\n{{sender_name}}\n\nP.S. {{elite_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Recognizes and rewards top users to maintain engagement"
+      },
+      {
+        "id": "seasonal_reengagement",
+        "test_group": "seasonal_motivation",
+        "template": "Subject: {{season}} goals? Let's make them happen with {{app_name}}\n\nHi {{first_name}},\n\n{{seasonal_opening}}\n\n{{season}} is the perfect time for {{seasonal_activity}}. And your {{app_name}} data shows you're ready for something amazing.\n\n🎯 {{season}} Challenge:\n{{seasonal_challenge_description}}\n\n📊 Why This Works:\n{{challenge_rationale}}\n\n🏁 Your {{timeframe}} Goal:\n{{personalized_goal}}\n\n📋 Action Plan:\n\nWeek 1: {{week_1_focus}}\n{{week_1_actions}}\n\nWeek 2: {{week_2_focus}}\n{{week_2_actions}}\n\n{{remaining_weeks}}\n\n{{challenge_cta}}\n\n🤝 Community Support:\n{{community_element}}\n\n🏆 Challenge Rewards:\n{{reward_structure}}\n\n{{seasonal_motivation}}\n\n{{sender_name}}\n\nP.S. {{seasonal_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Uses seasonal motivation to drive re-engagement"
+      }
+    ],
+    "placeholders": {
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "first_name": {
+        "type": "string",
+        "description": "User's first name",
+        "required": true
+      },
+      "inactive_days": {
+        "type": "number",
+        "description": "Number of days since last app usage"
+      },
+      "usage_stat_1": {
+        "type": "string",
+        "description": "User's usage statistic"
+      },
+      "sender_name": {
+        "type": "string",
+        "description": "Name of email sender",
+        "required": true
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T12:00:00Z",
+    "updated_at": "2025-01-25T12:00:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["email", "retention", "user_engagement", "habit_formation"],
+    "brand_voice": "supportive",
+    "tone": "encouraging",
+    "character_limits": {
+      "min": 250,
+      "max": 2000,
+      "optimal": 900
+    },
+    "call_to_action": {
+      "primary": "Continue Your Journey",
+      "secondary": "Get Back on Track",
+      "url": "{{app_url}}"
+    },
+    "performance_tracking": {
+      "metrics": ["open_rate", "click_through_rate", "app_reactivation", "feature_adoption"],
+      "goals": {
+        "open_rate": 0.35,
+        "reactivation_rate": 0.15,
+        "feature_adoption": 0.25
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "frequency": "campaign"
+    },
+    "triggers": [
+      {
+        "event": "time_based",
+        "action": "send_email",
+        "delay": 43200,
+        "conditions": {"days_since_signup": 30}
+      },
+      {
+        "event": "behavior_based",
+        "action": "send_email",
+        "delay": 1440,
+        "conditions": {"days_inactive": 7}
+      }
+    ],
+    "personalization": {
+      "dynamic_fields": ["usage_statistics", "achievement_data", "inactive_period"],
+      "segmentation_rules": [
+        {
+          "condition": "user_status == 'inactive'",
+          "variation": "inactive_user_reactivation"
+        },
+        {
+          "condition": "user_tier == 'power_user'",
+          "variation": "advanced_user_retention"
+        }
+      ]
+    }
+  }
+}
