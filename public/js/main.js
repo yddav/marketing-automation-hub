@@ -84,41 +84,53 @@ function updateActiveNavigation() {
     });
 }
 
-// Scroll Effects
+// Enhanced Scroll Effects
 function initializeScrollEffects() {
-    // Header background on scroll
+    // Professional header behavior on scroll
     const header = document.querySelector('.main-header');
+    let scrolled = false;
     
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.backdropFilter = 'blur(20px)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
+        const shouldAddClass = window.scrollY > 80;
+        
+        if (shouldAddClass && !scrolled) {
+            header.classList.add('scrolled');
+            scrolled = true;
+        } else if (!shouldAddClass && scrolled) {
+            header.classList.remove('scrolled');
+            scrolled = false;
         }
     });
     
-    // Intersection Observer for animations
+    // Professional Intersection Observer for animations
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
     
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('animate-in');
             }
         });
     }, observerOptions);
     
-    // Observe elements for animation
-    document.querySelectorAll('.feature-card, .integration-step').forEach(el => {
+    // Professional scroll animations for all cards and sections
+    const animateElements = document.querySelectorAll(`
+        .feature-card, 
+        .integration-step, 
+        .pricing-card, 
+        .testimonial-card,
+        .showcase-item,
+        .faq-item
+    `);
+    
+    animateElements.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(40px)';
+        el.style.transition = 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+        el.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(el);
     });
 }
