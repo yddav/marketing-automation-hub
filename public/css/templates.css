@@ -452,13 +452,16 @@
     justify-content: flex-end;
 }
 
-/* Pricing Section - Premium Design */
+/* Professional Pricing Section */
 .pricing-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 100px 0;
-    color: white;
+    background: var(--hero-gradient);
+    padding: var(--section-padding);
+    color: var(--text-white);
     position: relative;
     overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
 }
 
 .pricing-section::before {
@@ -468,19 +471,20 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.12) 0%, transparent 70%);
     pointer-events: none;
 }
 
 .pricing-section::after {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 50%);
-    animation: rotate 30s linear infinite;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -495,30 +499,48 @@
 }
 
 .pricing-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: var(--text-4xl);
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .pricing-header p {
-    font-size: 1.2rem;
+    font-size: var(--text-xl);
     opacity: 0.9;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .pricing-card {
-    background: white;
-    color: #202124;
-    border-radius: 20px;
-    padding: 50px;
+    background: var(--card-gradient);
+    color: var(--text-primary);
+    border-radius: var(--radius-2xl);
+    padding: 3rem;
     max-width: 550px;
     margin: 0 auto;
     position: relative;
-    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    box-shadow: var(--shadow-xl);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: var(--transition-normal);
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.2);
 }
 
 .pricing-card.featured {
     transform: scale(1.05);
+    background: linear-gradient(145deg, #ffffff 0%, #f0f8ff 100%);
+    box-shadow: var(--shadow-glow), var(--shadow-xl);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-8px);
 }
 
 .pricing-badge {
@@ -526,12 +548,14 @@
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: #ffd700;
-    color: #333;
-    padding: 8px 24px;
-    border-radius: 20px;
+    background: var(--accent-gradient);
+    color: var(--text-white);
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-full);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
+    box-shadow: var(--shadow-md);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .pricing-header-card {
