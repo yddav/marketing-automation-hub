@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://untrapd.com/sitemap.xml
+
+# Crawl delay for politeness
+Crawl-delay: 1
+
+# Priority pages
+Allow: /
+Allow: /index.html
+
+# Block sensitive paths (none for landing page)
+# Disallow: /admin/
+
+# Cache-friendly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

@@ -1,0 +1,6 @@
+127.0.0.1 - - [29/Jul/2025 02:49:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jul/2025 02:49:25] "GET /templates.html HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jul/2025 02:49:25] "GET /dashboard/ HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jul/2025 02:49:25] "GET /dashboard/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jul/2025 02:49:25] "GET /pages/pricing.html HTTP/1.1" 200 -
+127.0.0.1 - - [29/Jul/2025 02:49:26] "GET /css/professional-fixes.css HTTP/1.1" 200 -

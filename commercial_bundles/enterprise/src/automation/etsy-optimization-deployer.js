@@ -15,7 +15,7 @@ class EtsyOptimizationDeployer {
     this.optimizationStrategy = null;
     this.productTemplates = null;
     this.deploymentLog = [];
-    this.basePath = path.join(__dirname, '../../appfinder_content_templates');
+    this.basePath = path.join(__dirname, '../../finderr_content_templates');
   }
 
   /**
@@ -201,22 +201,22 @@ class EtsyOptimizationDeployer {
   async createBundleOffers() {
     const bundles = [];
     
-    // AppFinder User Special Bundle
+    // FINDERR User Special Bundle
     bundles.push({
-      id: 'appfinder_user_exclusive',
-      title: 'AppFinder User Exclusive - Premium Automotive Collection',
-      description: this.generateBundleDescription('appfinder_exclusive'),
+      id: 'finderr_user_exclusive',
+      title: 'FINDERR User Exclusive - Premium Automotive Collection',
+      description: this.generateBundleDescription('finderr_exclusive'),
       contents: [
         'Any Premium Automotive Hoodie',
         'Racing Heritage Professional Cap',
-        '3-Month AppFinder Premium Access ($30 value)',
+        '3-Month FINDERR Premium Access ($30 value)',
         'Untrapd Hub Community Premium Membership ($15 value)'
       ],
       regularPrice: 185,
       bundlePrice: 139,
       savings: 46,
       discountCode: 'APPFINDER25',
-      targetAudience: 'appfinder_users',
+      targetAudience: 'finderr_users',
       crossPromotionLevel: 'maximum'
     });
 
@@ -246,7 +246,7 @@ class EtsyOptimizationDeployer {
       description: this.generateBundleDescription('ecosystem_starter'),
       contents: [
         '1 Premium Automotive Hoodie',
-        'Welcome to AppFinder Premium (1 month)',
+        'Welcome to FINDERR Premium (1 month)',
         'Hub Community Access',
         'Exclusive Automotive + Tech Content'
       ],
@@ -266,21 +266,21 @@ class EtsyOptimizationDeployer {
    */
   generateBundleDescription(bundleType) {
     const descriptions = {
-      appfinder_exclusive: `🚀 **Exclusive for AppFinder Users - The Complete Professional Collection**
+      finderr_exclusive: `🚀 **Exclusive for FINDERR Users - The Complete Professional Collection**
 
 Perfect for productivity professionals who appreciate both cutting-edge apps and premium automotive-inspired style.
 
 **What Makes This Special:**
-• Curated specifically for our AppFinder community
+• Curated specifically for our FINDERR community
 • Combines digital productivity with premium lifestyle
 • Represents the complete Untrapd ecosystem experience
-• Limited availability - only for verified AppFinder users
+• Limited availability - only for verified FINDERR users
 
-**Why AppFinder Users Love This:**
+**Why FINDERR Users Love This:**
 You already trust us to curate the best productivity apps. Now let us curate your professional automotive style with the same attention to quality and detail.
 
 **Instant Digital Access:**
-Get immediate access to AppFinder Premium features plus our exclusive Hub community where automotive passion meets tech innovation.`,
+Get immediate access to FINDERR Premium features plus our exclusive Hub community where automotive passion meets tech innovation.`,
 
       productivity_pack: `💼 **The Ultimate Professional's Automotive Collection**
 
@@ -322,13 +322,13 @@ Experience how the Untrapd ecosystem enhances both your productivity and your st
     const assets = {
       shopBanner: {
         headline: 'Premium Automotive-Inspired Designs for Professionals',
-        subheadline: 'From the creators of AppFinder - where precision meets passion',
+        subheadline: 'From the creators of FINDERR - where precision meets passion',
         callToAction: 'Explore the Collection',
         designNotes: 'Clean, professional aesthetic with subtle automotive elements'
       },
       shopAnnouncements: [
-        '🏎️ NEW: Limited Edition Designs | From the AppFinder team | Premium quality for professionals',
-        '🚀 Exclusive: AppFinder users get 15% off with code APPFINDER15',
+        '🏎️ NEW: Limited Edition Designs | From the FINDERR team | Premium quality for professionals',
+        '🚀 Exclusive: FINDERR users get 15% off with code FINDERR15',
         'Professional Automotive Style: Where your passion meets your profession',
         '⭐ Join 10,000+ professionals in the Untrapd ecosystem'
       ],
@@ -337,13 +337,13 @@ Experience how the Untrapd ecosystem enhances both your productivity and your st
 Premium automotive-inspired apparel for professionals who appreciate excellence in all aspects of life.
 
 **Our Story:**
-Created by the team behind AppFinder (trusted by 10,000+ professionals for app discovery), we understand that your attention to detail extends beyond your digital tools to everything you choose.
+Created by the team behind FINDERR (trusted by 10,000+ professionals for app discovery), we understand that your attention to detail extends beyond your digital tools to everything you choose.
 
 **Our Philosophy:**
 Just as we curate only the best productivity apps, we design only premium apparel that meets the standards of professionals who refuse to compromise on quality.
 
 **The Untrapd Ecosystem:**
-• **AppFinder**: Curated app discovery for productivity professionals
+• **FINDERR**: Curated app discovery for productivity professionals
 • **SuperHyperCar**: Premium automotive-inspired professional apparel  
 • **Hub Community**: Where tech innovation meets automotive passion
 
@@ -371,10 +371,10 @@ Join the ecosystem at hub.untrapd.com`,
   async generateDiscountCodes() {
     const codes = [
       {
-        code: 'APPFINDER15',
+        code: 'FINDERR15',
         discount: '15%',
-        description: 'Exclusive for AppFinder users',
-        target: 'appfinder_users',
+        description: 'Exclusive for FINDERR users',
+        target: 'finderr_users',
         minOrder: 50,
         validFor: '90 days',
         usageLimit: 1000
@@ -494,7 +494,7 @@ Join the ecosystem at hub.untrapd.com`,
         priority: 'medium',
         tasks: [
           {
-            task: 'Launch cross-promotion email to AppFinder users',
+            task: 'Launch cross-promotion email to FINDERR users',
             estimated_time: '2 hours',
             difficulty: 'easy',
             impact: 'high'
@@ -535,10 +535,10 @@ Join the ecosystem at hub.untrapd.com`,
   async generateTrackingSetup() {
     const tracking = {
       utm_parameters: {
-        etsy_to_appfinder: {
+        etsy_to_finderr: {
           utm_source: 'etsy',
           utm_medium: 'product_description',
-          utm_campaign: 'cross_promotion_appfinder',
+          utm_campaign: 'cross_promotion_finderr',
           utm_content: 'product_page'
         },
         etsy_to_hub: {
@@ -555,9 +555,9 @@ Join the ecosystem at hub.untrapd.com`,
         }
       },
       conversion_goals: [
-        'Etsy visitor to AppFinder download',
+        'Etsy visitor to FINDERR download',
         'Etsy customer to Hub community signup',
-        'AppFinder user to Etsy purchase',
+        'FINDERR user to Etsy purchase',
         'Single platform user to multi-platform engagement'
       ],
       kpis_to_monitor: [
@@ -683,7 +683,7 @@ Join the ecosystem at hub.untrapd.com`,
         'Test discount codes functionality',
         'Update top 5 performing products first',
         'Set up conversion tracking',
-        'Launch cross-promotion to AppFinder users',
+        'Launch cross-promotion to FINDERR users',
         'Monitor performance and optimize based on data'
       ],
       deploymentLog: this.deploymentLog

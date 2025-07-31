@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UNTRAPD - Professional App Marketing Automation Hub. Advanced tools for app launches, email marketing, and social media automation.">
+    <meta name="keywords" content="app marketing, automation, email marketing, social media, app launch">
+    <meta name="author" content="UNTRAPD">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://untrapd.com/">
+    <meta property="og:title" content="UNTRAPD - App Marketing Automation Hub">
+    <meta property="og:description" content="Professional marketing automation tools for successful app launches.">
+    <meta property="og:image" content="https://untrapd.com/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://untrapd.com/">
+    <meta property="twitter:title" content="UNTRAPD - App Marketing Automation Hub">
+    <meta property="twitter:description" content="Professional marketing automation tools for successful app launches.">
+    <meta property="twitter:image" content="https://untrapd.com/og-image.png">
+    
+    <title>UNTRAPD - App Marketing Automation Hub</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://untrapd.com/">
+    
+    <!-- DNS prefetch for performance -->
+    <link rel="dns-prefetch" href="//hub.untrapd.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "UNTRAPD",
+        "url": "https://untrapd.com",
+        "logo": "https://untrapd.com/logo.png",
+        "description": "Professional app marketing automation hub",
+        "sameAs": [
+            "https://hub.untrapd.com"
+        ]
+    }
+    </script>
+    
+    <!-- Redirect meta tag fallback -->
+    <meta http-equiv="refresh" content="4;url=https://hub.untrapd.com">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background animation container -->
+    <div class="background-animation">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Main content container -->
+    <main class="container">
+        <!-- Logo and brand section -->
+        <header class="brand-header">
+            <div class="logo-container">
+                <h1 class="brand-logo">UNTRAPD</h1>
+                <div class="logo-underline"></div>
+            </div>
+            <p class="brand-tagline">App Marketing Automation Hub</p>
+        </header>
+        
+        <!-- Loading animation -->
+        <section class="loading-section">
+            <div class="loading-container">
+                <div class="loading-spinner">
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                </div>
+                <p class="loading-text">Preparing your experience...</p>
+            </div>
+        </section>
+        
+        <!-- Progress bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="progress-percentage">0%</span>
+            </div>
+        </div>
+        
+        <!-- Call to action (hidden initially) -->
+        <section class="cta-section">
+            <a href="https://hub.untrapd.com" class="cta-button" id="continueButton">
+                <span class="cta-text">Continue to Hub</span>
+                <span class="cta-arrow">→</span>
+            </a>
+            <p class="redirect-note">Redirecting automatically in <span id="countdown">3</span> seconds...</p>
+        </section>
+    </main>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- Main application script -->
+    <script src="script.js"></script>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+        
+        // Track landing page view
+        gtag('event', 'page_view', {
+            page_title: 'UNTRAPD Landing Page',
+            page_location: window.location.href,
+            custom_parameter: 'root_domain_landing'
+        });
+    </script>
+</body>
+</html>

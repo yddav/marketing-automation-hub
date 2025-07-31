@@ -3,7 +3,7 @@
 
 /**
  * Mailchimp configuration specifically for Untrapd ecosystem
- * Handles AppFinder users → Etsy shop cross-promotion → Hub engagement
+ * Handles FINDERR users → Etsy shop cross-promotion → Hub engagement
  */
 
 const untrapdMailchimpConfig = {
@@ -20,18 +20,18 @@ const untrapdMailchimpConfig = {
     replyTo: 'support@untrapd.com',
     websiteUrl: 'https://hub.untrapd.com',
     appStoreUrls: {
-      ios: 'https://apps.apple.com/app/appfinder', // Update when available
-      android: 'https://play.google.com/store/apps/details?id=com.untrapd.appfinder' // Update when available
+      ios: 'https://apps.apple.com/app/finderr', // Update when available
+      android: 'https://play.google.com/store/apps/details?id=com.untrapd.finderr' // Update when available
     },
     etsyShopUrl: 'https://www.etsy.com/shop/SuperHyperCar' // Update with actual URL
   },
 
   // Audience Lists Configuration
   audienceLists: {
-    appfinderUsers: {
-      name: 'AppFinder Users',
-      description: 'Users who downloaded and use AppFinder app',
-      tags: ['appfinder', 'app-users', 'productivity'],
+    finderrUsers: {
+      name: 'FINDERR Users',
+      description: 'Users who downloaded and use FINDERR app',
+      tags: ['finderr', 'app-users', 'productivity'],
       customFields: {
         'APP_INSTALL_DATE': 'date',
         'USER_ENGAGEMENT': 'text', // high, medium, low
@@ -64,52 +64,52 @@ const untrapdMailchimpConfig = {
 
   // Email Sequences Configuration
   emailSequences: {
-    appfinderWelcome: {
-      name: 'AppFinder Welcome & Cross-Promotion',
-      description: 'Welcome new AppFinder users and introduce Etsy shop',
-      audience: 'appfinderUsers',
+    finderrWelcome: {
+      name: 'FINDERR Welcome & Cross-Promotion',
+      description: 'Welcome new FINDERR users and introduce Etsy shop',
+      audience: 'finderrUsers',
       trigger: 'app_download',
       emails: [
         {
           day: 0,
-          subject: '🎉 Welcome to AppFinder - Your app discovery journey starts now!',
-          template: 'appfinder_welcome_day0',
+          subject: '🎉 Welcome to FINDERR - Your app discovery journey starts now!',
+          template: 'finderr_welcome_day0',
           goals: ['onboarding', 'engagement'],
           crossPromotion: 'subtle_etsy_mention'
         },
         {
           day: 1,
           subject: '📱 Your first 3 app recommendations are ready (+ a surprise)',
-          template: 'appfinder_day1_recommendations',
+          template: 'finderr_day1_recommendations',
           goals: ['feature_usage', 'etsy_awareness'],
           crossPromotion: 'etsy_discount_15_percent'
         },
         {
           day: 3,
           subject: 'The #1 mistake new app discoverers make',
-          template: 'appfinder_common_mistakes',
+          template: 'finderr_common_mistakes',
           goals: ['education', 'retention'],
           crossPromotion: 'lifestyle_alignment'
         },
         {
           day: 7,
-          subject: '🚀 One week with AppFinder: How many new apps did you discover?',
-          template: 'appfinder_week1_celebration',
+          subject: '🚀 One week with FINDERR: How many new apps did you discover?',
+          template: 'finderr_week1_celebration',
           goals: ['milestone_celebration', 'community_building'],
           crossPromotion: 'community_spotlight'
         },
         {
           day: 14,
           subject: '🏎️ From discovering apps to expressing your style',
-          template: 'appfinder_etsy_integration',
+          template: 'finderr_etsy_integration',
           goals: ['cross_platform_conversion', 'lifestyle_bridge'],
           crossPromotion: 'direct_etsy_promotion'
         }
       ]
     },
     etsyCustomerWelcome: {
-      name: 'Etsy Customer Welcome & AppFinder Intro',
-      description: 'Welcome Etsy customers and introduce AppFinder',
+      name: 'Etsy Customer Welcome & FINDERR Intro',
+      description: 'Welcome Etsy customers and introduce FINDERR',
       audience: 'etsyCustomers',
       trigger: 'etsy_purchase',
       emails: [
@@ -118,14 +118,14 @@ const untrapdMailchimpConfig = {
           subject: '🏎️ Thanks for your SuperHyperCar order - you\'re going to love it!',
           template: 'etsy_welcome_day0',
           goals: ['order_confirmation', 'brand_introduction'],
-          crossPromotion: 'appfinder_teaser'
+          crossPromotion: 'finderr_teaser'
         },
         {
           day: 3,
           subject: '📱 Love supercars? You\'ll love discovering apps too',
-          template: 'etsy_appfinder_intro',
+          template: 'etsy_finderr_intro',
           goals: ['cross_platform_conversion', 'value_alignment'],
-          crossPromotion: 'appfinder_direct_promotion'
+          crossPromotion: 'finderr_direct_promotion'
         },
         {
           day: 7,
@@ -163,7 +163,7 @@ const untrapdMailchimpConfig = {
   // Automation Rules
   automationRules: {
     crossPromotionTriggers: {
-      // AppFinder user to Etsy
+      // FINDERR user to Etsy
       appToEtsy: {
         condition: 'app_engagement >= 7_days AND no_etsy_purchase',
         action: 'send_etsy_promotion_email',
@@ -172,7 +172,7 @@ const untrapdMailchimpConfig = {
       // Etsy customer to AppFinder
       etsyToApp: {
         condition: 'etsy_purchase_complete AND no_app_download',
-        action: 'send_appfinder_promotion_email',
+        action: 'send_finderr_promotion_email',
         incentive: 'productivity_lifestyle_alignment'
       },
       // Hub engagement boost
@@ -200,12 +200,12 @@ const untrapdMailchimpConfig = {
   // Template Variables for Untrapd Brand
   templateVariables: {
     // Core brand variables
-    app_name: 'AppFinder',
+    app_name: 'FINDERR',
     company_name: 'Untrapd',
     sender_name: 'The Untrapd Team',
     sender_title: 'Community Manager',
     
-    // AppFinder specific
+    // FINDERR specific
     primary_benefit: 'discover apps that actually improve their productivity',
     core_value_1: 'efficiency',
     core_value_2: 'quality',
@@ -222,7 +222,7 @@ const untrapdMailchimpConfig = {
     value_alignment: 'Quality apps, premium style - both reflect your attention to detail',
     
     // Call-to-action buttons
-    cta_appfinder: 'Discover Your Next App',
+    cta_finderr: 'Discover Your Next App',
     cta_etsy: 'Shop Premium Hoodies',
     cta_hub: 'Join the Community',
     cta_ecosystem: 'Explore Everything'

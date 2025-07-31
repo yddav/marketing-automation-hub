@@ -1,0 +1,194 @@
+# Artillery.js Performance Test Configuration
+# Tests for Marketing Automation Hub production readiness
+
+config:
+  target: 'http://localhost:3000'
+  phases:
+    # Warm-up phase
+    - duration: 60
+      arrivalRate: 10
+      name: "Warm-up"
+    # Ramp-up phase
+    - duration: 120
+      arrivalRate: 50
+      rampTo: 100
+      name: "Ramp-up"
+    # Peak load phase - Product Hunt launch simulation
+    - duration: 300
+      arrivalRate: 200
+      name: "Peak Load - Product Hunt Launch"
+    # Sustained load
+    - duration: 600
+      arrivalRate: 100
+      name: "Sustained Load"
+    # Cool-down
+    - duration: 60
+      arrivalRate: 10
+      name: "Cool-down"
+  
+  payload:
+    path: "./test-data.csv"
+    fields:
+      - "email"
+      - "name"
+      - "app_name"
+  
+  defaults:
+    headers:
+      User-Agent: "Artillery Load Test"
+      Accept: "application/json"
+      Content-Type: "application/json"
+  
+  plugins:
+    metrics-by-endpoint:
+      useOnlyRequestNames: true
+    expect: {}
+    
+  processor: "./performance-helpers.js"
+
+scenarios:
+  # Homepage and marketing pages
+  - name: "Homepage Visits"
+    weight: 30
+    flow:
+      - get:
+          url: "/"
+          expect:
+            - statusCode: 200
+            - hasHeader: "content-type"
+          capture:
+            - json: "$.status"
+              as: "status"
+      - think: 3
+      - get:
+          url: "/templates"
+          expect:
+            - statusCode: 200
+            - contentType: "text/html"
+      - think: 2
+      - get:
+          url: "/dashboard"
+          expect:
+            - statusCode: 200
+
+  # API Health Checks
+  - name: "Health Checks"
+    weight: 10
+    flow:
+      - get:
+          url: "/health"
+          expect:
+            - statusCode: 200
+            - hasProperty: "status"
+            - equals:
+              - "{{ status }}"
+              - "ok"
+      - get:
+          url: "/api/health"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+
+  # Content Template API
+  - name: "Content Template Access"
+    weight: 25
+    flow:
+      - get:
+          url: "/content_templates/app_store/ios-app-store-descriptions.json"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+      - think: 1
+      - get:
+          url: "/content_templates/social_media/instagram-templates.json"
+          expect:
+            - statusCode: 200
+            - contentType: "application/json"
+      - think: 1
+      - get:
+          url: "/content_templates/email_marketing/welcome-sequence.json"
+          expect:
+            - statusCode: 200
+
+  # Email Marketing API
+  - name: "Email Marketing Operations"
+    weight: 20
+    flow:
+      - post:
+          url: "/api/email/subscribe"
+          json:
+            email: "{{ email }}"
+            name: "{{ name }}"
+            app_name: "{{ app_name }}"
+            source: "performance_test"
+          expect:
+            - statusCode: [200, 201]
+      - think: 2
+      - get:
+          url: "/api/email/templates"
+          expect:
+            - statusCode: 200
+
+  # Social Media Integration
+  - name: "Social Media Automation"
+    weight: 10
+    flow:
+      - get:
+          url: "/api/social/templates"
+          expect:
+            - statusCode: 200
+      - post:
+          url: "/api/social/schedule"
+          json:
+            platform: "twitter"
+            content: "Test post from {{ name }}"
+            app_name: "{{ app_name }}"
+            scheduled_time: "{{ $timestamp() }}"
+          expect:
+            - statusCode: [200, 201, 202]
+
+  # Analytics and Metrics
+  - name: "Analytics Dashboard"
+    weight: 5
+    flow:
+      - get:
+          url: "/api/analytics/overview"
+          expect:
+            - statusCode: 200
+      - get:
+          url: "/metrics"
+          expect:
+            - statusCode: 200
+            - contentType: "text/plain"
+
+# Performance SLA thresholds
+expect:
+  # Response time thresholds
+  - statusCode: 200
+  - responseTime: 100  # 95% of requests should complete within 100ms
+  
+# Custom metrics and assertions
+plugins:
+  expect:
+    outputFormat: json
+    reportFailuresAsErrors: true
+    
+  # Memory and CPU monitoring
+  cloudwatch:
+    namespace: "Marketing/Performance"
+    dimensions:
+      - name: "Environment"
+        value: "test"
+    metrics:
+      - name: "ResponseTime"
+        unit: "Milliseconds"
+      - name: "RequestRate"
+        unit: "Count/Second"
+      - name: "ErrorRate"
+        unit: "Percent"
+
+# Post-test validation
+after:
+  flow:
+    - log: "Performance test completed"
+    - function: "validatePerformanceResults"

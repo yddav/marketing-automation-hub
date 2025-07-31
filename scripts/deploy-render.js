@@ -58,51 +58,79 @@ class RenderDeployer {
   }
 
   async createDatabase() {
-    console.log('\n📊 Creating PostgreSQL database...');
+    console.log('\n📊 Checking for existing PostgreSQL database...');
     
-    const dbConfig = {
-      type: 'pserv',
-      name: DB_NAME,
-      plan: 'free',
-      databaseName: 'marketing_automation_hub',
-      databaseUser: 'marketing_user',
-      region: 'oregon'
-    };
-
     try {
-      const database = await this.makeRequest('POST', '/services', dbConfig);
-      console.log(`✅ Database created: ${database.service.id}`);
+      // Check for existing databases
+      const databases = await this.makeRequest('GET', '/postgres');
+      const existingDb = databases.find(db => db.postgres.name === DB_NAME);
       
-      this.deploymentConfig.database = database.service;
+      if (existingDb) {
+        console.log(`✅ Using existing database: ${existingDb.postgres.id}`);
+        this.deploymentConfig.database = existingDb.postgres;
+        this.deploymentConfig.databaseUrl = existingDb.postgres.connectionString || 'postgres://placeholder';
+        return existingDb.postgres;
+      }
+      
+      console.log('\n📊 Creating new PostgreSQL database...');
+      const dbConfig = {
+        name: DB_NAME,
+        plan: 'free',
+        databaseName: 'marketing_automation_hub',
+        databaseUser: 'marketing_user',
+        region: 'oregon',
+        version: '16',
+        ownerID: 'tea-d244l9ali9vc73cb5900'
+      };
+
+      const database = await this.makeRequest('POST', '/postgres', dbConfig);
+      console.log(`✅ Database created: ${database.id}`);
+      
+      this.deploymentConfig.database = database;
+      this.deploymentConfig.databaseUrl = database.connectionString;
       
       // Wait for database to initialize
       console.log('⏳ Waiting for database initialization...');
       await new Promise(resolve => setTimeout(resolve, 10000));
       
-      return database.service;
+      return database;
     } catch (error) {
-      console.error('❌ Failed to create database');
+      console.error('❌ Failed to handle database');
       throw error;
     }
   }
 
   async createWebService() {
-    console.log('\n🌐 Creating web service...');
+    console.log('\n🌐 Checking for existing web services...');
     
-    const serviceConfig = {
-      type: 'web_service',
-      name: SERVICE_NAME,
-      repo: `https://github.com/${GITHUB_REPO}`,
-      branch: 'clean-deployment',
-      plan: 'free',
-      buildCommand: 'npm install',
-      startCommand: 'npm start',
-      healthCheckPath: '/health',
-      region: 'oregon',
-      envVars: this.generateEnvVars()
-    };
-
     try {
+      // Check for existing services
+      const services = await this.makeRequest('GET', '/services');
+      const existingService = services.find(s => s.service.name === SERVICE_NAME);
+      
+      if (existingService) {
+        console.log(`✅ Using existing web service: ${existingService.service.id}`);
+        this.deploymentConfig.webService = existingService.service;
+        return existingService.service;
+      }
+      
+      console.log('\n🌐 Creating new web service...');
+      const serviceConfig = {
+        type: 'web_service',
+        name: SERVICE_NAME,
+        ownerID: 'tea-d244l9ali9vc73cb5900',
+        serviceDetails: {
+          repo: `https://github.com/${GITHUB_REPO}`,
+          branch: 'clean-deployment',
+          runtime: 'node',
+          buildCommand: 'npm install',
+          startCommand: 'npm start',
+          healthCheckPath: '/health',
+          region: 'oregon',
+          envVars: this.generateEnvVars()
+        }
+      };
+
       const webService = await this.makeRequest('POST', '/services', serviceConfig);
       console.log(`✅ Web service created: ${webService.service.id}`);
       console.log(`🌐 Service URL: ${webService.service.serviceDetails.url}`);
@@ -110,7 +138,7 @@ class RenderDeployer {
       this.deploymentConfig.webService = webService.service;
       return webService.service;
     } catch (error) {
-      console.error('❌ Failed to create web service');
+      console.error('❌ Failed to handle web service');
       throw error;
     }
   }
@@ -124,8 +152,12 @@ class RenderDeployer {
       { key: 'JWT_EXPIRES_IN', value: '7d' }
     ];
 
-    // Add database URL placeholder
-    envVars.push({ key: 'DATABASE_URL', value: 'postgres://placeholder' });
+    // Add database URL if available
+    if (this.deploymentConfig.databaseUrl) {
+      envVars.push({ key: 'DATABASE_URL', value: this.deploymentConfig.databaseUrl });
+    } else {
+      envVars.push({ key: 'DATABASE_URL', value: 'postgres://placeholder' });
+    }
 
     // Add placeholder API keys
     envVars.push(

@@ -1,5 +1,5 @@
 {
-  "id": "appfinder-brand-customization",
+  "id": "finderr-brand-customization",
   "type": "brand_customization_template",
   "platform": ["instagram", "twitter", "facebook", "linkedin", "email"],
   "audience": {
@@ -12,15 +12,15 @@
     }
   },
   "content": {
-    "template": "AppFinder + Untrapd ecosystem content templates",
+    "template": "FINDERR + Untrapd ecosystem content templates",
     "brand_variables": {
-      "app_name": "AppFinder",
+      "app_name": "FINDERR",
       "company_name": "Untrapd", 
       "website_url": "hub.untrapd.com",
-      "app_store_ios": "https://apps.apple.com/app/appfinder",
-      "app_store_android": "https://play.google.com/store/apps/details?id=com.untrapd.appfinder",
+      "app_store_ios": "https://apps.apple.com/app/finderr",
+      "app_store_android": "https://play.google.com/store/apps/details?id=com.untrapd.finderr",
       "etsy_shop_url": "https://superhypercardesigns.etsy.com/",
-      "primary_hashtag": "#AppFinder",
+      "primary_hashtag": "#FINDERR",
       "secondary_hashtags": ["#Untrapd", "#AppDiscovery", "#ProductivityApps", "#SuperHyperCar"],
       "founder_name": "Untrapd Team",
       "brand_voice": "innovative_yet_approachable",
@@ -32,7 +32,7 @@
       "tertiary": "Where precision meets passion - from apps to automotive art"
     },
     "key_features": {
-      "appfinder_features": [
+      "finderr_features": [
         "AI-powered app recommendations",
         "Cross-platform compatibility",
         "Personalized discovery engine", 
@@ -51,41 +51,41 @@
   "platform_specific_templates": {
     "instagram": {
       "app_discovery_post": {
-        "template": "🎯 APPFINDER DISCOVERY: {{featured_app_name}}\n\nFound this gem through AppFinder's AI recommendations! Perfect for {{use_case}}.\n\n✨ What it does: {{app_description}}\n⚡ Why it's amazing: {{key_benefit}}\n🚀 Best for: {{target_user}}\n\n💡 Pro tip: {{usage_tip}}\n\nTry AppFinder's personalized recommendations:\n👆 Link in bio\n\n#AppFinder #ProductivityApps #AppDiscovery #TechLife #{{featured_app_category}} #Untrapd",
+        "template": "🎯 FINDERR DISCOVERY: {{featured_app_name}}\n\nFound this gem through FINDERR's AI recommendations! Perfect for {{use_case}}.\n\n✨ What it does: {{app_description}}\n⚡ Why it's amazing: {{key_benefit}}\n🚀 Best for: {{target_user}}\n\n💡 Pro tip: {{usage_tip}}\n\nTry FINDERR's personalized recommendations:\n👆 Link in bio\n\n#FINDERR #ProductivityApps #AppDiscovery #TechLife #{{featured_app_category}} #Untrapd",
         "media_requirement": "app_screenshot_or_demo",
         "posting_frequency": "3x_per_week"
       },
       "lifestyle_crossover": {
-        "template": "📱➡️🏎️ From discovering productivity apps to premium automotive designs - the Untrapd lifestyle covers all your passions!\n\nThis week's favorites:\n🎯 AppFinder discovery: {{app_name}}\n🏎️ Latest design: {{hoodie_design}}\n\nBoth crafted with the same attention to detail and performance focus.\n\nWhat drives your passion for excellence?\n\n#Untrapd #AppFinder #SuperHyperCar #ProductivityLifestyle #PremiumQuality #TechMeetsAutomotive",
+        "template": "📱➡️🏎️ From discovering productivity apps to premium automotive designs - the Untrapd lifestyle covers all your passions!\n\nThis week's favorites:\n🎯 FINDERR discovery: {{app_name}}\n🏎️ Latest design: {{hoodie_design}}\n\nBoth crafted with the same attention to detail and performance focus.\n\nWhat drives your passion for excellence?\n\n#Untrapd #FINDERR #SuperHyperCar #ProductivityLifestyle #PremiumQuality #TechMeetsAutomotive",
         "media_requirement": "split_image_app_and_hoodie",
         "posting_frequency": "1x_per_week"
       }
     },
     "twitter": {
       "quick_discovery": {
-        "template": "🔥 Quick discovery: {{app_name}}\n\nFound via AppFinder in 15 seconds\n→ {{primary_benefit}}\n→ {{secondary_benefit}}\n→ {{rating}} rating\n\nDownload AppFinder: {{app_link}}\n\n#AppFinder #ProductivityHack #AppDiscovery",
+        "template": "🔥 Quick discovery: {{app_name}}\n\nFound via FINDERR in 15 seconds\n→ {{primary_benefit}}\n→ {{secondary_benefit}}\n→ {{rating}} rating\n\nDownload FINDERR: {{app_link}}\n\n#FINDERR #ProductivityHack #AppDiscovery",
         "thread_potential": true,
         "posting_frequency": "daily"
       },
       "ecosystem_promotion": {
-        "template": "The Untrapd ecosystem:\n\n📱 AppFinder: Discover apps that matter\n🏎️ SuperHyperCar: Premium automotive designs  \n🌐 Hub: Community for innovators\n\nWhere tech precision meets automotive passion.\n\nExplore: {{website_url}}\n\n#Untrapd #AppFinder #Innovation #TechLifestyle",
+        "template": "The Untrapd ecosystem:\n\n📱 FINDERR: Discover apps that matter\n🏎️ SuperHyperCar: Premium automotive designs  \n🌐 Hub: Community for innovators\n\nWhere tech precision meets automotive passion.\n\nExplore: {{website_url}}\n\n#Untrapd #FINDERR #Innovation #TechLifestyle",
         "posting_frequency": "2x_per_week"
       }
     },
     "linkedin": {
       "professional_productivity": {
-        "template": "How I discovered 3 productivity apps this week that actually matter:\n\nUsing AppFinder's AI recommendations instead of browsing app stores for hours.\n\nKey insight: The best productivity apps aren't always the most popular ones. They're the ones perfectly matched to your workflow.\n\nAppFinder's personalization engine analyzes:\n• Your device preferences\n• Work patterns\n• Productivity goals\n• Integration needs\n\nResult: 5 highly relevant recommendations in under 30 seconds.\n\nFor professionals serious about productivity optimization: this changes everything.\n\nWhat's your biggest app discovery challenge?\n\n#ProductivityApps #WorkflowOptimization #AppFinder #ProfessionalDevelopment #TechTools #WorkplaceEfficiency",
+        "template": "How I discovered 3 productivity apps this week that actually matter:\n\nUsing FINDERR's AI recommendations instead of browsing app stores for hours.\n\nKey insight: The best productivity apps aren't always the most popular ones. They're the ones perfectly matched to your workflow.\n\nFINDERR's personalization engine analyzes:\n• Your device preferences\n• Work patterns\n• Productivity goals\n• Integration needs\n\nResult: 5 highly relevant recommendations in under 30 seconds.\n\nFor professionals serious about productivity optimization: this changes everything.\n\nWhat's your biggest app discovery challenge?\n\n#ProductivityApps #WorkflowOptimization #FINDERR #ProfessionalDevelopment #TechTools #WorkplaceEfficiency",
         "posting_frequency": "2x_per_week"
       }
     },
     "email": {
-      "appfinder_welcome": {
-        "subject": "🎉 Welcome to AppFinder - Your productivity transformation starts now!",
-        "template": "Hi {{user_name}},\n\nWelcome to AppFinder and the Untrapd community!\n\nYou just joined thousands of professionals who've transformed their productivity through intelligent app discovery.\n\nWhat to expect in your first week:\n\n📱 Day 1: Complete your discovery profile (2 minutes)\n🎯 Day 3: Receive your first personalized recommendations\n⚡ Day 7: Discover 3-5 apps that actually fit your workflow\n\nBONUS: As part of the Untrapd ecosystem, you'll also get:\n• Early access to new AppFinder features\n• Exclusive community content\n• 15% off SuperHyperCar premium designs\n\nReady to discover your next favorite app?\n\n[Complete Your Profile]\n\nWelcome to precision productivity,\nThe Untrapd Team\n\nP.S. Check out our community hub for productivity tips and app spotlights: {{website_url}}"
+      "finderr_welcome": {
+        "subject": "🎉 Welcome to FINDERR - Your productivity transformation starts now!",
+        "template": "Hi {{user_name}},\n\nWelcome to FINDERR and the Untrapd community!\n\nYou just joined thousands of professionals who've transformed their productivity through intelligent app discovery.\n\nWhat to expect in your first week:\n\n📱 Day 1: Complete your discovery profile (2 minutes)\n🎯 Day 3: Receive your first personalized recommendations\n⚡ Day 7: Discover 3-5 apps that actually fit your workflow\n\nBONUS: As part of the Untrapd ecosystem, you'll also get:\n• Early access to new FINDERR features\n• Exclusive community content\n• 15% off SuperHyperCar premium designs\n\nReady to discover your next favorite app?\n\n[Complete Your Profile]\n\nWelcome to precision productivity,\nThe Untrapd Team\n\nP.S. Check out our community hub for productivity tips and app spotlights: {{website_url}}"
       },
       "weekly_discovery": {
-        "subject": "📱 This week's top AppFinder discoveries + community highlights",
-        "template": "Hi {{user_name}},\n\nThis week AppFinder users discovered some incredible apps! Here are the top 3 that are transforming workflows:\n\n🥇 {{top_app_1}}: {{app_1_benefit}} (⭐ {{app_1_rating}})\n🥈 {{top_app_2}}: {{app_2_benefit}} (⭐ {{app_2_rating}})\n🥉 {{top_app_3}}: {{app_3_benefit}} (⭐ {{app_3_rating}})\n\nCOMMUNITY SPOTLIGHT:\n{{user_story}} shared how {{discovered_app}} saved them {{time_saved}} this week!\n\nALSO THIS WEEK:\n🏎️ New SuperHyperCar design drop: {{latest_design}}\n🌐 Hub feature: {{community_highlight}}\n\nKeep discovering!\nThe Untrapd Team\n\n[Explore More Apps] [Visit Community Hub] [Shop Latest Designs]"
+        "subject": "📱 This week's top FINDERR discoveries + community highlights",
+        "template": "Hi {{user_name}},\n\nThis week FINDERR users discovered some incredible apps! Here are the top 3 that are transforming workflows:\n\n🥇 {{top_app_1}}: {{app_1_benefit}} (⭐ {{app_1_rating}})\n🥈 {{top_app_2}}: {{app_2_benefit}} (⭐ {{app_2_rating}})\n🥉 {{top_app_3}}: {{app_3_benefit}} (⭐ {{app_3_rating}})\n\nCOMMUNITY SPOTLIGHT:\n{{user_story}} shared how {{discovered_app}} saved them {{time_saved}} this week!\n\nALSO THIS WEEK:\n🏎️ New SuperHyperCar design drop: {{latest_design}}\n🌐 Hub feature: {{community_highlight}}\n\nKeep discovering!\nThe Untrapd Team\n\n[Explore More Apps] [Visit Community Hub] [Shop Latest Designs]"
       }
     }
   },
@@ -97,7 +97,7 @@
         "community_engagement_milestone"
       ],
       "messaging": "Celebrate your productivity wins with premium automotive-inspired designs",
-      "offer": "Exclusive 20% discount for AppFinder users"
+      "offer": "Exclusive 20% discount for FINDERR users"
     },
     "shop_to_app": {
       "trigger_points": [
@@ -106,7 +106,7 @@
         "design_customization_request"
       ],
       "messaging": "Enhance your productivity as much as your style",
-      "offer": "Free AppFinder Premium trial for SuperHyperCar customers"
+      "offer": "Free FINDERR Premium trial for SuperHyperCar customers"
     },
     "hub_to_both": {
       "content_types": [
@@ -171,7 +171,7 @@
     "updated_at": "2025-01-25T17:00:00Z",
     "version": "1.0.0",
     "author": "Untrapd Marketing Automation System",
-    "tags": ["appfinder", "untrapd", "brand_customization", "cross_promotion", "ecosystem_marketing"],
+    "tags": ["finderr", "untrapd", "brand_customization", "cross_promotion", "ecosystem_marketing"],
     "integration_points": {
       "replaces_placeholders_in": [
         "content_templates/social_media/",
@@ -182,7 +182,7 @@
       "connects_to": [
         "hub.untrapd.com",
         "superhypercardesigns.etsy.com", 
-        "appfinder_app_analytics",
+        "finderr_app_analytics",
         "community_engagement_tracking"
       ]
     }
