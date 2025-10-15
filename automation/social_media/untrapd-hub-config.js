@@ -45,9 +45,9 @@ const untrapdHubConfig = {
       accessToken: process.env.TIKTOK_ACCESS_TOKEN
     },
     facebook: {
-      pageName: "Untrapd Hub",
-      about: "Untrapd Hub creates premium AI-powered applications for productivity and security. Our flagship app FINDERR ensures you never lose your phone permanently. Intelligence unleashed through smart technology solutions.",
-      pageId: "750014458192598", // Updated with actual Facebook Page ID
+      pageName: "un trapd",
+      about: "un trapd creates premium AI-powered applications for productivity and security. Our flagship app FINDERR ensures you never lose your phone permanently. Intelligence unleashed through smart technology solutions.",
+      pageId: "UPDATE_WITH_NEW_PAGE_ID", // Will be updated with actual Facebook Page ID for "un trapd"
       pageAccessToken: process.env.FACEBOOK_PAGE_TOKEN
     }
   },
@@ -122,48 +122,77 @@ const untrapdHubConfig = {
     }
   },
 
-  // FINDERR Integration Configuration
+  // FINDERR Integration Configuration - v4.1 Android Pre-Launch
   finderrIntegration: {
+    // App version info
+    appVersion: "4.1 (Build 178)",
+    platform: "Android-only",
+    status: "pre-launch-beta",
+
     // Dynamic content variables
     dynamicVariables: {
-      lifetimeSlots: "lifetime_slots_remaining",
-      userCount: "new_users_today", 
-      downloads: "app_downloads",
+      betaTesters: "beta_testers_count",
+      betaSlotsRemaining: "beta_slots_remaining",
+      subscriberCount: "total_subscribers",
+      userCount: "active_users",
       testimonials: "user_testimonial_rotation",
-      milestones: "user_milestone_celebrations"
+      milestones: "subscriber_milestone_celebrations"
     },
 
-    // Hybrid revenue model campaign
-    hybridCampaign: {
-      phase1: {
-        name: "Early Adopter Lifetime",
-        userLimit: 2000,
-        messaging: {
-          ios: "Lifetime access $24.99 vs $71.88/year with competitors",
-          android: "Lifetime access $16.99 vs $53.88/year ongoing costs",
-          urgency: "Only {lifetime_slots_remaining} exclusive spots left",
-          social_proof: "{filled_slots} smart users already secured their spot"
-        }
-      },
-      phase2: {
-        name: "Subscription Launch", 
-        messaging: {
-          achievement: "Lifetime access now closed - 2,000 members secured",
-          continuation: "Monthly access still 50% less than competitors",
-          social_proof: "Join thousands of satisfied users",
-          value: "Proven by 2,000+ users, now monthly"
-        }
+    // Android-only revenue model (v4.1)
+    pricing: {
+      monthly: "$6.99/month",
+      annual: "$69.99/year",
+      freeTrial: "14 days",
+      competitiveSavings: "Save 30-40% vs $10-12/month competitors",
+      messaging: {
+        value: "$6.99/month Android phone security with 99.7% recovery rate",
+        comparison: "Professional features at 30-40% less than competitors",
+        trial: "14 days free trial - longer than any competitor",
+        platform: "100% Android optimized - no iOS bloat"
       }
     },
 
-    // Milestone automation
+    // Pre-launch beta campaign
+    betaCampaign: {
+      name: "FINDERR v4.1 Beta Testing",
+      phase: "pre-launch-awareness",
+      betaGoal: 100,
+      messaging: {
+        recruitment: "Join 100 beta testers for FINDERR v4.1 launch",
+        urgency: "Only {beta_slots_remaining} beta spots available",
+        security: "Help validate security (RLS) before production launch",
+        rewards: "50% lifetime discount ($3.50/month) for beta testers",
+        ecosystem: "Part of the UNTRAPD ecosystem"
+      }
+    },
+
+    // Content themes for pre-launch
+    contentThemes: {
+      monday: "Android Security Monday - Security tips & FINDERR features",
+      tuesday: "Tech Tuesday - Android ecosystem integration",
+      wednesday: "FINDERR Feature Wednesday - App capabilities showcase",
+      thursday: "User Story Thursday - Early adopter testimonials",
+      friday: "Android Tips Friday - Optimization & best practices",
+      weekend: "Community Weekend - Beta tester engagement"
+    },
+
+    // Milestone automation (subscriber-based)
     milestones: [
-      { users: 500, message: "🎉 500 users joined the Untrapd Hub!" },
-      { users: 1000, message: "🚀 1,000 FINDERR users can't be wrong!" },
-      { users: 1500, message: "⚡ Only 500 lifetime spots remaining!" },
-      { users: 1900, message: "🔥 Final 100 lifetime memberships available!" },
-      { users: 2000, message: "✅ Lifetime access complete - monthly now available!" }
-    ]
+      { subscribers: 100, message: "🎉 100 Android users trust FINDERR!" },
+      { subscribers: 500, message: "🚀 500 Android users secured with FINDERR!" },
+      { subscribers: 1000, message: "⚡ 1,000 Android users can't be wrong!" },
+      { subscribers: 2500, message: "🔥 2,500+ Android users protected by FINDERR!" },
+      { subscribers: 5000, message: "✅ 5K milestone - Android users love FINDERR!" }
+    ],
+
+    // Competitive messaging
+    competitiveMessaging: {
+      price: "$6.99/month vs $12+ competitors - same professional features",
+      platform: "Made for Android, optimized for Android - no iOS compromises",
+      trial: "14 days free - longer trial than any competitor",
+      features: "99.7% recovery rate with professional security features"
+    }
   },
 
   // Automation Integration Settings
