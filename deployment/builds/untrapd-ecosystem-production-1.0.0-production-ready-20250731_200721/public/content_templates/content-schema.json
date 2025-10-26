@@ -1,0 +1,366 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Content Metadata Schema",
+  "description": "Unified schema for all marketing content across platforms",
+  "type": "object",
+  "required": ["id", "type", "platform", "audience", "content", "metadata"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the content piece",
+      "pattern": "^[a-z0-9-_]+$"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "app_store_description",
+        "social_media_post",
+        "email_template",
+        "blog_post",
+        "press_release",
+        "landing_page",
+        "product_description",
+        "user_testimonial"
+      ],
+      "description": "Category of content"
+    },
+    "platform": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "app_store_ios",
+          "app_store_android",
+          "instagram",
+          "twitter",
+          "facebook",
+          "linkedin",
+          "email",
+          "website",
+          "blog",
+          "press",
+          "etsy"
+        ]
+      },
+      "minItems": 1,
+      "description": "Target platforms for this content"
+    },
+    "audience": {
+      "type": "object",
+      "required": ["primary"],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "enum": [
+            "app_users",
+            "potential_customers",
+            "business_owners",
+            "developers",
+            "press_media",
+            "investors",
+            "etsy_shoppers",
+            "social_followers"
+          ]
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "app_users",
+              "potential_customers", 
+              "business_owners",
+              "developers",
+              "press_media",
+              "investors",
+              "etsy_shoppers",
+              "social_followers"
+            ]
+          }
+        },
+        "demographics": {
+          "type": "object",
+          "properties": {
+            "age_range": {
+              "type": "string",
+              "enum": ["18-24", "25-34", "35-44", "45-54", "55+", "all"]
+            },
+            "interests": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tech_savviness": {
+              "type": "string",
+              "enum": ["beginner", "intermediate", "advanced", "all"]
+            }
+          }
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": ["template"],
+      "properties": {
+        "template": {
+          "type": "string",
+          "description": "Content template with {{placeholder}} variables"
+        },
+        "variations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "template", "test_group"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Variation identifier (e.g., 'a', 'b', 'c')"
+              },
+              "template": {
+                "type": "string",
+                "description": "Alternative content template"
+              },
+              "test_group": {
+                "type": "string",
+                "description": "A/B test group identifier"
+              },
+              "performance_notes": {
+                "type": "string",
+                "description": "Notes about variation performance"
+              }
+            }
+          },
+          "description": "A/B testing variations of the content"
+        },
+        "placeholders": {
+          "type": "object",
+          "description": "Available placeholders and their descriptions",
+          "patternProperties": {
+            "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+              "type": "object",
+              "required": ["type", "description"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["string", "number", "boolean", "array", "url", "date"]
+                },
+                "description": {
+                  "type": "string"
+                },
+                "required": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "default": {
+                  "description": "Default value if not provided"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["created_at", "updated_at", "version"],
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string", 
+          "format": "date-time"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "author": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "brand_voice": {
+          "type": "string",
+          "enum": ["professional", "casual", "friendly", "authoritative", "playful", "urgent"]
+        },
+        "tone": {
+          "type": "string",
+          "enum": ["informative", "persuasive", "educational", "promotional", "supportive"]
+        },
+        "character_limits": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "optimal": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "seo_keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hashtags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^#[a-zA-Z0-9_]+$"
+          }
+        },
+        "call_to_action": {
+          "type": "object",
+          "properties": {
+            "primary": {
+              "type": "string"
+            },
+            "secondary": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "performance_tracking": {
+          "type": "object",
+          "properties": {
+            "metrics": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "impressions",
+                  "clicks",
+                  "conversions",
+                  "engagement_rate",
+                  "open_rate",
+                  "click_through_rate",
+                  "shares",
+                  "saves",
+                  "comments"
+                ]
+              }
+            },
+            "goals": {
+              "type": "object",
+              "patternProperties": {
+                "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "automation": {
+      "type": "object",
+      "properties": {
+        "scheduling": {
+          "type": "object",
+          "properties": {
+            "auto_schedule": {
+              "type": "boolean",
+              "default": false
+            },
+            "optimal_times": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+              }
+            },
+            "frequency": {
+              "type": "string",
+              "enum": ["once", "daily", "weekly", "monthly", "campaign"]
+            },
+            "campaign_duration": {
+              "type": "integer",
+              "description": "Duration in days for campaign content"
+            }
+          }
+        },
+        "personalization": {
+          "type": "object",
+          "properties": {
+            "dynamic_fields": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Fields that can be personalized per user"
+            },
+            "segmentation_rules": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["condition", "variation"],
+                "properties": {
+                  "condition": {
+                    "type": "string",
+                    "description": "Condition logic for segment targeting"
+                  },
+                  "variation": {
+                    "type": "string",
+                    "description": "Content variation ID for this segment"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "triggers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["event", "action"],
+            "properties": {
+              "event": {
+                "type": "string",
+                "enum": [
+                  "app_download",
+                  "user_signup",
+                  "purchase_complete",
+                  "trial_started",
+                  "feature_used",
+                  "time_based",
+                  "behavior_based"
+                ]
+              },
+              "action": {
+                "type": "string",
+                "enum": ["send_email", "post_social", "update_website", "send_notification"]
+              },
+              "delay": {
+                "type": "integer",
+                "description": "Delay in minutes before action"
+              },
+              "conditions": {
+                "type": "object",
+                "description": "Additional conditions for trigger activation"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

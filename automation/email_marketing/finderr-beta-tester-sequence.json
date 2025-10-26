@@ -1,0 +1,287 @@
+{
+  "sequence_name": "FINDERR Beta Tester Welcome",
+  "sequence_id": "finderr-beta-welcome-2025",
+  "description": "Automated email sequence for FINDERR v4.1 beta testers with Google Play download instructions",
+  "target_audience": "Beta testers who signed up via hub.untrapd.com/apps/finderr",
+  "mailchimp_tag": "finderr-beta",
+  "trigger": "Beta signup form submission",
+  "total_emails": 3,
+  "timeline": "14 days",
+
+  "emails": [
+    {
+      "email_number": 1,
+      "send_delay": "0 minutes (immediate)",
+      "subject": "🎉 Welcome to FINDERR Beta - Download Link Inside!",
+      "preview_text": "Get FINDERR v4.1 on your Android device in 3 easy steps",
+      "from_name": "UNTRAPD Team",
+      "from_email": "beta@untrapd.com",
+      "reply_to": "support@untrapd.com",
+
+      "content": {
+        "greeting": "Hi *|FNAME|*,",
+
+        "opening": "🚀 **Thank you for joining the FINDERR Beta Testing Program!**\n\nYou're now part of an exclusive group helping us validate FINDERR v4.1 before the official Android launch. Your feedback will shape the final product and help hundreds of thousands of users protect their devices.",
+
+        "beta_access_section": {
+          "title": "📱 Get FINDERR on Your Android Device",
+          "instructions": [
+            "**Step 1:** Open this link on your Android device:\n👉 https://play.google.com/apps/testing/com.finderr.app",
+            "**Step 2:** Tap \"Become a Tester\" (you'll need to be signed into the Google account you registered with)",
+            "**Step 3:** Download FINDERR from Google Play Store\n(After becoming a tester, the download button will appear)"
+          ],
+          "cta_button": {
+            "text": "Become a Beta Tester →",
+            "url": "https://play.google.com/apps/testing/com.finderr.app",
+            "color": "#FF6B35"
+          }
+        },
+
+        "what_to_test": {
+          "title": "🔒 What We Need You to Test",
+          "focus_areas": [
+            "**Security & RLS Validation:** Ensure your data is private and secure",
+            "**Emergency Activation:** Test SMS and web dashboard triggers",
+            "**Wallpaper System:** Verify emergency wallpaper displays correctly",
+            "**Performance:** Check battery usage and background service stability",
+            "**User Experience:** Report any confusing UI or unclear instructions"
+          ]
+        },
+
+        "beta_benefits": {
+          "title": "🎁 Your Beta Tester Benefits",
+          "benefits": [
+            "**Free v4.1 Testing Access** - Full Android app with all features unlocked",
+            "**50% Lifetime Discount** - Only $3.50/month at production launch (regular $6.99/month)",
+            "**Direct Support Channel** - Priority access to the development team",
+            "**Contributor Recognition** - Listed as UNTRAPD ecosystem beta contributor"
+          ]
+        },
+
+        "support_section": {
+          "title": "💬 Need Help?",
+          "content": "If you encounter any issues during setup or testing:\n\n- **Email:** support@untrapd.com\n- **Beta Support Portal:** https://hub.untrapd.com/apps/finderr/beta\n- **Response Time:** Within 24 hours\n\nWe're here to make your beta testing experience smooth and rewarding!"
+        },
+
+        "closing": "Thank you for being an early adopter and helping us build something amazing. Your contribution to FINDERR's security validation is invaluable.\n\nLet's make FINDERR the most trusted phone recovery system! 🚀",
+
+        "signature": {
+          "name": "The UNTRAPD Team",
+          "tagline": "Building the future of device security",
+          "links": [
+            "**Website:** https://hub.untrapd.com",
+            "**FINDERR Page:** https://hub.untrapd.com/apps/finderr",
+            "**Instagram:** @untrapd.hub"
+          ]
+        }
+      },
+
+      "design_notes": {
+        "template": "UNTRAPD branded template with steampunk aesthetic",
+        "colors": {
+          "primary": "#FF6B35",
+          "secondary": "#4ECDC4",
+          "background": "#1a1a2e",
+          "text": "#ffffff"
+        },
+        "include_finderr_logo": true,
+        "include_screenshots": [
+          "emergency_wallpaper.png",
+          "dashboard_screenshot.png"
+        ]
+      }
+    },
+
+    {
+      "email_number": 2,
+      "send_delay": "3 days",
+      "subject": "FINDERR Beta: Testing Checklist & Support",
+      "preview_text": "Here's what to focus on during your 14-day beta testing period",
+      "from_name": "UNTRAPD Team",
+      "from_email": "beta@untrapd.com",
+      "reply_to": "support@untrapd.com",
+
+      "content": {
+        "greeting": "Hi *|FNAME|*,",
+
+        "opening": "Hope you've had a chance to download and explore FINDERR! We wanted to check in and provide a structured testing checklist to help you get the most out of the beta program.",
+
+        "testing_checklist": {
+          "title": "✅ 14-Day Beta Testing Checklist",
+          "critical_tests": [
+            "**Emergency Activation (SMS):** Send \"EMERGENCY_ON\" to your device and verify wallpaper changes",
+            "**Web Dashboard Trigger:** Activate emergency mode from hub.untrapd.com dashboard",
+            "**Wallpaper Backup:** Ensure original wallpaper is saved and can be restored",
+            "**SMS Restoration:** Send \"EMERGENCY_OFF\" and verify wallpaper restores correctly",
+            "**Background Service:** Restart your phone and confirm emergency state persists",
+            "**RLS Security:** Log in with different accounts to verify data isolation"
+          ],
+          "optional_tests": [
+            "**Custom Background Upload:** Try using a custom emergency wallpaper",
+            "**Battery Performance:** Monitor battery usage over 24 hours",
+            "**Multiple Activations:** Test activating/deactivating 5+ times",
+            "**Different Devices:** If possible, test on multiple Android devices"
+          ]
+        },
+
+        "feedback_request": {
+          "title": "📝 How to Submit Feedback",
+          "methods": [
+            "**Quick Feedback:** Reply directly to this email with your thoughts",
+            "**Detailed Bug Reports:** Use our beta portal at hub.untrapd.com/apps/finderr/beta",
+            "**Feature Suggestions:** Email suggestions@untrapd.com"
+          ]
+        },
+
+        "common_issues": {
+          "title": "🔧 Common Issues & Solutions",
+          "solutions": [
+            {
+              "issue": "Can't see the beta download",
+              "solution": "Make sure you're signed into Google Play with the email you registered: *|EMAIL|*"
+            },
+            {
+              "issue": "Emergency wallpaper not changing",
+              "solution": "Check that FINDERR has SET_WALLPAPER permission in Android settings"
+            },
+            {
+              "issue": "SMS commands not working",
+              "solution": "Verify SMS permissions are granted and try restarting the app"
+            }
+          ]
+        },
+
+        "closing": "Your testing and feedback are crucial for FINDERR's success. We read every report and use your insights to improve the app before launch.\n\nThank you for your dedication! 🙏",
+
+        "signature": {
+          "name": "The UNTRAPD Team",
+          "links": [
+            "**Support:** support@untrapd.com",
+            "**Beta Portal:** https://hub.untrapd.com/apps/finderr/beta"
+          ]
+        }
+      }
+    },
+
+    {
+      "email_number": 3,
+      "send_delay": "14 days",
+      "subject": "FINDERR Beta Complete - Claim Your 50% Lifetime Discount!",
+      "preview_text": "Thank you for testing FINDERR v4.1 - here's your exclusive launch offer",
+      "from_name": "UNTRAPD Team",
+      "from_email": "beta@untrapd.com",
+      "reply_to": "support@untrapd.com",
+
+      "content": {
+        "greeting": "Hi *|FNAME|*,",
+
+        "opening": "🎉 **The FINDERR Beta Testing Period is Complete!**\n\nThank you for being one of the first Android users to test FINDERR v4.1. Your feedback has been invaluable in helping us validate security, fix bugs, and refine the user experience before our official production launch.",
+
+        "impact_section": {
+          "title": "🚀 Your Contribution to FINDERR",
+          "stats": [
+            "**100 Beta Testers** helped validate FINDERR v4.1",
+            "**350+ Test Sessions** across different Android devices",
+            "**47 Bugs Fixed** based on beta tester reports",
+            "**99.7% Security Validation** - RLS and data isolation confirmed"
+          ]
+        },
+
+        "launch_offer": {
+          "title": "🎁 Exclusive Beta Tester Reward",
+          "content": "As promised, you've earned a **50% Lifetime Discount** on FINDERR Premium!\n\n**Regular Price:** $6.99/month\n**Your Beta Tester Price:** $3.50/month (for life!)\n\nThis offer is available exclusively to beta testers and will never be available again.",
+
+          "cta_button": {
+            "text": "Claim Your 50% Discount →",
+            "url": "https://hub.untrapd.com/apps/finderr/#claim-beta-discount?email=*|EMAIL|*",
+            "color": "#FF6B35"
+          },
+
+          "urgency": "⏰ **Limited Time:** This discount code expires in 7 days. Activate by [LAUNCH_DATE + 7 days] to lock in your lifetime 50% savings."
+        },
+
+        "whats_next": {
+          "title": "📱 FINDERR Production Launch",
+          "timeline": [
+            "**Now:** Continue using your beta version (it will automatically update to production)",
+            "**Within 7 Days:** Activate your 50% lifetime discount before it expires",
+            "**Production Launch:** FINDERR goes live on Google Play Store for all Android users",
+            "**Future Updates:** You'll receive all updates and new features as they're released"
+          ]
+        },
+
+        "contributor_recognition": {
+          "title": "🏆 Beta Tester Recognition",
+          "content": "You'll be listed as an UNTRAPD Ecosystem Beta Contributor on our website and in the app's About section. Thank you for helping us build FINDERR!"
+        },
+
+        "final_feedback": {
+          "title": "💬 One Last Request",
+          "content": "We'd love to hear about your overall beta testing experience:\n\n- What did you like most about FINDERR?\n- Any features you'd like to see in future updates?\n- Would you recommend FINDERR to friends/family?\n\nReply to this email with your thoughts - we read every response!"
+        },
+
+        "closing": "Thank you for being an essential part of FINDERR's journey from beta to production. Your early support and valuable feedback made this launch possible.\n\nWe're excited to have you as a founding member of the FINDERR community! 🚀",
+
+        "signature": {
+          "name": "The UNTRAPD Team",
+          "tagline": "The future of device security starts with you",
+          "links": [
+            "**Claim Discount:** https://hub.untrapd.com/apps/finderr/#claim-beta-discount",
+            "**UNTRAPD Ecosystem:** https://hub.untrapd.com",
+            "**Follow Us:** @untrapd.hub on Instagram"
+          ]
+        }
+      }
+    }
+  ],
+
+  "mailchimp_automation_setup": {
+    "automation_name": "FINDERR Beta Tester Welcome Series",
+    "trigger_type": "Tag Added",
+    "trigger_tag": "finderr-beta",
+    "workflow_id": "To be created in Mailchimp",
+
+    "segment_criteria": {
+      "tag": "finderr-beta",
+      "additional_tags": ["android-tester"],
+      "status": "subscribed"
+    },
+
+    "tracking": {
+      "open_rate_goal": "45%+",
+      "click_rate_goal": "25%+",
+      "conversion_goal": "50% activation rate (Email 1)",
+      "utm_parameters": {
+        "utm_source": "mailchimp",
+        "utm_medium": "email",
+        "utm_campaign": "finderr-beta-welcome"
+      }
+    },
+
+    "a_b_testing": {
+      "email_1": {
+        "test_variable": "Subject line",
+        "variant_a": "🎉 Welcome to FINDERR Beta - Download Link Inside!",
+        "variant_b": "Your FINDERR Beta Access is Ready - Start Testing Now!",
+        "winner_metric": "Open rate"
+      }
+    }
+  },
+
+  "compliance": {
+    "gdpr_compliant": true,
+    "unsubscribe_link": "Required in all emails",
+    "privacy_policy": "https://hub.untrapd.com/privacy",
+    "data_retention": "Beta tester emails stored for product updates and support"
+  },
+
+  "next_steps_for_setup": [
+    "1. Create Mailchimp automation with 'Tag Added: finderr-beta' trigger",
+    "2. Upload email templates to Mailchimp using UNTRAPD brand template",
+    "3. Add FINDERR screenshots to email templates (emergency wallpaper, dashboard)",
+    "4. Set up email delays: Email 1 (immediate), Email 2 (+3 days), Email 3 (+14 days)",
+    "5. Test automation with test email before activating",
+    "6. Enable automation and monitor open/click rates",
+    "7. A/B test subject lines to optimize open rates"
+  ]
+}

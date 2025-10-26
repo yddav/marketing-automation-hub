@@ -1,0 +1,308 @@
+# Pod Security Policies and Standards
+# Implements security hardening for all deployments
+
+# Pod Security Policy (if using older Kubernetes versions)
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: marketing-automation-psp
+  labels:
+    app: marketing-automation-hub
+spec:
+  privileged: false
+  allowPrivilegeEscalation: false
+  requiredDropCapabilities:
+    - ALL
+  volumes:
+    - 'configMap'
+    - 'emptyDir'
+    - 'projected'
+    - 'secret'
+    - 'downwardAPI'
+    - 'persistentVolumeClaim'
+  runAsUser:
+    rule: 'MustRunAsNonRoot'
+  seLinux:
+    rule: 'RunAsAny'
+  fsGroup:
+    rule: 'RunAsAny'
+  readOnlyRootFilesystem: true
+
+---
+# Security Context Constraints (OpenShift)
+apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
+metadata:
+  name: marketing-automation-scc
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegedContainer: false
+allowPrivilegeEscalation: false
+allowedCapabilities: null
+defaultAddCapabilities: null
+requiredDropCapabilities:
+- ALL
+readOnlyRootFilesystem: true
+runAsUser:
+  type: MustRunAsNonRoot
+seLinuxContext:
+  type: MustRunAs
+volumes:
+- configMap
+- downwardAPI
+- emptyDir
+- persistentVolumeClaim
+- projected
+- secret
+
+---
+# Open Policy Agent Gatekeeper Policies
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8srequiredsecuritycontext
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sRequiredSecurityContext
+      validation:
+        properties:
+          runAsNonRoot:
+            type: boolean
+          readOnlyRootFilesystem:
+            type: boolean
+          allowPrivilegeEscalation:
+            type: boolean
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8srequiredsecuritycontext
+        
+        violation[{"msg": msg}] {
+          container := input.review.object.spec.containers[_]
+          not container.securityContext.runAsNonRoot
+          msg := "Container must run as non-root user"
+        }
+        
+        violation[{"msg": msg}] {
+          container := input.review.object.spec.containers[_]
+          not container.securityContext.readOnlyRootFilesystem
+          msg := "Container must have read-only root filesystem"
+        }
+        
+        violation[{"msg": msg}] {
+          container := input.review.object.spec.containers[_]
+          container.securityContext.allowPrivilegeEscalation != false
+          msg := "Container must not allow privilege escalation"
+        }
+
+---
+# Security Context Constraint
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: K8sRequiredSecurityContext
+metadata:
+  name: require-security-context
+spec:
+  match:
+    - apiGroups: ["apps"]
+      kinds: ["Deployment"]
+      namespaces: ["marketing-automation"]
+  parameters:
+    runAsNonRoot: true
+    readOnlyRootFilesystem: true
+    allowPrivilegeEscalation: false
+
+---
+# Image Security Policy
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8srequiredimagesources
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sRequiredImageSources
+      validation:
+        properties:
+          allowedRegistries:
+            type: array
+            items:
+              type: string
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8srequiredimagesources
+        
+        violation[{"msg": msg}] {
+          container := input.review.object.spec.containers[_]
+          satisfied := [good | repo = input.parameters.allowedRegistries[_] ; good = startswith(container.image, repo)]
+          not any(satisfied)
+          msg := sprintf("Image '%v' not from approved registry", [container.image])
+        }
+
+---
+# Image Registry Constraint
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: K8sRequiredImageSources
+metadata:
+  name: allowed-registries
+spec:
+  match:
+    - apiGroups: ["apps"]
+      kinds: ["Deployment"]
+      namespaces: ["marketing-automation"]
+  parameters:
+    allowedRegistries:
+      - "ghcr.io/"
+      - "docker.io/library/"
+      - "registry.k8s.io/"
+      - "quay.io/"
+
+---
+# Service Account with minimal permissions
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: marketing-automation-sa
+  namespace: marketing-automation
+  labels:
+    app: marketing-automation-hub
+automountServiceAccountToken: false
+
+---
+# RBAC - Role for application
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: marketing-automation
+  name: marketing-automation-role
+rules:
+- apiGroups: [""]
+  resources: ["configmaps"]
+  verbs: ["get", "list"]
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get"]
+  resourceNames: ["app-secrets", "api-secrets"]
+
+---
+# RBAC - RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: marketing-automation-binding
+  namespace: marketing-automation
+subjects:
+- kind: ServiceAccount
+  name: marketing-automation-sa
+  namespace: marketing-automation
+roleRef:
+  kind: Role
+  name: marketing-automation-role
+  apiGroup: rbac.authorization.k8s.io
+
+---
+# Service Account for monitoring
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: prometheus-marketing
+  namespace: monitoring
+  labels:
+    app: prometheus
+
+---
+# RBAC for Prometheus
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: prometheus-marketing
+rules:
+- apiGroups: [""]
+  resources:
+  - nodes
+  - nodes/proxy
+  - services
+  - endpoints
+  - pods
+  verbs: ["get", "list", "watch"]
+- apiGroups:
+  - extensions
+  resources:
+  - ingresses
+  verbs: ["get", "list", "watch"]
+- nonResourceURLs: ["/metrics"]
+  verbs: ["get"]
+
+---
+# Prometheus ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: prometheus-marketing
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: prometheus-marketing
+subjects:
+- kind: ServiceAccount
+  name: prometheus-marketing
+  namespace: monitoring
+
+---
+# Grafana Service Account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: grafana
+  namespace: monitoring
+  labels:
+    app: grafana
+
+---
+# Alertmanager Service Account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: alertmanager-marketing
+  namespace: monitoring
+  labels:
+    app: alertmanager
+
+---
+# TLS Certificate for ingress
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: marketing-automation-tls
+  namespace: marketing-automation
+spec:
+  secretName: marketing-automation-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - marketing-hub.yourdomain.com
+  - api.yourdomain.com
+
+---
+# ClusterIssuer for Let's Encrypt
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: admin@yourdomain.com
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+    - http01:
+        ingress:
+          class: nginx

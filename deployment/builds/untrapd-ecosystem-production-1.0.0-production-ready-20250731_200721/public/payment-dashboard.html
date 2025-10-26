@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Dashboard - Marketing Automation Hub</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0f1419;
+            color: #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00d4aa;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 170, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 170, 0.2);
+        }
+
+        .card h3 {
+            color: #00d4aa;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #2a2a2a;
+            border-radius: 4px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00d4aa, #4ade80);
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        .tier-breakdown {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+        
+        .tier-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .tier-count {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #00d4aa;
+        }
+        
+        .tier-name {
+            font-size: 0.8rem;
+            color: #a0a0a0;
+            text-transform: uppercase;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-green { background-color: #4ade80; }
+        .status-yellow { background-color: #facc15; }
+        .status-red { background-color: #ef4444; }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+
+        .milestone-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .milestone-item {
+            padding: 10px;
+            margin: 8px 0;
+            background-color: rgba(0, 212, 170, 0.1);
+            border-radius: 6px;
+            border-left: 4px solid #00d4aa;
+        }
+
+        .milestone-amount {
+            font-weight: 600;
+            color: #00d4aa;
+        }
+
+        .recent-sales {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .sale-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            margin: 8px 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+        }
+
+        .sale-amount {
+            font-weight: 600;
+            color: #4ade80;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #a0a0a0;
+        }
+
+        .error {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid #ef4444;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #fecaca;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #00d4aa, #4ade80);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+            margin: 10px;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .metric-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Payment Dashboard</h1>
+        
+        <div class="dashboard-grid">
+            <!-- Total Revenue -->
+            <div class="card">
+                <h3>Total Revenue</h3>
+                <div class="metric-value" id="totalRevenue">$0</div>
+                <div class="metric-label">All-time sales</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="revenueProgress" style="width: 0%"></div>
+                </div>
+                <div id="revenueTarget" class="metric-label">Target: $13,445</div>
+            </div>
+
+            <!-- Today's Performance -->
+            <div class="card">
+                <h3>Today's Performance</h3>
+                <div class="metric-value" id="todayRevenue">$0</div>
+                <div class="metric-label">Today's sales</div>
+                <div class="tier-breakdown" id="todayTiers">
+                    <div class="tier-item">
+                        <div class="tier-count" id="todayStarter">0</div>
+                        <div class="tier-name">Starter</div>
+                    </div>
+                    <div class="tier-item">
+                        <div class="tier-count" id="todayPro">0</div>
+                        <div class="tier-name">Pro</div>
+                    </div>
+                    <div class="tier-item">
+                        <div class="tier-count" id="todayEnt">0</div>
+                        <div class="tier-name">Enterprise</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Progress -->
+            <div class="card">
+                <h3>Monthly Progress</h3>
+                <div class="metric-value" id="monthlyProgress">0%</div>
+                <div class="metric-label">Progress to conservative target</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="monthlyProgressBar" style="width: 0%"></div>
+                </div>
+                <div id="monthlyStats" class="metric-label">0 sales this month</div>
+            </div>
+
+            <!-- Average Order Value -->
+            <div class="card">
+                <h3>Average Order Value</h3>
+                <div class="metric-value" id="avgOrderValue">$0</div>
+                <div class="metric-label">Per transaction</div>
+                <div id="totalSales" class="metric-label">0 total sales</div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Sales Trend Chart -->
+            <div class="card" style="grid-column: span 2;">
+                <h3>Sales Trend (Last 7 Days)</h3>
+                <div class="chart-container">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Tier Breakdown Chart -->
+            <div class="card">
+                <h3>Product Tier Breakdown</h3>
+                <div class="chart-container">
+                    <canvas id="tierChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Next Milestone -->
+            <div class="card">
+                <h3>Next Milestone</h3>
+                <div class="metric-value" id="nextMilestoneAmount">$1,000</div>
+                <div class="metric-label" id="nextMilestoneRemaining">$1,000 remaining</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="milestoneProgress" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- System Status -->
+            <div class="card">
+                <h3>System Status</h3>
+                <div style="margin: 20px 0;">
+                    <div><span class="status-indicator status-green"></span>Payment Processing</div>
+                    <div><span class="status-indicator status-green"></span>Order Fulfillment</div>
+                    <div><span class="status-indicator status-green"></span>Analytics Tracking</div>
+                    <div><span class="status-indicator status-green"></span>Customer Database</div>
+                </div>
+                <div class="metric-label" id="lastUpdated">Last updated: Never</div>
+            </div>
+
+            <!-- Milestones Achieved -->
+            <div class="card">
+                <h3>Milestones Achieved</h3>
+                <div class="milestone-list" id="milestonesList">
+                    <div class="loading">No milestones reached yet</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <button class="refresh-btn" onclick="loadDashboard()">🔄 Refresh Data</button>
+            <button class="refresh-btn" onclick="testWebhook()">🧪 Test Webhook</button>
+        </div>
+    </div>
+
+    <script>
+        let salesChart = null;
+        let tierChart = null;
+
+        // Load dashboard data
+        async function loadDashboard() {
+            try {
+                const response = await fetch('/payment/analytics/dashboard');
+                const data = await response.json();
+
+                if (data.success) {
+                    updateDashboard(data.data);
+                } else {
+                    showError('Failed to load dashboard data: ' + data.error);
+                }
+            } catch (error) {
+                showError('Error loading dashboard: ' + error.message);
+            }
+        }
+
+        // Update dashboard with data
+        function updateDashboard(data) {
+            // Total revenue
+            document.getElementById('totalRevenue').textContent = '$' + data.totalRevenue.toLocaleString();
+            
+            // Progress to target
+            const targetProgress = (data.totalRevenue / data.targets.monthly.conservative * 100);
+            document.getElementById('revenueProgress').style.width = Math.min(targetProgress, 100) + '%';
+            
+            // Today's performance
+            document.getElementById('todayRevenue').textContent = '$' + data.today.revenue.toLocaleString();
+            document.getElementById('todayStarter').textContent = data.today.tierBreakdown.starter.count;
+            document.getElementById('todayPro').textContent = data.today.tierBreakdown.professional.count;
+            document.getElementById('todayEnt').textContent = data.today.tierBreakdown.enterprise.count;
+
+            // Monthly progress
+            document.getElementById('monthlyProgress').textContent = data.monthly.progressToConservative + '%';
+            document.getElementById('monthlyProgressBar').style.width = Math.min(data.monthly.progressToConservative, 100) + '%';
+            document.getElementById('monthlyStats').textContent = data.monthly.sales + ' sales this month';
+
+            // Average order value
+            document.getElementById('avgOrderValue').textContent = '$' + data.averageOrderValue.toFixed(2);
+            document.getElementById('totalSales').textContent = data.totalSales + ' total sales';
+
+            // Next milestone
+            if (data.nextMilestone) {
+                document.getElementById('nextMilestoneAmount').textContent = '$' + data.nextMilestone.amount.toLocaleString();
+                document.getElementById('nextMilestoneRemaining').textContent = '$' + data.nextMilestone.remaining.toLocaleString() + ' remaining';
+                document.getElementById('milestoneProgress').style.width = data.nextMilestone.progressPercent + '%';
+            }
+
+            // Milestones achieved
+            const milestonesList = document.getElementById('milestonesList');
+            if (data.milestonesReached.length > 0) {
+                milestonesList.innerHTML = data.milestonesReached.map(amount => 
+                    `<div class="milestone-item">
+                        <span class="milestone-amount">$${amount.toLocaleString()}</span> milestone achieved!
+                    </div>`
+                ).join('');
+            }
+
+            // Update charts
+            updateSalesChart(data.last7Days);
+            updateTierChart(data.tierBreakdown);
+
+            // Last updated
+            document.getElementById('lastUpdated').textContent = 'Last updated: ' + new Date(data.lastUpdated).toLocaleString();
+        }
+
+        // Update sales trend chart
+        function updateSalesChart(last7Days) {
+            const ctx = document.getElementById('salesChart').getContext('2d');
+            
+            if (salesChart) {
+                salesChart.destroy();
+            }
+
+            salesChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: last7Days.map(day => new Date(day.date).toLocaleDateString()),
+                    datasets: [{
+                        label: 'Daily Revenue',
+                        data: last7Days.map(day => day.revenue),
+                        borderColor: '#00d4aa',
+                        backgroundColor: 'rgba(0, 212, 170, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#e6e6e6' }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#a0a0a0' },
+                            grid: { color: 'rgba(160, 160, 160, 0.1)' }
+                        },
+                        y: {
+                            ticks: { 
+                                color: '#a0a0a0',
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            },
+                            grid: { color: 'rgba(160, 160, 160, 0.1)' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Update tier breakdown chart
+        function updateTierChart(tierBreakdown) {
+            const ctx = document.getElementById('tierChart').getContext('2d');
+            
+            if (tierChart) {
+                tierChart.destroy();
+            }
+
+            const tiers = Object.keys(tierBreakdown);
+            const counts = tiers.map(tier => tierBreakdown[tier].count);
+
+            tierChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: tiers.map(tier => tier.charAt(0).toUpperCase() + tier.slice(1)),
+                    datasets: [{
+                        data: counts,
+                        backgroundColor: ['#00d4aa', '#4ade80', '#22d3ee'],
+                        borderColor: '#0f1419',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#e6e6e6' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Test webhook
+        async function testWebhook() {
+            try {
+                const response = await fetch('/payment/webhook/gumroad/test', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: 'test@example.com',
+                        name: 'Test Customer'
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Test webhook successful! Refreshing dashboard...');
+                    setTimeout(loadDashboard, 1000);
+                } else {
+                    alert('Test webhook failed: ' + result.error);
+                }
+            } catch (error) {
+                alert('Test webhook error: ' + error.message);
+            }
+        }
+
+        // Show error message
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.textContent = message;
+            document.querySelector('.container').insertBefore(errorDiv, document.querySelector('.dashboard-grid'));
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+        }
+
+        // Auto-refresh every 30 seconds
+        setInterval(loadDashboard, 30000);
+
+        // Load dashboard on page load
+        loadDashboard();
+    </script>
+</body>
+</html>

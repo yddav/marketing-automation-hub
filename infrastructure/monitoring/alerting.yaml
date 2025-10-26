@@ -1,0 +1,275 @@
+# Alertmanager Configuration
+apiVersion: monitoring.coreos.com/v1
+kind: Alertmanager
+metadata:
+  name: marketing-alertmanager
+  namespace: monitoring
+  labels:
+    app: alertmanager
+spec:
+  replicas: 2
+  retention: 120h
+  storage:
+    volumeClaimTemplate:
+      spec:
+        storageClassName: fast-ssd
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 512Mi
+      cpu: 200m
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    fsGroup: 2000
+  serviceAccountName: alertmanager-marketing
+  
+---
+# Alertmanager Config
+apiVersion: v1
+kind: Secret
+metadata:
+  name: alertmanager-marketing
+  namespace: monitoring
+  labels:
+    app: alertmanager
+type: Opaque
+stringData:
+  alertmanager.yml: |
+    global:
+      smtp_smarthost: 'smtp.sendgrid.net:587'
+      smtp_from: 'alerts@yourdomain.com'
+      smtp_auth_username: 'apikey'
+      smtp_auth_password: 'YOUR_SENDGRID_API_KEY'
+      slack_api_url: 'YOUR_SLACK_WEBHOOK_URL'
+      
+    route:
+      group_by: ['alertname', 'cluster', 'service']
+      group_wait: 10s
+      group_interval: 10s
+      repeat_interval: 1h
+      receiver: 'web.hook'
+      routes:
+      - match:
+          severity: critical
+        receiver: 'critical-alerts'
+        group_wait: 5s
+        repeat_interval: 30m
+      - match:
+          severity: warning
+        receiver: 'warning-alerts'
+        repeat_interval: 4h
+      - match:
+          alertname: DeadMansSwitch
+        receiver: 'null'
+        
+    receivers:
+    - name: 'web.hook'
+      webhook_configs:
+      - url: 'http://webhook-service:8080/webhook'
+        send_resolved: true
+        
+    - name: 'critical-alerts'
+      email_configs:
+      - to: 'devops@yourdomain.com'
+        subject: '🚨 CRITICAL: {{ .GroupLabels.alertname }} - {{ .GroupLabels.service }}'
+        body: |
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          Instance: {{ .Labels.instance }}
+          Severity: {{ .Labels.severity }}
+          Time: {{ .StartsAt }}
+          {{ end }}
+      slack_configs:
+      - channel: '#alerts-critical'
+        color: 'danger'
+        title: '🚨 CRITICAL Alert'
+        text: '{{ range .Alerts }}{{ .Annotations.summary }}{{ end }}'
+        send_resolved: true
+        
+    - name: 'warning-alerts'
+      email_configs:
+      - to: 'devops@yourdomain.com'
+        subject: '⚠️ WARNING: {{ .GroupLabels.alertname }} - {{ .GroupLabels.service }}'
+        body: |
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          Instance: {{ .Labels.instance }}
+          Severity: {{ .Labels.severity }}
+          Time: {{ .StartsAt }}
+          {{ end }}
+      slack_configs:
+      - channel: '#alerts-warning'
+        color: 'warning'
+        title: '⚠️ Warning Alert'
+        text: '{{ range .Alerts }}{{ .Annotations.summary }}{{ end }}'
+        send_resolved: true
+        
+    - name: 'null'
+      
+    inhibit_rules:
+    - source_match:
+        severity: 'critical'
+      target_match:
+        severity: 'warning'
+      equal: ['alertname', 'instance']
+      
+---
+# PrometheusRule for Marketing Automation Alerts
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: marketing-automation-rules
+  namespace: monitoring
+  labels:
+    app: marketing-automation-hub
+    role: alert-rules
+spec:
+  groups:
+  - name: marketing-automation.rules
+    interval: 30s
+    rules:
+    # Application Health
+    - alert: ApplicationDown
+      expr: up{job="marketing-automation-app"} == 0
+      for: 1m
+      labels:
+        severity: critical
+        service: marketing-automation-hub
+      annotations:
+        summary: "Marketing Automation Hub application is down"
+        description: "Instance {{ $labels.instance }} has been down for more than 1 minute"
+        
+    - alert: HighResponseTime
+      expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 0.1
+      for: 5m
+      labels:
+        severity: warning
+        service: marketing-automation-hub
+      annotations:
+        summary: "High response time detected"
+        description: "95th percentile response time is {{ $value }}s for instance {{ $labels.instance }}"
+        
+    - alert: HighErrorRate
+      expr: rate(http_requests_total{status=~"4..|5.."}[5m]) / rate(http_requests_total[5m]) > 0.05
+      for: 5m
+      labels:
+        severity: critical
+        service: marketing-automation-hub
+      annotations:
+        summary: "High error rate detected"
+        description: "Error rate is {{ $value | humanizePercentage }} for instance {{ $labels.instance }}"
+        
+    # Resource Utilization
+    - alert: HighMemoryUsage
+      expr: container_memory_usage_bytes{pod=~"marketing-automation-hub-.*"} / container_spec_memory_limit_bytes{pod=~"marketing-automation-hub-.*"} > 0.9
+      for: 10m
+      labels:
+        severity: warning
+        service: marketing-automation-hub
+      annotations:
+        summary: "High memory usage detected"
+        description: "Pod {{ $labels.pod }} memory usage is {{ $value | humanizePercentage }}"
+        
+    - alert: HighCPUUsage
+      expr: rate(container_cpu_usage_seconds_total{pod=~"marketing-automation-hub-.*"}[5m]) > 0.8
+      for: 10m
+      labels:
+        severity: warning
+        service: marketing-automation-hub
+      annotations:
+        summary: "High CPU usage detected"
+        description: "Pod {{ $labels.pod }} CPU usage is {{ $value | humanizePercentage }}"
+        
+    # Database Alerts
+    - alert: DatabaseConnectionsHigh
+      expr: pg_stat_activity_count{datname="marketing_automation_hub"} > 150
+      for: 5m
+      labels:
+        severity: warning
+        service: postgres
+      annotations:
+        summary: "High database connections"
+        description: "Database has {{ $value }} active connections"
+        
+    - alert: DatabaseDown
+      expr: pg_up == 0
+      for: 1m
+      labels:
+        severity: critical
+        service: postgres
+      annotations:
+        summary: "PostgreSQL database is down"
+        description: "PostgreSQL instance {{ $labels.instance }} is down"
+        
+    # Redis Alerts
+    - alert: RedisDown
+      expr: redis_up == 0
+      for: 1m
+      labels:
+        severity: critical
+        service: redis
+      annotations:
+        summary: "Redis is down"
+        description: "Redis instance {{ $labels.instance }} is down"
+        
+    - alert: RedisMemoryHigh
+      expr: redis_memory_used_bytes / redis_memory_max_bytes > 0.9
+      for: 5m
+      labels:
+        severity: warning
+        service: redis
+      annotations:
+        summary: "Redis memory usage high"
+        description: "Redis memory usage is {{ $value | humanizePercentage }}"
+        
+    # Kubernetes Alerts
+    - alert: PodCrashLooping
+      expr: rate(kube_pod_container_status_restarts_total[15m]) > 0
+      for: 5m
+      labels:
+        severity: warning
+        service: kubernetes
+      annotations:
+        summary: "Pod crash looping"
+        description: "Pod {{ $labels.pod }} in namespace {{ $labels.namespace }} is crash looping"
+        
+    - alert: PodNotReady
+      expr: kube_pod_status_ready{condition="false", pod=~"marketing-automation-hub-.*"} == 1
+      for: 10m
+      labels:
+        severity: warning
+        service: kubernetes
+      annotations:
+        summary: "Pod not ready"
+        description: "Pod {{ $labels.pod }} has been not ready for more than 10 minutes"
+        
+    # SSL Certificate Expiry
+    - alert: SSLCertificateExpiry
+      expr: probe_ssl_earliest_cert_expiry - time() < 86400 * 7
+      for: 1h
+      labels:
+        severity: warning
+        service: ssl
+      annotations:
+        summary: "SSL certificate expiring soon"
+        description: "SSL certificate for {{ $labels.instance }} expires in {{ $value | humanizeDuration }}"
+        
+    # Disk Space
+    - alert: DiskSpaceHigh
+      expr: (node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes > 0.85
+      for: 5m
+      labels:
+        severity: warning
+        service: system
+      annotations:
+        summary: "Disk space usage high"
+        description: "Disk usage is {{ $value | humanizePercentage }} on {{ $labels.instance }}"

@@ -1,0 +1,25 @@
+UNTRAPD ECOSYSTEM - PRODUCTION DEPLOYMENT PACKAGE
+==================================================
+
+Package: untrapd-ecosystem-production-1.0.0-production-ready-20250731_200721.tar.gz
+Version: 1.0.0-production-ready
+Created: jeu. 31 juil. 2025 20:07:21 CEST
+Size: 688K
+Checksum: 6b8fe3d571edcad2f22af9b06468ffb8e1b24fadec087d85fe67586f50a6e3f5
+
+Contents:
+- Optimized static website files
+- Production nginx configuration
+- SSL certificate setup tools
+- Automated deployment scripts
+- Health monitoring utilities
+- Backup and rollback tools
+- Comprehensive documentation
+
+Quick Deploy:
+1. Extract: tar -xzf untrapd-ecosystem-production-1.0.0-production-ready-20250731_200721.tar.gz
+2. Configure: Edit config/nginx.conf with your domain
+3. Deploy: sudo ./scripts/deploy.sh
+4. SSL: sudo ./deployment-tools/ssl/setup-ssl.sh letsencrypt
+
+For detailed instructions, see docs/DEPLOYMENT_GUIDE.md

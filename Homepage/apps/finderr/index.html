@@ -398,45 +398,58 @@
         // Beta form handler
         document.getElementById('finderrBetaForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             const form = this;
             const submitBtn = form.querySelector('.beta-submit-btn');
             const originalText = submitBtn.innerHTML;
-            
+
             // Show loading state
             submitBtn.innerHTML = 'Joining Beta...';
             submitBtn.disabled = true;
-            
+
             // Collect form data
-            const formData = {
-                email: form.querySelector('#email').value,
-                firstName: form.querySelector('#firstName').value,
-                deviceType: form.querySelector('#deviceType').value,
-                interest: form.querySelector('#interest').value,
-                source: 'finderr-page',
-                timestamp: new Date().toISOString()
-            };
-            
+            const email = form.querySelector('#email').value;
+            const firstName = form.querySelector('#firstName').value;
+            const deviceType = form.querySelector('#deviceType').value;
+            const interest = form.querySelector('#interest').value;
+
             try {
-                // Simulate API call - replace with real endpoint
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                
+                // Call Mailchimp webhook to collect email
+                const response = await fetch('/.netlify/functions/mailchimp-webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        name: firstName,
+                        source: 'finderr-beta-signup',
+                        tags: ['finderr-beta', 'android-tester', deviceType, interest]
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to subscribe');
+                }
+
                 // Success state
                 submitBtn.innerHTML = '🎉 Welcome to Beta!';
                 submitBtn.classList.add('success');
-                
+
                 // Update progress
                 const spotsTaken = document.querySelector('.spots-taken');
                 const newCount = parseInt(spotsTaken.textContent) + 1;
                 spotsTaken.textContent = newCount;
-                
+
                 const progressFill = document.querySelector('.progress-fill');
                 const newPercentage = (newCount / 10000) * 100;
                 progressFill.style.width = newPercentage + '%';
-                
+
                 // Reset form
                 form.reset();
-                
+
                 // Track conversion
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'finderr_beta_signup', {
@@ -445,22 +458,40 @@
                         value: 1
                     });
                 }
-                
-                // Show success message
+
+                // Show success message with Google Play beta link
                 setTimeout(() => {
-                    alert('🎉 Welcome to Finderr Beta! Check your email for access details.');
+                    const betaUrl = 'https://play.google.com/apps/testing/com.finderr.app';
+                    const message = `🎉 Welcome to FINDERR Beta Testing!\n\n` +
+                                  `✅ You've been added to our beta tester list\n\n` +
+                                  `📱 NEXT STEPS:\n` +
+                                  `1. Open this link on your Android device:\n${betaUrl}\n\n` +
+                                  `2. Click "Become a Tester"\n` +
+                                  `3. Download FINDERR from Google Play\n\n` +
+                                  `📧 Check your email (${email}) for detailed instructions and support.\n\n` +
+                                  `Thank you for helping us launch FINDERR v4.1! 🚀`;
+
+                    if (confirm(message + '\n\nClick OK to open the Google Play beta page now')) {
+                        window.open(betaUrl, '_blank');
+                    }
                 }, 500);
-                
+
             } catch (error) {
                 console.error('Beta signup error:', error);
-                alert('There was an error signing up. Please try again or contact support.');
+                alert('There was an error signing up. Please try again or contact support@untrapd.com');
+
+                // Reset button on error
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
             } finally {
-                // Reset button after delay
+                // Reset button after delay (only if no error)
                 setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('success');
-                }, 3000);
+                    if (submitBtn.classList.contains('success')) {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('success');
+                    }
+                }, 5000);
             }
         });
         

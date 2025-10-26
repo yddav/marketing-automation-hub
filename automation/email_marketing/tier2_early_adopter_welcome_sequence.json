@@ -1,0 +1,167 @@
+{
+  "id": "tier2-early-adopter-welcome-sequence",
+  "type": "email_template",
+  "platform": ["email"],
+  "tier": "tier_2_early_adopter",
+  "tier_details": {
+    "name": "Early Adopter",
+    "subscriber_range": "1,001-3,000",
+    "status": "early_adopter_member"
+  },
+  "audience": {
+    "primary": "tier_2_early_adopters",
+    "secondary": ["android_users", "security_conscious"],
+    "demographics": {
+      "age_range": "25-44",
+      "interests": ["phone_security", "android_apps", "early_adoption", "technology"],
+      "tech_savviness": "intermediate_to_advanced"
+    }
+  },
+  "content": {
+    "template": "Tier 2 Early Adopter Welcome Sequence - 3 emails",
+    "variations": [
+      {
+        "id": "tier2_email_1_welcome",
+        "trigger_day": 0,
+        "template": "Subject: ⭐ Welcome to FINDERR Early Adopter Program - You Made It!\n\nHi {{first_name}},\n\nWelcome to the **FINDERR Early Adopter Program**! 🎉\n\nYou secured your spot as Early Adopter #{{subscriber_number}} out of 3,000 - congratulations!\n\n⭐ **YOUR EARLY ADOPTER STATUS:**\n\nThe first 1,000 Founder spots sold out, but you're in the next exclusive tier with incredible benefits:\n\n✅ **What You Get:**\n• v5.0 GPS Tracking (Q1 2026) - **FREE FOREVER**\n• v6.0 Mesh Network (Q2 2026) - **FREE FOREVER**\n• v7.0 Premium Features - **50% OFF** when released\n• \"Early Adopter\" badge displayed in-app\n• Feature voting rights on v7.0+ development\n• Priority feature access and early documentation\n\n💰 **YOUR LIFETIME SAVINGS:**\n\nAfter 5,000 subscribers:\n• v5.0 GPS: +$3/month\n• v6.0 Mesh: +$4/month\n• Full suite: $12.97/month\n\nYour Early Adopter status saves you **$84/year** starting Q1 2026.\n\n**10-Year Savings: $840**\n**20-Year Savings: $1,680**\n\nPlus 50% off v7.0 premium features (value TBD, estimated $200+ savings).\n\n📱 **WHAT'S AVAILABLE NOW (v4.1):**\n\nFINDERR's emergency wallpaper system is ready to protect your Android device:\n\n✅ **Emergency Contact Display:**\n• Display your contact info on lost phone's lockscreen\n• Anyone who finds your phone sees how to reach you\n• No unlocking required - contact info visible immediately\n\n✅ **Dual Activation Methods:**\n• **SMS Activation:** Text \"EMERGENCY_ON\" from any phone\n• **Web Dashboard:** One-click activation at finderr.app\n\n✅ **7 SMS Commands:**\n• Activation: EMERGENCY_ON, FINDERR_ON, EMERGENCY_ACTIVATE, etc.\n• Restoration: EMERGENCY_OFF, FINDERR_OFF, RESTORE_PHONE, etc.\n\n✅ **Professional Features:**\n• Real-time sync via Supabase\n• Automatic wallpaper backup & restore\n• Material Design 3 Android UI\n• Enterprise-grade RLS security\n• 99.9% emergency system uptime\n• Battery efficient operation\n\n🚀 **GET STARTED IN 3 STEPS:**\n\n1. **Download FINDERR** from Google Play Store\n2. **Sign In** with your Google Account\n3. **Configure Emergency Info** (email + phone number)\n\n[Download FINDERR Now]\n\n🔮 **COMING SOON (FREE FOR YOU):**\n\n**v5.0 GPS Tracking (Q1 2026):**\n• Real-time location tracking on map\n• 7-30 day location history\n• Geofencing alerts (home, work, school)\n• Emergency location sharing\n• Lost Mode with remote lock\n\n**v6.0 Mesh Network (Q2 2026):**\n• Bluetooth mesh network tracking\n• Offline phone recovery\n• Community detection system\n• Private family mesh networks\n\nBoth upgrades will be **100% FREE** for Early Adopters like you.\n\n⏰ **WHY YOU SHOULD ACT NOW:**\n\nOnly {{remaining_spots}} Early Adopter spots remain!\n\nOnce we hit 3,000 total subscribers:\n• Tier 3 (Launch Supporter) opens with fewer benefits\n• After 5,000 subscribers, GPS and mesh become paid add-ons\n• Your Early Adopter status = locked in for life\n\n💬 **QUESTIONS?**\n\nReply to this email anytime - we're here to help you get started.\n\nThank you for joining FINDERR early. You're helping us build the future of Android phone security.\n\nWelcome to the Early Adopter family,\n\n{{sender_name}}\nFounder, FINDERR\nUNTRAPD.COM Ecosystem\n\nP.S. Check your email in 3 days to learn how to activate your Early Adopter badge and start using FINDERR's emergency wallpaper system.\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Early adopter benefits with urgency messaging"
+      },
+      {
+        "id": "tier2_email_2_getting_started",
+        "trigger_day": 3,
+        "template": "Subject: 🚀 Get Started with FINDERR - Emergency Wallpaper Setup Guide\n\nHi {{first_name}},\n\nReady to activate your **Early Adopter** benefits? Let's get your FINDERR emergency wallpaper system set up! 🚀\n\n🏅 **FIRST: ACTIVATE YOUR EARLY ADOPTER BADGE**\n\n1. Open FINDERR app on your Android device\n2. Go to Settings → Profile → Badges\n3. Your \"Early Adopter #{{subscriber_number}}\" badge is ready\n4. Toggle \"Display Badge\" to show your status\n5. Share on social media to help others discover FINDERR\n\n⭐ **Your badge unlocks:**\n• Feature voting portal access (launching Month 3)\n• Priority documentation and tutorial access\n• Beta testing invitations for v5.0 and v6.0\n• Early Adopter community channels\n\n📱 **EMERGENCY WALLPAPER SETUP (5 MINUTES):**\n\n**Step 1: Configure Emergency Contact Info**\n1. Open FINDERR app\n2. Tap \"Emergency Contact Setup\"\n3. Enter your emergency email (where people can reach you)\n4. Enter your emergency phone number (alternative contact)\n5. Preview how it looks on lockscreen\n6. Save configuration\n\n**Step 2: Test SMS Activation**\n1. From another phone (or friend's phone), text your FINDERR number\n2. Send message: \"EMERGENCY_ON\"\n3. Wait 3 seconds - your wallpaper changes to emergency contact display\n4. Confirm contact info is visible on lockscreen\n5. Restore: Send \"EMERGENCY_OFF\" to restore original wallpaper\n\n**Step 3: Test Web Dashboard Activation**\n1. Visit https://finderr.app/dashboard on any browser\n2. Sign in with your Google Account\n3. Click \"Activate Emergency Mode\" button\n4. Check your phone - wallpaper changes instantly\n5. Click \"Restore Wallpaper\" when ready to restore\n\n[Access FINDERR Dashboard]\n\n💡 **PRO TIPS FROM EARLY ADOPTERS:**\n\n✅ **Tip 1: Test It Now**\n\"I tested emergency mode right after setup. When I actually lost my phone at a coffee shop, I knew exactly how it worked and activated it immediately. Got my phone back in 2 hours!\" - Sarah M., Early Adopter #1,234\n\n✅ **Tip 2: Save SMS Commands**\n\"I saved 'EMERGENCY_ON' and 'EMERGENCY_OFF' as contact shortcuts on my backup phone. One tap activation if needed.\" - Jason K., Early Adopter #1,567\n\n✅ **Tip 3: Bookmark Dashboard**\n\"I bookmarked finderr.app/dashboard on my laptop and tablet. Instant access from anywhere.\" - Maria R., Early Adopter #1,892\n\n🎯 **YOUR SETUP CHECKLIST:**\n\n- [ ] Early Adopter badge activated and displayed\n- [ ] Emergency email configured\n- [ ] Emergency phone number configured\n- [ ] SMS activation tested successfully\n- [ ] SMS restoration tested successfully\n- [ ] Web dashboard activation tested\n- [ ] Web dashboard restoration tested\n- [ ] Dashboard bookmarked for quick access\n- [ ] SMS commands saved on backup device\n\n[Complete Setup Now]\n\n🔮 **FEATURE VOTING PORTAL (COMING MONTH 3):**\n\nAs an Early Adopter, you'll have voting rights on v7.0+ features:\n\n• Vote on feature priorities (what we build first)\n• Suggest new features and improvements\n• Access quarterly product roadmap previews\n• Participate in feature feedback sessions\n\nYou'll receive an invitation email when the portal launches.\n\n📊 **v5.0 & v6.0 DEVELOPMENT UPDATE:**\n\n**v5.0 GPS Tracking (Q1 2026):**\n• Development: 67% complete\n• Beta testing: February 2026\n• Public release: April 2026\n• Your access: FREE (beta invitation coming)\n\n**v6.0 Mesh Network (Q2 2026):**\n• Development: 42% complete\n• Beta testing: May 2026\n• Public release: July 2026\n• Your access: FREE (beta invitation coming)\n\n💬 **NEED HELP?**\n\nCommon questions:\n\n**Q: How do I change emergency contact info?**\nA: Settings → Emergency Contact → Edit Info → Save\n\n**Q: Can I have multiple emergency contacts?**\nA: v4.1 supports one email + one phone. v5.0 will support multiple contacts.\n\n**Q: What happens to my original wallpaper?**\nA: It's automatically backed up and can be restored anytime via SMS or dashboard.\n\n**Q: Does emergency mode drain battery?**\nA: No - the wallpaper change uses minimal resources. Battery life is unaffected.\n\nStill have questions? Reply to this email!\n\n🎉 **NEXT STEPS:**\n\nIn 4 days, I'll send you a complete overview of what's coming in v5.0 and v6.0, including exclusive Early Adopter beta testing details.\n\nGet your emergency wallpaper system set up today!\n\n{{sender_name}}\nFounder, FINDERR\nUNTRAPD.COM Ecosystem\n\nP.S. Only {{remaining_spots}} Early Adopter spots remain. Know someone who needs FINDERR? Share your referral link: {{referral_link}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Detailed setup guide with pro tips and checklist"
+      },
+      {
+        "id": "tier2_email_3_whats_coming",
+        "trigger_day": 7,
+        "template": "Subject: 🔮 What's Coming to FINDERR - Your v5.0 & v6.0 Preview\n\nHi {{first_name}},\n\nYou've been an **Early Adopter** for a week now - welcome to the FINDERR family! 🎉\n\nLet me give you an exclusive preview of what's coming in v5.0 and v6.0 (both **FREE** for you).\n\n📈 **YOUR FINDERR JOURNEY:**\n\n✅ **Today (v4.1):** Emergency Wallpaper System\n🔮 **Q1 2026 (v5.0):** GPS Tracking (FREE for you)\n🔮 **Q2 2026 (v6.0):** Mesh Network (FREE for you)\n🔮 **Q3 2026 (v7.0):** Premium Features (50% off for you)\n\n🚀 **v5.0 GPS TRACKING - COMPLETE FEATURE BREAKDOWN:**\n\n**Real-Time Location Tracking:**\n• See your phone's location on interactive map\n• Updates every 30 seconds when active\n• Works indoors and outdoors (GPS + WiFi + cell tower)\n• Battery-optimized tracking (10-hour battery life when lost)\n\n**Location History:**\n• 7-day history: FREE tier\n• 30-day history: Early Adopter bonus\n• View complete movement timeline\n• Playback mode shows route on map\n• Export data (KML, GPX, CSV formats)\n\n**Geofencing Alerts:**\n• Create custom zones (home, work, school, etc.)\n• Get notifications when phone enters/exits zones\n• Unlimited geofences for Early Adopters\n• 500-meter to 5-kilometer radius options\n• Smart alerts (only notify during specific times)\n\n**Emergency Location Sharing:**\n• One-tap share location with emergency contacts\n• Auto-share when emergency mode activates\n• Real-time tracking link (share via SMS/email)\n• Location sharing expires after 24 hours (privacy)\n\n**Lost Mode:**\n• Remote device lock with custom message\n• Display \"Phone Lost - Contact [your info]\"\n• Disable device access while displaying contact info\n• Unlock remotely when phone is recovered\n• Works even if SIM card is removed\n\n💰 **v5.0 Value for Early Adopters:**\n• Normal price: +$3/month ($36/year)\n• Your price: **FREE** (Early Adopter benefit)\n• 10-year savings: **$360**\n\n🌐 **v6.0 MESH NETWORK - REVOLUTIONARY TECHNOLOGY:**\n\n**How Mesh Network Works:**\n1. Your phone is lost (no WiFi, no cell signal)\n2. FINDERR broadcasts Bluetooth beacon\n3. Nearby Android devices with FINDERR detect beacon\n4. Location is reported anonymously to you\n5. You see phone's last known location on map\n\n**Crowdsourced Detection:**\n• Leverage 1+ billion Android devices worldwide\n• Anonymous detection (privacy-focused)\n• Works completely offline\n• Detection range: 30-100 meters per device\n• Urban areas: high detection probability\n• Rural areas: detection when any FINDERR user passes by\n\n**Emergency Super-Beacon:**\n• Enhanced Bluetooth broadcast when emergency mode active\n• 3x detection range (90-300 meters)\n• Priority reporting to your account\n• Notification when phone is detected\n\n**Community Karma System:**\n• Earn points for helping others find phones\n• Leaderboards and badges\n• Karma rewards: Extended features, special badges\n• Privacy: All detection is anonymous\n\n**Private Mesh Networks:**\n• Create family mesh (5-10 devices)\n• Create company mesh (unlimited devices)\n• Private detection (only your network)\n• Shared location access for family\n\n💰 **v6.0 Value for Early Adopters:**\n• Normal price: +$4/month ($48/year)\n• Your price: **FREE** (Early Adopter benefit)\n• 10-year savings: **$480**\n\n🎁 **v7.0 PREMIUM FEATURES - 50% OFF FOR YOU:**\n\n**Planned Features (Q3 2026):**\n• **FINDERR Pro Analytics:** Advanced device analytics dashboard\n• **Enterprise Management:** Multi-device management for businesses\n• **Family Plans:** Shared security for 5-10 devices\n• **Smart Custom Messages:** QR codes, crypto wallet addresses, network configs\n• **Advanced Automation:** Custom triggers and actions\n• **Priority Support:** 24-hour response guarantee\n\n**Pricing:**\n• Normal price: TBD (estimated $5-7/month)\n• Your price: **50% OFF** (Early Adopter benefit)\n• Estimated savings: $30-42/year\n\n💵 **COMPLETE EARLY ADOPTER SAVINGS:**\n\n```\nYear 1 (2025):\nEarly Adopter: $6.99/mo × 12 = $83.88\nPost-5K Standard: $6.99/mo × 12 = $83.88\nSavings: $0 (setup phase)\n\nYear 2 (2026) - v5.0 & v6.0 launch:\nEarly Adopter: $6.99/mo × 12 = $83.88\nPost-5K Standard: $12.97/mo × 12 = $155.64\nSavings: $71.76\n\nYear 3 (2027) - v7.0 launch:\nEarly Adopter: $6.99/mo + $3/mo (50% off v7.0) = $119.88/year\nPost-5K Standard: $12.97/mo + $6/mo (v7.0) = $227.64/year\nSavings: $107.76\n\nYears 4-10 (2028-2034):\nEarly Adopter: $9.99/mo × 84 = $839.16\nPost-5K Standard: $18.97/mo × 84 = $1,593.48\nSavings: $754.32\n\n10-YEAR TOTAL SAVINGS: $933.84\n20-YEAR TOTAL SAVINGS: $2,401.48\n```\n\n📅 **YOUR EXCLUSIVE TIMELINE:**\n\n**February 2026:**\n• v5.0 beta testing invitation (Early Adopter priority)\n• GPS tracking early access (4-6 weeks before public)\n\n**April 2026:**\n• v5.0 public release\n• Location history upgrade: 30 days (FREE for you)\n\n**May 2026:**\n• v6.0 beta testing invitation\n• Mesh network early access\n\n**July 2026:**\n• v6.0 public release\n• Private mesh network creation (FREE for you)\n\n**September 2026:**\n• v7.0 feature voting begins\n• Early Adopter input on premium features\n\n**Q3 2026:**\n• v7.0 beta testing invitation\n• 50% discount activated for Early Adopters\n\n🎯 **HOW TO MAXIMIZE YOUR BENEFITS:**\n\n1. **Use v4.1 Today:**\n   - Test emergency wallpaper system monthly\n   - Keep emergency contact info updated\n   - Display Early Adopter badge\n\n2. **Prepare for v5.0 (February 2026):**\n   - Accept beta testing invitation\n   - Test GPS tracking features\n   - Provide feedback to development team\n\n3. **Prepare for v6.0 (May 2026):**\n   - Accept beta testing invitation\n   - Join mesh network community\n   - Invite family to create private mesh\n\n4. **Prepare for v7.0 (September 2026):**\n   - Vote on feature priorities\n   - Claim 50% discount when released\n   - Upgrade to premium features\n\n💬 **COMMUNITY UPDATES:**\n\nAs an Early Adopter, you'll receive:\n• Monthly development progress emails\n• Beta testing invitations (v5.0, v6.0, v7.0)\n• Feature voting portal access (Month 3)\n• Quarterly product roadmap webinars\n• Exclusive Early Adopter Discord channel (launching Month 2)\n\n🚀 **THANK YOU:**\n\nYou joined FINDERR when we only had emergency wallpaper. You believed in our vision for comprehensive phone security.\n\nThat's why you're an **Early Adopter** - you saw the potential before the features existed.\n\nYour lifetime benefits reflect our commitment to rewarding your early support.\n\nProud to have you in the FINDERR family,\n\n{{sender_name}}\nFounder, FINDERR\nUNTRAPD.COM Ecosystem\n\nP.S. Questions about the roadmap? Reply to this email - we're here to help.\n\nP.P.S. Only {{remaining_spots}} Early Adopter spots remain! Share FINDERR with friends: {{referral_link}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Complete roadmap preview with exclusive timeline and savings calculator"
+      }
+    ],
+    "placeholders": {
+      "first_name": {
+        "type": "string",
+        "description": "User's first name",
+        "required": true
+      },
+      "subscriber_number": {
+        "type": "integer",
+        "description": "Subscriber number within 1,001-3,000 range",
+        "required": true,
+        "validation": "1001-3000"
+      },
+      "remaining_spots": {
+        "type": "integer",
+        "description": "Remaining Early Adopter spots (3,000 - current subscribers)",
+        "required": true
+      },
+      "sender_name": {
+        "type": "string",
+        "description": "Name of email sender",
+        "required": true,
+        "default": "Michael Chen"
+      },
+      "referral_link": {
+        "type": "string",
+        "description": "Personalized referral link",
+        "required": false
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-10-15T18:45:00Z",
+    "updated_at": "2025-10-15T18:45:00Z",
+    "version": "1.0.0",
+    "author": "Agent C - Email & Asset Creation Specialist",
+    "tags": ["email", "tier_2", "early_adopter", "onboarding", "roadmap"],
+    "brand_voice": "supportive",
+    "tone": "excited",
+    "character_limits": {
+      "min": 500,
+      "max": 3000,
+      "optimal": 1500
+    },
+    "call_to_action": {
+      "primary": "Download FINDERR Now",
+      "secondary": "Access FINDERR Dashboard",
+      "tertiary": "Complete Setup Now",
+      "url": "https://play.google.com/store/apps/details?id=com.untrapd.finderr"
+    },
+    "performance_tracking": {
+      "metrics": ["open_rate", "click_through_rate", "feature_activation_rate", "setup_completion_rate"],
+      "goals": {
+        "open_rate": 0.55,
+        "click_through_rate": 0.14,
+        "feature_activation_rate": 0.75,
+        "sequence_completion": 0.65
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "frequency": "campaign",
+      "campaign_duration": 7,
+      "email_sequence": [
+        {"day": 0, "email_id": "tier2_email_1_welcome"},
+        {"day": 3, "email_id": "tier2_email_2_getting_started"},
+        {"day": 7, "email_id": "tier2_email_3_whats_coming"}
+      ]
+    },
+    "triggers": [
+      {
+        "event": "subscription_created",
+        "action": "send_email",
+        "delay": 0,
+        "conditions": {
+          "tier": "tier_2",
+          "subscriber_number": "1001-3000",
+          "email_verified": true
+        }
+      },
+      {
+        "event": "email_1_sent",
+        "action": "schedule_email_2",
+        "delay": 4320,
+        "conditions": {"sequence_step": 2}
+      },
+      {
+        "event": "email_2_sent",
+        "action": "schedule_email_3",
+        "delay": 5760,
+        "conditions": {"sequence_step": 3}
+      }
+    ],
+    "personalization": {
+      "dynamic_fields": [
+        "subscriber_number",
+        "remaining_spots",
+        "referral_link",
+        "setup_progress"
+      ],
+      "segmentation_rules": [
+        {
+          "condition": "remaining_spots < 200",
+          "variation": "high_urgency_messaging"
+        },
+        {
+          "condition": "remaining_spots < 500",
+          "variation": "moderate_urgency_messaging"
+        },
+        {
+          "condition": "remaining_spots >= 500",
+          "variation": "standard_messaging"
+        }
+      ]
+    }
+  },
+  "feature_accuracy": {
+    "v4_1_features_only": true,
+    "gps_tracking_status": "coming_q1_2026_free_for_tier2",
+    "mesh_network_status": "coming_q2_2026_free_for_tier2",
+    "v7_discount_status": "50_percent_off",
+    "verified_against": "FINDERR_V4.1_FEATURE_ACCURACY.md",
+    "accuracy_check_date": "2025-10-15"
+  }
+}

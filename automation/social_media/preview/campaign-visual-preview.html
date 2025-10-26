@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINDERR Beta Campaign - Visual Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Header Controls */
+        .header {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .day-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .day-selector button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .day-selector button:hover {
+            background: #5568d3;
+        }
+
+        .day-selector span {
+            font-weight: 600;
+            color: #1a1a1a;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .platform-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .platform-filter {
+            padding: 8px 16px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .platform-filter.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .content-type-selector {
+            display: flex;
+            gap: 10px;
+        }
+
+        .content-type-btn {
+            padding: 8px 16px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .content-type-btn.active {
+            background: #764ba2;
+            color: white;
+            border-color: #764ba2;
+        }
+
+        /* Preview Grid */
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Instagram Preview */
+        .instagram-preview {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .instagram-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .instagram-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .instagram-username {
+            font-weight: 600;
+            font-size: 14px;
+            color: #262626;
+        }
+
+        .instagram-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .instagram-actions {
+            display: flex;
+            padding: 12px 16px;
+            gap: 16px;
+        }
+
+        .instagram-action-btn {
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .instagram-caption {
+            padding: 0 16px 16px;
+            font-size: 14px;
+            line-height: 18px;
+            color: #262626;
+        }
+
+        .instagram-username-caption {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .instagram-hashtags {
+            color: #0095f6;
+            margin-top: 8px;
+            display: block;
+        }
+
+        /* Facebook Preview */
+        .facebook-preview {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .facebook-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+        }
+
+        .facebook-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1877f2;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .facebook-name {
+            font-weight: 600;
+            font-size: 15px;
+            color: #050505;
+        }
+
+        .facebook-time {
+            font-size: 13px;
+            color: #65676b;
+        }
+
+        .facebook-content {
+            padding: 4px 16px 16px;
+            font-size: 15px;
+            line-height: 20px;
+            color: #050505;
+            white-space: pre-wrap;
+        }
+
+        .facebook-hashtags {
+            color: #385898;
+            margin-top: 8px;
+            display: block;
+        }
+
+        .facebook-actions {
+            border-top: 1px solid #e4e6eb;
+            display: flex;
+            padding: 4px 16px;
+            justify-content: space-around;
+        }
+
+        .facebook-action-btn {
+            padding: 8px;
+            color: #65676b;
+            font-size: 15px;
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+            border: none;
+            background: none;
+            font-weight: 600;
+        }
+
+        .facebook-action-btn:hover {
+            background: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        /* Twitter Preview */
+        .twitter-preview {
+            background: white;
+            border: 1px solid #eff3f4;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .twitter-header {
+            display: flex;
+            padding: 12px 16px;
+        }
+
+        .twitter-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #1d9bf0;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .twitter-user-info {
+            flex: 1;
+        }
+
+        .twitter-name {
+            font-weight: 700;
+            font-size: 15px;
+            color: #0f1419;
+        }
+
+        .twitter-handle {
+            font-size: 15px;
+            color: #536471;
+        }
+
+        .twitter-content {
+            padding: 0 16px 12px;
+            font-size: 15px;
+            line-height: 20px;
+            color: #0f1419;
+            white-space: pre-wrap;
+        }
+
+        .twitter-hashtag {
+            color: #1d9bf0;
+        }
+
+        .twitter-actions {
+            display: flex;
+            padding: 12px 16px;
+            border-top: 1px solid #eff3f4;
+            justify-content: space-around;
+        }
+
+        .twitter-action-btn {
+            color: #536471;
+            font-size: 18px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .twitter-char-count {
+            padding: 0 16px 8px;
+            font-size: 13px;
+            color: #536471;
+            text-align: right;
+        }
+
+        /* TikTok Preview */
+        .tiktok-preview {
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-width: 350px;
+            margin: 0 auto;
+            aspect-ratio: 9 / 16;
+            position: relative;
+        }
+
+        .tiktok-video {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .tiktok-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+        }
+
+        .tiktok-user {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .tiktok-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fe2c55;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tiktok-username {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .tiktok-caption {
+            color: white;
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 8px;
+        }
+
+        .tiktok-hashtags {
+            color: white;
+            font-size: 14px;
+        }
+
+        .tiktok-hashtags span {
+            opacity: 0.9;
+        }
+
+        /* Pinterest Preview */
+        .pinterest-preview {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            max-width: 280px;
+            margin: 0 auto;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pinterest-preview:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+        }
+
+        .pinterest-image {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            background: linear-gradient(135deg, #e60023 0%, #c92228 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .pinterest-save-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #e60023;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 24px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .pinterest-content {
+            padding: 12px;
+        }
+
+        .pinterest-title {
+            font-weight: 700;
+            font-size: 16px;
+            color: #111;
+            margin-bottom: 8px;
+            line-height: 20px;
+        }
+
+        .pinterest-description {
+            font-size: 14px;
+            color: #5f5f5f;
+            line-height: 18px;
+            margin-bottom: 8px;
+        }
+
+        .pinterest-hashtags {
+            font-size: 14px;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        .pinterest-user {
+            display: flex;
+            align-items: center;
+            padding-top: 8px;
+            border-top: 1px solid #e9e9e9;
+        }
+
+        .pinterest-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #e60023;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .pinterest-username {
+            font-weight: 600;
+            font-size: 14px;
+            color: #111;
+        }
+
+        /* Platform Labels */
+        .platform-label {
+            text-align: center;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            background: white;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: -12px;
+        }
+
+        .instagram-label {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .facebook-label {
+            background: #1877f2;
+            color: white;
+        }
+
+        .twitter-label {
+            background: #1d9bf0;
+            color: white;
+        }
+
+        .tiktok-label {
+            background: #000;
+            color: white;
+        }
+
+        .pinterest-label {
+            background: #e60023;
+            color: white;
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-banner h2 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .campaign-stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .day-selector {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Controls -->
+        <div class="header">
+            <h1>🎯 FINDERR Beta Campaign - Visual Preview</h1>
+            <div class="controls">
+                <div class="day-selector">
+                    <button id="prevDay">← Prev</button>
+                    <span id="currentDay">Day 1</span>
+                    <button id="nextDay">Next →</button>
+                </div>
+
+                <div class="platform-filters">
+                    <button class="platform-filter active" data-platform="instagram">📸 Instagram</button>
+                    <button class="platform-filter active" data-platform="facebook">👥 Facebook</button>
+                    <button class="platform-filter active" data-platform="twitter">🐦 Twitter</button>
+                    <button class="platform-filter active" data-platform="tiktok">🎵 TikTok</button>
+                    <button class="platform-filter active" data-platform="pinterest">📌 Pinterest</button>
+                </div>
+
+                <div class="content-type-selector">
+                    <button class="content-type-btn active" data-type="awareness">Awareness</button>
+                    <button class="content-type-btn" data-type="consideration">Consideration</button>
+                    <button class="content-type-btn" data-type="conversion">Conversion</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Grid -->
+        <div class="preview-grid" id="previewGrid">
+            <!-- Previews will be inserted here dynamically -->
+        </div>
+
+        <!-- Campaign Info -->
+        <div class="info-banner">
+            <h2>Campaign Information</h2>
+            <div class="campaign-stats">
+                <div class="stat-item">
+                    <div class="stat-label">Campaign Duration</div>
+                    <div class="stat-value">30 Days</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Target Beta Testers</div>
+                    <div class="stat-value">100</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Total Posts</div>
+                    <div class="stat-value" id="totalPosts">210+</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Platforms</div>
+                    <div class="stat-value">5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample content data - in production, this would be loaded from finderr-prelaunch-templates.js
+        const sampleContent = {
+            awareness: {
+                problem: {
+                    instagram: {
+                        content: "📱 Lost your Android phone? Scared it's gone forever?\n\nEvery 2 minutes, someone loses their phone. Traditional 'Find My Device' apps have limitations.\n\nFINDERR v4.1 changes everything with emergency wallpaper display system.\n\n🔮 GPS tracking coming Q1 2026 (v5.0)\n\n🧠 From UNTRAPD.COM - Building the future of Android security.",
+                        hashtags: ["#FINDERR", "#AndroidSecurity", "#PhoneLost", "#UNTRAPD", "#SecurityApp"]
+                    },
+                    facebook: {
+                        content: "🔍 THE PHONE SECURITY PROBLEM:\n\n❌ Traditional 'Find My Device' has blind spots\n❌ Competitors charge $10-12/month for basic features\n❌ iOS-focused apps compromise Android optimization\n\n✅ FINDERR v4.1 solves this:\n• Emergency wallpaper display system\n• $6.99/month (save 40%)\n• 100% Android optimized\n• 14-day free trial\n\n🔮 COMING SOON (FREE FOR FIRST 5,000 SUBSCRIBERS):\n• GPS tracking & remote lock (v5.0 - Q1 2026)\n• Bluetooth mesh network (v6.0 - Q2 2026)\n\n🧠 UNTRAPD.COM is building premium Android solutions. FINDERR is our first flagship.\n\nJoin 100 beta testers to help validate security before full launch.",
+                        hashtags: ["#FINDERR", "#AndroidSecurity", "#UNTRAPD"]
+                    },
+                    twitter: {
+                        content: "Every 2 minutes, someone loses their phone.\n\nFINDERR v4.1: Emergency wallpaper display at $6.99/month.\n\nShow your contact info on lost phone's lockscreen.\n100% Android optimized. 14-day free trial.\n\n🔮 GPS tracking coming Q1 2026\n\n🧠 From @untrapd.com - First of many premium Android apps.\n\nJoin 100 beta testers: hub.untrapd.com\n\n#FINDERR #AndroidSecurity"
+                    },
+                    tiktok: {
+                        content: "POV: You just realized your Android phone is missing 😱\n\nBut wait... you have FINDERR v4.1 📱✨\n\nEmergency wallpaper display\n$6.99/month Android security\nSMS activation + Web dashboard control\n\n🔮 GPS tracking coming Q1 2026!\n\n🧠 UNTRAPD.COM - Your intelligence hub unleashed",
+                        hashtags: ["#FINDERR", "#AndroidSecurity", "#PhoneSecurity", "#UNTRAPD", "#TechTok"]
+                    },
+                    pinterest: {
+                        title: "Lost Your Android Phone? FINDERR v4.1 Can Help",
+                        content: "Emergency wallpaper display system shows your contact info on lost phone's lockscreen. $6.99/month Android security with SMS activation and web dashboard. GPS tracking coming Q1 2026. From UNTRAPD.COM - Building the future of Android security.",
+                        hashtags: ["#FINDERR", "#AndroidSecurity", "#PhoneSecurity", "#UNTRAPD", "#TechSolutions"]
+                    }
+                }
+            }
+        };
+
+        let currentDay = 1;
+        let activeContentType = 'awareness';
+        let activePlatforms = new Set(['instagram', 'facebook', 'twitter', 'tiktok', 'pinterest']);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPreviews();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Day navigation
+            document.getElementById('prevDay').addEventListener('click', () => {
+                if (currentDay > 1) {
+                    currentDay--;
+                    updateDayDisplay();
+                    renderPreviews();
+                }
+            });
+
+            document.getElementById('nextDay').addEventListener('click', () => {
+                if (currentDay < 30) {
+                    currentDay++;
+                    updateDayDisplay();
+                    renderPreviews();
+                }
+            });
+
+            // Platform filters
+            document.querySelectorAll('.platform-filter').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const platform = btn.dataset.platform;
+                    if (activePlatforms.has(platform)) {
+                        activePlatforms.delete(platform);
+                        btn.classList.remove('active');
+                    } else {
+                        activePlatforms.add(platform);
+                        btn.classList.add('active');
+                    }
+                    renderPreviews();
+                });
+            });
+
+            // Content type selector
+            document.querySelectorAll('.content-type-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.content-type-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    activeContentType = btn.dataset.type;
+                    renderPreviews();
+                });
+            });
+        }
+
+        function updateDayDisplay() {
+            document.getElementById('currentDay').textContent = `Day ${currentDay}`;
+        }
+
+        function renderPreviews() {
+            const grid = document.getElementById('previewGrid');
+            grid.innerHTML = '';
+
+            // Get content for current day and type
+            const content = sampleContent[activeContentType]?.problem || {};
+
+            if (activePlatforms.has('instagram') && content.instagram) {
+                grid.appendChild(createInstagramPreview(content.instagram));
+            }
+
+            if (activePlatforms.has('facebook') && content.facebook) {
+                grid.appendChild(createFacebookPreview(content.facebook));
+            }
+
+            if (activePlatforms.has('twitter') && content.twitter) {
+                grid.appendChild(createTwitterPreview(content.twitter));
+            }
+
+            if (activePlatforms.has('tiktok') && content.tiktok) {
+                grid.appendChild(createTikTokPreview(content.tiktok));
+            }
+
+            if (activePlatforms.has('pinterest') && content.pinterest) {
+                grid.appendChild(createPinterestPreview(content.pinterest));
+            }
+        }
+
+        function createInstagramPreview(data) {
+            const container = document.createElement('div');
+            container.innerHTML = `
+                <div class="platform-label instagram-label">📸 Instagram</div>
+                <div class="instagram-preview">
+                    <div class="instagram-header">
+                        <div class="instagram-avatar">U</div>
+                        <div class="instagram-username">untrapd.hub</div>
+                    </div>
+                    <div class="instagram-image">
+                        📱 FINDERR App Screenshot
+                    </div>
+                    <div class="instagram-actions">
+                        <button class="instagram-action-btn">♡</button>
+                        <button class="instagram-action-btn">💬</button>
+                        <button class="instagram-action-btn">✈</button>
+                    </div>
+                    <div class="instagram-caption">
+                        <span class="instagram-username-caption">untrapd.hub</span>
+                        ${data.content}
+                        <span class="instagram-hashtags">${data.hashtags.join(' ')}</span>
+                    </div>
+                </div>
+            `;
+            return container;
+        }
+
+        function createFacebookPreview(data) {
+            const container = document.createElement('div');
+            container.innerHTML = `
+                <div class="platform-label facebook-label">👥 Facebook</div>
+                <div class="facebook-preview">
+                    <div class="facebook-header">
+                        <div class="facebook-avatar">U</div>
+                        <div>
+                            <div class="facebook-name">UNTRAPD Hub</div>
+                            <div class="facebook-time">Just now · 🌎</div>
+                        </div>
+                    </div>
+                    <div class="facebook-content">
+                        ${data.content}
+                        <span class="facebook-hashtags">${data.hashtags.join(' ')}</span>
+                    </div>
+                    <div class="facebook-actions">
+                        <button class="facebook-action-btn">👍 Like</button>
+                        <button class="facebook-action-btn">💬 Comment</button>
+                        <button class="facebook-action-btn">↗ Share</button>
+                    </div>
+                </div>
+            `;
+            return container;
+        }
+
+        function createTwitterPreview(data) {
+            const charCount = data.content.length;
+            const container = document.createElement('div');
+            container.innerHTML = `
+                <div class="platform-label twitter-label">🐦 Twitter</div>
+                <div class="twitter-preview">
+                    <div class="twitter-header">
+                        <div class="twitter-avatar">U</div>
+                        <div class="twitter-user-info">
+                            <div class="twitter-name">UNTRAPD Hub</div>
+                            <div class="twitter-handle">@untrapd_hub</div>
+                        </div>
+                    </div>
+                    <div class="twitter-content">
+                        ${data.content.replace(/#(\w+)/g, '<span class="twitter-hashtag">#$1</span>')}
+                    </div>
+                    <div class="twitter-char-count">${charCount}/280 characters</div>
+                    <div class="twitter-actions">
+                        <button class="twitter-action-btn">💬</button>
+                        <button class="twitter-action-btn">🔄</button>
+                        <button class="twitter-action-btn">♡</button>
+                        <button class="twitter-action-btn">📊</button>
+                    </div>
+                </div>
+            `;
+            return container;
+        }
+
+        function createTikTokPreview(data) {
+            const container = document.createElement('div');
+            container.innerHTML = `
+                <div class="platform-label tiktok-label">🎵 TikTok</div>
+                <div class="tiktok-preview">
+                    <div class="tiktok-video">
+                        🎥 FINDERR Demo Video
+                    </div>
+                    <div class="tiktok-overlay">
+                        <div class="tiktok-user">
+                            <div class="tiktok-avatar">U</div>
+                            <div class="tiktok-username">@untrapd.hub</div>
+                        </div>
+                        <div class="tiktok-caption">
+                            ${data.content}
+                        </div>
+                        <div class="tiktok-hashtags">
+                            ${data.hashtags.map(tag => `<span>${tag}</span>`).join(' ')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            return container;
+        }
+
+        function createPinterestPreview(data) {
+            const container = document.createElement('div');
+            container.innerHTML = `
+                <div class="platform-label pinterest-label">📌 Pinterest</div>
+                <div class="pinterest-preview">
+                    <div class="pinterest-image">
+                        <button class="pinterest-save-btn">Save</button>
+                        📱 FINDERR
+                    </div>
+                    <div class="pinterest-content">
+                        <div class="pinterest-title">${data.title}</div>
+                        <div class="pinterest-description">${data.content}</div>
+                        <div class="pinterest-hashtags">${data.hashtags.join(' ')}</div>
+                        <div class="pinterest-user">
+                            <div class="pinterest-avatar">U</div>
+                            <div class="pinterest-username">UNTRAPD Hub</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            return container;
+        }
+    </script>
+</body>
+</html>

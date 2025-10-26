@@ -1,0 +1,142 @@
+{
+  "id": "twitter-templates",
+  "type": "social_media_post", 
+  "platform": ["twitter"],
+  "audience": {
+    "primary": "social_followers",
+    "secondary": ["potential_customers", "developers", "business_owners"],
+    "demographics": {
+      "age_range": "25-44",
+      "interests": ["technology", "business", "productivity"],
+      "tech_savviness": "advanced"
+    }
+  },
+  "content": {
+    "template": "{{post_type}} template for Twitter",
+    "variations": [
+      {
+        "id": "quick_tip",
+        "test_group": "value_first",
+        "template": "💡 Quick {{category}} tip:\n\n{{tip_content}}\n\nResult: {{benefit}}\n\n{{question_or_cta}}\n\n{{hashtags}}",
+        "performance_notes": "Short, actionable tips perform well"
+      },
+      {
+        "id": "thread_announcement",
+        "test_group": "thread_content",
+        "template": "🧵 THREAD: {{thread_topic}}\n\nWhy {{hook_question}}?\n\nI'll break it down in {{thread_length}} tweets 👇\n\n1/{{thread_length}}",
+        "performance_notes": "Threads increase engagement and reach"
+      },
+      {
+        "id": "feature_launch",
+        "test_group": "product_updates", 
+        "template": "🚀 NEW: {{feature_name}} is live!\n\n{{one_line_description}}\n\nPerfect for: {{use_case}}\nImpact: {{key_benefit}}\n\n{{call_to_action}}\n\n{{hashtags}}",
+        "performance_notes": "Concise feature announcements"
+      },
+      {
+        "id": "behind_the_metrics",
+        "test_group": "transparency",
+        "template": "📊 {{time_period}} numbers for {{app_name}}:\n\n• {{metric_1}}: {{value_1}} ({{change_1}})\n• {{metric_2}}: {{value_2}} ({{change_2}})\n• {{metric_3}}: {{value_3}} ({{change_3}})\n\n{{insight_or_lesson}}\n\n{{hashtags}}",
+        "performance_notes": "Transparency builds trust"
+      },
+      {
+        "id": "user_spotlight",
+        "test_group": "community",
+        "template": "🌟 User Spotlight\n\n{{user_achievement}}\n\n\"{{user_quote}}\" - {{user_handle}}\n\n{{app_name}} helping {{user_type}} {{achieve_goal}}\n\n{{community_cta}}\n\n{{hashtags}}",
+        "performance_notes": "Community features increase loyalty"
+      },
+      {
+        "id": "poll_engagement",
+        "test_group": "interactive",
+        "template": "🤔 Quick poll for {{target_audience}}:\n\n{{poll_question}}\n\n{{context_or_reason}}\n\n{{additional_options_text}}\n\n{{hashtags}}",
+        "performance_notes": "Polls drive high engagement"
+      },
+      {
+        "id": "industry_insight",
+        "test_group": "thought_leadership",
+        "template": "📈 {{industry}} trend I'm watching:\n\n{{trend_observation}}\n\nWhy it matters: {{impact_explanation}}\n\nHow {{app_name}} fits: {{relevance}}\n\nThoughts? {{engagement_question}}\n\n{{hashtags}}",
+        "performance_notes": "Industry insights establish authority"
+      },
+      {
+        "id": "problem_solution",
+        "test_group": "pain_point",
+        "template": "❌ Problem: {{common_problem}}\n\n✅ Solution: {{solution_approach}}\n\n⚡ Result: {{outcome}}\n\n{{app_name}} makes this automatic.\n\n{{cta}}\n\n{{hashtags}}",
+        "performance_notes": "Clear problem-solution format"
+      }
+    ],
+    "placeholders": {
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "category": {
+        "type": "string",
+        "description": "Category of tip or content"
+      },
+      "hashtags": {
+        "type": "string", 
+        "description": "Twitter hashtags with # symbol",
+        "default": "#productivity #mobileapp #startup"
+      },
+      "cta": {
+        "type": "string",
+        "description": "Call to action",
+        "default": "Try it free:"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T10:45:00Z",
+    "updated_at": "2025-01-25T10:45:00Z",
+    "version": "1.0.0", 
+    "author": "Agent A - Content Specialist",
+    "tags": ["twitter", "social_media", "microcontent", "engagement"],
+    "brand_voice": "professional",
+    "tone": "informative",
+    "character_limits": {
+      "min": 50,
+      "max": 280,
+      "optimal": 240
+    },
+    "hashtags": ["#productivity", "#startup", "#mobileapp", "#tech", "#business"],
+    "call_to_action": {
+      "primary": "Learn more:",
+      "secondary": "Try free:"
+    },
+    "performance_tracking": {
+      "metrics": ["impressions", "engagement_rate", "clicks", "retweets", "replies"],
+      "goals": {
+        "engagement_rate": 0.04,
+        "retweets_per_post": 10
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "optimal_times": ["08:00", "12:00", "15:00", "18:00"],
+      "frequency": "daily"
+    },
+    "personalization": {
+      "dynamic_fields": ["user_handle", "metric_values", "industry_trends"],
+      "segmentation_rules": [
+        {
+          "condition": "audience_interest == 'technical'",
+          "variation": "behind_the_metrics"
+        },
+        {
+          "condition": "engagement_type == 'interactive'",
+          "variation": "poll_engagement"
+        }
+      ]
+    },
+    "triggers": [
+      {
+        "event": "feature_used",
+        "action": "post_social",
+        "delay": 60,
+        "conditions": {"feature_usage_count": ">100"}
+      }
+    ]
+  }
+}

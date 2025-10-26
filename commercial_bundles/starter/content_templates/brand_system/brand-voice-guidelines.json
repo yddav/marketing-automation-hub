@@ -1,0 +1,94 @@
+{
+  "id": "brand-voice-guidelines",
+  "type": "brand_guidelines",
+  "platform": ["all"],
+  "audience": {
+    "primary": "internal_team",
+    "secondary": ["content_creators", "partners", "agencies"],
+    "demographics": {
+      "age_range": "all",
+      "interests": ["brand_consistency", "content_creation", "marketing"],
+      "tech_savviness": "all"
+    }
+  },
+  "content": {
+    "template": "Brand voice guidelines structure",
+    "variations": [
+      {
+        "id": "core_brand_voice",
+        "test_group": "primary_voice",
+        "template": "# {{company_name}} Brand Voice Guidelines\n\n*Version {{version}} | Updated {{last_updated}}*\n\n## Our Brand Personality\n\n{{company_name}} is {{brand_personality_summary}}. We believe in {{core_belief}} and strive to {{brand_mission_statement}}.\n\n### Brand Personality Traits\n\n**Primary Traits:**\n- **{{trait_1}}**: {{trait_1_description}}\n- **{{trait_2}}**: {{trait_2_description}}\n- **{{trait_3}}**: {{trait_3_description}}\n\n**Supporting Traits:**\n- **{{trait_4}}**: {{trait_4_description}}\n- **{{trait_5}}**: {{trait_5_description}}\n\n### Brand Archetype\n\n**Primary Archetype:** {{primary_archetype}}\n{{archetype_description}}\n\n**Secondary Archetype:** {{secondary_archetype}}\n{{secondary_archetype_description}}\n\n## Voice Characteristics\n\n### {{voice_characteristic_1}}\n**Definition:** {{characteristic_1_definition}}\n**In Practice:** {{characteristic_1_examples}}\n**Avoid:** {{characteristic_1_avoid}}\n\n### {{voice_characteristic_2}}\n**Definition:** {{characteristic_2_definition}}\n**In Practice:** {{characteristic_2_examples}}\n**Avoid:** {{characteristic_2_avoid}}\n\n### {{voice_characteristic_3}}\n**Definition:** {{characteristic_3_definition}}\n**In Practice:** {{characteristic_3_examples}}\n**Avoid:** {{characteristic_3_avoid}}\n\n## Tone Variations\n\n### Professional Context\n**Use When:** {{professional_context}}\n**Tone:** {{professional_tone}}\n**Language Style:** {{professional_language}}\n**Example:** \"{{professional_example}}\"\n\n### Casual Context\n**Use When:** {{casual_context}}\n**Tone:** {{casual_tone}}\n**Language Style:** {{casual_language}}\n**Example:** \"{{casual_example}}\"\n\n### Supportive Context\n**Use When:** {{supportive_context}}\n**Tone:** {{supportive_tone}}\n**Language Style:** {{supportive_language}}\n**Example:** \"{{supportive_example}}\"\n\n### Promotional Context\n**Use When:** {{promotional_context}}\n**Tone:** {{promotional_tone}}\n**Language Style:** {{promotional_language}}\n**Example:** \"{{promotional_example}}\"\n\n## Language Guidelines\n\n### Words We Love\n{{preferred_words_explanation}}\n\n**Power Words:**\n- {{power_word_1}} - {{power_word_1_usage}}\n- {{power_word_2}} - {{power_word_2_usage}}\n- {{power_word_3}} - {{power_word_3_usage}}\n- {{power_word_4}} - {{power_word_4_usage}}\n- {{power_word_5}} - {{power_word_5_usage}}\n\n**Descriptive Words:**\n- {{descriptive_word_1}}\n- {{descriptive_word_2}}\n- {{descriptive_word_3}}\n- {{descriptive_word_4}}\n- {{descriptive_word_5}}\n\n### Words to Avoid\n{{words_to_avoid_explanation}}\n\n**Avoid These:**\n- {{avoid_word_1}} - {{avoid_reason_1}}\n- {{avoid_word_2}} - {{avoid_reason_2}}\n- {{avoid_word_3}} - {{avoid_reason_3}}\n- {{avoid_word_4}} - {{avoid_reason_4}}\n- {{avoid_word_5}} - {{avoid_reason_5}}\n\n### Grammar and Style\n\n**Sentence Structure:**\n- {{sentence_preference}} ({{sentence_justification}})\n- {{sentence_guideline_2}}\n- {{sentence_guideline_3}}\n\n**Punctuation:**\n- {{punctuation_rule_1}}\n- {{punctuation_rule_2}}\n- {{punctuation_rule_3}}\n\n**Capitalization:**\n- {{capitalization_rule_1}}\n- {{capitalization_rule_2}}\n- {{capitalization_rule_3}}\n\n## Platform-Specific Adaptations\n\n### Social Media\n**Adaptation:** {{social_media_adaptation}}\n**Key Changes:** {{social_changes}}\n**Example:** \"{{social_example}}\"\n\n### Email Marketing\n**Adaptation:** {{email_adaptation}}\n**Key Changes:** {{email_changes}}\n**Example:** \"{{email_example}}\"\n\n### Website Copy\n**Adaptation:** {{website_adaptation}}\n**Key Changes:** {{website_changes}}\n**Example:** \"{{website_example}}\"\n\n### Customer Support\n**Adaptation:** {{support_adaptation}}\n**Key Changes:** {{support_changes}}\n**Example:** \"{{support_example}}\"\n\n### Press Releases\n**Adaptation:** {{press_adaptation}}\n**Key Changes:** {{press_changes}}\n**Example:** \"{{press_example}}\"\n\n## Content Testing Examples\n\n### ✅ Good Examples\n\n**Social Media Post:**\n\"{{good_social_example}}\"\n*Why it works: {{good_social_explanation}}*\n\n**Email Subject Line:**\n\"{{good_email_subject}}\"\n*Why it works: {{good_email_explanation}}*\n\n**Website Headline:**\n\"{{good_headline_example}}\"\n*Why it works: {{good_headline_explanation}}*\n\n### ❌ Poor Examples\n\n**Social Media Post:**\n\"{{poor_social_example}}\"\n*Why it doesn't work: {{poor_social_explanation}}*\n*Better version: \"{{improved_social_example}}\"*\n\n**Email Subject Line:**\n\"{{poor_email_subject}}\"\n*Why it doesn't work: {{poor_email_explanation}}*\n*Better version: \"{{improved_email_subject}}\"*\n\n## Voice Consistency Checklist\n\n### Before Publishing, Ask:\n\n- [ ] Does this sound like {{company_name}}?\n- [ ] Would our target audience {{audience_connection_check}}?\n- [ ] Does the tone match the context and platform?\n- [ ] Are we using our preferred words and avoiding restricted ones?\n- [ ] Is the message {{brand_value_alignment}}?\n- [ ] Does this {{call_to_action_alignment}}?\n\n### Content Review Process\n\n1. **Creator Review:** {{creator_review_focus}}\n2. **Peer Review:** {{peer_review_focus}}\n3. **Brand Review:** {{brand_review_focus}}\n4. **Final Approval:** {{approval_criteria}}\n\n## Brand Voice Evolution\n\n### Quarterly Review Process\n{{review_process_description}}\n\n### Voice Adaptation Triggers\n- {{adaptation_trigger_1}}\n- {{adaptation_trigger_2}}\n- {{adaptation_trigger_3}}\n\n### Feedback Integration\n{{feedback_integration_process}}\n\n---\n\n*For questions about brand voice implementation, contact {{brand_contact}} at {{brand_contact_email}}*\n\n*These guidelines are living documents and should be updated regularly based on brand evolution and market feedback.*",
+        "performance_notes": "Comprehensive brand voice guidelines for consistency across all channels"
+      }
+    ],
+    "placeholders": {
+      "company_name": {
+        "type": "string",
+        "description": "Name of the company",
+        "required": true
+      },
+      "version": {
+        "type": "string",
+        "description": "Version number of guidelines",
+        "default": "1.0"
+      },
+      "last_updated": {
+        "type": "date",
+        "description": "Date of last update",
+        "required": true
+      },
+      "brand_personality_summary": {
+        "type": "string",
+        "description": "Brief summary of brand personality"
+      },
+      "core_belief": {
+        "type": "string",
+        "description": "Core brand belief or value"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T12:45:00Z",
+    "updated_at": "2025-01-25T12:45:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["brand_voice", "guidelines", "consistency", "internal_documentation"],
+    "brand_voice": "authoritative",
+    "tone": "instructional",
+    "character_limits": {
+      "min": 2000,
+      "max": 10000,
+      "optimal": 5000
+    },
+    "call_to_action": {
+      "primary": "Implement guidelines",
+      "secondary": "Provide feedback"
+    },
+    "performance_tracking": {
+      "metrics": ["guideline_adherence", "brand_consistency_score", "content_approval_time"],
+      "goals": {
+        "adherence_rate": 0.95,
+        "consistency_score": 0.90
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": false,
+      "frequency": "quarterly"
+    },
+    "personalization": {
+      "dynamic_fields": ["brand_evolution_data", "feedback_integration", "market_changes"],
+      "segmentation_rules": [
+        {
+          "condition": "user_role == 'content_creator'",
+          "variation": "creator_focused_guidelines"
+        },
+        {
+          "condition": "department == 'customer_support'",
+          "variation": "support_focused_guidelines"
+        }
+      ]
+    }
+  }
+}

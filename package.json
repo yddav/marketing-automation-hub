@@ -1,0 +1,27 @@
+{
+  "name": "hub-app-shop-integ",
+  "version": "1.0.0",
+  "description": "App Marketing Automation Hub - FINDERR Integration",
+  "main": "index.js",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "netlify build",
+    "deploy": "netlify deploy --prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "finderr",
+    "automation",
+    "webhooks",
+    "analytics",
+    "netlify-functions"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "published": [
+    "day1-twitter-16:00"
+  ],
+  "scheduled": [],
+  "failed": [
+    {
+      "postId": "day1-instagram-09:00",
+      "error": "Error validating access token: Session has expired on Thursday, 16-Oct-25 05:00:00 PDT. The current time is Friday, 17-Oct-25 06:46:51 PDT.",
+      "timestamp": "2025-10-17T13:46:51.800Z"
+    },
+    {
+      "postId": "day1-instagram-09:15",
+      "error": "Error validating access token: Session has expired on Thursday, 16-Oct-25 05:00:00 PDT. The current time is Friday, 17-Oct-25 06:46:53 PDT.",
+      "timestamp": "2025-10-17T13:46:53.909Z"
+    },
+    {
+      "postId": "day1-facebook-10:00",
+      "error": "Error validating access token: Session has expired on Thursday, 16-Oct-25 05:00:00 PDT. The current time is Friday, 17-Oct-25 06:46:55 PDT.",
+      "timestamp": "2025-10-17T13:46:56.081Z"
+    },
+    {
+      "postId": "day1-tiktok-19:00",
+      "error": "TikTok API pending approval",
+      "timestamp": "2025-10-17T13:46:58.084Z"
+    },
+    {
+      "postId": "day1-twitter-08:00",
+      "error": "Authenticating with OAuth 2.0 Application-Only is forbidden for this endpoint.  Supported authentication types are [OAuth 1.0a User Context, OAuth 2.0 User Context].",
+      "timestamp": "2025-10-17T13:47:00.236Z"
+    },
+    {
+      "postId": "day1-twitter-12:00",
+      "error": "Authenticating with OAuth 2.0 Application-Only is forbidden for this endpoint.  Supported authentication types are [OAuth 1.0a User Context, OAuth 2.0 User Context].",
+      "timestamp": "2025-10-17T13:47:02.357Z"
+    },
+    {
+      "postId": "day1-twitter-16:00",
+      "error": "Authenticating with OAuth 2.0 Application-Only is forbidden for this endpoint.  Supported authentication types are [OAuth 1.0a User Context, OAuth 2.0 User Context].",
+      "timestamp": "2025-10-17T13:47:04.475Z"
+    },
+    {
+      "postId": "day2-instagram-09:00",
+      "error": "Error validating access token: Session has expired on Thursday, 16-Oct-25 05:00:00 PDT. The current time is Friday, 17-Oct-25 06:47:06 PDT.",
+      "timestamp": "2025-10-17T13:47:06.880Z"
+    },
+    {
+      "postId": "day2-instagram-18:00",
+      "error": "Error validating access token: Session has expired on Thursday, 16-Oct-25 05:00:00 PDT. The current time is Friday, 17-Oct-25 06:47:08 PDT.",
+      "timestamp": "2025-10-17T13:47:08.985Z"
+    },
+    {
+      "postId": "day2-facebook-10:00",
+      "error": "Error validating access token: Session has expired on Thursday, 16-Oct-25 05:00:00 PDT. The current time is Friday, 17-Oct-25 06:47:11 PDT.",
+      "timestamp": "2025-10-17T13:47:11.091Z"
+    },
+    {
+      "postId": "day2-tiktok-19:00",
+      "error": "TikTok API pending approval",
+      "timestamp": "2025-10-17T13:47:13.097Z"
+    },
+    {
+      "postId": "day2-twitter-08:00",
+      "error": "Authenticating with OAuth 2.0 Application-Only is forbidden for this endpoint.  Supported authentication types are [OAuth 1.0a User Context, OAuth 2.0 User Context].",
+      "timestamp": "2025-10-17T13:47:15.238Z"
+    },
+    {
+      "postId": "day2-twitter-12:00",
+      "error": "Authenticating with OAuth 2.0 Application-Only is forbidden for this endpoint.  Supported authentication types are [OAuth 1.0a User Context, OAuth 2.0 User Context].",
+      "timestamp": "2025-10-17T13:47:17.353Z"
+    },
+    {
+      "postId": "day2-twitter-16:00",
+      "error": "Authenticating with OAuth 2.0 Application-Only is forbidden for this endpoint.  Supported authentication types are [OAuth 1.0a User Context, OAuth 2.0 User Context].",
+      "timestamp": "2025-10-17T13:47:19.468Z"
+    },
+    {
+      "postId": "day3-instagram-09:00",
+      "error": "Error validating access token: Session has expired on Thursday, 16-Oct-25 05:00:00 PDT. The current time is Friday, 17-Oct-25 06:47:21 PDT.",
+      "timestamp": "2025-10-17T13:47:21.602Z"
+    },
+    {
+      "postId": "day3-instagram-18:00",
+      "error": "Error validating access token: Session has expired on Thursday, 16-Oct-25 05:00:00 PDT. The current time is Friday, 17-Oct-25 06:47:23 PDT.",
+      "timestamp": "2025-10-17T13:47:23.711Z"
+    },
+    {
+      "postId": "day3-facebook-10:00",
+      "error": "Error validating access token: Session has expired on Thursday, 16-Oct-25 05:00:00 PDT. The current time is Friday, 17-Oct-25 06:47:25 PDT.",
+      "timestamp": "2025-10-17T13:47:25.818Z"
+    },
+    {
+      "postId": "day3-tiktok-19:00",
+      "error": "TikTok API pending approval",
+      "timestamp": "2025-10-17T13:47:27.820Z"
+    },
+    {
+      "postId": "day3-twitter-08:00",
+      "error": "Authenticating with OAuth 2.0 Application-Only is forbidden for this endpoint.  Supported authentication types are [OAuth 1.0a User Context, OAuth 2.0 User Context].",
+      "timestamp": "2025-10-17T13:47:29.968Z"
+    },
+    {
+      "postId": "day3-twitter-12:00",
+      "error": "Authenticating with OAuth 2.0 Application-Only is forbidden for this endpoint.  Supported authentication types are [OAuth 1.0a User Context, OAuth 2.0 User Context].",
+      "timestamp": "2025-10-17T13:47:32.085Z"
+    },
+    {
+      "postId": "day3-twitter-16:00",
+      "error": "Authenticating with OAuth 2.0 Application-Only is forbidden for this endpoint.  Supported authentication types are [OAuth 1.0a User Context, OAuth 2.0 User Context].",
+      "timestamp": "2025-10-17T13:47:34.209Z"
+    },
+    {
+      "postId": "day1-instagram-09:00",
+      "error": "Unsupported post request. Object with ID '76216363129' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "timestamp": "2025-10-17T14:03:58.076Z"
+    },
+    {
+      "postId": "day1-instagram-09:15",
+      "error": "Unsupported post request. Object with ID '76216363129' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "timestamp": "2025-10-17T14:04:00.213Z"
+    },
+    {
+      "postId": "day1-facebook-10:00",
+      "error": "(#200) If posting to a group, requires app being installed in the group, and \\\n          either publish_to_groups permission with user token, or both pages_read_engagement \\\n          and pages_manage_posts permission with page token; If posting to a page, \\\n          requires both pages_read_engagement and pages_manage_posts as an admin with \\\n          sufficient administrative permission",
+      "timestamp": "2025-10-17T14:04:02.421Z"
+    },
+    {
+      "postId": "day1-tiktok-19:00",
+      "error": "TikTok API pending approval",
+      "timestamp": "2025-10-17T14:04:04.423Z"
+    },
+    {
+      "postId": "day1-twitter-08:00",
+      "error": "Your client app is not configured with the appropriate oauth1 app permissions for this endpoint.",
+      "timestamp": "2025-10-17T14:04:06.597Z"
+    },
+    {
+      "postId": "day1-twitter-12:00",
+      "error": "Your client app is not configured with the appropriate oauth1 app permissions for this endpoint.",
+      "timestamp": "2025-10-17T14:04:08.730Z"
+    },
+    {
+      "postId": "day1-twitter-16:00",
+      "error": "Your client app is not configured with the appropriate oauth1 app permissions for this endpoint.",
+      "timestamp": "2025-10-17T14:04:10.865Z"
+    },
+    {
+      "postId": "day1-instagram-09:00",
+      "error": "Unsupported post request. Object with ID '76216363129' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "timestamp": "2025-10-17T16:34:46.184Z"
+    },
+    {
+      "postId": "day1-instagram-09:15",
+      "error": "Unsupported post request. Object with ID '76216363129' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "timestamp": "2025-10-17T16:34:48.311Z"
+    },
+    {
+      "postId": "day1-facebook-10:00",
+      "error": "(#200) If posting to a group, requires app being installed in the group, and \\\n          either publish_to_groups permission with user token, or both pages_read_engagement \\\n          and pages_manage_posts permission with page token; If posting to a page, \\\n          requires both pages_read_engagement and pages_manage_posts as an admin with \\\n          sufficient administrative permission",
+      "timestamp": "2025-10-17T16:34:50.462Z"
+    },
+    {
+      "postId": "day1-tiktok-19:00",
+      "error": "TikTok API pending approval",
+      "timestamp": "2025-10-17T16:34:52.464Z"
+    },
+    {
+      "postId": "day1-twitter-08:00",
+      "error": "You are not permitted to perform this action.",
+      "timestamp": "2025-10-17T16:34:54.936Z"
+    },
+    {
+      "postId": "day1-twitter-12:00",
+      "error": "You are not permitted to perform this action.",
+      "timestamp": "2025-10-17T16:34:57.099Z"
+    },
+    {
+      "postId": "day1-instagram-09:00",
+      "error": "Error validating access token: Session has expired on Friday, 17-Oct-25 10:00:00 PDT. The current time is Friday, 17-Oct-25 13:31:12 PDT.",
+      "timestamp": "2025-10-17T20:31:12.655Z"
+    },
+    {
+      "postId": "day1-instagram-09:15",
+      "error": "Error validating access token: Session has expired on Friday, 17-Oct-25 10:00:00 PDT. The current time is Friday, 17-Oct-25 13:31:14 PDT.",
+      "timestamp": "2025-10-17T20:31:14.770Z"
+    },
+    {
+      "postId": "day1-facebook-10:00",
+      "error": "Error validating access token: Session has expired on Friday, 17-Oct-25 10:00:00 PDT. The current time is Friday, 17-Oct-25 13:31:16 PDT.",
+      "timestamp": "2025-10-17T20:31:16.876Z"
+    },
+    {
+      "postId": "day1-tiktok-19:00",
+      "error": "TikTok API pending approval",
+      "timestamp": "2025-10-17T20:31:18.877Z"
+    },
+    {
+      "postId": "day1-twitter-08:00",
+      "error": "You are not permitted to perform this action.",
+      "timestamp": "2025-10-17T20:31:21.067Z"
+    },
+    {
+      "postId": "day1-twitter-12:00",
+      "error": "You are not permitted to perform this action.",
+      "timestamp": "2025-10-17T20:31:23.235Z"
+    }
+  ]
+}

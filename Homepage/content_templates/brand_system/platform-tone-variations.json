@@ -1,0 +1,93 @@
+{
+  "id": "platform-tone-variations",
+  "type": "brand_guidelines",
+  "platform": ["all"],
+  "audience": {
+    "primary": "content_creators",
+    "secondary": ["social_media_team", "copywriters", "customer_support"],
+    "demographics": {
+      "age_range": "all",
+      "interests": ["content_creation", "brand_communication", "platform_optimization"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "Platform-specific tone variation guidelines",
+    "variations": [
+      {
+        "id": "comprehensive_tone_guide",
+        "test_group": "primary_tone_system",
+        "template": "# {{company_name}} Platform Tone Variations\n\n*Adaptive brand voice guidelines for different platforms and contexts*\n\n## Core Brand Voice Foundation\n\n**Base Personality:** {{core_brand_personality}}\n**Core Values:** {{core_brand_values}}\n**Brand Promise:** {{core_brand_promise}}\n\n**Consistent Elements Across All Platforms:**\n- {{consistent_element_1}}\n- {{consistent_element_2}}\n- {{consistent_element_3}}\n- {{consistent_element_4}}\n\n## Platform-Specific Tone Adaptations\n\n### Instagram\n\n**Tone Profile:** {{instagram_tone_profile}}\n**Energy Level:** {{instagram_energy_level}}\n**Formality:** {{instagram_formality_level}}\n\n**Characteristics:**\n- **Visual-First:** {{instagram_visual_first_approach}}\n- **Community-Focused:** {{instagram_community_focus}}\n- **Inspiring:** {{instagram_inspiration_style}}\n- **Authentic:** {{instagram_authenticity_approach}}\n\n**Language Style:**\n- **Sentence Length:** {{instagram_sentence_length}}\n- **Vocabulary:** {{instagram_vocabulary_style}}\n- **Emojis:** {{instagram_emoji_usage}}\n- **Hashtags:** {{instagram_hashtag_integration}}\n\n**Examples:**\n\n*Feature Announcement:*\n✅ Good: \"{{instagram_good_feature_example}}\"\n❌ Avoid: \"{{instagram_avoid_feature_example}}\"\n\n*Community Engagement:*\n✅ Good: \"{{instagram_good_community_example}}\"\n❌ Avoid: \"{{instagram_avoid_community_example}}\"\n\n*Behind-the-Scenes:*\n✅ Good: \"{{instagram_good_bts_example}}\"\n❌ Avoid: \"{{instagram_avoid_bts_example}}\"\n\n### Twitter\n\n**Tone Profile:** {{twitter_tone_profile}}\n**Energy Level:** {{twitter_energy_level}}\n**Formality:** {{twitter_formality_level}}\n\n**Characteristics:**\n- **Conversational:** {{twitter_conversational_style}}\n- **Timely:** {{twitter_timeliness_approach}}\n- **Engaging:** {{twitter_engagement_strategy}}\n- **Informative:** {{twitter_information_balance}}\n\n**Language Style:**\n- **Conciseness:** {{twitter_conciseness_approach}}\n- **Personality:** {{twitter_personality_expression}}\n- **Current Events:** {{twitter_current_events_integration}}\n- **Threads:** {{twitter_thread_storytelling}}\n\n**Examples:**\n\n*Product Update:*\n✅ Good: \"{{twitter_good_update_example}}\"\n❌ Avoid: \"{{twitter_avoid_update_example}}\"\n\n*Industry Commentary:*\n✅ Good: \"{{twitter_good_commentary_example}}\"\n❌ Avoid: \"{{twitter_avoid_commentary_example}}\"\n\n*Customer Interaction:*\n✅ Good: \"{{twitter_good_interaction_example}}\"\n❌ Avoid: \"{{twitter_avoid_interaction_example}}\"\n\n### Facebook\n\n**Tone Profile:** {{facebook_tone_profile}}\n**Energy Level:** {{facebook_energy_level}}\n**Formality:** {{facebook_formality_level}}\n\n**Characteristics:**\n- **Story-Driven:** {{facebook_storytelling_approach}}\n- **Community-Building:** {{facebook_community_building}}\n- **Educational:** {{facebook_educational_focus}}\n- **Personal:** {{facebook_personal_connection}}\n\n**Language Style:**\n- **Narrative Length:** {{facebook_narrative_preference}}\n- **Emotional Connection:** {{facebook_emotional_approach}}\n- **Call-to-Action:** {{facebook_cta_style}}\n- **Question Integration:** {{facebook_question_strategy}}\n\n**Examples:**\n\n*Success Story:*\n✅ Good: \"{{facebook_good_story_example}}\"\n❌ Avoid: \"{{facebook_avoid_story_example}}\"\n\n*Educational Content:*\n✅ Good: \"{{facebook_good_educational_example}}\"\n❌ Avoid: \"{{facebook_avoid_educational_example}}\"\n\n*Community Building:*\n✅ Good: \"{{facebook_good_community_example}}\"\n❌ Avoid: \"{{facebook_avoid_community_example}}\"\n\n### LinkedIn\n\n**Tone Profile:** {{linkedin_tone_profile}}\n**Energy Level:** {{linkedin_energy_level}}\n**Formality:** {{linkedin_formality_level}}\n\n**Characteristics:**\n- **Professional:** {{linkedin_professional_approach}}\n- **Authoritative:** {{linkedin_authority_building}}\n- **Insightful:** {{linkedin_insight_sharing}}\n- **Network-Focused:** {{linkedin_networking_style}}\n\n**Language Style:**\n- **Industry Terminology:** {{linkedin_industry_language}}\n- **Thought Leadership:** {{linkedin_thought_leadership}}\n- **Data Integration:** {{linkedin_data_usage}}\n- **Professional Growth:** {{linkedin_growth_focus}}\n\n**Examples:**\n\n*Industry Insight:*\n✅ Good: \"{{linkedin_good_insight_example}}\"\n❌ Avoid: \"{{linkedin_avoid_insight_example}}\"\n\n*Company Achievement:*\n✅ Good: \"{{linkedin_good_achievement_example}}\"\n❌ Avoid: \"{{linkedin_avoid_achievement_example}}\"\n\n*Professional Advice:*\n✅ Good: \"{{linkedin_good_advice_example}}\"\n❌ Avoid: \"{{linkedin_avoid_advice_example}}\"\n\n### Email Marketing\n\n**Tone Profile:** {{email_tone_profile}}\n**Energy Level:** {{email_energy_level}}\n**Formality:** {{email_formality_level}}\n\n**Characteristics:**\n- **Personal:** {{email_personalization_approach}}\n- **Value-Driven:** {{email_value_focus}}\n- **Action-Oriented:** {{email_action_orientation}}\n- **Relationship-Building:** {{email_relationship_strategy}}\n\n**Language Style:**\n- **Direct Address:** {{email_direct_address_style}}\n- **Storytelling:** {{email_storytelling_balance}}\n- **Urgency:** {{email_urgency_application}}\n- **Personalization:** {{email_personalization_depth}}\n\n**Examples by Email Type:**\n\n*Welcome Email:*\n✅ Good: \"{{email_good_welcome_example}}\"\n❌ Avoid: \"{{email_avoid_welcome_example}}\"\n\n*Feature Announcement:*\n✅ Good: \"{{email_good_feature_example}}\"\n❌ Avoid: \"{{email_avoid_feature_example}}\"\n\n*Re-engagement:*\n✅ Good: \"{{email_good_reengagement_example}}\"\n❌ Avoid: \"{{email_avoid_reengagement_example}}\"\n\n### Website Copy\n\n**Tone Profile:** {{website_tone_profile}}\n**Energy Level:** {{website_energy_level}}\n**Formality:** {{website_formality_level}}\n\n**Characteristics:**\n- **Clear:** {{website_clarity_approach}}\n- **Persuasive:** {{website_persuasion_style}}\n- **Scannable:** {{website_scannability_focus}}\n- **SEO-Conscious:** {{website_seo_integration}}\n\n**Language Style by Page Type:**\n\n**Homepage:**\n- **Hero Section:** {{homepage_hero_tone}}\n- **Value Proposition:** {{homepage_value_prop_tone}}\n- **Social Proof:** {{homepage_social_proof_tone}}\n\n**Product Pages:**\n- **Feature Descriptions:** {{product_feature_tone}}\n- **Benefits:** {{product_benefits_tone}}\n- **Technical Specs:** {{product_specs_tone}}\n\n**About Page:**\n- **Company Story:** {{about_story_tone}}\n- **Team Descriptions:** {{about_team_tone}}\n- **Mission/Vision:** {{about_mission_tone}}\n\n### Customer Support\n\n**Tone Profile:** {{support_tone_profile}}\n**Energy Level:** {{support_energy_level}}\n**Formality:** {{support_formality_level}}\n\n**Characteristics:**\n- **Helpful:** {{support_helpful_approach}}\n- **Patient:** {{support_patience_demonstration}}\n- **Solution-Focused:** {{support_solution_focus}}\n- **Empathetic:** {{support_empathy_expression}}\n\n**Scenario-Based Responses:**\n\n*Initial Contact:*\n✅ Good: \"{{support_good_initial_example}}\"\n❌ Avoid: \"{{support_avoid_initial_example}}\"\n\n*Problem Resolution:*\n✅ Good: \"{{support_good_resolution_example}}\"\n❌ Avoid: \"{{support_avoid_resolution_example}}\"\n\n*Escalation:*\n✅ Good: \"{{support_good_escalation_example}}\"\n❌ Avoid: \"{{support_avoid_escalation_example}}\"\n\n### Blog Content\n\n**Tone Profile:** {{blog_tone_profile}}\n**Energy Level:** {{blog_energy_level}}\n**Formality:** {{blog_formality_level}}\n\n**Characteristics:**\n- **Educational:** {{blog_educational_approach}}\n- **Authoritative:** {{blog_authority_building}}\n- **Engaging:** {{blog_engagement_strategy}}\n- **SEO-Optimized:** {{blog_seo_consciousness}}\n\n**Content Type Variations:**\n\n**How-To Guides:**\n- **Introduction:** {{blog_howto_intro_tone}}\n- **Steps:** {{blog_howto_steps_tone}}\n- **Conclusion:** {{blog_howto_conclusion_tone}}\n\n**Industry Analysis:**\n- **Opening:** {{blog_analysis_opening_tone}}\n- **Data Presentation:** {{blog_analysis_data_tone}}\n- **Insights:** {{blog_analysis_insights_tone}}\n\n**Case Studies:**\n- **Challenge Description:** {{blog_case_challenge_tone}}\n- **Solution Presentation:** {{blog_case_solution_tone}}\n- **Results:** {{blog_case_results_tone}}\n\n### Press Releases\n\n**Tone Profile:** {{press_tone_profile}}\n**Energy Level:** {{press_energy_level}}\n**Formality:** {{press_formality_level}}\n\n**Characteristics:**\n- **Newsworthy:** {{press_newsworthiness_approach}}\n- **Factual:** {{press_factual_presentation}}\n- **Quotable:** {{press_quotability_focus}}\n- **Media-Friendly:** {{press_media_consideration}}\n\n**Section-Specific Tone:**\n- **Headline:** {{press_headline_tone}}\n- **Lead Paragraph:** {{press_lead_tone}}\n- **Body Content:** {{press_body_tone}}\n- **Quotes:** {{press_quotes_tone}}\n- **Boilerplate:** {{press_boilerplate_tone}}\n\n## Context-Based Tone Modifications\n\n### Crisis Communication\n**Tone Shift:** {{crisis_tone_shift}}\n**Key Principles:** {{crisis_communication_principles}}\n**Example:** \"{{crisis_communication_example}}\"\n\n### Product Launch\n**Tone Amplification:** {{launch_tone_amplification}}\n**Excitement Level:** {{launch_excitement_approach}}\n**Example:** \"{{launch_communication_example}}\"\n\n### User Feedback Response\n**Positive Feedback:** {{positive_feedback_tone}}\n**Constructive Criticism:** {{criticism_response_tone}}\n**Negative Feedback:** {{negative_feedback_tone}}\n\n### Seasonal Adaptations\n**Holiday Seasons:** {{holiday_tone_adaptation}}\n**Back-to-School:** {{bts_tone_adaptation}}\n**New Year:** {{newyear_tone_adaptation}}\n\n## Implementation Guidelines\n\n### Content Creation Process\n1. **Identify Platform:** {{platform_identification_step}}\n2. **Determine Context:** {{context_assessment_step}}\n3. **Select Tone:** {{tone_selection_process}}\n4. **Create Content:** {{content_creation_guidelines}}\n5. **Review Alignment:** {{alignment_review_process}}\n\n### Quality Assurance\n**Tone Consistency Checklist:**\n- [ ] Matches platform expectations\n- [ ] Aligns with brand personality\n- [ ] Appropriate for audience\n- [ ] Consistent with message goals\n- [ ] Authentic to brand voice\n\n### Training and Onboarding\n**New Team Members:**\n- {{training_process_1}}\n- {{training_process_2}}\n- {{training_process_3}}\n\n**Ongoing Education:**\n- {{ongoing_education_1}}\n- {{ongoing_education_2}}\n- {{ongoing_education_3}}\n\n---\n\n*For tone guidance and platform-specific questions, contact {{content_contact}} at {{content_contact_email}}*\n\n*These guidelines should be reviewed monthly to ensure alignment with platform changes and audience evolution.*",
+        "performance_notes": "Comprehensive platform-specific tone guidelines for consistent brand voice adaptation"
+      }
+    ],
+    "placeholders": {
+      "company_name": {
+        "type": "string",
+        "description": "Name of the company",
+        "required": true
+      },
+      "core_brand_personality": {
+        "type": "string",
+        "description": "Core brand personality description",
+        "required": true
+      },
+      "core_brand_values": {
+        "type": "string",
+        "description": "Core brand values"
+      },
+      "instagram_tone_profile": {
+        "type": "string",
+        "description": "Instagram-specific tone profile"
+      },
+      "twitter_tone_profile": {
+        "type": "string",
+        "description": "Twitter-specific tone profile"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T13:45:00Z",
+    "updated_at": "2025-01-25T13:45:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["tone_of_voice", "platform_optimization", "brand_consistency", "content_guidelines"],
+    "brand_voice": "instructional",
+    "tone": "comprehensive",
+    "character_limits": {
+      "min": 5000,
+      "max": 25000,
+      "optimal": 12000
+    },
+    "call_to_action": {
+      "primary": "Implement platform-specific tones",
+      "secondary": "Train team on tone variations"
+    },
+    "performance_tracking": {
+      "metrics": ["tone_consistency_score", "platform_engagement", "brand_recognition"],
+      "goals": {
+        "consistency_across_platforms": 0.90,
+        "engagement_lift": 0.20
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": false,
+      "frequency": "monthly"
+    },
+    "personalization": {
+      "dynamic_fields": ["platform_updates", "audience_feedback", "performance_data"],
+      "segmentation_rules": [
+        {
+          "condition": "platform == 'social_media'",
+          "variation": "social_focused_tone_guide"
+        },
+        {
+          "condition": "team_role == 'customer_support'",
+          "variation": "support_focused_tone_guide"
+        }
+      ]
+    }
+  }
+}

@@ -30,13 +30,19 @@ class UntrapdHubLauncher {
       dailyPostCount: {},
       weeklyThemeIndex: 0,
       finderrStats: {
-        currentUsers: 1247,
+        currentUsers: 150, // Updated to reflect current beta testing status
         lifetimeSlots: 753,
-        newUsersToday: 23
-      }
+        newUsersToday: 23,
+        tier1Count: 150,
+        tier2Count: 0,
+        tier3Count: 0,
+        activeTier: 1
+      },
+      lastMilestoneReached: null // Track last milestone to prevent duplicate posts
     };
-    
+
     this.logger.log('🧠 UNTRAPD Hub Automation Launcher initialized');
+    this.logger.log('📊 FINDERR Milestone Tracking: 3-tier program (1K, 3K, 5K)');
   }
 
   // ============================
@@ -294,31 +300,140 @@ class UntrapdHubLauncher {
   // MILESTONE AUTOMATION
   // ============================
 
-  async checkAndPostMilestones() {
-    const currentUsers = this.state.finderrStats.currentUsers;
-    const milestones = this.config.finderrIntegration.milestones;
-    
-    // Find if we've hit a milestone
-    const hitMilestone = milestones.find(m => m.users === currentUsers);
-    
-    if (hitMilestone) {
-      this.logger.log(`🎉 Milestone reached: ${currentUsers} users!`);
-      
-      // Create milestone content
-      const milestoneContent = {
-        content: hitMilestone.message,
-        type: 'milestone',
-        theme: 'Milestone Celebration',
-        hashtags: ['#UntrapдHub', '#FINDERR', '#Milestone']
+  /**
+   * Check FINDERR tiered milestone progress and trigger celebration posts
+   * Monitors 3-tier early adopter program:
+   * - Tier 1 (Founder's Circle): 1,000 subscribers
+   * - Tier 2 (Early Adopter): 3,000 subscribers (cumulative)
+   * - Tier 3 (Launch Supporter): 5,000 subscribers (cumulative)
+   *
+   * Integration point: /api/finderr/milestones endpoint
+   * Check frequency: Every 30 minutes (via milestoneInterval)
+   *
+   * @returns {Promise<boolean>} True if milestone was reached and post triggered
+   */
+  async checkFINDERRMilestones() {
+    try {
+      // TODO: Replace with actual API call when endpoint is ready
+      // const response = await fetch('/api/finderr/milestones');
+      // const milestoneData = await response.json();
+
+      // Placeholder data structure (replace with API response)
+      const milestoneData = {
+        totalSubscribers: this.state.finderrStats.currentUsers,
+        tier1Count: Math.min(this.state.finderrStats.currentUsers, 1000),
+        tier2Count: Math.max(0, Math.min(this.state.finderrStats.currentUsers - 1000, 2000)),
+        tier3Count: Math.max(0, Math.min(this.state.finderrStats.currentUsers - 3000, 2000)),
+        activeTier: this.state.finderrStats.currentUsers <= 1000 ? 1 :
+                    this.state.finderrStats.currentUsers <= 3000 ? 2 :
+                    this.state.finderrStats.currentUsers <= 5000 ? 3 : 4,
+        lastMilestoneReached: null // Track last milestone to avoid duplicate posts
       };
 
-      // Post immediately to all platforms
-      await this.postToAllPlatforms(milestoneContent);
-      
-      return true;
+      // Define tier milestones
+      const tierMilestones = [
+        {
+          threshold: 1000,
+          tier: 1,
+          name: 'Founder\'s Circle',
+          message: '🎉 MILESTONE REACHED: 1,000 Founders!\n\n' +
+                   'Tier 1 (Founder\'s Circle) is now FULL! 🏆\n\n' +
+                   '✅ 1,000 Android users secured:\n' +
+                   '• v5.0 & v6.0 FREE (lifetime)\n' +
+                   '• v7.0 early access\n' +
+                   '• Lifetime price lock at $6.99\n\n' +
+                   '🚀 Tier 2 (Early Adopter) NOW OPEN!\n' +
+                   '2,000 spots available for next wave.\n\n' +
+                   '#FINDERR #AndroidSecurity #MilestoneReached',
+          hashtags: ['#FINDERR', '#Milestone', '#FoundersCircle', '#AndroidSecurity']
+        },
+        {
+          threshold: 3000,
+          tier: 2,
+          name: 'Early Adopter',
+          message: '🎉 MILESTONE REACHED: 3,000 Subscribers!\n\n' +
+                   'Tier 2 (Early Adopter) is now FULL! 🏆\n\n' +
+                   '✅ 3,000 total users (1,000 Founders + 2,000 Early Adopters)\n' +
+                   '✅ All secured FREE v5.0 & v6.0 upgrades\n\n' +
+                   '🚀 Tier 3 (Launch Supporter) NOW OPEN!\n' +
+                   'FINAL 2,000 spots for FREE upgrades.\n\n' +
+                   'After 5,000: v5.0 costs +$3/mo, v6.0 costs +$4/mo!\n\n' +
+                   '#FINDERR #AndroidSecurity #MilestoneReached',
+          hashtags: ['#FINDERR', '#Milestone', '#EarlyAdopter', '#AndroidSecurity']
+        },
+        {
+          threshold: 5000,
+          tier: 3,
+          name: 'Launch Supporter',
+          message: '🎉 MAJOR MILESTONE: 5,000 SUBSCRIBERS! 🎉\n\n' +
+                   'Early Adopter Program is now CLOSED! 🏆\n\n' +
+                   '✅ 5,000 Android users secured FREE upgrades:\n' +
+                   '• 1,000 Founders (Tier 1)\n' +
+                   '• 2,000 Early Adopters (Tier 2)\n' +
+                   '• 2,000 Launch Supporters (Tier 3)\n\n' +
+                   '🚨 NEW PRICING EFFECTIVE NOW:\n' +
+                   '• v4.1 Base: $6.99/mo\n' +
+                   '• v5.0 GPS Tracking: +$3/mo\n' +
+                   '• v6.0 Mesh Network: +$4/mo\n' +
+                   '• Full Suite: $12.97/mo\n\n' +
+                   'Join 5,000+ happy FINDERR users! 🚀\n\n' +
+                   '#FINDERR #AndroidSecurity #5000Subscribers #MilestoneReached',
+          hashtags: ['#FINDERR', '#Milestone', '#5000Subscribers', '#AndroidSecurity', '#LaunchSuccess']
+        }
+      ];
+
+      // Check if we've hit a tier milestone
+      const currentTotal = milestoneData.totalSubscribers;
+      const hitMilestone = tierMilestones.find(m =>
+        currentTotal >= m.threshold &&
+        (!this.state.lastMilestoneReached || this.state.lastMilestoneReached < m.threshold)
+      );
+
+      if (hitMilestone) {
+        this.logger.log(`🎉 Tier ${hitMilestone.tier} milestone reached: ${currentTotal} subscribers!`);
+
+        // Create milestone celebration content
+        const milestoneContent = {
+          content: hitMilestone.message,
+          type: 'milestone',
+          theme: `Tier ${hitMilestone.tier} Milestone: ${hitMilestone.name}`,
+          hashtags: hitMilestone.hashtags
+        };
+
+        // Post immediately to all platforms
+        const results = await this.postToAllPlatforms(milestoneContent, {
+          platforms: ['instagram', 'facebook', 'twitter'] // Prioritize high-reach platforms
+        });
+
+        // Update state to prevent duplicate milestone posts
+        this.state.lastMilestoneReached = hitMilestone.threshold;
+
+        // Log milestone achievement
+        this.logger.log(`✅ Tier ${hitMilestone.tier} milestone celebration posted to ${results.filter(r => r.success).length} platforms`);
+
+        return true;
+      }
+
+      // Log progress toward next milestone if close (within 50 subscribers)
+      const nextMilestone = tierMilestones.find(m => m.threshold > currentTotal);
+      if (nextMilestone && (nextMilestone.threshold - currentTotal) <= 50) {
+        this.logger.log(`📊 Approaching Tier ${nextMilestone.tier} milestone: ${currentTotal}/${nextMilestone.threshold} (${nextMilestone.threshold - currentTotal} to go)`);
+      }
+
+      return false;
+
+    } catch (error) {
+      this.logger.error('❌ Failed to check FINDERR milestones:', error.message);
+      return false;
     }
-    
-    return false;
+  }
+
+  /**
+   * Legacy milestone checker (backward compatibility)
+   * Use checkFINDERRMilestones() for tiered program
+   */
+  async checkAndPostMilestones() {
+    return await this.checkFINDERRMilestones();
   }
 
   // ============================
@@ -416,13 +531,14 @@ class UntrapdHubLauncher {
       }
     }, 24 * 60 * 60 * 1000); // Every 24 hours
 
+    // Check FINDERR milestones every 30 minutes for 3-tier program
     const milestoneInterval = setInterval(async () => {
       try {
-        await this.checkAndPostMilestones();
+        await this.checkFINDERRMilestones();
       } catch (error) {
         this.logger.error('❌ Milestone check failed:', error.message);
       }
-    }, 60 * 60 * 1000); // Every hour
+    }, 30 * 60 * 1000); // Every 30 minutes (increased frequency for tier tracking)
 
     // Graceful shutdown
     process.on('SIGINT', () => {

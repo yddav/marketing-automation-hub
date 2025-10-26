@@ -1,0 +1,128 @@
+{
+  "id": "instagram-templates",
+  "type": "social_media_post",
+  "platform": ["instagram"],
+  "audience": {
+    "primary": "social_followers",
+    "secondary": ["potential_customers", "app_users"],
+    "demographics": {
+      "age_range": "18-34",
+      "interests": ["lifestyle", "productivity", "technology"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "{{post_type}} template for Instagram",
+    "variations": [
+      {
+        "id": "feature_showcase",
+        "test_group": "feature_highlight",
+        "template": "✨ {{feature_name}} is here! ✨\n\n{{feature_description}}\n\n🎯 Perfect for {{target_use_case}}\n💡 Pro tip: {{usage_tip}}\n\n{{call_to_action}}\n\n{{hashtags}}\n\n---\n📱 Download {{app_name}} (link in bio)\n🌟 Rate us 5⭐ if you love it!\n💬 Comment your favorite feature below 👇",
+        "performance_notes": "Visual content with feature demonstration"
+      },
+      {
+        "id": "behind_scenes", 
+        "test_group": "story_content",
+        "template": "🎬 Behind the scenes at {{company_name}}\n\n{{story_hook}}\n\nHere's what went into creating {{feature_or_update}}:\n\n📋 {{development_insight_1}}\n🔧 {{development_insight_2}} \n🧪 {{development_insight_3}}\n\nThe result? {{achievement}}\n\n{{personal_note}}\n\n{{hashtags}}\n\n#{{app_name}}Family #BehindTheScenes #AppDevelopment",
+        "performance_notes": "Humanizes brand, builds connection"
+      },
+      {
+        "id": "user_testimonial",
+        "test_group": "social_proof", 
+        "template": "💬 What our users are saying...\n\n\"{{testimonial_quote}}\" \n- {{user_name}}, {{user_title}}\n\n🙌 Stories like this make our day!\n\n{{app_name}} has helped {{user_count}}+ people {{primary_benefit}}\n\nReady to join them? {{call_to_action}}\n\n{{hashtags}}\n\n#UserLove #TestimonialTuesday #{{app_name}}Success",
+        "performance_notes": "Social proof builds credibility"
+      },
+      {
+        "id": "tip_tutorial",
+        "test_group": "educational",
+        "template": "💡 {{tip_category}} TIP #{{tip_number}}\n\n{{tip_title}}\n\n{{step_by_step_guide}}\n\n⏰ Time saved: {{time_benefit}}\n📈 Result: {{outcome_benefit}}\n\n{{question_engagement}}\n\n{{hashtags}}\n\n#ProductivityTips #{{app_name}}Tips #LifeHacks",
+        "performance_notes": "Educational content increases shares"
+      },
+      {
+        "id": "launch_countdown",
+        "test_group": "launch_campaign",
+        "template": "🚀 {{countdown_number}} DAYS TO GO!\n\n{{app_name}} {{launch_announcement}}\n\n{{sneak_peek_content}}\n\n🎁 Early bird bonus: {{launch_incentive}}\n📅 Launch date: {{launch_date}}\n⏰ Set your reminder!\n\n{{pre_launch_cta}}\n\n{{hashtags}}\n\n#LaunchCountdown #ComingSoon #{{app_name}}Launch",
+        "performance_notes": "Creates anticipation and urgency"
+      },
+      {
+        "id": "carousel_features",
+        "test_group": "multi_slide",
+        "template": "📱 Swipe to see why {{app_name}} is different ➡️\n\n{{carousel_intro}}\n\n👆 Which feature are you most excited about?\n\n{{engagement_question}}\n\n{{hashtags}}\n\n#SwipeForMore #{{app_name}}Features #Innovation",
+        "performance_notes": "Carousel format increases engagement time"
+      },
+      {
+        "id": "milestone_celebration",
+        "test_group": "achievement",
+        "template": "🎉 MILESTONE ALERT! 🎉\n\n{{milestone_achievement}}\n\n{{gratitude_message}}\n\n📊 By the numbers:\n• {{stat_1}}\n• {{stat_2}}\n• {{stat_3}}\n\n{{future_commitment}}\n\n{{celebration_cta}}\n\n{{hashtags}}\n\n#Milestone #ThankYou #{{app_name}}Community",
+        "performance_notes": "Celebrates success with community"
+      }
+    ],
+    "placeholders": {
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "feature_name": {
+        "type": "string", 
+        "description": "Specific feature being highlighted"
+      },
+      "hashtags": {
+        "type": "string",
+        "description": "Platform-appropriate hashtags",
+        "default": "#productivity #mobileapp #innovation #lifestyle"
+      },
+      "call_to_action": {
+        "type": "string",
+        "description": "Action you want users to take",
+        "default": "Try it today!"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T10:30:00Z",
+    "updated_at": "2025-01-25T10:30:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["instagram", "social_media", "visual_content", "engagement"],
+    "brand_voice": "friendly",
+    "tone": "engaging",
+    "character_limits": {
+      "min": 50,
+      "max": 2200,
+      "optimal": 125
+    },
+    "hashtags": ["#productivity", "#mobileapp", "#innovation", "#lifestyle", "#appdev"],
+    "call_to_action": {
+      "primary": "Check link in bio",
+      "secondary": "DM us for details"
+    },
+    "performance_tracking": {
+      "metrics": ["impressions", "engagement_rate", "shares", "saves", "comments"],
+      "goals": {
+        "engagement_rate": 0.06,
+        "saves_per_post": 50
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "optimal_times": ["09:00", "12:00", "17:00", "20:00"],
+      "frequency": "daily"
+    },
+    "personalization": {
+      "dynamic_fields": ["feature_name", "user_testimonial", "milestone_data"],
+      "segmentation_rules": [
+        {
+          "condition": "audience_type == 'business'",
+          "variation": "feature_showcase"
+        },
+        {
+          "condition": "engagement_level == 'high'", 
+          "variation": "behind_scenes"
+        }
+      ]
+    }
+  }
+}

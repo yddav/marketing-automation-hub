@@ -1,0 +1,144 @@
+{
+  "id": "app-store-descriptions",
+  "type": "app_store_description",
+  "platform": ["app_store_ios", "app_store_android"],
+  "audience": {
+    "primary": "potential_customers",
+    "secondary": ["app_users", "business_owners"],
+    "demographics": {
+      "age_range": "25-44",
+      "interests": ["productivity", "business", "mobile apps"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "{{app_name}} - {{primary_benefit}}\n\n{{main_description}}\n\n✨ KEY FEATURES:\n{{feature_list}}\n\n🎯 PERFECT FOR:\n{{target_users}}\n\n{{social_proof}}\n\nDownload {{app_name}} today and {{cta_benefit}}!",
+    "variations": [
+      {
+        "id": "a",
+        "test_group": "benefit_focused",
+        "template": "🚀 {{app_name}} - {{primary_benefit}}\n\nTransform your {{industry}} workflow with {{app_name}}, the {{app_category}} app that {{unique_value_prop}}.\n\n✨ POWERFUL FEATURES:\n• {{feature_1}} - {{feature_1_benefit}}\n• {{feature_2}} - {{feature_2_benefit}}\n• {{feature_3}} - {{feature_3_benefit}}\n• {{feature_4}} - {{feature_4_benefit}}\n\n🎯 DESIGNED FOR:\n• {{user_type_1}}\n• {{user_type_2}}\n• {{user_type_3}}\n\n⭐ {{rating_text}} with {{download_count}}+ satisfied users\n\n💡 WHY CHOOSE {{app_name}}?\n{{competitive_advantage}}\n\nJoin thousands who've already {{success_metric}}. Download now and {{immediate_benefit}}!",
+        "performance_notes": "Focuses on benefits and social proof, longer format with emojis"
+      },
+      {
+        "id": "b", 
+        "test_group": "problem_solution",
+        "template": "{{app_name}} - Stop {{pain_point}}\n\nTired of {{common_problem}}? {{app_name}} is the solution you've been waiting for.\n\n🔧 HOW IT WORKS:\n{{solution_process}}\n\n📊 RESULTS YOU'LL SEE:\n• {{result_1}}\n• {{result_2}}\n• {{result_3}}\n\n✅ TRUSTED BY:\n{{user_testimonial}}\n\nReady to {{desired_outcome}}? Download {{app_name}} now!\n\n{{urgency_element}}",
+        "performance_notes": "Problem-agitation-solution approach with urgency"
+      },
+      {
+        "id": "c",
+        "test_group": "feature_focused", 
+        "template": "{{app_name}} | {{tagline}}\n\n{{app_description_short}}\n\nKEY FEATURES:\n{{feature_bullets}}\n\nSUPPORTED PLATFORMS:\n{{platform_compatibility}}\n\nRATED {{app_rating}}/5 by {{review_count}} users\n\n{{app_size}} | {{last_updated}}\n\nDownload free today!",
+        "performance_notes": "Clean, technical approach focusing on features and specs"
+      },
+      {
+        "id": "d",
+        "test_group": "story_driven",
+        "template": "{{founder_story_hook}}\n\nThat's how {{app_name}} was born - from a real need for {{core_need}}.\n\n🌟 OUR MISSION:\n{{mission_statement}}\n\n🎯 WHAT MAKES US DIFFERENT:\n{{differentiator_1}}\n{{differentiator_2}}\n{{differentiator_3}}\n\n👥 JOIN OUR COMMUNITY:\n{{community_stats}}\n\n💬 WHAT USERS SAY:\n\"{{user_quote}}\" - {{user_name}}\n\nBecome part of the {{app_name}} family. Download now and {{community_benefit}}!",
+        "performance_notes": "Story-driven approach building emotional connection"
+      },
+      {
+        "id": "e",
+        "test_group": "minimalist",
+        "template": "{{app_name}}\n{{one_line_description}}\n\n{{essential_features}}\n\n{{download_cta}}",
+        "performance_notes": "Ultra-minimalist approach, testing brevity vs detail"
+      }
+    ],
+    "placeholders": {
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "primary_benefit": {
+        "type": "string", 
+        "description": "Main benefit or value proposition",
+        "required": true
+      },
+      "app_category": {
+        "type": "string",
+        "description": "App category (e.g., productivity, business, lifestyle)"
+      },
+      "unique_value_prop": {
+        "type": "string",
+        "description": "What makes this app unique"
+      },
+      "feature_1": {
+        "type": "string",
+        "description": "Primary feature name"
+      },
+      "feature_1_benefit": {
+        "type": "string",
+        "description": "Benefit of primary feature"
+      },
+      "pain_point": {
+        "type": "string",
+        "description": "Main problem the app solves"
+      },
+      "common_problem": {
+        "type": "string", 
+        "description": "Common issue users face"
+      },
+      "rating_text": {
+        "type": "string",
+        "description": "Rating description (e.g., '4.8/5 stars')",
+        "default": "Highly rated"
+      },
+      "download_count": {
+        "type": "string",
+        "description": "Number of downloads",
+        "default": "10,000"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T10:00:00Z",
+    "updated_at": "2025-01-25T10:00:00Z", 
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["app_store", "descriptions", "a_b_testing", "conversion"],
+    "brand_voice": "professional",
+    "tone": "persuasive",
+    "character_limits": {
+      "min": 150,
+      "max": 4000,
+      "optimal": 500
+    },
+    "seo_keywords": ["app", "mobile", "productivity", "business", "download"],
+    "call_to_action": {
+      "primary": "Download now",
+      "secondary": "Try free today",
+      "url": "{{app_store_url}}"
+    },
+    "performance_tracking": {
+      "metrics": ["impressions", "conversions", "click_through_rate"],
+      "goals": {
+        "conversion_rate": 0.05,
+        "impression_to_download": 0.02
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": false,
+      "frequency": "once"
+    },
+    "personalization": {
+      "segmentation_rules": [
+        {
+          "condition": "user_type == 'business_owner'",
+          "variation": "a"
+        },
+        {
+          "condition": "user_type == 'individual_user'", 
+          "variation": "b"
+        },
+        {
+          "condition": "traffic_source == 'organic_search'",
+          "variation": "c"
+        }
+      ]
+    }
+  }
+}

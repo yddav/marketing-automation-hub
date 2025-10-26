@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "armyOptimizations": {
+    "todoManagement": {
+      "enableAgentSpecificTodos": false,
+      "sharedTodoFile": true,
+      "maxTodoFiles": 5,
+      "autoCleanupAfterHours": 24,
+      "persistOnlyCompletedTasks": true
+    },
+    "sessionManagement": {
+      "enableMicroSessions": false,
+      "sharedSessionContext": true,
+      "sessionMergingEnabled": true,
+      "maxSessionDuration": 3600
+    },
+    "performanceOptimizations": {
+      "batchAgentOperations": true,
+      "enableContextCaching": true,
+      "reduceFileIO": true,
+      "compressAgentCommunication": true
+    },
+    "armyCoordination": {
+      "centralizedCoordination": true,
+      "agentPooling": true,
+      "resourceSharing": true,
+      "intelligentDelegation": true
+    }
+  },
+  "resumeFunctionOptimizations": {
+    "enableSmartFiltering": true,
+    "excludeTransientSessions": true,
+    "maxResumeEntries": 20,
+    "prioritizeRecentSessions": true
+  }
+}

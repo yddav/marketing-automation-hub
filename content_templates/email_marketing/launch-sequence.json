@@ -1,0 +1,130 @@
+{
+  "id": "launch-sequence",
+  "type": "email_template",
+  "platform": ["email"],
+  "audience": {
+    "primary": "potential_customers",
+    "secondary": ["social_followers", "etsy_shoppers"],
+    "demographics": {
+      "age_range": "25-54",
+      "interests": ["new_products", "early_adoption", "productivity"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "Launch email sequence template",
+    "variations": [
+      {
+        "id": "launch_announcement",
+        "test_group": "announcement",
+        "template": "Subject: 🚀 IT'S HERE! {{app_name}} is officially live\n\nHi {{first_name}},\n\nThe day is finally here! 🎉\n\nAfter {{development_time}} of development, {{app_name}} is officially available for download.\n\n{{personal_note}}\n\n🎯 What is {{app_name}}?\n{{app_description}}\n\n✨ Key Features:\n• {{feature_1}} - {{feature_1_benefit}}\n• {{feature_2}} - {{feature_2_benefit}}\n• {{feature_3}} - {{feature_3_benefit}}\n• {{feature_4}} - {{feature_4_benefit}}\n\n🎁 Launch Week Special:\n{{launch_offer}}\n\n⏰ Available for: {{offer_duration}}\n\n{{download_cta}}\n\n📊 Early Reviews:\n{{early_review_summary}}\n\n💬 What users are saying:\n\"{{user_testimonial}}\" - {{user_name}}\n\n🌟 Ready to join the {{app_name}} community?\n\n{{secondary_cta}}\n\nThank you for being part of this journey from the beginning!\n\n{{sender_name}}\n{{sender_title}}\n\nP.S. {{ps_launch_bonus}}\n\n---\n{{social_sharing_buttons}}\n{{unsubscribe_footer}}",
+        "performance_notes": "Main launch announcement with excitement and urgency"
+      },
+      {
+        "id": "launch_day_2",
+        "test_group": "momentum",
+        "template": "Subject: The response to {{app_name}} has been incredible! 🔥\n\nHi {{first_name}},\n\n{{excitement_opening}}\n\nIn just 24 hours since launch:\n\n📱 {{download_count}} downloads\n⭐ {{rating}} average rating\n💬 {{review_count}} reviews\n🌍 Available in {{country_count}} countries\n\n{{gratitude_message}}\n\n🔥 What people are loving most:\n\n1. {{popular_feature_1}}\n   \"{{feature_1_feedback}}\" - {{reviewer_1}}\n\n2. {{popular_feature_2}}\n   \"{{feature_2_feedback}}\" - {{reviewer_2}\n\n3. {{popular_feature_3}}\n   \"{{feature_3_feedback}}\" - {{reviewer_3}\n\n{{momentum_message}}\n\n🎁 Launch Week Bonus ({{time_remaining}} left):\n{{bonus_offer_details}}\n\n{{urgency_cta}}\n\n📸 Behind the scenes:\n{{behind_scenes_content}}\n\n{{team_thanks}}\n\n{{sender_name}}\n\nP.S. {{social_proof_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Builds momentum with social proof and urgency"
+      },
+      {
+        "id": "launch_tutorial",
+        "test_group": "educational",
+        "template": "Subject: How to get the most from {{app_name}} (5-minute setup)\n\nHi {{first_name}},\n\n{{tutorial_intro}}\n\nSince {{app_name}} launched {{days_since_launch}} days ago, I've been collecting feedback from early users.\n\nThe #1 question: \"What's the best way to get started?\"\n\n🎯 Here's your 5-minute setup guide:\n\n**Step 1: {{setup_step_1}}**\n{{step_1_details}}\n💡 Why this matters: {{step_1_benefit}}\n\n**Step 2: {{setup_step_2}}**\n{{step_2_details}}\n💡 Pro tip: {{step_2_tip}}\n\n**Step 3: {{setup_step_3}}**\n{{step_3_details}}\n💡 This will: {{step_3_outcome}}\n\n**Step 4: {{setup_step_4}}**\n{{step_4_details}}\n💡 Advanced users: {{step_4_advanced_tip}}\n\n{{completion_message}}\n\n📺 Video walkthrough:\n{{video_link}}\n\n❓ Common questions:\n\nQ: {{faq_1}}\nA: {{answer_1}}\n\nQ: {{faq_2}}\nA: {{answer_2}}\n\n{{support_offer}}\n\n{{sender_name}}\n\nP.S. {{tutorial_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Educational content to drive adoption and reduce churn"
+      },
+      {
+        "id": "launch_success_stories",
+        "test_group": "social_proof",
+        "template": "Subject: Amazing! See what {{app_name}} users accomplished this week\n\nHi {{first_name}},\n\n{{success_intro}}\n\nIt's been {{time_since_launch}} since {{app_name}} launched, and the success stories are pouring in!\n\n🌟 User Spotlight #1:\n{{user_1_name}}, {{user_1_description}}\n\n\"{{user_1_story}}\"\n\nResult: {{user_1_achievement}}\n\n🌟 User Spotlight #2:\n{{user_2_name}}, {{user_2_description}}\n\n\"{{user_2_story}}\"\n\nResult: {{user_2_achievement}}\n\n🌟 User Spotlight #3:\n{{user_3_name}}, {{user_3_description}}\n\n\"{{user_3_story}}\"\n\nResult: {{user_3_achievement}}\n\n📊 Community Impact:\n{{community_stats}}\n\n{{inspiration_message}}\n\n🎯 Ready to create your own success story?\n\n{{success_cta}}\n\n💬 Share your {{app_name}} win:\nJust reply to this email with your success story - we love celebrating our community!\n\n{{sender_name}}\n\nP.S. {{success_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Showcases user success to motivate downloads and engagement"
+      },
+      {
+        "id": "launch_week_wrap",
+        "test_group": "celebration",
+        "template": "Subject: Launch week recap - thank you for making {{app_name}} a success! 🙏\n\nHi {{first_name}},\n\n{{wrap_up_intro}}\n\nWhat an incredible first week for {{app_name}}!\n\n📈 Launch Week Numbers:\n• {{final_download_count}} total downloads\n• {{final_rating}} average rating ({{total_reviews}} reviews)\n• {{engagement_metric}} average daily usage\n• {{retention_rate}} user retention rate\n• Featured in {{feature_mentions}}\n\n{{celebration_message}}\n\n🏆 Week 1 Highlights:\n\n{{highlight_1}}\n{{highlight_2}}\n{{highlight_3}}\n\n🔮 What's Next:\n\n{{roadmap_item_1}}\n{{roadmap_item_2}}\n{{roadmap_item_3}}\n\n{{future_commitment}}\n\n🎁 Thank You Bonus:\n{{thank_you_offer}}\n\n{{final_cta}}\n\n💌 Personal note:\n{{personal_thank_you}}\n\n{{sender_name}}\n{{sender_title}}\n\nP.S. {{wrap_up_ps}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Celebrates launch success and previews future development"
+      }
+    ],
+    "placeholders": {
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "first_name": {
+        "type": "string",
+        "description": "Subscriber's first name",
+        "required": true
+      },
+      "development_time": {
+        "type": "string",
+        "description": "Time spent developing the app",
+        "default": "6 months"
+      },
+      "launch_offer": {
+        "type": "string",
+        "description": "Special launch offer or promotion"
+      },
+      "sender_name": {
+        "type": "string",
+        "description": "Name of email sender",
+        "required": true
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T11:45:00Z",
+    "updated_at": "2025-01-25T11:45:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["email", "launch_campaign", "product_launch", "momentum"],
+    "brand_voice": "excited",
+    "tone": "celebratory",
+    "character_limits": {
+      "min": 300,
+      "max": 2500,
+      "optimal": 1000
+    },
+    "call_to_action": {
+      "primary": "Download Now",
+      "secondary": "Learn More",
+      "url": "{{download_url}}"
+    },
+    "performance_tracking": {
+      "metrics": ["open_rate", "click_through_rate", "downloads", "conversions"],
+      "goals": {
+        "open_rate": 0.50,
+        "click_through_rate": 0.12,
+        "download_conversion": 0.25
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "frequency": "campaign",
+      "campaign_duration": 7
+    },
+    "triggers": [
+      {
+        "event": "app_launch",
+        "action": "send_email",
+        "delay": 0,
+        "conditions": {"subscriber_status": "active"}
+      }
+    ],
+    "personalization": {
+      "dynamic_fields": ["download_stats", "user_reviews", "milestone_data"],
+      "segmentation_rules": [
+        {
+          "condition": "subscriber_type == 'early_supporter'",
+          "variation": "launch_announcement"
+        },
+        {
+          "condition": "engagement_level == 'high'",
+          "variation": "launch_success_stories"
+        }
+      ]
+    }
+  }
+}

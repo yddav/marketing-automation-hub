@@ -1,0 +1,214 @@
+{
+  "id": "content-calendar-system",
+  "type": "automation_system",
+  "platform": ["instagram", "twitter", "facebook", "linkedin"],
+  "audience": {
+    "primary": "social_media_automation",
+    "secondary": ["marketing_team", "content_creators"],
+    "demographics": {
+      "age_range": "all",
+      "interests": ["automation", "social_media", "marketing"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "30-day automated content calendar generator",
+    "calendar_structure": {
+      "posting_frequency": {
+        "instagram": {
+          "posts_per_day": 1,
+          "stories_per_day": 2,
+          "reels_per_week": 3,
+          "optimal_times": ["09:00", "13:00", "19:00"]
+        },
+        "twitter": {
+          "tweets_per_day": 3,
+          "threads_per_week": 2,
+          "optimal_times": ["08:00", "12:00", "16:00", "20:00"]
+        },
+        "facebook": {
+          "posts_per_day": 1,
+          "optimal_times": ["09:00", "15:00", "21:00"]
+        },
+        "linkedin": {
+          "posts_per_day": 1,
+          "articles_per_week": 1,
+          "optimal_times": ["08:00", "12:00", "17:00"]
+        }
+      },
+      "content_distribution": {
+        "week_1": {
+          "theme": "feature_showcase",
+          "content_types": ["product_demo", "user_testimonial", "behind_scenes"],
+          "primary_goal": "awareness",
+          "engagement_target": "15%"
+        },
+        "week_2": {
+          "theme": "community_building", 
+          "content_types": ["user_generated", "tips_tutorials", "team_spotlight"],
+          "primary_goal": "engagement",
+          "engagement_target": "20%"
+        },
+        "week_3": {
+          "theme": "value_demonstration",
+          "content_types": ["case_studies", "feature_deep_dive", "success_stories"],
+          "primary_goal": "conversion", 
+          "engagement_target": "18%"
+        },
+        "week_4": {
+          "theme": "launch_preparation",
+          "content_types": ["countdown_posts", "exclusive_previews", "call_to_action"],
+          "primary_goal": "conversion",
+          "engagement_target": "25%"
+        }
+      }
+    },
+    "automated_scheduling": {
+      "time_zone": "UTC",
+      "smart_scheduling": true,
+      "audience_analysis": true,
+      "optimal_timing_calculation": {
+        "factors": ["follower_activity", "platform_algorithms", "engagement_history"],
+        "adjustment_frequency": "weekly",
+        "performance_learning": true
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T14:00:00Z",
+    "updated_at": "2025-01-25T14:00:00Z",
+    "version": "2.0.0",
+    "author": "Agent A - Social Media Automation",
+    "tags": ["automation", "scheduling", "content_calendar", "multi_platform"],
+    "integration_points": {
+      "agent_b_apis": "social_media_posting_apis",
+      "agent_c_analytics": "performance_tracking_dashboard",
+      "content_templates": "phase_1_content_infrastructure"
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "batch_scheduling": true,
+      "conflict_detection": true,
+      "platform_optimization": true,
+      "queue_management": {
+        "buffer_time": 15,
+        "retry_failed_posts": true,
+        "fallback_content": true
+      }
+    },
+    "content_generation": {
+      "template_rotation": "smart_rotation",
+      "hashtag_rotation": "performance_based",
+      "personalization": {
+        "audience_segmentation": true,
+        "dynamic_content": true,
+        "a_b_testing": true
+      }
+    },
+    "performance_optimization": {
+      "real_time_adjustments": true,
+      "algorithm_adaptation": true,
+      "engagement_optimization": true,
+      "conversion_tracking": true
+    }
+  },
+  "integration_apis": {
+    "required_for_agent_b": {
+      "instagram_basic_display": "content_publishing",
+      "twitter_api_v2": "tweet_posting_management", 
+      "facebook_graph_api": "page_content_management",
+      "linkedin_marketing_api": "company_page_posting"
+    },
+    "data_exchange_agent_c": {
+      "performance_metrics": "real_time_analytics_feed",
+      "engagement_data": "dashboard_visualization",
+      "conversion_tracking": "roi_analysis"
+    }
+  },
+  "daily_calendar_structure": [
+    {
+      "day": 1,
+      "theme": "monday_motivation",
+      "content_schedule": {
+        "instagram": {
+          "09:00": {
+            "type": "feature_showcase",
+            "template_id": "feature_showcase",
+            "hashtag_set": "tier1_branded",
+            "cta": "download_app"
+          },
+          "13:00": {
+            "type": "story_series",
+            "template_id": "behind_scenes",
+            "interactive": "poll_question"
+          },
+          "19:00": {
+            "type": "user_testimonial",
+            "template_id": "user_testimonial",
+            "hashtag_set": "community_focused"
+          }
+        },
+        "twitter": {
+          "08:00": {
+            "type": "thread_starter",
+            "template_id": "weekly_tips",
+            "engagement_hook": "question"
+          },
+          "12:00": {
+            "type": "quick_tip",
+            "template_id": "productivity_tip",
+            "hashtag_set": "niche_community"
+          },
+          "16:00": {
+            "type": "retweet_engage",
+            "strategy": "community_interaction"
+          },
+          "20:00": {
+            "type": "closing_thought",
+            "template_id": "daily_reflection",
+            "cta": "app_download"
+          }
+        },
+        "facebook": {
+          "09:00": {
+            "type": "week_kickoff",
+            "template_id": "feature_showcase",
+            "format": "video_demo"
+          },
+          "21:00": {
+            "type": "community_question",
+            "template_id": "engagement_post",
+            "interactive": "comment_discussion"
+          }
+        },
+        "linkedin": {
+          "08:00": {
+            "type": "professional_insight",
+            "template_id": "industry_thought_leadership",
+            "hashtag_set": "professional_network"
+          }
+        }
+      }
+    }
+  ],
+  "coordination_dependencies": {
+    "agent_b_requirements": {
+      "api_connections": ["instagram", "twitter", "facebook", "linkedin"],
+      "authentication_tokens": "oauth_management",
+      "posting_permissions": "content_publishing_rights",
+      "rate_limiting": "platform_specific_limits"
+    },
+    "agent_c_requirements": {
+      "analytics_integration": "performance_data_feed",
+      "dashboard_endpoints": "real_time_metrics_api",
+      "reporting_system": "automated_performance_reports"
+    },
+    "shared_resources": {
+      "content_database": "phase_1_templates",
+      "brand_guidelines": "consistent_voice_tone",
+      "hashtag_strategy": "coordinated_hashtag_usage"
+    }
+  }
+}

@@ -1,0 +1,363 @@
+name: Marketing Automation Hub - Production Pipeline
+
+on:
+  push:
+    branches: [ main, production ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  KUBECONFIG_FILE: ${{ secrets.KUBECONFIG }}
+
+jobs:
+  # Quality Gates
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci --only=production
+      
+    - name: Security audit
+      run: npm audit --audit-level=high
+      
+    - name: Code quality check
+      run: |
+        npm run lint
+        npm run format
+        
+    - name: Type checking
+      run: |
+        if [ -f "tsconfig.json" ]; then
+          npx tsc --noEmit
+        fi
+        
+    - name: Content validation
+      run: npm run validate-content
+      
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  # Security Scanning
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        
+    - name: Upload Trivy scan results
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+        
+    - name: Snyk Security Scan
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        args: --severity-threshold=high
+
+  # Automated Testing
+  test-suite:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run unit tests
+      run: npm test -- --coverage --watchAll=false
+      env:
+        DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_db
+        REDIS_URL: redis://localhost:6379
+        NODE_ENV: test
+        
+    - name: Run integration tests
+      run: npm run test:integration
+      env:
+        DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_db
+        REDIS_URL: redis://localhost:6379
+        NODE_ENV: test
+        
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage/lcov.info
+        
+    - name: Performance tests
+      run: |
+        npm start &
+        sleep 10
+        npx artillery run performance-tests.yml
+        
+  # E2E Testing
+  e2e-tests:
+    runs-on: ubuntu-latest
+    needs: [code-quality, test-suite]
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
+      
+    - name: Start application
+      run: |
+        npm start &
+        npx wait-on http://localhost:3000 --timeout 60000
+      env:
+        NODE_ENV: test
+        PORT: 3000
+        
+    - name: Run E2E tests
+      run: npx playwright test
+      
+    - name: Upload E2E test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+
+  # Container Build & Security Scan
+  build-and-scan:
+    runs-on: ubuntu-latest
+    needs: [code-quality, security-scan, test-suite]
+    outputs:
+      image-digest: ${{ steps.build.outputs.digest }}
+      image-tag: ${{ steps.meta.outputs.tags }}
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Log in to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=sha,prefix={{branch}}-
+          type=raw,value=latest,enable={{is_default_branch}}
+          
+    - name: Build and push Docker image
+      id: build
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        platforms: linux/amd64,linux/arm64
+        
+    - name: Container security scan
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        format: 'sarif'
+        output: 'container-results.sarif'
+        
+    - name: Upload container scan results
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+        sarif_file: 'container-results.sarif'
+
+  # Staging Deployment
+  deploy-staging:
+    runs-on: ubuntu-latest
+    needs: [build-and-scan, e2e-tests]
+    if: github.ref == 'refs/heads/main'
+    environment: staging
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Setup kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+        
+    - name: Configure kubeconfig
+      run: |
+        mkdir -p ~/.kube
+        echo "${{ secrets.KUBECONFIG_STAGING }}" | base64 -d > ~/.kube/config
+        
+    - name: Deploy to staging
+      run: |
+        kubectl set image deployment/marketing-automation-hub \
+          marketing-hub=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+          -n marketing-automation-staging
+        kubectl rollout status deployment/marketing-automation-hub -n marketing-automation-staging --timeout=300s
+        
+    - name: Run smoke tests
+      run: |
+        STAGING_URL=$(kubectl get ingress marketing-automation-ingress -n marketing-automation-staging -o jsonpath='{.spec.rules[0].host}')
+        curl -I https://$STAGING_URL/health || exit 1
+        curl -I https://$STAGING_URL/api/health || exit 1
+        
+  # Production Deployment
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: [deploy-staging]
+    if: startsWith(github.ref, 'refs/tags/v')
+    environment: production
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Setup kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+        
+    - name: Configure kubeconfig
+      run: |
+        mkdir -p ~/.kube
+        echo "${{ secrets.KUBECONFIG_PRODUCTION }}" | base64 -d > ~/.kube/config
+        
+    - name: Blue-Green Deployment
+      run: |
+        # Create new deployment with green label
+        kubectl patch deployment marketing-automation-hub \
+          -p '{"spec":{"selector":{"matchLabels":{"version":"green"}},"template":{"metadata":{"labels":{"version":"green"}}},"template":{"spec":{"containers":[{"name":"marketing-hub","image":"${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"}]}}}}' \
+          -n marketing-automation
+          
+        # Wait for green deployment
+        kubectl rollout status deployment/marketing-automation-hub -n marketing-automation --timeout=600s
+        
+        # Health check on green deployment
+        kubectl get pods -l version=green -n marketing-automation
+        
+        # Switch traffic to green
+        kubectl patch service marketing-automation-service \
+          -p '{"spec":{"selector":{"version":"green"}}}' \
+          -n marketing-automation
+          
+    - name: Production smoke tests
+      run: |
+        PROD_URL=$(kubectl get ingress marketing-automation-ingress -n marketing-automation -o jsonpath='{.spec.rules[0].host}')
+        
+        # Health checks
+        curl -f https://$PROD_URL/health || exit 1
+        curl -f https://$PROD_URL/api/health || exit 1
+        
+        # Performance validation
+        response_time=$(curl -o /dev/null -s -w '%{time_total}' https://$PROD_URL)
+        if (( $(echo "$response_time > 1.0" | bc -l) )); then
+          echo "Response time $response_time exceeds 1.0s threshold"
+          exit 1
+        fi
+        
+    - name: Cleanup old deployment
+      run: |
+        # Remove blue deployment after successful green deployment
+        kubectl delete deployment marketing-automation-hub-blue -n marketing-automation --ignore-not-found=true
+        
+    - name: Notify deployment success
+      uses: 8398a7/action-slack@v3
+      with:
+        status: success
+        channel: '#deployments'
+        text: '🚀 Production deployment successful! Version: ${{ github.ref_name }}'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+
+  # Rollback capability
+  rollback-production:
+    runs-on: ubuntu-latest
+    if: failure() && github.ref == 'refs/heads/main'
+    needs: [deploy-production]
+    environment: production
+    steps:
+    - name: Setup kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'v1.28.0'
+        
+    - name: Configure kubeconfig
+      run: |
+        mkdir -p ~/.kube
+        echo "${{ secrets.KUBECONFIG_PRODUCTION }}" | base64 -d > ~/.kube/config
+        
+    - name: Automatic rollback
+      run: |
+        kubectl rollout undo deployment/marketing-automation-hub -n marketing-automation
+        kubectl rollout status deployment/marketing-automation-hub -n marketing-automation --timeout=300s
+        
+    - name: Notify rollback
+      uses: 8398a7/action-slack@v3
+      with:
+        status: failure
+        channel: '#alerts-critical'
+        text: '🚨 Production deployment failed and rolled back automatically!'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}

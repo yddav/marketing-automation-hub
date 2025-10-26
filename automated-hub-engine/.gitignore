@@ -1,0 +1,67 @@
+# Automated Hub Engine - Git Ignore
+
+# Environment and Secrets
+.env
+.env.local
+.env.production
+.env.staging
+staging-config.env
+
+# Logs
+*.log
+staging-server.log
+deployment.log
+
+# Process IDs
+*.pid
+staging-server.pid
+
+# Temporary Files
+.DS_Store
+.vscode/
+.idea/
+*.tmp
+*.swp
+*~
+
+# Staging Deployment (generated)
+staging-deployment/
+backups/
+
+# Node.js Dependencies (if added later)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Database (if added later)
+*.db
+*.sqlite
+*.sqlite3
+
+# Testing Coverage
+coverage/
+.nyc_output/
+
+# Docker
+docker-compose.override.yml
+
+# OS Generated Files
+Thumbs.db
+ehthumbs.db
+
+# Temporary deployment files
+/tmp/ahe_*
+/var/log/ahe-*
+
+# Analytics and tracking (sensitive)
+analytics-config.js
+tracking-keys.js
+
+# Backup files
+backup_*
+staging_backup_*
+
+# Server certificates (if any)
+*.pem
+*.key
+*.crt

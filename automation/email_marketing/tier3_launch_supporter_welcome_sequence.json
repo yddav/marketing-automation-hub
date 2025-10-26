@@ -1,0 +1,167 @@
+{
+  "id": "tier3-launch-supporter-welcome-sequence",
+  "type": "email_template",
+  "platform": ["email"],
+  "tier": "tier_3_launch_supporter",
+  "tier_details": {
+    "name": "Launch Supporter",
+    "subscriber_range": "3,001-5,000",
+    "status": "launch_supporter_member"
+  },
+  "audience": {
+    "primary": "tier_3_launch_supporters",
+    "secondary": ["android_users", "value_seekers"],
+    "demographics": {
+      "age_range": "25-44",
+      "interests": ["phone_security", "android_apps", "value_pricing"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "Tier 3 Launch Supporter Welcome Sequence - 3 emails",
+    "variations": [
+      {
+        "id": "tier3_email_1_welcome",
+        "trigger_day": 0,
+        "template": "Subject: 🎯 Welcome to FINDERR Launch Supporter Program - Last Chance!\n\nHi {{first_name}},\n\nWelcome to **FINDERR Launch Supporter Program**! 🎉\n\nYou secured one of the final spots (Launch Supporter #{{subscriber_number}}) before the 5,000-subscriber deadline - excellent timing!\n\n🎯 **YOUR LAUNCH SUPPORTER STATUS:**\n\nYou made it! The Founder's Circle (1-1,000) and Early Adopter (1,001-3,000) tiers are sold out, but you're in the final exclusive tier with amazing benefits:\n\n✅ **What You Get:**\n• v5.0 GPS Tracking (Q1 2026) - **FREE when it launches**\n• v6.0 Mesh Network (Q2 2026) - **FREE when it launches**\n• \"Launch Supporter\" badge displayed in-app\n• Priority access to new features\n• Locked-in pricing at $6.99/month\n\n💰 **YOUR SAVINGS:**\n\nAfter subscriber #5,000, new users pay:\n• v5.0 GPS: +$3/month ($36/year)\n• v6.0 Mesh: +$4/month ($48/year)\n• Full suite: $12.97/month ($155.64/year)\n\nYour Launch Supporter status saves you **$84/year** starting Q1 2026.\n\n**5-Year Savings: $420**\n**10-Year Savings: $840**\n**Lifetime Savings: Unlimited**\n\n⏰ **YOU'RE LOCKED IN:**\n\nOnly {{remaining_spots}} spots remain until 5,000!\n\nAfter 5,000 subscribers:\n• GPS tracking becomes a paid add-on (+$3/month)\n• Mesh network becomes a paid add-on (+$4/month)\n• No more FREE upgrade opportunities\n\nYou secured your spot just in time! 🎯\n\n📱 **WHAT YOU GET TODAY (v4.1):**\n\nFINDERR's emergency wallpaper system is ready to protect your Android device right now:\n\n✅ **Emergency Contact Display:**\n• Display your email and phone on lost phone's lockscreen\n• Anyone who finds your phone sees how to contact you\n• Works on locked devices - no unlocking required\n• Visible immediately when someone picks up your phone\n\n✅ **Two Ways to Activate:**\n• **SMS Method:** Text \"EMERGENCY_ON\" from any phone to activate\n• **Web Dashboard:** One-click activation at finderr.app from any browser\n\n✅ **Simple Commands:**\n• Turn ON: EMERGENCY_ON, FINDERR_ON, EMERGENCY_ACTIVATE\n• Turn OFF: EMERGENCY_OFF, FINDERR_OFF, RESTORE_PHONE\n\n✅ **Reliable & Secure:**\n• Real-time sync via Supabase\n• Automatic wallpaper backup & restore\n• Enterprise-grade security\n• 99.9% system uptime\n• Battery efficient\n• Works on Android 8+\n\n🚀 **GET STARTED NOW:**\n\n1. **Download FINDERR** from Google Play Store\n2. **Sign In** with your Google Account\n3. **Add Emergency Contact** (email + phone)\n4. **Test Emergency Mode** (activate & restore)\n\n[Download FINDERR Now]\n\n🔮 **COMING SOON (FREE FOR YOU):**\n\n**v5.0 GPS Tracking (Q1 2026):**\n• Real-time location tracking\n• 7-day location history\n• Geofencing alerts\n• Emergency location sharing\n• Lost Mode with remote lock\n\n**v6.0 Mesh Network (Q2 2026):**\n• Bluetooth mesh tracking\n• Offline phone recovery\n• Community detection\n• Private mesh networks\n\n**Both upgrades: 100% FREE for Launch Supporters**\n\n💬 **QUESTIONS?**\n\nReply to this email anytime - we're here to help you get started with FINDERR.\n\nThank you for supporting FINDERR's launch. You're part of the first 5,000 - an exclusive group with lifetime benefits.\n\nWelcome to FINDERR,\n\n{{sender_name}}\nFounder, FINDERR\nUNTRAPD.COM Ecosystem\n\nP.S. Next email (Day 3): Complete emergency wallpaper setup guide with step-by-step instructions.\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Launch supporter benefits with urgency and value focus"
+      },
+      {
+        "id": "tier3_email_2_emergency_setup",
+        "trigger_day": 3,
+        "template": "Subject: 📱 FINDERR Emergency Wallpaper Setup - Step-by-Step Guide\n\nHi {{first_name}},\n\nLet's get your **FINDERR emergency wallpaper system** set up! This takes 5 minutes and could save your phone. 📱\n\n🏅 **ACTIVATE YOUR LAUNCH SUPPORTER BADGE:**\n\n1. Open FINDERR app\n2. Go to Settings → Profile → Badges\n3. Find \"Launch Supporter #{{subscriber_number}}\"\n4. Toggle \"Display Badge\" ON\n5. Your status is now visible in-app\n\n🎯 **EMERGENCY WALLPAPER SETUP:**\n\n**STEP 1: Configure Your Emergency Contact Info (2 minutes)**\n\n1. Open FINDERR app on your Android device\n2. Tap \"Emergency Contact Setup\" on home screen\n3. Enter your emergency email address\n   - Use an email you check regularly\n   - This displays on your lockscreen when activated\n4. Enter your emergency phone number\n   - Use a number where you can be reached\n   - Can be different from your phone's number\n5. Preview the emergency wallpaper\n   - See exactly how it looks on your lockscreen\n   - Make sure contact info is readable\n6. Tap \"Save Configuration\"\n\n✅ Setup complete! Now let's test it.\n\n**STEP 2: Test SMS Activation (2 minutes)**\n\n1. Grab a friend's phone or use a backup phone\n2. Send a text message to your FINDERR phone number\n3. Type: \"EMERGENCY_ON\" (without quotes)\n4. Send the message\n5. Wait 3-5 seconds\n6. Check your phone's lockscreen\n7. Your emergency contact info should be displayed!\n\n**To restore:**\n1. Send another text: \"EMERGENCY_OFF\"\n2. Your original wallpaper returns automatically\n\n✅ SMS activation tested!\n\n**STEP 3: Test Web Dashboard Activation (1 minute)**\n\n1. Open a web browser (computer, tablet, or other phone)\n2. Go to: https://finderr.app/dashboard\n3. Sign in with your Google Account (same as FINDERR app)\n4. Click the big \"Activate Emergency Mode\" button\n5. Check your phone - wallpaper changes instantly!\n6. Return to dashboard\n7. Click \"Restore Wallpaper\" to restore original\n\n✅ Web dashboard tested!\n\n[Test Dashboard Now]\n\n💡 **SMS COMMAND CHEAT SHEET:**\n\nSave these commands for quick access:\n\n**Activation Commands:**\n• EMERGENCY_ON\n• FINDERR_ON\n• EMERGENCY_ACTIVATE\n• FINDERR_ACTIVATE\n• EMERGENCY_FINDERR\n• FINDERR_EMERGENCY\n• ACTIVATE_FINDERR\n\n**Restoration Commands:**\n• EMERGENCY_OFF\n• FINDERR_OFF\n• RESTORE_PHONE\n• DEACTIVATE_FINDERR\n• FINDERR_DEACTIVATE\n• FINDERR_RESTORE\n\n**Pro Tip:** Save \"EMERGENCY_ON\" and \"EMERGENCY_OFF\" as contacts on your backup phone for one-tap activation.\n\n🎯 **SETUP CHECKLIST:**\n\nMake sure you've completed everything:\n\n- [ ] Launch Supporter badge activated\n- [ ] Emergency email configured\n- [ ] Emergency phone number configured\n- [ ] Emergency wallpaper preview reviewed\n- [ ] SMS activation tested (EMERGENCY_ON)\n- [ ] SMS restoration tested (EMERGENCY_OFF)\n- [ ] Web dashboard login successful\n- [ ] Web dashboard activation tested\n- [ ] Web dashboard restoration tested\n- [ ] SMS commands saved on backup device\n- [ ] Dashboard bookmarked for quick access\n\n[Complete Setup]\n\n📊 **HOW EMERGENCY MODE WORKS:**\n\n**When Your Phone is Lost:**\n1. You realize your phone is missing\n2. You send \"EMERGENCY_ON\" via SMS (from any phone)\n   OR you activate via web dashboard (from any browser)\n3. Within 3 seconds, your phone's wallpaper changes\n4. Your emergency contact info displays on the lockscreen\n5. Anyone who finds your phone sees how to reach you\n6. They contact you (no unlocking required)\n7. You coordinate phone return\n8. Once recovered, send \"EMERGENCY_OFF\" to restore wallpaper\n\n**Real Success Story:**\n\"I left my phone in an Uber. Activated emergency mode from my laptop. The driver saw my email on the lockscreen and messaged me within 30 minutes. Got my phone back the same day!\" - David L., Beta Tester\n\n💬 **COMMON QUESTIONS:**\n\n**Q: What if my phone battery dies?**\nA: The emergency wallpaper stays active when the phone powers back on. Your contact info remains visible until you restore it.\n\n**Q: Can someone access my phone with emergency mode active?**\nA: No - emergency mode only changes the wallpaper. Your phone remains locked and secure.\n\n**Q: Does emergency mode work without internet?**\nA: The wallpaper change requires internet connection initially, but once activated, it remains even offline.\n\n**Q: How do I change emergency contact info?**\nA: Settings → Emergency Contact → Edit Info → Save. Changes sync instantly.\n\nHave more questions? Reply to this email!\n\n🔮 **WHAT'S COMING (FREE FOR YOU):**\n\n**v5.0 GPS Tracking (April 2026):**\nSee your phone's location on a map in real-time, with 7-day location history and geofencing alerts.\n\n**v6.0 Mesh Network (July 2026):**\nFind your phone even when offline using community Bluetooth mesh network.\n\nBoth upgrades are **completely FREE** for Launch Supporters.\n\n🎉 **NEXT STEPS:**\n\nIn 4 days, I'll send you complete details about v5.0 and v6.0, including timeline, features, and what to expect.\n\nFor now, make sure your emergency wallpaper system is set up and tested!\n\n{{sender_name}}\nFounder, FINDERR\nUNTRAPD.COM Ecosystem\n\nP.S. Only {{remaining_spots}} Launch Supporter spots remain! Share FINDERR: {{referral_link}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Detailed setup tutorial with checklist and SMS command reference"
+      },
+      {
+        "id": "tier3_email_3_locked_in",
+        "trigger_day": 7,
+        "template": "Subject: ✅ You're Locked In - Your v5.0 & v6.0 FREE Upgrades Confirmed\n\nHi {{first_name}},\n\nCongratulations! You've been a **Launch Supporter** for a week. Your FREE v5.0 and v6.0 upgrades are officially locked in! ✅\n\n🎯 **YOUR FINDERR STATUS CONFIRMED:**\n\nLaunch Supporter #{{subscriber_number}} out of 5,000\n\n✅ **Confirmed Benefits:**\n• v4.1 Emergency Wallpaper System - **ACTIVE NOW**\n• v5.0 GPS Tracking (Q1 2026) - **FREE CONFIRMED**\n• v6.0 Mesh Network (Q2 2026) - **FREE CONFIRMED**\n• Locked-in pricing: $6.99/month forever\n• Launch Supporter badge active\n\n💰 **Your Lifetime Value:**\n\n```\nLaunch Supporter Cost:\n$6.99/month × 120 months (10 years) = $838.80\n\nPost-5K Standard Cost:\n$12.97/month × 120 months (10 years) = $1,556.40\n\nYour 10-Year Savings: $717.60\n```\n\nYou saved **$717.60** by subscribing before subscriber #5,000! 🎉\n\n📱 **v4.1 EMERGENCY WALLPAPER SYSTEM (AVAILABLE NOW):**\n\nMake sure you've completed setup:\n\n✅ **What You Have Today:**\n• Emergency contact display on lockscreen\n• SMS activation (7 commands: EMERGENCY_ON, etc.)\n• Web dashboard activation (finderr.app)\n• Automatic wallpaper backup & restore\n• Real-time synchronization\n• Enterprise-grade security\n• 99.9% uptime guarantee\n\n🎯 **Monthly Maintenance Checklist:**\n- [ ] Test emergency activation once per month\n- [ ] Verify emergency contact info is current\n- [ ] Confirm SMS commands work from backup phone\n- [ ] Test web dashboard login and activation\n- [ ] Ensure Launch Supporter badge is displayed\n\n[Test Emergency Mode]\n\n🔮 **v5.0 GPS TRACKING (Q1 2026) - COMPLETE DETAILS:**\n\n**Development Status:** 67% complete\n\n**Timeline:**\n• February 2026: Internal testing begins\n• March 2026: Beta testing (invitation-based)\n• April 2026: Public release for ALL Launch Supporters\n\n**Features You'll Get (FREE):**\n\n1. **Real-Time Location Tracking**\n   • See phone location on interactive map\n   • Updates every 30 seconds\n   • Indoor + outdoor tracking (GPS + WiFi + cell)\n   • Battery-optimized (10-hour tracking when lost)\n\n2. **Location History**\n   • 7-day history included\n   • Complete movement timeline\n   • Playback mode with route visualization\n   • Export data (KML, GPX, CSV)\n\n3. **Geofencing Alerts**\n   • Create custom zones (home, work, school)\n   • Enter/exit notifications\n   • Configurable radius (500m - 5km)\n   • Time-based smart alerts\n\n4. **Emergency Location Sharing**\n   • One-tap share with emergency contacts\n   • Auto-share when emergency mode activates\n   • Real-time tracking links\n   • 24-hour expiration (privacy)\n\n5. **Lost Mode**\n   • Remote device lock with custom message\n   • Display contact info while locked\n   • Unlock remotely when recovered\n   • Works without SIM card\n\n💰 **v5.0 Value:** FREE for you (others pay +$3/month)\n\n🌐 **v6.0 MESH NETWORK (Q2 2026) - REVOLUTIONARY FEATURES:**\n\n**Development Status:** 42% complete\n\n**Timeline:**\n• May 2026: Internal testing begins\n• June 2026: Beta testing (invitation-based)\n• July 2026: Public release for ALL Launch Supporters\n\n**How It Works:**\n\nYour lost phone broadcasts a Bluetooth beacon. Other Android devices with FINDERR detect the beacon and anonymously report location to you. Find your phone even when it's offline!\n\n**Features You'll Get (FREE):**\n\n1. **Crowdsourced Detection**\n   • Leverage 1+ billion Android devices\n   • Anonymous detection (privacy-protected)\n   • Works completely offline\n   • 30-100 meter detection range per device\n   • High probability in urban areas\n\n2. **Emergency Super-Beacon**\n   • Enhanced broadcast when emergency mode active\n   • 3x detection range (90-300 meters)\n   • Priority reporting to your account\n   • Instant notifications when detected\n\n3. **Community Karma System**\n   • Earn points for helping others\n   • Leaderboards and special badges\n   • Karma rewards: Extended features\n   • Privacy: All detection is anonymous\n\n4. **Private Mesh Networks**\n   • Create family mesh (5-10 devices)\n   • Create company mesh (unlimited devices)\n   • Private detection (network-only)\n   • Shared location access\n\n💰 **v6.0 Value:** FREE for you (others pay +$4/month)\n\n📅 **YOUR FINDERR TIMELINE:**\n\n**Today - March 2026:**\n• Use v4.1 emergency wallpaper system\n• Test activation monthly\n• Keep emergency contact info updated\n\n**April 2026:**\n• v5.0 GPS tracking launches (FREE for you)\n• Automatic upgrade notification\n• Complete v5.0 setup tutorial\n• Start using location tracking\n\n**July 2026:**\n• v6.0 mesh network launches (FREE for you)\n• Join community detection network\n• Create private family mesh\n• Earn karma by helping others\n\n**Beyond 2026:**\n• v7.0 premium features (available for purchase)\n• Continued v4.1 + v5.0 + v6.0 access at $6.99/month\n• Launch Supporter status: permanent\n\n💬 **COMMUNITY INTRODUCTION:**\n\nAs a Launch Supporter, you're part of the founding 5,000:\n\n• **Exclusive Discord:** Launch Supporter channel (invitation coming Month 2)\n• **Monthly Updates:** Development progress emails\n• **Beta Testing:** Optional invitations for v5.0 and v6.0\n• **Community Events:** Quarterly webinars and Q&A sessions\n\n🎯 **HOW TO MAXIMIZE YOUR BENEFITS:**\n\n1. **Master v4.1 Now** (Today - March 2026)\n   - Use emergency wallpaper system regularly\n   - Test monthly to ensure it works\n   - Update contact info when needed\n\n2. **Prepare for v5.0** (April 2026)\n   - Accept upgrade notification\n   - Complete v5.0 setup tutorial\n   - Configure geofencing zones\n   - Test location tracking features\n\n3. **Prepare for v6.0** (July 2026)\n   - Join mesh network community\n   - Enable background detection\n   - Create private family mesh\n   - Earn karma by helping others\n\n4. **Stay Informed**\n   - Read monthly development updates\n   - Join Launch Supporter Discord\n   - Participate in community webinars\n   - Provide feedback to development team\n\n🚀 **THANK YOU:**\n\nYou're one of the first 5,000 FINDERR subscribers. You believed in our vision when we only had emergency wallpaper.\n\nThat's why you're a **Launch Supporter** - you supported us at launch, so we're supporting you with FREE upgrades for life.\n\nYour $6.99/month investment today will include $12.97/month worth of features starting in 2026.\n\nThank you for your support,\n\n{{sender_name}}\nFounder, FINDERR\nUNTRAPD.COM Ecosystem\n\nP.S. Questions about v5.0 or v6.0? Reply to this email anytime.\n\nP.P.S. Only {{remaining_spots}} Launch Supporter spots remain before we hit 5,000! Share: {{referral_link}}\n\n---\n{{unsubscribe_footer}}",
+        "performance_notes": "Confirmation of benefits with complete roadmap and timeline"
+      }
+    ],
+    "placeholders": {
+      "first_name": {
+        "type": "string",
+        "description": "User's first name",
+        "required": true
+      },
+      "subscriber_number": {
+        "type": "integer",
+        "description": "Subscriber number within 3,001-5,000 range",
+        "required": true,
+        "validation": "3001-5000"
+      },
+      "remaining_spots": {
+        "type": "integer",
+        "description": "Remaining Launch Supporter spots (5,000 - current subscribers)",
+        "required": true
+      },
+      "sender_name": {
+        "type": "string",
+        "description": "Name of email sender",
+        "required": true,
+        "default": "Michael Chen"
+      },
+      "referral_link": {
+        "type": "string",
+        "description": "Personalized referral link",
+        "required": false
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-10-15T19:00:00Z",
+    "updated_at": "2025-10-15T19:00:00Z",
+    "version": "1.0.0",
+    "author": "Agent C - Email & Asset Creation Specialist",
+    "tags": ["email", "tier_3", "launch_supporter", "setup_guide", "roadmap"],
+    "brand_voice": "encouraging",
+    "tone": "supportive",
+    "character_limits": {
+      "min": 500,
+      "max": 2500,
+      "optimal": 1300
+    },
+    "call_to_action": {
+      "primary": "Download FINDERR Now",
+      "secondary": "Test Emergency Mode",
+      "tertiary": "Complete Setup",
+      "url": "https://play.google.com/store/apps/details?id=com.untrapd.finderr"
+    },
+    "performance_tracking": {
+      "metrics": ["open_rate", "click_through_rate", "setup_completion_rate", "monthly_test_rate"],
+      "goals": {
+        "open_rate": 0.50,
+        "click_through_rate": 0.12,
+        "setup_completion_rate": 0.70,
+        "sequence_completion": 0.60
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "frequency": "campaign",
+      "campaign_duration": 7,
+      "email_sequence": [
+        {"day": 0, "email_id": "tier3_email_1_welcome"},
+        {"day": 3, "email_id": "tier3_email_2_emergency_setup"},
+        {"day": 7, "email_id": "tier3_email_3_locked_in"}
+      ]
+    },
+    "triggers": [
+      {
+        "event": "subscription_created",
+        "action": "send_email",
+        "delay": 0,
+        "conditions": {
+          "tier": "tier_3",
+          "subscriber_number": "3001-5000",
+          "email_verified": true
+        }
+      },
+      {
+        "event": "email_1_sent",
+        "action": "schedule_email_2",
+        "delay": 4320,
+        "conditions": {"sequence_step": 2}
+      },
+      {
+        "event": "email_2_sent",
+        "action": "schedule_email_3",
+        "delay": 5760,
+        "conditions": {"sequence_step": 3}
+      }
+    ],
+    "personalization": {
+      "dynamic_fields": [
+        "subscriber_number",
+        "remaining_spots",
+        "referral_link",
+        "setup_completion_status"
+      ],
+      "segmentation_rules": [
+        {
+          "condition": "remaining_spots < 100",
+          "variation": "urgent_final_spots_messaging"
+        },
+        {
+          "condition": "remaining_spots < 500",
+          "variation": "high_urgency_messaging"
+        },
+        {
+          "condition": "remaining_spots >= 500",
+          "variation": "standard_messaging"
+        }
+      ]
+    }
+  },
+  "feature_accuracy": {
+    "v4_1_features_only": true,
+    "gps_tracking_status": "coming_april_2026_free_for_tier3",
+    "mesh_network_status": "coming_july_2026_free_for_tier3",
+    "remote_lock_status": "coming_in_v5_lost_mode",
+    "verified_against": "FINDERR_V4.1_FEATURE_ACCURACY.md",
+    "accuracy_check_date": "2025-10-15"
+  }
+}

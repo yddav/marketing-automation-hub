@@ -1,0 +1,73 @@
+{
+    "name": "UNTRAPD - AI-Powered Marketing Automation Hub",
+    "short_name": "UNTRAPD",
+    "description": "Transform your marketing with UNTRAPD's AI-powered automation platform. Streamline campaigns, boost engagement, and drive growth with intelligent marketing tools.",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1a1a2e",
+    "background_color": "#0f0f23",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "start_url": "/",
+    "scope": "/",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": ["business", "marketing", "productivity"],
+    "screenshots": [
+        {
+            "src": "/screenshot-desktop.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "UNTRAPD Landing Page - Desktop"
+        },
+        {
+            "src": "/screenshot-mobile.png",
+            "sizes": "375x812",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "UNTRAPD Landing Page - Mobile"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Go to Hub",
+            "short_name": "Hub",
+            "description": "Access UNTRAPD Marketing Hub",
+            "url": "https://hub.untrapd.com",
+            "icons": [
+                {
+                    "src": "/shortcut-hub-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ],
+    "prefer_related_applications": false
+}

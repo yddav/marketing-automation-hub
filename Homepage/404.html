@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Marketing Templates Hub</title>
+    <meta name="description" content="The page you're looking for couldn't be found. Browse our marketing templates or return to the homepage.">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/templates.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        .error-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,100 100,0 200,50 300,20 400,80 500,30 600,70 700,10 800,60 900,40 1000,90 1000,100"/></svg>') repeat-x;
+            animation: wave 20s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100px); }
+        }
+        
+        .error-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .error-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .suggestions {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .suggestion-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .suggestion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .suggestion-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .suggestion-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .suggestion-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            .error-title {
+                font-size: 2rem;
+            }
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="/index.html" class="logo-link">
+                        <h1>Marketing Hub</h1>
+                        <span class="tagline">Templates That Convert</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/templates.html" class="nav-link">Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/dashboard/index.html" class="nav-link">Analytics Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/pricing.html" class="nav-link">Pricing</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="/pages/pricing.html#buy-now" class="cta-button primary">Buy Now - $97</a>
+                </div>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Error Hero Section -->
+    <section class="error-hero">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-subtitle">
+                Oops! The page you're looking for seems to have disappeared. 
+                Don't worry, our marketing templates are still here and ready to help your app succeed.
+            </p>
+            <div class="error-actions">
+                <a href="/index.html" class="cta-button primary large">
+                    Back to Home
+                </a>
+                <a href="/templates.html" class="cta-button secondary large">
+                    Browse Templates
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suggestions Section -->
+    <section class="suggestions">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">What are you looking for?</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                Try one of these popular destinations instead:
+            </p>
+            
+            <div class="suggestions-grid">
+                <div class="suggestion-card">
+                    <div class="suggestion-icon">📝</div>
+                    <h3>Marketing Templates</h3>
+                    <p>Browse our collection of 17+ proven marketing templates for all major platforms.</p>
+                    <a href="/templates.html" class="cta-button primary">Browse Templates</a>
+                </div>
+                
+                <div class="suggestion-card">
+                    <div class="suggestion-icon">📊</div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>See how our analytics dashboard tracks performance across all your marketing campaigns.</p>
+                    <a href="/dashboard/index.html" class="cta-button primary">View Demo</a>
+                </div>
+                
+                <div class="suggestion-card">
+                    <div class="suggestion-icon">💰</div>
+                    <h3>Pricing & Purchase</h3>
+                    <p>Get the complete marketing automation system for just $97 with lifetime access.</p>
+                    <a href="/pages/pricing.html" class="cta-button primary">See Pricing</a>
+                </div>
+                
+                <div class="suggestion-card">
+                    <div class="suggestion-icon">🛟</div>
+                    <h3>Get Support</h3>
+                    <p>Need help? Contact our support team for questions about templates or purchases.</p>
+                    <a href="/pages/contact.html" class="cta-button primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section style="padding: 3rem 0; background: white;">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <h2>Still can't find what you need?</h2>
+                <p style="color: #666; margin-bottom: 2rem;">
+                    Try searching our site or contact our support team directly.
+                </p>
+                
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                    <input 
+                        type="text" 
+                        placeholder="Search templates, features, help..." 
+                        style="flex: 1; padding: 12px 16px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px;"
+                        id="searchInput"
+                    >
+                    <button 
+                        class="cta-button primary" 
+                        onclick="performSearch()"
+                        style="white-space: nowrap;"
+                    >
+                        Search
+                    </button>
+                </div>
+                
+                <p style="color: #666; font-size: 14px;">
+                    Popular searches: instagram templates, email marketing, analytics dashboard, pricing
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marketing Templates Hub</h3>
+                    <p>Professional marketing templates for successful app launches. Trusted by 500+ developers worldwide.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/templates.html">Browse Templates</a></li>
+                        <li><a href="/dashboard/index.html">Analytics Demo</a></li>
+                        <li><a href="/pages/pricing.html">Pricing</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/pages/contact.html">Contact Support</a></li>
+                        <li><a href="#" onclick="showRefundPolicy()">Refund Policy</a></li>
+                        <li><a href="#" onclick="showTerms()">Terms of Service</a></li>
+                        <li><a href="#" onclick="showPrivacy()">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/index.html">Homepage</a></li>
+                        <li><a href="/templates.html">All Templates</a></li>
+                        <li><a href="/pages/pricing.html">Get Started</a></li>
+                        <li><a href="/pages/contact.html">Get Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Marketing Templates Hub. All rights reserved. Professional marketing templates for app success.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script>
+        // Search functionality
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            
+            if (!searchTerm) return;
+            
+            // Simple search routing based on keywords
+            if (searchTerm.includes('template') || searchTerm.includes('instagram') || searchTerm.includes('email') || searchTerm.includes('social')) {
+                window.location.href = '/templates.html';
+            } else if (searchTerm.includes('analytics') || searchTerm.includes('dashboard') || searchTerm.includes('tracking')) {
+                window.location.href = '/dashboard/index.html';
+            } else if (searchTerm.includes('pricing') || searchTerm.includes('buy') || searchTerm.includes('purchase') || searchTerm.includes('$')) {
+                window.location.href = '/pages/pricing.html';
+            } else if (searchTerm.includes('contact') || searchTerm.includes('support') || searchTerm.includes('help')) {
+                window.location.href = '/pages/contact.html';
+            } else {
+                // Default to templates page
+                window.location.href = '/templates.html';
+            }
+        }
+        
+        // Allow enter key to search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+        
+        // Track 404 page view
+        if (typeof gtag !== 'undefined') {
+            gtag('event', '404_page_view', {
+                event_category: 'error',
+                event_label: window.location.pathname
+            });
+        }
+    </script>
+</body>
+</html>

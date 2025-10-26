@@ -1,0 +1,362 @@
+# Automated Failover and Business Continuity
+# Multi-region disaster recovery configuration
+
+# Multi-region deployment configuration
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: marketing-automation-dr
+  namespace: argocd
+  labels:
+    app: marketing-automation-hub
+    env: disaster-recovery
+spec:
+  project: marketing-automation
+  source:
+    repoURL: https://github.com/your-org/marketing-automation-infrastructure
+    targetRevision: HEAD
+    path: disaster-recovery/manifests
+  destination:
+    server: https://kubernetes-dr.yourdomain.com  # DR cluster
+    namespace: marketing-automation
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
+
+---
+# Database failover configuration
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: marketing-postgres-dr-cluster
+  namespace: marketing-automation
+  labels:
+    app: postgresql
+    tier: database
+    role: standby
+spec:
+  instances: 2
+  
+  # Bootstrap from primary cluster backup
+  bootstrap:
+    recovery:
+      source: primary-cluster
+      recoveryTargetSettings:
+        targetTime: ""  # Latest available
+        
+  # Replica configuration
+  replica:
+    enabled: true
+    source: primary-cluster
+    
+  externalClusters:
+  - name: primary-cluster
+    connectionParameters:
+      host: marketing-postgres-cluster-rw.marketing-automation.svc.cluster.local
+      user: postgres
+      dbname: marketing_automation_hub
+    password:
+      name: postgres-credentials
+      key: password
+      
+  storage:
+    size: 100Gi
+    storageClass: fast-ssd
+    
+  monitoring:
+    enabled: true
+    
+  backup:
+    retentionPolicy: "30d"
+    barmanObjectStore:
+      destinationPath: "s3://marketing-automation-backups-dr/postgres"
+      s3Credentials:
+        accessKeyId:
+          name: backup-credentials
+          key: ACCESS_KEY_ID
+        secretAccessKey:
+          name: backup-credentials
+          key: SECRET_ACCESS_KEY
+
+---
+# Circuit breaker for automatic failover
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: failover-config
+  namespace: marketing-automation
+  labels:
+    app: failover-automation
+data:
+  config.yaml: |
+    failover:
+      # Health check configuration
+      healthCheck:
+        interval: 30s
+        timeout: 10s
+        retries: 3
+        endpoints:
+          - name: primary-api
+            url: https://marketing-hub.yourdomain.com/health
+            expectedStatus: 200
+          - name: primary-database
+            url: postgresql://marketing-postgres-cluster-rw:5432/marketing_automation_hub
+            query: "SELECT 1"
+            
+      # Failover triggers
+      triggers:
+        - name: api-unavailable
+          condition: "primary-api.consecutive_failures >= 5"
+          action: failover-to-dr
+          
+        - name: database-unavailable
+          condition: "primary-database.consecutive_failures >= 3"
+          action: failover-database
+          
+        - name: high-error-rate
+          condition: "error_rate > 50% for 5m"
+          action: failover-to-dr
+          
+      # Recovery conditions
+      recovery:
+        cooldown: 10m
+        healthThreshold: 95%
+        consecutiveChecks: 10
+
+---
+# Failover automation deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: failover-controller
+  namespace: marketing-automation
+  labels:
+    app: failover-controller
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: failover-controller
+  template:
+    metadata:
+      labels:
+        app: failover-controller
+    spec:
+      serviceAccountName: failover-service-account
+      containers:
+      - name: failover-controller
+        image: failover-controller:latest
+        ports:
+        - containerPort: 8080
+          name: http
+        env:
+        - name: FAILOVER_CONFIG
+          value: "/config/config.yaml"
+        - name: PROMETHEUS_URL
+          value: "http://prometheus-service.monitoring:9090"
+        - name: DR_CLUSTER_ENDPOINT
+          value: "https://kubernetes-dr.yourdomain.com"
+        - name: SLACK_WEBHOOK_URL
+          valueFrom:
+            secretKeyRef:
+              name: notification-secrets
+              key: slack-webhook
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: kubeconfig-dr
+          mountPath: /etc/kubeconfig-dr
+          readOnly: true
+        resources:
+          requests:
+            memory: 128Mi
+            cpu: 100m
+          limits:
+            memory: 256Mi
+            cpu: 200m
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      volumes:
+      - name: config
+        configMap:
+          name: failover-config
+      - name: kubeconfig-dr
+        secret:
+          secretName: dr-cluster-kubeconfig
+
+---
+# DNS failover using External DNS
+apiVersion: v1
+kind: Service
+metadata:
+  name: marketing-automation-global
+  namespace: marketing-automation
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: marketing-hub.yourdomain.com
+    external-dns.alpha.kubernetes.io/aws-health-check-id: "HEALTH_CHECK_ID"
+    external-dns.alpha.kubernetes.io/set-identifier: "primary"
+    external-dns.alpha.kubernetes.io/aws-weight: "100"
+    external-dns.alpha.kubernetes.io/aws-region: "us-west-2"
+    external-dns.alpha.kubernetes.io/aws-evaluate-target-health: "true"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000
+  selector:
+    app: marketing-automation-hub
+
+---
+# DR region service configuration
+apiVersion: v1
+kind: Service
+metadata:
+  name: marketing-automation-dr
+  namespace: marketing-automation
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: marketing-hub.yourdomain.com
+    external-dns.alpha.kubernetes.io/aws-health-check-id: "DR_HEALTH_CHECK_ID"
+    external-dns.alpha.kubernetes.io/set-identifier: "dr"
+    external-dns.alpha.kubernetes.io/aws-weight: "0"
+    external-dns.alpha.kubernetes.io/aws-region: "us-east-1"
+    external-dns.alpha.kubernetes.io/aws-evaluate-target-health: "true"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000
+  selector:
+    app: marketing-automation-hub
+
+---
+# Service Account for failover operations
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: failover-service-account
+  namespace: marketing-automation
+  labels:
+    app: failover-automation
+
+---
+# RBAC for failover controller
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: failover-controller-role
+rules:
+- apiGroups: [""]
+  resources: ["services", "endpoints", "configmaps"]
+  verbs: ["get", "list", "watch", "create", "update", "patch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "replicasets"]
+  verbs: ["get", "list", "watch", "update", "patch"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses"]
+  verbs: ["get", "list", "watch", "update", "patch"]
+- apiGroups: ["postgresql.cnpg.io"]
+  resources: ["clusters"]
+  verbs: ["get", "list", "watch", "update", "patch"]
+
+---
+# ClusterRoleBinding for failover controller
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: failover-controller-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: failover-controller-role
+subjects:
+- kind: ServiceAccount
+  name: failover-service-account
+  namespace: marketing-automation
+
+---
+# Runbook automation for incident response
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: disaster-recovery-runbook
+  namespace: marketing-automation
+  labels:
+    app: dr-automation
+spec:
+  template:
+    metadata:
+      labels:
+        app: dr-automation
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: dr-runbook
+        image: alpine/aws-cli:2.13.0
+        command:
+        - /bin/sh
+        - -c
+        - |
+          # Disaster Recovery Runbook Automation
+          
+          echo "=== DISASTER RECOVERY ACTIVATION ==="
+          echo "Timestamp: $(date)"
+          
+          # 1. Validate DR cluster health
+          echo "Checking DR cluster health..."
+          kubectl --kubeconfig=/etc/kubeconfig-dr/config get nodes
+          
+          # 2. Promote standby database to primary
+          echo "Promoting standby database..."
+          kubectl --kubeconfig=/etc/kubeconfig-dr/config patch cluster marketing-postgres-dr-cluster \
+            -p '{"spec":{"replica":{"enabled":false}}}' --type=merge
+          
+          # 3. Update DNS to point to DR region
+          echo "Updating DNS failover..."
+          kubectl patch service marketing-automation-global \
+            -p '{"metadata":{"annotations":{"external-dns.alpha.kubernetes.io/aws-weight":"0"}}}' --type=merge
+          kubectl --kubeconfig=/etc/kubeconfig-dr/config patch service marketing-automation-dr \
+            -p '{"metadata":{"annotations":{"external-dns.alpha.kubernetes.io/aws-weight":"100"}}}' --type=merge
+          
+          # 4. Scale up DR deployment
+          echo "Scaling up DR deployment..."
+          kubectl --kubeconfig=/etc/kubeconfig-dr/config scale deployment marketing-automation-hub --replicas=5
+          
+          # 5. Verify DR deployment
+          echo "Verifying DR deployment..."
+          kubectl --kubeconfig=/etc/kubeconfig-dr/config rollout status deployment/marketing-automation-hub
+          
+          # 6. Send notifications
+          echo "Sending incident notifications..."
+          curl -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-type: application/json' \
+            --data '{"text":"🚨 DISASTER RECOVERY ACTIVATED - Marketing Automation Hub is now running in DR region"}'
+          
+          echo "=== DISASTER RECOVERY COMPLETED ==="
+        env:
+        - name: SLACK_WEBHOOK_URL
+          valueFrom:
+            secretKeyRef:
+              name: notification-secrets
+              key: slack-webhook
+        volumeMounts:
+        - name: kubeconfig-dr
+          mountPath: /etc/kubeconfig-dr
+          readOnly: true
+      volumes:
+      - name: kubeconfig-dr
+        secret:
+          secretName: dr-cluster-kubeconfig

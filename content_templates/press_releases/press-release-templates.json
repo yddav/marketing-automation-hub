@@ -1,0 +1,116 @@
+{
+  "id": "press-release-templates",
+  "type": "press_release",
+  "platform": ["press", "website"],
+  "audience": {
+    "primary": "press_media",
+    "secondary": ["investors", "business_owners", "potential_customers"],
+    "demographics": {
+      "age_range": "30-54",
+      "interests": ["business", "technology", "innovation", "industry_news"],
+      "tech_savviness": "advanced"
+    }
+  },
+  "content": {
+    "template": "Press release template structure",
+    "variations": [
+      {
+        "id": "product_launch",
+        "test_group": "launch_announcement",
+        "template": "FOR IMMEDIATE RELEASE\n\n# {{company_name}} Launches {{app_name}}: {{headline_hook}}\n\n## {{subheadline}}\n\n**{{city}}, {{state}} – {{release_date}}** – {{company_name}}, {{company_description}}, today announced the official launch of {{app_name}}, {{app_description}}. The new {{app_category}} addresses {{market_problem}} and is now available for download on {{platforms}}.\n\n{{market_context}}\n\n\"{{founder_quote}},\" said {{founder_name}}, {{founder_title}} of {{company_name}}. \"{{vision_statement}}\"\n\n## Key Features and Benefits\n\n{{app_name}} includes several innovative features designed to {{primary_benefit}}:\n\n• **{{feature_1}}**: {{feature_1_description}}\n• **{{feature_2}}**: {{feature_2_description}}\n• **{{feature_3}}**: {{feature_3_description}}\n• **{{feature_4}}**: {{feature_4_description}}\n\n## Market Opportunity\n\n{{market_size_data}}\n\n{{market_trend_analysis}}\n\n## Early Adoption and Feedback\n\n{{beta_testing_results}}\n\n\"{{user_testimonial}},\" said {{user_name}}, {{user_title}} at {{user_company}}, an early adopter of {{app_name}}.\n\n## Availability and Pricing\n\n{{app_name}} is available immediately for download on {{download_platforms}}. {{pricing_information}}\n\n{{special_launch_offers}}\n\n## Company Background\n\n{{company_background}}\n\n## Future Development\n\n{{roadmap_preview}}\n\n\"{{future_vision_quote}},\" added {{spokesperson_name}}, {{spokesperson_title}}.\n\n## About {{company_name}}\n\n{{company_boilerplate}}\n\nFor more information about {{app_name}}, visit {{website_url}}.\n\n## Media Contact\n\n{{media_contact_name}}\n{{media_contact_title}}\n{{company_name}}\nPhone: {{media_contact_phone}}\nEmail: {{media_contact_email}}\n\n## Additional Resources\n\n• Download {{app_name}}: {{download_link}}\n• Product Screenshots: {{press_kit_url}}\n• Company Logo and Assets: {{brand_assets_url}}\n• Executive Bios: {{executive_bios_url}}\n\n###\n\n*{{company_name}} and {{app_name}} are trademarks of {{legal_entity_name}}. All other trademarks are the property of their respective owners.*",
+        "performance_notes": "Standard press release format for product launches"
+      },
+      {
+        "id": "funding_announcement",
+        "test_group": "investment_news",
+        "template": "FOR IMMEDIATE RELEASE\n\n# {{company_name}} Secures ${{funding_amount}} {{funding_round}} to {{funding_purpose}}\n\n## {{investor_headline}}\n\n**{{city}}, {{state}} – {{release_date}}** – {{company_name}}, {{company_description}}, today announced the successful completion of its ${{funding_amount}} {{funding_round}} led by {{lead_investor}} with participation from {{participating_investors}}.\n\n{{funding_context}}\n\n\"{{funding_quote}},\" said {{ceo_name}}, CEO and {{ceo_additional_title}} of {{company_name}}. \"{{growth_vision}}\"\n\n## Investment Highlights\n\nThe funding round was driven by several key factors:\n\n• **{{growth_metric_1}}**: {{metric_1_details}}\n• **{{growth_metric_2}}**: {{metric_2_details}}\n• **{{growth_metric_3}}**: {{metric_3_details}}\n• **{{market_opportunity}}**: {{opportunity_details}}\n\n## Use of Funds\n\nThe investment will be used to:\n\n1. **{{use_1}}**: {{use_1_description}}\n2. **{{use_2}}**: {{use_2_description}}\n3. **{{use_3}}**: {{use_3_description}}\n4. **{{use_4}}**: {{use_4_description}}\n\n## Investor Perspective\n\n\"{{investor_quote}},\" said {{investor_name}}, {{investor_title}} at {{investor_firm}}. \"{{investment_rationale}}\"\n\n## Company Traction\n\n{{traction_overview}}\n\n### Key Metrics:\n\n• {{metric_name_1}}: {{metric_value_1}}\n• {{metric_name_2}}: {{metric_value_2}}\n• {{metric_name_3}}: {{metric_value_3}}\n• {{metric_name_4}}: {{metric_value_4}}\n\n## Market Position\n\n{{market_position_statement}}\n\n{{competitive_advantage}}\n\n## Leadership Team\n\n{{team_overview}}\n\n**{{ceo_name}}**, CEO: {{ceo_background}}\n\n**{{cto_name}}**, CTO: {{cto_background}}\n\n**{{additional_executive}}**, {{executive_title}}: {{executive_background}}\n\n## Growth Plans\n\n{{growth_strategy}}\n\n\"{{expansion_quote}},\" noted {{expansion_spokesperson}}, {{spokesperson_title}}.\n\n## About the Investors\n\n**{{lead_investor}}**: {{lead_investor_description}}\n\n**{{secondary_investor}}**: {{secondary_investor_description}}\n\n## About {{company_name}}\n\n{{company_boilerplate}}\n\nFor more information, visit {{website_url}}.\n\n## Media Contact\n\n{{media_contact_name}}\n{{media_contact_title}}\n{{company_name}}\nPhone: {{media_contact_phone}}\nEmail: {{media_contact_email}}\n\n## Investor Relations\n\n{{investor_contact_name}}\n{{investor_contact_title}}\n{{company_name}}\nEmail: {{investor_contact_email}}\n\n###",
+        "performance_notes": "Investment announcement with growth metrics and investor quotes"
+      },
+      {
+        "id": "milestone_achievement",
+        "test_group": "company_news",
+        "template": "FOR IMMEDIATE RELEASE\n\n# {{company_name}}'s {{app_name}} {{milestone_achievement}}\n\n## {{milestone_significance}}\n\n**{{city}}, {{state}} – {{release_date}}** – {{company_name}} announced today that its {{app_name}} has {{milestone_details}}. This achievement {{milestone_importance}}.\n\n{{milestone_context}}\n\n\"{{achievement_quote}},\" said {{spokesperson_name}}, {{spokesperson_title}} of {{company_name}}. \"{{milestone_reflection}}\"\n\n## Milestone Breakdown\n\n{{detailed_milestone_analysis}}\n\n### Key Statistics:\n\n• **{{stat_1_category}}**: {{stat_1_value}} ({{stat_1_change}})\n• **{{stat_2_category}}**: {{stat_2_value}} ({{stat_2_change}})\n• **{{stat_3_category}}**: {{stat_3_value}} ({{stat_3_change}})\n• **{{stat_4_category}}**: {{stat_4_value}} ({{stat_4_change}})\n\n## User Impact\n\n{{user_impact_overview}}\n\n\"{{user_impact_quote}},\" shared {{user_representative}}, representing the {{app_name}} user community.\n\n### Success Stories:\n\n**{{success_story_1_title}}**: {{success_story_1_details}}\n\n**{{success_story_2_title}}**: {{success_story_2_details}}\n\n## Industry Recognition\n\n{{recognition_overview}}\n\n• {{award_or_recognition_1}}\n• {{award_or_recognition_2}}\n• {{award_or_recognition_3}}\n\n## Market Context\n\n{{market_context_analysis}}\n\n{{industry_comparison}}\n\n## Looking Forward\n\n{{future_goals}}\n\n\"{{future_commitment_quote}},\" added {{future_spokesperson}}, {{future_spokesperson_title}}.\n\n### Upcoming Initiatives:\n\n1. {{initiative_1}}\n2. {{initiative_2}}\n3. {{initiative_3}}\n\n## Community Response\n\n{{community_feedback}}\n\n## Technical Achievements\n\n{{technical_milestone_details}}\n\n## About {{company_name}}\n\n{{company_boilerplate}}\n\nFor more information about {{app_name}}, visit {{website_url}}.\n\n## Media Contact\n\n{{media_contact_name}}\n{{media_contact_title}}\n{{company_name}}\nPhone: {{media_contact_phone}}\nEmail: {{media_contact_email}}\n\n## Additional Resources\n\n• Milestone Infographic: {{infographic_url}}\n• User Testimonials: {{testimonials_url}}\n• Company Timeline: {{timeline_url}}\n\n###",
+        "performance_notes": "Celebrates significant company or product milestones"
+      },
+      {
+        "id": "partnership_announcement",
+        "test_group": "strategic_news",
+        "template": "FOR IMMEDIATE RELEASE\n\n# {{company_name}} Partners with {{partner_company}} to {{partnership_goal}}\n\n## {{partnership_headline}}\n\n**{{city}}, {{state}} – {{release_date}}** – {{company_name}}, {{company_description}}, today announced a strategic partnership with {{partner_company}}, {{partner_description}}. The collaboration will {{partnership_outcome}}.\n\n{{partnership_context}}\n\n\"{{partnership_quote}},\" said {{company_spokesperson}}, {{spokesperson_title}} at {{company_name}}. \"{{partnership_vision}}\"\n\n## Partnership Details\n\n{{partnership_structure}}\n\n### Key Components:\n\n• **{{component_1}}**: {{component_1_description}}\n• **{{component_2}}**: {{component_2_description}}\n• **{{component_3}}**: {{component_3_description}}\n• **{{component_4}}**: {{component_4_description}}\n\n## Mutual Benefits\n\n### For {{company_name}}:\n\n• {{benefit_company_1}}\n• {{benefit_company_2}}\n• {{benefit_company_3}}\n\n### For {{partner_company}}:\n\n• {{benefit_partner_1}}\n• {{benefit_partner_2}}\n• {{benefit_partner_3}}\n\n## Customer Impact\n\n{{customer_benefits}}\n\n\"{{customer_impact_quote}},\" explained {{customer_advocate}}, {{advocate_title}}.\n\n## Implementation Timeline\n\n**{{timeline_phase_1}}**: {{phase_1_activities}}\n\n**{{timeline_phase_2}}**: {{phase_2_activities}}\n\n**{{timeline_phase_3}}**: {{phase_3_activities}}\n\n## Partner Perspective\n\n\"{{partner_quote}},\" said {{partner_spokesperson}}, {{partner_title}} at {{partner_company}}. \"{{partner_perspective}}\"\n\n## Market Opportunity\n\n{{market_opportunity_analysis}}\n\n{{partnership_market_position}}\n\n## Integration Details\n\n{{technical_integration_overview}}\n\n### Technical Highlights:\n\n• {{technical_feature_1}}\n• {{technical_feature_2}}\n• {{technical_feature_3}}\n\n## Expected Outcomes\n\n{{outcome_projections}}\n\n### Success Metrics:\n\n• {{success_metric_1}}: {{metric_1_target}}\n• {{success_metric_2}}: {{metric_2_target}}\n• {{success_metric_3}}: {{metric_3_target}}\n\n## About {{partner_company}}\n\n{{partner_company_boilerplate}}\n\n## About {{company_name}}\n\n{{company_boilerplate}}\n\nFor more information, visit {{website_url}}.\n\n## Media Contacts\n\n**{{company_name}}:**\n{{media_contact_name}}\n{{media_contact_title}}\nPhone: {{media_contact_phone}}\nEmail: {{media_contact_email}}\n\n**{{partner_company}}:**\n{{partner_media_contact}}\n{{partner_contact_title}}\nPhone: {{partner_contact_phone}}\nEmail: {{partner_contact_email}}\n\n###",
+        "performance_notes": "Strategic partnership announcements with mutual benefits"
+      }
+    ],
+    "placeholders": {
+      "company_name": {
+        "type": "string",
+        "description": "Name of the company",
+        "required": true
+      },
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "release_date": {
+        "type": "date",
+        "description": "Date of press release",
+        "required": true
+      },
+      "city": {
+        "type": "string",
+        "description": "City where company is located",
+        "required": true
+      },
+      "state": {
+        "type": "string",
+        "description": "State where company is located",
+        "required": true
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T12:30:00Z",
+    "updated_at": "2025-01-25T12:30:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["press_release", "media", "public_relations", "announcements"],
+    "brand_voice": "professional",
+    "tone": "authoritative",
+    "character_limits": {
+      "min": 400,
+      "max": 2000,
+      "optimal": 800
+    },
+    "seo_keywords": ["press release", "announcement", "company news", "product launch"],
+    "call_to_action": {
+      "primary": "Contact for more information",
+      "secondary": "Visit website",
+      "url": "{{website_url}}"
+    },
+    "performance_tracking": {
+      "metrics": ["media_pickups", "website_traffic", "brand_mentions"],
+      "goals": {
+        "media_pickups": 10,
+        "website_traffic_increase": 0.25
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": false,
+      "frequency": "campaign"
+    },
+    "personalization": {
+      "dynamic_fields": ["milestone_data", "partnership_details", "funding_information"],
+      "segmentation_rules": [
+        {
+          "condition": "announcement_type == 'funding'",
+          "variation": "funding_announcement"
+        },
+        {
+          "condition": "announcement_type == 'partnership'",
+          "variation": "partnership_announcement"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "dashboard_overview": {
+    "total_impressions": 245000,
+    "impressions_change": 12.5,
+    "engagement_rate": 0.045,
+    "engagement_change": 8.3,
+    "total_conversions": 1250,
+    "conversions_change": -2.1,
+    "roi": 0.285,
+    "roi_change": 15.7
+  },
+  "performance_data": {
+    "instagram": {
+      "dates": ["2024-01-15", "2024-01-16", "2024-01-17", "2024-01-18", "2024-01-19", "2024-01-20", "2024-01-21"],
+      "engagement_rate": [0.042, 0.038, 0.051, 0.045, 0.048, 0.052, 0.049],
+      "click_through_rate": [0.025, 0.022, 0.028, 0.024, 0.026, 0.029, 0.027],
+      "conversion_rate": [0.15, 0.13, 0.18, 0.16, 0.17, 0.19, 0.16],
+      "impressions": [25000, 23500, 28000, 26500, 27200, 29000, 27800],
+      "total_impressions": 187000
+    },
+    "twitter": {
+      "dates": ["2024-01-15", "2024-01-16", "2024-01-17", "2024-01-18", "2024-01-19", "2024-01-20", "2024-01-21"],
+      "engagement_rate": [0.032, 0.029, 0.035, 0.031, 0.033, 0.037, 0.034],
+      "click_through_rate": [0.018, 0.016, 0.021, 0.019, 0.020, 0.023, 0.021],
+      "conversion_rate": [0.12, 0.10, 0.14, 0.11, 0.13, 0.15, 0.12],
+      "impressions": [18000, 17200, 19500, 18800, 19100, 20200, 19400],
+      "total_impressions": 132200
+    },
+    "facebook": {
+      "dates": ["2024-01-15", "2024-01-16", "2024-01-17", "2024-01-18", "2024-01-19", "2024-01-20", "2024-01-21"],
+      "engagement_rate": [0.038, 0.035, 0.041, 0.037, 0.039, 0.043, 0.040],
+      "click_through_rate": [0.022, 0.020, 0.025, 0.023, 0.024, 0.027, 0.025],
+      "conversion_rate": [0.16, 0.14, 0.18, 0.15, 0.17, 0.19, 0.16],
+      "impressions": [22000, 21000, 24500, 23200, 23800, 25000, 24200],
+      "total_impressions": 163700
+    },
+    "linkedin": {
+      "dates": ["2024-01-15", "2024-01-16", "2024-01-17", "2024-01-18", "2024-01-19", "2024-01-20", "2024-01-21"],
+      "engagement_rate": [0.028, 0.025, 0.032, 0.029, 0.030, 0.034, 0.031],
+      "click_through_rate": [0.035, 0.032, 0.038, 0.036, 0.037, 0.041, 0.038],
+      "conversion_rate": [0.22, 0.20, 0.25, 0.23, 0.24, 0.26, 0.23],
+      "impressions": [8500, 8100, 9200, 8800, 9000, 9500, 9200],
+      "total_impressions": 62300
+    },
+    "email": {
+      "dates": ["2024-01-15", "2024-01-16", "2024-01-17", "2024-01-18", "2024-01-19", "2024-01-20", "2024-01-21"],
+      "engagement_rate": [0.185, 0.178, 0.192, 0.186, 0.189, 0.195, 0.188],
+      "click_through_rate": [0.055, 0.052, 0.058, 0.056, 0.057, 0.061, 0.058],
+      "conversion_rate": [0.28, 0.26, 0.31, 0.29, 0.30, 0.33, 0.29],
+      "impressions": [12000, 11500, 13200, 12800, 13000, 13500, 13200],
+      "total_impressions": 89200
+    },
+    "app_store": {
+      "dates": ["2024-01-15", "2024-01-16", "2024-01-17", "2024-01-18", "2024-01-19", "2024-01-20", "2024-01-21"],
+      "engagement_rate": [0.065, 0.062, 0.068, 0.064, 0.066, 0.071, 0.067],
+      "click_through_rate": [0.125, 0.118, 0.132, 0.128, 0.130, 0.135, 0.131],
+      "conversion_rate": [0.45, 0.42, 0.48, 0.46, 0.47, 0.51, 0.47],
+      "impressions": [5500, 5200, 6000, 5800, 5900, 6200, 6100],
+      "total_impressions": 40700
+    }
+  },
+  "ab_tests": [
+    {
+      "test_id": "ab_test_001",
+      "test_name": "Instagram CTA Button Test",
+      "test_type": "cta_test",
+      "status": "completed",
+      "start_date": "2024-01-10T00:00:00Z",
+      "end_date": "2024-01-20T23:59:59Z",
+      "variants": [
+        {
+          "variant_id": "a",
+          "content_id": "instagram-cta-control",
+          "traffic_allocation": 0.5,
+          "performance": {
+            "impressions": 15000,
+            "clicks": 675,
+            "conversions": 108,
+            "engagement_rate": 0.045,
+            "click_through_rate": 0.045,
+            "conversion_rate": 0.16
+          },
+          "statistical_significance": 0.95
+        },
+        {
+          "variant_id": "b",
+          "content_id": "instagram-cta-variant",
+          "traffic_allocation": 0.5,
+          "performance": {
+            "impressions": 15000,
+            "clicks": 780,
+            "conversions": 140,
+            "engagement_rate": 0.052,
+            "click_through_rate": 0.052,
+            "conversion_rate": 0.18
+          },
+          "statistical_significance": 0.98
+        }
+      ],
+      "winner": {
+        "variant_id": "b",
+        "improvement": 12.5,
+        "confidence": 0.98
+      }
+    },
+    {
+      "test_id": "ab_test_002",
+      "test_name": "Email Subject Line Test",
+      "test_type": "subject_line_test",
+      "status": "running",
+      "start_date": "2024-01-18T00:00:00Z",
+      "end_date": null,
+      "variants": [
+        {
+          "variant_id": "a",
+          "content_id": "email-subject-control",
+          "traffic_allocation": 0.33,
+          "performance": {
+            "impressions": 4000,
+            "clicks": 200,
+            "conversions": 56,
+            "engagement_rate": 0.18,
+            "click_through_rate": 0.05,
+            "conversion_rate": 0.28
+          },
+          "statistical_significance": 0.65
+        },
+        {
+          "variant_id": "b",
+          "content_id": "email-subject-variant1",
+          "traffic_allocation": 0.33,
+          "performance": {
+            "impressions": 4000,
+            "clicks": 240,
+            "conversions": 74,
+            "engagement_rate": 0.195,
+            "click_through_rate": 0.06,
+            "conversion_rate": 0.31
+          },
+          "statistical_significance": 0.78
+        },
+        {
+          "variant_id": "c",
+          "content_id": "email-subject-variant2",
+          "traffic_allocation": 0.34,
+          "performance": {
+            "impressions": 4000,
+            "clicks": 220,
+            "conversions": 62,
+            "engagement_rate": 0.188,
+            "click_through_rate": 0.055,
+            "conversion_rate": 0.28
+          },
+          "statistical_significance": 0.42
+        }
+      ]
+    }
+  ],
+  "top_content": [
+    {
+      "content_id": "instagram-feature-showcase-1",
+      "content_title": "✨ New Feature: Smart Automation",
+      "platform": "instagram",
+      "content_type": "feature_showcase",
+      "engagement_rate": 0.078,
+      "clicks": 1250,
+      "conversions": 89,
+      "performance_score": 0.92
+    },
+    {
+      "content_id": "email-welcome-1",
+      "content_title": "Welcome to the Family! 🎉",
+      "platform": "email",
+      "content_type": "welcome_email",
+      "engagement_rate": 0.245,
+      "clicks": 890,
+      "conversions": 156,
+      "performance_score": 0.88
+    },
+    {
+      "content_id": "linkedin-thought-leadership-1",
+      "content_title": "The Future of App Marketing",
+      "platform": "linkedin",
+      "content_type": "thought_leadership",
+      "engagement_rate": 0.042,
+      "clicks": 560,
+      "conversions": 92,
+      "performance_score": 0.85
+    },
+    {
+      "content_id": "twitter-tip-tutorial-1",
+      "content_title": "💡 Productivity Tip #15",
+      "platform": "twitter",
+      "content_type": "tip_tutorial",
+      "engagement_rate": 0.055,
+      "clicks": 432,
+      "conversions": 34,
+      "performance_score": 0.78
+    },
+    {
+      "content_id": "facebook-user-testimonial-1",
+      "content_title": "What our users are saying...",
+      "platform": "facebook",
+      "content_type": "user_testimonial",
+      "engagement_rate": 0.048,
+      "clicks": 678,
+      "conversions": 45,
+      "performance_score": 0.72
+    }
+  ],
+  "platform_insights": {
+    "instagram": {
+      "summary": {
+        "reach": 187000,
+        "engagement_rate": 0.047,
+        "click_through_rate": 0.026,
+        "conversion_rate": 0.17
+      },
+      "content_performance": {
+        "feature-showcase-1": {
+          "engagement_rate": 0.078,
+          "click_through_rate": 0.035
+        },
+        "behind-scenes-1": {
+          "engagement_rate": 0.052,
+          "click_through_rate": 0.028
+        },
+        "user-testimonial-1": {
+          "engagement_rate": 0.041,
+          "click_through_rate": 0.022
+        },
+        "tip-tutorial-1": {
+          "engagement_rate": 0.038,
+          "click_through_rate": 0.019
+        },
+        "launch-countdown-1": {
+          "engagement_rate": 0.045,
+          "click_through_rate": 0.025
+        }
+      }
+    }
+  },
+  "correlation_data": {
+    "correlation_matrix": {
+      "instagram": {
+        "instagram": 1.0,
+        "twitter": 0.75,
+        "facebook": 0.68,
+        "linkedin": 0.32,
+        "email": 0.45,
+        "app_store": 0.58
+      },
+      "twitter": {
+        "instagram": 0.75,
+        "twitter": 1.0,
+        "facebook": 0.72,
+        "linkedin": 0.28,
+        "email": 0.38,
+        "app_store": 0.51
+      },
+      "facebook": {
+        "instagram": 0.68,
+        "twitter": 0.72,
+        "facebook": 1.0,
+        "linkedin": 0.25,
+        "email": 0.42,
+        "app_store": 0.48
+      },
+      "linkedin": {
+        "instagram": 0.32,
+        "twitter": 0.28,
+        "facebook": 0.25,
+        "linkedin": 1.0,
+        "email": 0.65,
+        "app_store": 0.78
+      },
+      "email": {
+        "instagram": 0.45,
+        "twitter": 0.38,
+        "facebook": 0.42,
+        "linkedin": 0.65,
+        "email": 1.0,
+        "app_store": 0.82
+      },
+      "app_store": {
+        "instagram": 0.58,
+        "twitter": 0.51,
+        "facebook": 0.48,
+        "linkedin": 0.78,
+        "email": 0.82,
+        "app_store": 1.0
+      }
+    },
+    "insights": [
+      {
+        "type": "opportunity",
+        "title": "Strong Email-App Store Synergy",
+        "description": "Email marketing shows 82% positive correlation with App Store performance",
+        "recommendation": "Coordinate email campaigns with App Store feature releases",
+        "priority": "high",
+        "platforms": ["email", "app_store"]
+      },
+      {
+        "type": "opportunity",
+        "title": "Social Media Cross-Promotion Potential",
+        "description": "Instagram and Twitter show 75% positive correlation",
+        "recommendation": "Create coordinated social media campaigns across both platforms",
+        "priority": "high",
+        "platforms": ["instagram", "twitter"]
+      }
+    ]
+  },
+  "alerts": [
+    {
+      "id": "alert_001",
+      "severity": "warning",
+      "title": "Facebook Engagement Drop",
+      "description": "Facebook engagement rate decreased by 15% over the last 3 days",
+      "platform": "facebook",
+      "created_at": "2024-01-21T08:30:00Z",
+      "metric_affected": "engagement_rate",
+      "current_value": 0.035,
+      "threshold": 0.04
+    },
+    {
+      "id": "alert_002",
+      "severity": "info",
+      "title": "LinkedIn Performance Peak",
+      "description": "LinkedIn conversion rate reached a 30-day high of 26%",
+      "platform": "linkedin",
+      "created_at": "2024-01-21T10:15:00Z",
+      "metric_affected": "conversion_rate",
+      "current_value": 0.26,
+      "threshold": 0.22
+    }
+  ],
+  "user_engagement": {
+    "recent_events": [
+      {
+        "user_id": "user_12345",
+        "session_id": "session_abc123",
+        "platform": "website",
+        "timestamp": "2024-01-21T14:30:00Z",
+        "event_type": "content_view",
+        "content_id": "dashboard-overview",
+        "event_properties": {
+          "duration": 45,
+          "scroll_depth": 0.75,
+          "device_type": "desktop"
+        }
+      },
+      {
+        "user_id": "user_67890",
+        "session_id": "session_def456",
+        "platform": "instagram",
+        "timestamp": "2024-01-21T14:25:00Z",
+        "event_type": "like",
+        "content_id": "instagram-feature-showcase-1",
+        "event_properties": {
+          "engagement_time": 15,
+          "device_type": "mobile"
+        }
+      }
+    ]
+  },
+  "campaign_performance": {
+    "campaign_001": {
+      "campaign_id": "launch_campaign_q1_2024",
+      "campaign_name": "Q1 2024 Feature Launch",
+      "campaign_type": "product_launch",
+      "start_date": "2024-01-15T00:00:00Z",
+      "end_date": "2024-01-31T23:59:59Z",
+      "platforms": ["instagram", "twitter", "facebook", "email"],
+      "aggregate_metrics": {
+        "impressions": 425000,
+        "clicks": 12750,
+        "conversions": 892,
+        "revenue_generated": 24680
+      },
+      "roi_metrics": {
+        "total_spent": 8500,
+        "total_revenue": 24680,
+        "roi_percentage": 190.35,
+        "cost_per_acquisition": 9.53
+      }
+    }
+  }
+}

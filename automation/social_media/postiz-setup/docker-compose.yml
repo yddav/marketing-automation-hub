@@ -1,0 +1,90 @@
+# UNTRAPD HUB POSTIZ SOCIAL MEDIA AUTOMATION
+# Free, open-source social media scheduler
+# Platforms: Instagram, Facebook, Pinterest
+
+version: '3.8'
+
+services:
+  postiz:
+    image: ghcr.io/gitroomhq/postiz-app:latest
+    container_name: untrapd-postiz
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Application Configuration
+      - NODE_ENV=production
+      - NEXTAUTH_SECRET=your_nextauth_secret_change_this_immediately
+      - NEXTAUTH_URL=http://localhost:3000
+      
+      # Database Configuration
+      - DATABASE_URL=postgresql://postiz:postiz_password@postgres:5432/postiz
+      
+      # Redis Configuration  
+      - REDIS_URL=redis://redis:6379
+      
+      # Email Configuration (for notifications)
+      - RESEND_API_KEY=your_resend_api_key_optional
+      
+      # Upload Configuration
+      - UPLOAD_DIRECTORY=/app/uploads
+      
+      # UNTRAPD Hub Branding
+      - APP_NAME=UNTRAPD Hub Social Automation
+      - APP_URL=http://localhost:3000
+      
+    volumes:
+      - postiz_uploads:/app/uploads
+      - postiz_data:/app/data
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - postiz-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: untrapd-postiz-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postiz
+      - POSTGRES_USER=postiz
+      - POSTGRES_PASSWORD=postiz_password
+      - POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - postiz-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postiz -d postiz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    container_name: untrapd-postiz-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - postiz-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  postiz_uploads:
+    driver: local
+  postiz_data:
+    driver: local
+
+networks:
+  postiz-network:
+    driver: bridge

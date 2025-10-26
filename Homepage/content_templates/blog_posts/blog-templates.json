@@ -1,0 +1,115 @@
+{
+  "id": "blog-templates",
+  "type": "blog_post",
+  "platform": ["website", "blog"],
+  "audience": {
+    "primary": "potential_customers",
+    "secondary": ["app_users", "business_owners", "developers"],
+    "demographics": {
+      "age_range": "25-54",
+      "interests": ["productivity", "business", "technology", "self-improvement"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "Blog post template structure",
+    "variations": [
+      {
+        "id": "feature_highlight",
+        "test_group": "product_focused",
+        "template": "# {{feature_name}}: {{compelling_headline}}\n\n*Published on {{publish_date}} | {{read_time}} min read*\n\n{{hook_paragraph}}\n\n## The Problem\n\n{{problem_description}}\n\n{{problem_impact_stats}}\n\n## Introducing {{feature_name}}\n\n{{feature_overview}}\n\n![{{feature_screenshot_alt}}]({{feature_screenshot_url}})\n\n## How {{feature_name}} Works\n\n### Step 1: {{step_1_title}}\n{{step_1_description}}\n\n### Step 2: {{step_2_title}}\n{{step_2_description}}\n\n### Step 3: {{step_3_title}}\n{{step_3_description}}\n\n## Real-World Example\n\n{{use_case_scenario}}\n\n**Before {{app_name}}:**\n{{before_scenario}}\n\n**After {{app_name}}:**\n{{after_scenario}}\n\n**Result:**\n{{transformation_result}}\n\n## Key Benefits\n\n- **{{benefit_1_title}}**: {{benefit_1_description}}\n- **{{benefit_2_title}}**: {{benefit_2_description}}\n- **{{benefit_3_title}}**: {{benefit_3_description}}\n\n## What Users Are Saying\n\n> \"{{user_testimonial_1}}\"\n> \n> — {{user_1_name}}, {{user_1_title}}\n\n> \"{{user_testimonial_2}}\"\n> \n> — {{user_2_name}}, {{user_2_title}}\n\n## Getting Started\n\n{{getting_started_intro}}\n\n1. {{onboarding_step_1}}\n2. {{onboarding_step_2}}\n3. {{onboarding_step_3}}\n\n{{cta_section}}\n\n## What's Next?\n\n{{roadmap_teaser}}\n\n---\n\n*{{author_bio}}*\n\n**Tags:** {{blog_tags}}\n\n**Share this post:** {{social_sharing_buttons}}",
+        "performance_notes": "Detailed feature explanation with social proof and clear CTA"
+      },
+      {
+        "id": "tutorial_guide",
+        "test_group": "educational",
+        "template": "# {{tutorial_title}}: {{skill_promise}}\n\n*{{author_name}} | {{publish_date}} | {{read_time}} min read*\n\n{{tutorial_hook}}\n\n## What You'll Learn\n\n- {{learning_outcome_1}}\n- {{learning_outcome_2}}\n- {{learning_outcome_3}}\n- {{learning_outcome_4}}\n\n**Difficulty Level:** {{difficulty_level}}\n**Time Required:** {{time_estimate}}\n**Prerequisites:** {{prerequisites}}\n\n## Why This Matters\n\n{{importance_explanation}}\n\n{{supporting_statistics}}\n\n## Getting Started\n\n### What You'll Need\n\n- {{requirement_1}}\n- {{requirement_2}}\n- {{requirement_3}}\n\n### Initial Setup\n\n{{setup_instructions}}\n\n## Step-by-Step Tutorial\n\n### Phase 1: {{phase_1_title}}\n\n{{phase_1_overview}}\n\n**Step 1.1: {{step_1_1_title}}**\n{{step_1_1_details}}\n\n💡 **Pro Tip:** {{step_1_1_tip}}\n\n**Step 1.2: {{step_1_2_title}}**\n{{step_1_2_details}}\n\n![{{step_1_2_screenshot_alt}}]({{step_1_2_screenshot}})\n\n### Phase 2: {{phase_2_title}}\n\n{{phase_2_overview}}\n\n**Step 2.1: {{step_2_1_title}}**\n{{step_2_1_details}}\n\n**Step 2.2: {{step_2_2_title}}**\n{{step_2_2_details}}\n\n### Phase 3: {{phase_3_title}}\n\n{{phase_3_overview}}\n\n**Step 3.1: {{step_3_1_title}}**\n{{step_3_1_details}}\n\n## Common Mistakes to Avoid\n\n❌ **Mistake 1:** {{mistake_1}}\n✅ **Instead:** {{solution_1}}\n\n❌ **Mistake 2:** {{mistake_2}}\n✅ **Instead:** {{solution_2}}\n\n❌ **Mistake 3:** {{mistake_3}}\n✅ **Instead:** {{solution_3}}\n\n## Advanced Tips\n\n{{advanced_section_intro}}\n\n### {{advanced_tip_1_title}}\n{{advanced_tip_1_content}}\n\n### {{advanced_tip_2_title}}\n{{advanced_tip_2_content}}\n\n## Troubleshooting\n\n**Issue:** {{common_issue_1}}\n**Solution:** {{issue_1_solution}}\n\n**Issue:** {{common_issue_2}}\n**Solution:** {{issue_2_solution}}\n\n## Results & Next Steps\n\n{{results_summary}}\n\n{{next_steps_guidance}}\n\n## Additional Resources\n\n- [{{resource_1_title}}]({{resource_1_url}})\n- [{{resource_2_title}}]({{resource_2_url}})\n- [{{resource_3_title}}]({{resource_3_url}})\n\n{{tutorial_cta}}\n\n---\n\n*{{author_bio}}*\n\n**Tags:** {{blog_tags}}",
+        "performance_notes": "Comprehensive tutorial format with troubleshooting and advanced tips"
+      },
+      {
+        "id": "case_study",
+        "test_group": "proof_driven",
+        "template": "# Case Study: {{client_transformation_headline}}\n\n*{{publish_date}} | {{read_time}} min read | {{case_study_category}}*\n\n{{case_study_hook}}\n\n## Meet {{client_name}}\n\n{{client_background}}\n\n**Industry:** {{client_industry}}\n**Company Size:** {{company_size}}\n**Location:** {{client_location}}\n\n## The Challenge\n\n{{challenge_overview}}\n\n### Specific Problems:\n\n1. **{{problem_1_title}}**\n   {{problem_1_details}}\n   \n2. **{{problem_2_title}}**\n   {{problem_2_details}}\n   \n3. **{{problem_3_title}}**\n   {{problem_3_details}}\n\n### Impact on Business:\n\n- {{business_impact_1}}\n- {{business_impact_2}}\n- {{business_impact_3}}\n\n{{pain_point_quote}}\n\n## The Solution\n\n{{solution_overview}}\n\n### Implementation Strategy:\n\n**Phase 1: {{implementation_phase_1}}**\n{{phase_1_details}}\n\n**Phase 2: {{implementation_phase_2}}**\n{{phase_2_details}}\n\n**Phase 3: {{implementation_phase_3}}**\n{{phase_3_details}}\n\n### {{app_name}} Features Used:\n\n- **{{feature_used_1}}**: {{feature_1_application}}\n- **{{feature_used_2}}**: {{feature_2_application}}\n- **{{feature_used_3}}**: {{feature_3_application}}\n\n## Implementation Timeline\n\n**Week 1-2:** {{weeks_1_2_activities}}\n**Week 3-4:** {{weeks_3_4_activities}}\n**Week 5-6:** {{weeks_5_6_activities}}\n**Week 7-8:** {{weeks_7_8_activities}}\n\n## Results\n\n### Quantitative Outcomes:\n\n📈 **{{metric_1_name}}:** {{metric_1_improvement}}\n📊 **{{metric_2_name}}:** {{metric_2_improvement}}\n💰 **{{metric_3_name}}:** {{metric_3_improvement}}\n⏰ **{{metric_4_name}}:** {{metric_4_improvement}}\n\n### Qualitative Benefits:\n\n- {{qualitative_benefit_1}}\n- {{qualitative_benefit_2}}\n- {{qualitative_benefit_3}}\n\n## Client Testimonial\n\n> \"{{detailed_testimonial}}\"\n> \n> — {{client_name}}, {{client_title}}\n\n## Key Lessons Learned\n\n### What Worked Well:\n\n1. {{success_factor_1}}\n2. {{success_factor_2}}\n3. {{success_factor_3}}\n\n### Challenges Overcome:\n\n1. {{challenge_overcome_1}}\n2. {{challenge_overcome_2}}\n\n### Recommendations for Others:\n\n- {{recommendation_1}}\n- {{recommendation_2}}\n- {{recommendation_3}}\n\n## 6-Month Follow-Up\n\n{{follow_up_results}}\n\n## How {{app_name}} Can Help Your Business\n\n{{transition_to_reader}}\n\n{{value_proposition_summary}}\n\n{{case_study_cta}}\n\n---\n\n*{{author_bio}}*\n\n**Industry:** {{blog_industry_tag}}\n**Tags:** {{blog_tags}}",
+        "performance_notes": "Detailed case study with quantitative results and social proof"
+      },
+      {
+        "id": "industry_insights",
+        "test_group": "thought_leadership",
+        "template": "# {{insight_headline}}: {{industry_trend_focus}}\n\n*{{author_name}} | {{publish_date}} | {{read_time}} min read*\n\n{{thought_leadership_hook}}\n\n## Industry Landscape\n\n{{industry_context}}\n\n### Current State:\n\n- {{current_state_point_1}}\n- {{current_state_point_2}}\n- {{current_state_point_3}}\n\n### Key Statistics:\n\n{{industry_statistics}}\n\n## Emerging Trends\n\n### Trend 1: {{trend_1_title}}\n\n{{trend_1_description}}\n\n**Impact:** {{trend_1_impact}}\n\n**Timeline:** {{trend_1_timeline}}\n\n### Trend 2: {{trend_2_title}}\n\n{{trend_2_description}}\n\n**Impact:** {{trend_2_impact}}\n\n**Timeline:** {{trend_2_timeline}}\n\n### Trend 3: {{trend_3_title}}\n\n{{trend_3_description}}\n\n**Impact:** {{trend_3_impact}}\n\n**Timeline:** {{trend_3_timeline}}\n\n## What This Means for Businesses\n\n### Opportunities:\n\n1. **{{opportunity_1_title}}**\n   {{opportunity_1_details}}\n   \n2. **{{opportunity_2_title}}**\n   {{opportunity_2_details}}\n   \n3. **{{opportunity_3_title}}**\n   {{opportunity_3_details}}\n\n### Challenges to Watch:\n\n- {{challenge_to_watch_1}}\n- {{challenge_to_watch_2}}\n- {{challenge_to_watch_3}}\n\n## Expert Perspectives\n\n> \"{{expert_quote_1}}\"\n> \n> — {{expert_1_name}}, {{expert_1_title}}\n\n> \"{{expert_quote_2}}\"\n> \n> — {{expert_2_name}}, {{expert_2_title}}\n\n## How {{app_name}} Addresses These Trends\n\n{{app_relevance_intro}}\n\n### {{trend_connection_1}}\n{{trend_1_app_connection}}\n\n### {{trend_connection_2}}\n{{trend_2_app_connection}}\n\n### {{trend_connection_3}}\n{{trend_3_app_connection}}\n\n## Actionable Recommendations\n\n### For Business Leaders:\n\n1. {{leader_recommendation_1}}\n2. {{leader_recommendation_2}}\n3. {{leader_recommendation_3}}\n\n### For Teams:\n\n1. {{team_recommendation_1}}\n2. {{team_recommendation_2}}\n3. {{team_recommendation_3}}\n\n### For Individuals:\n\n1. {{individual_recommendation_1}}\n2. {{individual_recommendation_2}}\n3. {{individual_recommendation_3}}\n\n## Looking Ahead\n\n{{future_predictions}}\n\n## Get Prepared\n\n{{preparation_guidance}}\n\n{{insights_cta}}\n\n---\n\n*{{author_bio}}*\n\n**Tags:** {{blog_tags}}",
+        "performance_notes": "Establishes thought leadership with industry analysis and expert quotes"
+      }
+    ],
+    "placeholders": {
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "feature_name": {
+        "type": "string",
+        "description": "Name of the feature being highlighted"
+      },
+      "author_name": {
+        "type": "string",
+        "description": "Name of the blog post author",
+        "required": true
+      },
+      "publish_date": {
+        "type": "date",
+        "description": "Publication date of the blog post"
+      },
+      "read_time": {
+        "type": "number",
+        "description": "Estimated reading time in minutes"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T12:15:00Z",
+    "updated_at": "2025-01-25T12:15:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["blog", "content_marketing", "seo", "thought_leadership"],
+    "brand_voice": "authoritative",
+    "tone": "educational",
+    "character_limits": {
+      "min": 800,
+      "max": 5000,
+      "optimal": 2000
+    },
+    "seo_keywords": ["productivity", "mobile app", "business efficiency", "workflow optimization"],
+    "call_to_action": {
+      "primary": "Try {{app_name}} Free",
+      "secondary": "Learn More",
+      "url": "{{app_url}}"
+    },
+    "performance_tracking": {
+      "metrics": ["page_views", "time_on_page", "social_shares", "conversions"],
+      "goals": {
+        "average_time_on_page": 180,
+        "social_shares": 25,
+        "conversion_rate": 0.03
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "frequency": "weekly",
+      "optimal_times": ["09:00", "14:00"]
+    },
+    "personalization": {
+      "dynamic_fields": ["user_data", "case_study_metrics", "industry_trends"],
+      "segmentation_rules": [
+        {
+          "condition": "audience_type == 'technical'",
+          "variation": "tutorial_guide"
+        },
+        {
+          "condition": "content_goal == 'thought_leadership'",
+          "variation": "industry_insights"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "id": "hashtag-strategy",
+  "type": "brand_guidelines",
+  "platform": ["instagram", "twitter", "facebook", "linkedin"],
+  "audience": {
+    "primary": "social_media_team",
+    "secondary": ["content_creators", "community_managers", "influencers"],
+    "demographics": {
+      "age_range": "all",
+      "interests": ["social_media", "brand_marketing", "content_creation"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "Hashtag strategy framework",
+    "variations": [
+      {
+        "id": "comprehensive_hashtag_strategy",
+        "test_group": "primary_strategy",
+        "template": "# {{company_name}} Hashtag Strategy Guide\n\n*Social media hashtag framework for brand visibility and engagement*\n\n## Hashtag Hierarchy\n\n### Tier 1: Branded Hashtags (Always Use)\n\n**Primary Brand Hashtag:** #{{primary_brand_hashtag}}\n- **Usage:** {{primary_usage_description}}\n- **Purpose:** {{primary_purpose}}\n- **Target:** {{primary_target_reach}}\n\n**Secondary Brand Hashtags:**\n\n1. **#{{secondary_hashtag_1}}**\n   - **Usage:** {{secondary_1_usage}}\n   - **Context:** {{secondary_1_context}}\n   - **Frequency:** {{secondary_1_frequency}}\n\n2. **#{{secondary_hashtag_2}}**\n   - **Usage:** {{secondary_2_usage}}\n   - **Context:** {{secondary_2_context}}\n   - **Frequency:** {{secondary_2_frequency}}\n\n3. **#{{secondary_hashtag_3}}**\n   - **Usage:** {{secondary_3_usage}}\n   - **Context:** {{secondary_3_context}}\n   - **Frequency:** {{secondary_3_frequency}}\n\n**Campaign-Specific Hashtags:**\n\n- **#{{campaign_hashtag_1}}** - {{campaign_1_description}}\n- **#{{campaign_hashtag_2}}** - {{campaign_2_description}}\n- **#{{campaign_hashtag_3}}** - {{campaign_3_description}}\n\n### Tier 2: Category Hashtags (Mix and Match)\n\n**Industry Hashtags:**\n- #{{industry_hashtag_1}} ({{industry_1_reach}} posts)\n- #{{industry_hashtag_2}} ({{industry_2_reach}} posts)\n- #{{industry_hashtag_3}} ({{industry_3_reach}} posts)\n- #{{industry_hashtag_4}} ({{industry_4_reach}} posts)\n- #{{industry_hashtag_5}} ({{industry_5_reach}} posts)\n\n**Functionality Hashtags:**\n- #{{function_hashtag_1}} ({{function_1_reach}} posts)\n- #{{function_hashtag_2}} ({{function_2_reach}} posts)\n- #{{function_hashtag_3}} ({{function_3_reach}} posts)\n- #{{function_hashtag_4}} ({{function_4_reach}} posts)\n- #{{function_hashtag_5}} ({{function_5_reach}} posts)\n\n**Community Hashtags:**\n- #{{community_hashtag_1}} ({{community_1_reach}} posts)\n- #{{community_hashtag_2}} ({{community_2_reach}} posts)\n- #{{community_hashtag_3}} ({{community_3_reach}} posts)\n- #{{community_hashtag_4}} ({{community_4_reach}} posts)\n- #{{community_hashtag_5}} ({{community_5_reach}} posts)\n\n### Tier 3: Trending/Niche Hashtags (Rotate)\n\n**Trending Topics:**\n- #{{trending_hashtag_1}} - {{trending_1_context}}\n- #{{trending_hashtag_2}} - {{trending_2_context}}\n- #{{trending_hashtag_3}} - {{trending_3_context}}\n\n**Niche Communities:**\n- #{{niche_hashtag_1}} - {{niche_1_audience}}\n- #{{niche_hashtag_2}} - {{niche_2_audience}}\n- #{{niche_hashtag_3}} - {{niche_3_audience}}\n\n## Platform-Specific Strategies\n\n### Instagram Hashtag Strategy\n\n**Optimal Count:** {{instagram_hashtag_count}} hashtags per post\n\n**Mix Formula:**\n- {{instagram_branded_count}} Branded hashtags\n- {{instagram_category_count}} Category hashtags\n- {{instagram_trending_count}} Trending/Niche hashtags\n\n**Placement:** {{instagram_placement_strategy}}\n\n**Story Hashtags:** {{instagram_story_strategy}}\n\n**Reel Hashtags:** {{instagram_reel_strategy}}\n\n**Example Instagram Set:**\n```\n#{{example_instagram_set}}\n```\n\n### Twitter Hashtag Strategy\n\n**Optimal Count:** {{twitter_hashtag_count}} hashtags per tweet\n\n**Approach:** {{twitter_strategy_approach}}\n\n**Thread Strategy:** {{twitter_thread_strategy}}\n\n**Event Hashtags:** {{twitter_event_strategy}}\n\n**Example Twitter Set:**\n```\n#{{example_twitter_set}}\n```\n\n### LinkedIn Hashtag Strategy\n\n**Optimal Count:** {{linkedin_hashtag_count}} hashtags per post\n\n**Professional Focus:** {{linkedin_professional_focus}}\n\n**Industry Emphasis:** {{linkedin_industry_emphasis}}\n\n**Example LinkedIn Set:**\n```\n#{{example_linkedin_set}}\n```\n\n### Facebook Hashtag Strategy\n\n**Optimal Count:** {{facebook_hashtag_count}} hashtags per post\n\n**Approach:** {{facebook_strategy_approach}}\n\n**Group Strategy:** {{facebook_group_strategy}}\n\n**Example Facebook Set:**\n```\n#{{example_facebook_set}}\n```\n\n## Content-Type Specific Hashtags\n\n### Product Features\n**Template:**\n```\n#{{primary_brand_hashtag}} #{{feature_specific_hashtag}} #{{benefit_hashtag}} #{{user_type_hashtag}} #{{industry_hashtag}}\n```\n\n**Example:**\n```\n#{{product_feature_example}}\n```\n\n### User-Generated Content\n**Template:**\n```\n#{{ugc_branded_hashtag}} #{{community_hashtag}} #{{user_story_hashtag}} #{{testimonial_hashtag}} #{{category_hashtag}}\n```\n\n**Example:**\n```\n#{{ugc_example}}\n```\n\n### Educational Content\n**Template:**\n```\n#{{educational_branded_hashtag}} #{{tips_hashtag}} #{{how_to_hashtag}} #{{learning_hashtag}} #{{expertise_hashtag}}\n```\n\n**Example:**\n```\n#{{educational_example}}\n```\n\n### Behind-the-Scenes\n**Template:**\n```\n#{{bts_branded_hashtag}} #{{team_hashtag}} #{{culture_hashtag}} #{{process_hashtag}} #{{transparency_hashtag}}\n```\n\n**Example:**\n```\n#{{bts_example}}\n```\n\n## Hashtag Research & Monitoring\n\n### Research Process\n1. **Weekly Trending Analysis:** {{research_process_1}}\n2. **Competitor Monitoring:** {{research_process_2}}\n3. **Performance Review:** {{research_process_3}}\n4. **Community Listening:** {{research_process_4}}\n\n### Monitoring Tools\n- **{{monitoring_tool_1}}**: {{tool_1_purpose}}\n- **{{monitoring_tool_2}}**: {{tool_2_purpose}}\n- **{{monitoring_tool_3}}**: {{tool_3_purpose}}\n\n### Performance Metrics\n\n**Engagement Metrics:**\n- {{engagement_metric_1}}: {{metric_1_target}}\n- {{engagement_metric_2}}: {{metric_2_target}}\n- {{engagement_metric_3}}: {{metric_3_target}}\n\n**Reach Metrics:**\n- {{reach_metric_1}}: {{reach_1_target}}\n- {{reach_metric_2}}: {{reach_2_target}}\n- {{reach_metric_3}}: {{reach_3_target}}\n\n## Hashtag Calendar\n\n### Daily Themes\n**Monday:** #{{monday_theme}} - {{monday_description}}\n**Tuesday:** #{{tuesday_theme}} - {{tuesday_description}}\n**Wednesday:** #{{wednesday_theme}} - {{wednesday_description}}\n**Thursday:** #{{thursday_theme}} - {{thursday_description}}\n**Friday:** #{{friday_theme}} - {{friday_description}}\n**Saturday:** #{{saturday_theme}} - {{saturday_description}}\n**Sunday:** #{{sunday_theme}} - {{sunday_description}}\n\n### Monthly Campaigns\n**Month 1:** #{{month_1_campaign}} - {{campaign_1_focus}}\n**Month 2:** #{{month_2_campaign}} - {{campaign_2_focus}}\n**Month 3:** #{{month_3_campaign}} - {{campaign_3_focus}}\n\n### Seasonal Hashtags\n**Spring:** #{{spring_hashtags}}\n**Summer:** #{{summer_hashtags}}\n**Fall:** #{{fall_hashtags}}\n**Winter:** #{{winter_hashtags}}\n\n## Brand Protection\n\n### Hashtag Monitoring\n- **Brand Mentions:** {{brand_mention_monitoring}}\n- **Misuse Detection:** {{misuse_detection_process}}\n- **Crisis Response:** {{crisis_hashtag_response}}\n\n### Guidelines for Partners\n**Approved Usage:** {{partner_approved_usage}}\n**Restricted Usage:** {{partner_restricted_usage}}\n**Approval Process:** {{partner_approval_process}}\n\n## Performance Optimization\n\n### A/B Testing Framework\n**Test Variables:**\n- {{test_variable_1}}\n- {{test_variable_2}}\n- {{test_variable_3}}\n\n**Success Criteria:**\n- {{success_criteria_1}}\n- {{success_criteria_2}}\n- {{success_criteria_3}}\n\n### Hashtag Rotation Strategy\n**High-Frequency Rotation:** {{high_frequency_strategy}}\n**Medium-Frequency Rotation:** {{medium_frequency_strategy}}\n**Low-Frequency Rotation:** {{low_frequency_strategy}}\n\n## Implementation Checklist\n\n### Content Creation\n- [ ] Include primary brand hashtag\n- [ ] Mix hashtag tiers appropriately\n- [ ] Match hashtags to content type\n- [ ] Check platform-specific limits\n- [ ] Verify hashtag spelling and relevance\n- [ ] Monitor hashtag performance\n\n### Campaign Launch\n- [ ] Create campaign-specific hashtags\n- [ ] Brief team on hashtag usage\n- [ ] Set up monitoring and tracking\n- [ ] Prepare response templates\n- [ ] Schedule performance review\n\n---\n\n*For hashtag strategy questions, contact {{social_media_contact}} at {{social_contact_email}}*\n\n*This strategy should be reviewed monthly and updated based on platform changes and performance data.*",
+        "performance_notes": "Comprehensive hashtag strategy for multi-platform social media presence"
+      }
+    ],
+    "placeholders": {
+      "company_name": {
+        "type": "string",
+        "description": "Name of the company",
+        "required": true
+      },
+      "primary_brand_hashtag": {
+        "type": "string",
+        "description": "Primary branded hashtag without # symbol",
+        "required": true
+      },
+      "instagram_hashtag_count": {
+        "type": "string",
+        "description": "Optimal number of hashtags for Instagram",
+        "default": "20-30"
+      },
+      "twitter_hashtag_count": {
+        "type": "string",
+        "description": "Optimal number of hashtags for Twitter",
+        "default": "1-2"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T13:15:00Z",
+    "updated_at": "2025-01-25T13:15:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist",
+    "tags": ["hashtags", "social_media", "brand_strategy", "engagement"],
+    "brand_voice": "strategic",
+    "tone": "instructional",
+    "character_limits": {
+      "min": 2000,
+      "max": 12000,
+      "optimal": 6000
+    },
+    "call_to_action": {
+      "primary": "Implement hashtag strategy",
+      "secondary": "Monitor hashtag performance"
+    },
+    "performance_tracking": {
+      "metrics": ["hashtag_reach", "engagement_rate", "brand_mention_growth"],
+      "goals": {
+        "branded_hashtag_usage": 100,
+        "engagement_lift": 0.25
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": false,
+      "frequency": "monthly"
+    },
+    "personalization": {
+      "dynamic_fields": ["trending_hashtags", "performance_data", "competitor_analysis"],
+      "segmentation_rules": [
+        {
+          "condition": "platform == 'instagram'",
+          "variation": "instagram_focused_strategy"
+        },
+        {
+          "condition": "content_type == 'ugc'",
+          "variation": "ugc_hashtag_focus"
+        }
+      ]
+    }
+  }
+}
