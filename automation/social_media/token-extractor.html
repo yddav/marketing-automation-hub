@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facebook Token Extractor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f0f2f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1877f2;
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f7f8fa;
+            border-left: 4px solid #1877f2;
+        }
+        .url-box {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 4px;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        button {
+            background: #1877f2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #166fe5;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            display: none;
+        }
+        .token {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            word-break: break-all;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        .command {
+            background: #2c3e50;
+            color: #2ecc71;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔑 Facebook Access Token Generator</h1>
+
+        <div class="step">
+            <h3>Step 1: Click the button below to authorize</h3>
+            <button onclick="openAuthDialog()">🚀 Authorize Facebook App</button>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Or copy this URL manually</h3>
+            <div class="url-box" id="authUrl"></div>
+            <button onclick="copyUrl()">📋 Copy URL</button>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: After authorization</h3>
+            <p>When Facebook redirects to localhost (shows "Unable to connect"), paste the FULL URL here:</p>
+            <input type="text" id="redirectUrl" placeholder="https://localhost/#access_token=..." style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            <br><br>
+            <button onclick="extractToken()">🔍 Extract Token</button>
+        </div>
+
+        <div id="result">
+            <h3>✅ Access Token Extracted!</h3>
+            <p><strong>Your Token:</strong></p>
+            <div class="token" id="tokenDisplay"></div>
+            <button onclick="copyToken()">📋 Copy Token</button>
+
+            <p><strong>Run this command:</strong></p>
+            <div class="command" id="commandDisplay"></div>
+            <button onclick="copyCommand()">📋 Copy Command</button>
+        </div>
+    </div>
+
+    <script>
+        const APP_ID = '738653215879612';
+        const REDIRECT_URI = 'https://localhost/';
+        const PERMISSIONS = [
+            'pages_show_list',
+            'pages_read_engagement',
+            'pages_manage_posts',
+            'pages_read_user_content',
+            'instagram_basic',
+            'instagram_content_publish'
+        ];
+
+        const scope = PERMISSIONS.join(',');
+        const authUrl = `https://www.facebook.com/v18.0/dialog/oauth?client_id=${APP_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${encodeURIComponent(scope)}&response_type=token`;
+
+        document.getElementById('authUrl').textContent = authUrl;
+
+        let extractedToken = '';
+
+        function openAuthDialog() {
+            window.open(authUrl, '_blank');
+        }
+
+        function copyUrl() {
+            navigator.clipboard.writeText(authUrl);
+            alert('✅ URL copied! Paste it in a new browser tab.');
+        }
+
+        function extractToken() {
+            const redirectUrl = document.getElementById('redirectUrl').value;
+
+            if (!redirectUrl) {
+                alert('⚠️ Please paste the redirect URL first!');
+                return;
+            }
+
+            // Extract token from URL
+            const match = redirectUrl.match(/#access_token=([^&]+)/);
+
+            if (!match) {
+                alert('❌ No access token found in URL. Make sure you copied the FULL URL from the address bar.');
+                return;
+            }
+
+            extractedToken = match[1];
+
+            document.getElementById('tokenDisplay').textContent = extractedToken;
+            document.getElementById('commandDisplay').textContent = `node update-env-token.js "${extractedToken}"`;
+            document.getElementById('result').style.display = 'block';
+        }
+
+        function copyToken() {
+            navigator.clipboard.writeText(extractedToken);
+            alert('✅ Token copied to clipboard!');
+        }
+
+        function copyCommand() {
+            const command = `node update-env-token.js "${extractedToken}"`;
+            navigator.clipboard.writeText(command);
+            alert('✅ Command copied! Paste it in your terminal.');
+        }
+    </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
--- AppFinder-Supabase Integration Database Schema
--- Agent A: AppFinder Optimization & Security Enhancement
+-- FINDERR-Supabase Integration Database Schema
+-- Agent A: FINDERR Optimization & Security Enhancement
 -- Database: PostgreSQL via Supabase
 -- Security: Row Level Security (RLS) enabled on all tables
 
@@ -12,7 +12,7 @@ CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 -- =====================================================
 
 -- Main user profiles table
-CREATE TABLE appfinder_users (
+CREATE TABLE finderr_users (
     user_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     email TEXT UNIQUE NOT NULL,
     email_encrypted TEXT, -- PGP encrypted email for compliance
@@ -44,7 +44,7 @@ CREATE TABLE appfinder_users (
 -- User security events table
 CREATE TABLE user_security_events (
     event_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     event_type TEXT NOT NULL, -- login, logout, security_alert, device_change
     event_details JSONB,
     ip_address INET,
@@ -57,7 +57,7 @@ CREATE TABLE user_security_events (
 -- Trusted devices table
 CREATE TABLE user_trusted_devices (
     device_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     device_fingerprint TEXT NOT NULL,
     device_name TEXT,
     device_type TEXT, -- ios, android, web
@@ -73,7 +73,7 @@ CREATE TABLE user_trusted_devices (
 -- User app discoveries tracking
 CREATE TABLE user_app_discoveries (
     discovery_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     app_name TEXT NOT NULL,
     app_category TEXT,
     app_platform TEXT, -- ios, android, web, cross_platform
@@ -105,7 +105,7 @@ CREATE TABLE app_discovery_analytics (
 -- User engagement sessions
 CREATE TABLE user_sessions (
     session_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     session_start TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     session_end TIMESTAMP WITH TIME ZONE,
     session_duration INTEGER, -- seconds
@@ -122,7 +122,7 @@ CREATE TABLE user_sessions (
 -- Unified ecosystem interactions
 CREATE TABLE ecosystem_interactions (
     interaction_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     platform TEXT NOT NULL, -- appfinder, hub, etsy, email, instagram, twitter
     action_type TEXT NOT NULL, -- visit, click, purchase, signup, engagement
     interaction_details JSONB,
@@ -135,7 +135,7 @@ CREATE TABLE ecosystem_interactions (
 -- Cross-platform conversion funnels
 CREATE TABLE conversion_funnels (
     funnel_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     funnel_name TEXT NOT NULL, -- appfinder_to_etsy, hub_to_appfinder, etc
     entry_platform TEXT NOT NULL,
     exit_platform TEXT,
@@ -150,7 +150,7 @@ CREATE TABLE conversion_funnels (
 -- Community engagement tracking
 CREATE TABLE community_engagement (
     engagement_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     engagement_type TEXT NOT NULL, -- comment, like, share, post, vote
     content_type TEXT, -- app_review, design_showcase, discussion
     content_id TEXT, -- reference to hub content
@@ -165,7 +165,7 @@ CREATE TABLE community_engagement (
 -- User email marketing status
 CREATE TABLE email_marketing_status (
     email_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     mailchimp_subscriber_id TEXT,
     subscription_status TEXT DEFAULT 'subscribed', -- subscribed, unsubscribed, cleaned
     email_preferences JSONB DEFAULT '{
@@ -184,7 +184,7 @@ CREATE TABLE email_marketing_status (
 -- Personalized recommendations cache
 CREATE TABLE recommendation_cache (
     cache_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     recommendation_type TEXT NOT NULL, -- app_discovery, etsy_design, hub_content
     recommendations JSONB NOT NULL,
     confidence_scores JSONB,
@@ -196,7 +196,7 @@ CREATE TABLE recommendation_cache (
 -- A/B testing for features
 CREATE TABLE feature_ab_tests (
     test_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES appfinder_users(user_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES finderr_users(user_id) ON DELETE CASCADE,
     test_name TEXT NOT NULL,
     variant TEXT NOT NULL, -- A, B, control
     assigned_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
@@ -209,8 +209,8 @@ CREATE TABLE feature_ab_tests (
 -- =====================================================
 
 -- User tables indexes
-CREATE INDEX idx_appfinder_users_email ON appfinder_users(email);
-CREATE INDEX idx_appfinder_users_last_active ON appfinder_users(last_active);
+CREATE INDEX idx_finderr_users_email ON finderr_users(email);
+CREATE INDEX idx_finderr_users_last_active ON finderr_users(last_active);
 CREATE INDEX idx_user_security_events_user_id ON user_security_events(user_id);
 CREATE INDEX idx_user_security_events_created_at ON user_security_events(created_at);
 
@@ -236,7 +236,7 @@ CREATE INDEX idx_user_sessions_user_id ON user_sessions(user_id);
 -- =====================================================
 
 -- Enable RLS on all tables
-ALTER TABLE appfinder_users ENABLE ROW LEVEL SECURITY;
+ALTER TABLE finderr_users ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_security_events ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_trusted_devices ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_app_discoveries ENABLE ROW LEVEL SECURITY;
@@ -249,10 +249,10 @@ ALTER TABLE recommendation_cache ENABLE ROW LEVEL SECURITY;
 ALTER TABLE feature_ab_tests ENABLE ROW LEVEL SECURITY;
 
 -- User can only access their own data
-CREATE POLICY "Users can view own profile" ON appfinder_users
+CREATE POLICY "Users can view own profile" ON finderr_users
     FOR SELECT USING (auth.uid() = user_id);
 
-CREATE POLICY "Users can update own profile" ON appfinder_users
+CREATE POLICY "Users can update own profile" ON finderr_users
     FOR UPDATE USING (auth.uid() = user_id);
 
 CREATE POLICY "Users can view own discoveries" ON user_app_discoveries
@@ -265,7 +265,7 @@ CREATE POLICY "Users can view own ecosystem interactions" ON ecosystem_interacti
     FOR ALL USING (auth.uid() = user_id);
 
 -- Admin policies for analytics (service role access)
-CREATE POLICY "Service role can access all data" ON appfinder_users
+CREATE POLICY "Service role can access all data" ON finderr_users
     FOR ALL USING (auth.role() = 'service_role');
 
 -- =====================================================
@@ -276,7 +276,7 @@ CREATE POLICY "Service role can access all data" ON appfinder_users
 CREATE OR REPLACE FUNCTION update_user_last_active()
 RETURNS TRIGGER AS $$
 BEGIN
-    UPDATE appfinder_users 
+    UPDATE finderr_users 
     SET last_active = NOW() 
     WHERE user_id = NEW.user_id;
     RETURN NEW;
@@ -335,7 +335,7 @@ BEGIN
         (ecosystem_engagement->>'etsy_clicks')::INTEGER,
         (ecosystem_engagement->>'community_interactions')::INTEGER
     INTO hub_visits, etsy_clicks, community_interactions
-    FROM appfinder_users 
+    FROM finderr_users 
     WHERE user_id = user_id_param;
     
     -- Calculate weighted engagement score
@@ -363,7 +363,7 @@ SELECT
     COUNT(s.session_id) as total_sessions,
     AVG(s.session_duration) as avg_session_duration,
     get_user_engagement_score(u.user_id) as engagement_score
-FROM appfinder_users u
+FROM finderr_users u
 LEFT JOIN user_app_discoveries d ON u.user_id = d.user_id
 LEFT JOIN user_sessions s ON u.user_id = s.user_id
 GROUP BY u.user_id, u.email, u.created_at, u.last_active;

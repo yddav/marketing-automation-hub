@@ -9,7 +9,7 @@ const path = require('path');
 
 /**
  * Mailchimp Untrapd Ecosystem Deployer
- * Sets up complete email marketing automation for AppFinder → Etsy → Hub integration
+ * Sets up complete email marketing automation for FINDERR → Etsy → Hub integration
  */
 
 class MailchimpUntrapdDeployer {
@@ -150,7 +150,7 @@ class MailchimpUntrapdDeployer {
         // Load email template content
         const templatePath = path.join(
           __dirname, 
-          '../../content_templates/email_marketing/untrapd-appfinder-sequence.json'
+          '../../content_templates/email_marketing/untrapd-finderr-sequence.json'
         );
         const templateContent = JSON.parse(await fs.readFile(templatePath, 'utf8'));
         
@@ -294,7 +294,7 @@ class MailchimpUntrapdDeployer {
     
     // App users to Etsy promotion
     const appToEtsyRule = await this.createSegmentedCampaign(
-      'AppFinder users who haven\'t visited Etsy',
+      'FINDERR users who haven\'t visited Etsy',
       'etsy_cross_promotion',
       this.config.automationRules.crossPromotionTriggers.appToEtsy
     );
@@ -303,8 +303,8 @@ class MailchimpUntrapdDeployer {
     
     // Etsy customers to AppFinder promotion
     const etsyToAppRule = await this.createSegmentedCampaign(
-      'Etsy customers who haven\'t downloaded AppFinder',
-      'appfinder_cross_promotion',
+      'Etsy customers who haven\'t downloaded FINDERR',
+      'finderr_cross_promotion',
       this.config.automationRules.crossPromotionTriggers.etsyToApp
     );
     

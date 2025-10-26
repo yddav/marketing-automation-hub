@@ -1,0 +1,60 @@
+{
+  "name": "untrapd-hub-social-automation",
+  "version": "1.0.0",
+  "description": "Social media automation system for UNTRAPD Hub ecosystem",
+  "main": "untrapd-hub-launcher.js",
+  "scripts": {
+    "start": "node untrapd-hub-launcher.js",
+    "demo": "node untrapd-hub-launcher.js --demo --once",
+    "test": "node demo-test-launcher.js",
+    "once": "node untrapd-hub-launcher.js --once",
+    "validate": "node -e \"const h=require('./api-handler.js'); new h().validateApiTokens().then(console.log)\"",
+    "insights": "node -e \"const h=require('./api-handler.js'); new h().getAllInsights().then(console.log)\"",
+    "setup": "cp .env.template .env && echo 'Edit .env with your API tokens'",
+    "setup-tokens": "node setup-tokens.js",
+    "install-deps": "npm install axios form-data dotenv",
+    "finderr-preview": "node finderr-native-launcher.js preview",
+    "finderr-launch": "node finderr-native-launcher.js launch",
+    "finderr-dry-run": "node finderr-native-launcher.js dry-run",
+    "finderr-day": "node finderr-native-launcher.js day",
+    "pm2-start": "pm2 start untrapd-hub-launcher.js --name untrapd-social",
+    "pm2-finderr": "pm2 start finderr-native-launcher.js --name finderr-campaign -- launch",
+    "pm2-stop": "pm2 stop untrapd-social finderr-campaign",
+    "pm2-logs": "pm2 logs",
+    "test-tiktok": "node test-tiktok-integration.js",
+    "tiktok-status": "node -e \"const h=require('./api-handler.js'); new h().getTikTokInsights().then(console.log)\""
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.2.3",
+    "form-data": "^4.0.0",
+    "oauth-1.0a": "^2.2.6"
+  },
+  "devDependencies": {
+    "pm2": "^5.3.0"
+  },
+  "keywords": [
+    "social-media",
+    "automation",
+    "instagram",
+    "facebook",
+    "tiktok",
+    "twitter",
+    "untrapd",
+    "finderr"
+  ],
+  "author": "UNTRAPD Hub",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untrapd/hub-automation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/untrapd/hub-automation/issues"
+  },
+  "homepage": "https://hub.untrapd.com"
+}

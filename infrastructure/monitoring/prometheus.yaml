@@ -1,0 +1,190 @@
+# Prometheus Operator
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: marketing-prometheus
+  namespace: monitoring
+  labels:
+    app: prometheus
+    prometheus: marketing
+spec:
+  replicas: 2
+  retention: 30d
+  retentionSize: 50GB
+  
+  serviceAccountName: prometheus-marketing
+  
+  serviceMonitorSelector:
+    matchLabels:
+      app: marketing-automation-hub
+      
+  serviceMonitorNamespaceSelector:
+    matchLabels:
+      name: marketing-automation
+      
+  ruleSelector:
+    matchLabels:
+      app: marketing-automation-hub
+      role: alert-rules
+      
+  resources:
+    requests:
+      memory: 2Gi
+      cpu: 1000m
+    limits:
+      memory: 4Gi
+      cpu: 2000m
+      
+  storage:
+    volumeClaimTemplate:
+      spec:
+        storageClassName: fast-ssd
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 100Gi
+            
+  securityContext:
+    runAsGroup: 2000
+    runAsNonRoot: true
+    runAsUser: 1000
+    
+  podMetadata:
+    labels:
+      app: prometheus
+      
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - prometheus
+          topologyKey: kubernetes.io/hostname
+          
+  additionalScrapeConfigs:
+    name: additional-scrape-configs
+    key: prometheus-additional.yaml
+    
+---
+# ServiceMonitor for Marketing Automation Hub
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: marketing-automation-monitor
+  namespace: monitoring
+  labels:
+    app: marketing-automation-hub
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: marketing-automation-hub
+      service: web
+  namespaceSelector:
+    matchNames:
+    - marketing-automation
+  endpoints:
+  - port: metrics
+    interval: 15s
+    path: /metrics
+    honorLabels: true
+    relabelings:
+    - sourceLabels: [__meta_kubernetes_pod_name]
+      targetLabel: instance
+    - sourceLabels: [__meta_kubernetes_pod_node_name]
+      targetLabel: node
+      
+---
+# Additional Scrape Configs
+apiVersion: v1
+kind: Secret
+metadata:
+  name: additional-scrape-configs
+  namespace: monitoring
+type: Opaque
+stringData:
+  prometheus-additional.yaml: |
+    # Node Exporter
+    - job_name: 'node-exporter'
+      kubernetes_sd_configs:
+      - role: endpoints
+        namespaces:
+          names:
+          - monitoring
+      relabel_configs:
+      - source_labels: [__meta_kubernetes_service_name]
+        action: keep
+        regex: node-exporter
+      - source_labels: [__meta_kubernetes_endpoint_port_name]
+        action: keep
+        regex: metrics
+    
+    # Application metrics
+    - job_name: 'marketing-automation-app'
+      kubernetes_sd_configs:
+      - role: pod
+        namespaces:
+          names:
+          - marketing-automation
+      relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+        action: keep
+        regex: true
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+        action: replace
+        target_label: __metrics_path__
+        regex: (.+)
+      - source_labels: [__address__, __meta_kubernetes_pod_annotation_prometheus_io_port]
+        action: replace
+        regex: ([^:]+)(?::\d+)?;(\d+)
+        replacement: $1:$2
+        target_label: __address__
+      - action: labelmap
+        regex: __meta_kubernetes_pod_label_(.+)
+      - source_labels: [__meta_kubernetes_namespace]
+        action: replace
+        target_label: kubernetes_namespace
+      - source_labels: [__meta_kubernetes_pod_name]
+        action: replace
+        target_label: kubernetes_pod_name
+    
+    # Database metrics
+    - job_name: 'postgres-exporter'
+      static_configs:
+      - targets: ['postgres-exporter:9187']
+      scrape_interval: 30s
+      
+    - job_name: 'redis-exporter'
+      kubernetes_sd_configs:
+      - role: service
+        namespaces:
+          names:
+          - marketing-automation
+      relabel_configs:
+      - source_labels: [__meta_kubernetes_service_name]
+        action: keep
+        regex: redis-exporter
+        
+---
+# Prometheus Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-service
+  namespace: monitoring
+  labels:
+    app: prometheus
+spec:
+  type: ClusterIP
+  ports:
+  - name: web
+    port: 9090
+    targetPort: 9090
+  selector:
+    app: prometheus
+    prometheus: marketing

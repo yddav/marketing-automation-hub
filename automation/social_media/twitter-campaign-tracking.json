@@ -1,0 +1,22 @@
+{
+  "published": [],
+  "failed": [
+    {
+      "postId": "day1-twitter-08:00",
+      "error": "Too Many Requests",
+      "timestamp": "2025-10-18T07:00:02.732Z"
+    },
+    {
+      "postId": "day1-twitter-12:00",
+      "error": "Too Many Requests",
+      "timestamp": "2025-10-18T07:00:07.887Z"
+    },
+    {
+      "postId": "day1-twitter-16:00",
+      "error": "Too Many Requests",
+      "timestamp": "2025-10-18T07:00:13.045Z"
+    }
+  ],
+  "campaign": "FINDERR Beta Recruitment",
+  "startDate": "2025-10-18"
+}

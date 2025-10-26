@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Untrapd Hub</title>
+    <meta name="description" content="Physical products and merchandise from Untrapd.">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="/" class="logo-link">
+                        <h1>Untrapd</h1>
+                        <span class="tagline">Shop</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/apps/" class="nav-link">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/templates/" class="nav-link">Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/shop/" class="nav-link active">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shop-hero">
+            <div class="container">
+                <div class="hero-badge">New Store</div>
+                <h1>Untrapd Shop</h1>
+                <p>Premium physical products and branded merchandise. Designed for professionals who value quality and innovation.</p>
+            </div>
+        </section>
+
+        <section class="shop-content">
+            <div class="container">
+                <div class="coming-soon-section">
+                    <h2>Coming Soon</h2>
+                    <p>We're preparing an exclusive collection of premium products and merchandise. Be the first to know when we launch.</p>
+                    
+                    <div class="newsletter-signup">
+                        <h3>Get Notified First</h3>
+                        <p>Join our exclusive launch list and get early access to our premium collection.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-button">Notify Me</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="shop-grid">
+                    <div class="product-card coming-soon">
+                        <div class="product-icon">👕</div>
+                        <h3>Premium Apparel</h3>
+                        <p>High-quality branded merchandise including t-shirts, hoodies, and accessories.</p>
+                        <div class="product-status">Coming Soon</div>
+                    </div>
+                    
+                    <div class="product-card coming-soon">
+                        <div class="product-icon">💻</div>
+                        <h3>Tech Accessories</h3>
+                        <p>Professional accessories and gadgets for developers and entrepreneurs.</p>
+                        <div class="product-status">Coming Soon</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Untrapd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            // Newsletter form handling
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('.newsletter-input').value;
+                    if (email) {
+                        alert('Thank you! We\'ll notify you when the shop launches.');
+                        this.reset();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

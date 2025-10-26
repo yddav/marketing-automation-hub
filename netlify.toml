@@ -1,5 +1,5 @@
 [build]
-  publish = "public"
+  publish = "Homepage"
 
 [build.environment]
   NODE_ENV = "production"
@@ -22,6 +22,46 @@
 [[redirects]]
   from = "/analytics"
   to = "/dashboard/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms-of-service"
+  to = "/terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/tos"
+  to = "/terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/data-deletion"
+  to = "/data-deletion.html"
+  status = 200
+
+[[redirects]]
+  from = "/delete-data"
+  to = "/data-deletion.html"
+  status = 200
+
+[[redirects]]
+  from = "/deletion"
+  to = "/data-deletion.html"
   status = 200
 
 [[headers]]

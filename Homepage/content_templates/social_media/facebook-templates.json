@@ -1,0 +1,128 @@
+{
+  "id": "facebook-templates",
+  "type": "social_media_post",
+  "platform": ["facebook"],
+  "audience": {
+    "primary": "potential_customers",
+    "secondary": ["business_owners", "app_users"],
+    "demographics": {
+      "age_range": "35-54",
+      "interests": ["family", "business", "lifestyle", "technology"],
+      "tech_savviness": "intermediate"
+    }
+  },
+  "content": {
+    "template": "{{post_type}} template for Facebook",
+    "variations": [
+      {
+        "id": "story_post",
+        "test_group": "narrative",
+        "template": "{{story_hook}}\n\n{{story_development}}\n\nThat's when we realized {{insight}}.\n\nSo we built {{solution}} into {{app_name}}.\n\nThe result? {{outcome}}\n\n{{personal_connection}}\n\n{{call_to_action}}\n\nWhat's your experience with {{related_topic}}? Share in the comments! 👇\n\n{{hashtags}}",
+        "performance_notes": "Storytelling performs well on Facebook"
+      },
+      {
+        "id": "educational_post",
+        "test_group": "value_content",
+        "template": "📚 {{educational_topic}}: A Quick Guide\n\n{{problem_statement}}\n\nHere's what we've learned after helping {{user_count}}+ people:\n\n1️⃣ {{tip_1}}\n{{tip_1_explanation}}\n\n2️⃣ {{tip_2}}\n{{tip_2_explanation}}\n\n3️⃣ {{tip_3}}\n{{tip_3_explanation}}\n\n💡 Pro tip: {{bonus_tip}}\n\n{{app_connection}}\n\nSave this post for later! And share with someone who needs to see this.\n\n{{hashtags}}",
+        "performance_notes": "Educational content gets saves and shares"
+      },
+      {
+        "id": "community_highlight",
+        "test_group": "social_proof",
+        "template": "🌟 Community Spotlight 🌟\n\nMeet {{user_name}}, {{user_description}}.\n\n{{user_story_summary}}\n\n\"{{user_testimonial_long}}\"\n\n{{user_results}}\n\n{{community_impact}}\n\nStories like {{user_name}}'s inspire us every day. {{app_name}} isn't just an app - it's a community of people {{shared_goal}}.\n\nWant to share your story? Comment below or send us a message!\n\n{{hashtags}}",
+        "performance_notes": "Community stories build emotional connection"
+      },
+      {
+        "id": "behind_the_scenes",
+        "test_group": "transparency",
+        "template": "🎬 Behind the Scenes at {{company_name}}\n\n{{casual_opening}}\n\n{{behind_scenes_story}}\n\nHere's what goes into making {{app_name}} better for you:\n\n🔍 {{process_step_1}}\n⚙️ {{process_step_2}}\n🧪 {{process_step_3}}\n📱 {{process_step_4}}\n\n{{team_insight}}\n\n{{future_tease}}\n\nWhat feature would you like to see us work on next? Let us know!\n\n{{hashtags}}",
+        "performance_notes": "Humanizes brand, increases trust"
+      },
+      {
+        "id": "milestone_announcement",
+        "test_group": "achievement",
+        "template": "🎉 HUGE Milestone Alert! 🎉\n\n{{milestone_statement}}\n\n{{emotional_response}}\n\nLet's break down what this means:\n\n📊 {{statistic_1}}\n📈 {{statistic_2}}\n🌍 {{statistic_3}}\n\nBut numbers are just numbers. What really matters is {{human_impact}}.\n\n{{gratitude_message}}\n\n{{future_commitment}}\n\nCelebrate with us! Share your {{app_name}} success story in the comments 👇\n\n{{hashtags}}",
+        "performance_notes": "Milestones encourage community celebration"
+      },
+      {
+        "id": "problem_solver",
+        "test_group": "solution_focused",
+        "template": "❓ Ever wondered why {{common_question}}?\n\n{{problem_exploration}}\n\nWe've been there too. That's exactly why we created {{specific_feature}}.\n\nHere's how it works:\n\n🎯 {{step_1}}\n⚡ {{step_2}}\n✅ {{step_3}}\n\n{{result_description}}\n\nReal example: {{case_study_brief}}\n\n{{call_to_action}}\n\nQuestions about {{topic}}? Ask in the comments - we love helping!\n\n{{hashtags}}",
+        "performance_notes": "Problem-solution format with engagement"
+      },
+      {
+        "id": "tips_and_tricks",
+        "test_group": "helpful_content",
+        "template": "💡 {{time_period}} Tips: {{topic}}\n\n{{introduction}}\n\nTip #1: {{tip_1_title}}\n{{tip_1_description}}\n💪 Impact: {{tip_1_benefit}}\n\nTip #2: {{tip_2_title}}\n{{tip_2_description}}\n💪 Impact: {{tip_2_benefit}}\n\nTip #3: {{tip_3_title}}\n{{tip_3_description}}\n💪 Impact: {{tip_3_benefit}}\n\n🚀 Bonus: {{bonus_tip}}\n\n{{app_integration}}\n\nWhich tip will you try first? Let us know! ⬇️\n\n{{hashtags}}",
+        "performance_notes": "Actionable tips encourage engagement"
+      }
+    ],
+    "placeholders": {
+      "app_name": {
+        "type": "string",
+        "description": "Name of the mobile application",
+        "required": true
+      },
+      "company_name": {
+        "type": "string",
+        "description": "Name of the company"
+      },
+      "hashtags": {
+        "type": "string",
+        "description": "Facebook hashtags (fewer than other platforms)",
+        "default": "#productivity #business #mobileapp"
+      },
+      "user_count": {
+        "type": "string",
+        "description": "Number of users",
+        "default": "1,000"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-25T11:00:00Z",
+    "updated_at": "2025-01-25T11:00:00Z",
+    "version": "1.0.0",
+    "author": "Agent A - Content Specialist", 
+    "tags": ["facebook", "social_media", "long_form", "community"],
+    "brand_voice": "friendly",
+    "tone": "supportive",
+    "character_limits": {
+      "min": 100,
+      "max": 63206,
+      "optimal": 400
+    },
+    "hashtags": ["#productivity", "#business", "#mobileapp", "#community"],
+    "call_to_action": {
+      "primary": "Learn more at [website]",
+      "secondary": "Share your experience!"
+    },
+    "performance_tracking": {
+      "metrics": ["impressions", "engagement_rate", "shares", "comments", "saves"],
+      "goals": {
+        "engagement_rate": 0.08,
+        "shares_per_post": 25
+      }
+    }
+  },
+  "automation": {
+    "scheduling": {
+      "auto_schedule": true,
+      "optimal_times": ["09:00", "13:00", "19:00"],
+      "frequency": "daily"
+    },
+    "personalization": {
+      "dynamic_fields": ["user_stories", "milestone_data", "community_stats"],
+      "segmentation_rules": [
+        {
+          "condition": "age_group == '35-54'",
+          "variation": "story_post"
+        },
+        {
+          "condition": "interest == 'business'",
+          "variation": "educational_post"
+        }
+      ]
+    }
+  }
+}

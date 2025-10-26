@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Postiz Browser Access Test</title>
+</head>
+<body>
+    <h1>Postiz Browser Access Test</h1>
+    <p>Testing authenticated access to Postiz dashboard...</p>
+    
+    <button onclick="setCookieAndRedirect()">Set Cookie and Go to Dashboard</button>
+    
+    <script>
+    function setCookieAndRedirect() {
+        // Set the auth cookie
+        document.cookie = 'auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNkMjUwMjc3LTc4ZjEtNDIyYy1iNzg5LWRiYzgzZDQyYzJhZCIsImVtYWlsIjoiYWRtaW5AdW50cmFwZC5odWIiLCJwYXNzd29yZCI6IiQyYSQwNiRNWTBRMWN1S2NhRm01MjYvcnNGdnEuZEQvYTh2SDRITU1rYmI3cGh3emxTRjM1UVRmbHREdSIsInByb3ZpZGVyTmFtZSI6IkxPQ0FMIiwibmFtZSI6IlVOVFJBUEQgSHViIEFkbWluIiwibGFzdE5hbWUiOm51bGwsImlzU3VwZXJBZG1pbiI6dHJ1ZSwiYmlvIjpudWxsLCJhdWRpZW5jZSI6MCwicGljdHVyZUlkIjpudWxsLCJwcm92aWRlcklkIjpudWxsLCJ0aW1lem9uZSI6MCwiY3JlYXRlZEF0IjoiMjAyNS0wOC0wNVQwMTo1Mjo0MC4yMTZaIiwidXBkYXRlZEF0IjoiMjAyNS0wOC0wNVQwMTo1Mjo0MC4yMTZaIiwibGFzdFJlYWROb3RpZmljYXRpb25zIjoiMjAyNS0wOC0wNVQwMTo1Mjo0MC4yMTZaIiwiaW52aXRlSWQiOm51bGwsImFjdGl2YXRlZCI6dHJ1ZSwibWFya2V0cGxhY2UiOnRydWUsImFjY291bnQiOm51bGwsImNvbm5lY3RlZEFjY291bnQiOmZhbHNlLCJsYXN0T25saW5lIjoiMjAyNS0wOC0wNVQwMTo1Mjo0MC4yMTZaIiwiaXAiOm51bGwsImFnZW50IjpudWxsLCJwaWN0dXJlIjpudWxsLCJpYXQiOjE3NTQzNTkwMzJ9.iOMTRL0tXBAFUmc9OjizsV-MMynBjSzUcnmrjiWigjU; Path=/; Domain=localhost';
+        
+        // Redirect to dashboard
+        window.location.href = 'http://localhost:4200/analytics';
+    }
+    </script>
+    
+    <h2>Manual Instructions:</h2>
+    <ol>
+        <li>Open your browser's Developer Tools (F12)</li>
+        <li>Go to Application > Cookies > http://localhost:4200</li>
+        <li>Clear any existing cookies</li>
+        <li>Add a new cookie:
+            <ul>
+                <li>Name: <code>auth</code></li>
+                <li>Value: <code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNkMjUwMjc3LTc4ZjEtNDIyYy1iNzg5LWRiYzgzZDQyYzJhZCIsImVtYWlsIjoiYWRtaW5AdW50cmFwZC5odWIiLCJwYXNzd29yZCI6IiQyYSQwNiRNWTBRMWN1S2NhRm01MjYvcnNGdnEuZEQvYTh2SDRITU1rYmI3cGh3emxTRjM1UVRmbHREdSIsInByb3ZpZGVyTmFtZSI6IkxPQ0FMIiwibmFtZSI6IlVOVFJBUEQgSHViIEFkbWluIiwibGFzdE5hbWUiOm51bGwsImlzU3VwZXJBZG1pbiI6dHJ1ZSwiYmlvIjpudWxsLCJhdWRpZW5jZSI6MCwicGljdHVyZUlkIjpudWxsLCJwcm92aWRlcklkIjpudWxsLCJ0aW1lem9uZSI6MCwiY3JlYXRlZEF0IjoiMjAyNS0wOC0wNVQwMTo1Mjo0MC4yMTZaIiwidXBkYXRlZEF0IjoiMjAyNS0wOC0wNVQwMTo1Mjo0MC4yMTZaIiwibGFzdFJlYWROb3RpZmljYXRpb25zIjoiMjAyNS0wOC0wNVQwMTo1Mjo0MC4yMTZaIiwiaW52aXRlSWQiOm51bGwsImFjdGl2YXRlZCI6dHJ1ZSwibWFya2V0cGxhY2UiOnRydWUsImFjY291bnQiOm51bGwsImNvbm5lY3RlZGFjY291bnQiOmZhbHNlLCJsYXN0T25saW5lIjoiMjAyNS0wOC0wNVQwMTo1Mjo0MC4yMTZaIiwiaXAiOm51bGwsImFnZW50IjpudWxsLCJwaWN0dXJlIjpudWxsLCJpYXQiOjE3NTQzNTkwMzJ9.iOMTRL0tXBAFUmc9OjizsV-MMynBjSzUcnmrjiWigjU</code></li>
+                <li>Domain: <code>localhost</code></li>
+                <li>Path: <code>/</code></li>
+            </ul>
+        </li>
+        <li>Navigate to <a href="http://localhost:4200">http://localhost:4200</a></li>
+    </ol>
+    
+    <h2>Working Credentials:</h2>
+    <ul>
+        <li>Email: admin@untrapd.hub</li>
+        <li>Password: UNTRAPDHub2025!</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Untrapd Hub</title>
+    <meta name="description" content="Get in touch with the Untrapd team for support, partnerships, or inquiries.">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/contact.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="/" class="logo-link">
+                        <h1>Untrapd</h1>
+                        <span class="tagline">Contact</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/apps/" class="nav-link">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/templates/" class="nav-link">Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/shop/" class="nav-link">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact/" class="nav-link active">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <div class="hero-badge">Get in Touch</div>
+                <h1>Contact Untrapd</h1>
+                <p>Ready to transform your marketing? Let's start a conversation about how we can help you succeed.</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-info-section">
+                        <h2>Let's Connect</h2>
+                        <p>We're here to help with questions about our apps, templates, or potential partnerships. Choose the best way to reach us.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-method-icon">📧</div>
+                                <h3>Email Us</h3>
+                                <p>General inquiries: <a href="mailto:hello@untrapd.com">hello@untrapd.com</a></p>
+                                <p>Support: <a href="mailto:support@untrapd.com">support@untrapd.com</a></p>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-method-icon">🤝</div>
+                                <h3>Partnerships</h3>
+                                <p>Business inquiries: <a href="mailto:partnerships@untrapd.com">partnerships@untrapd.com</a></p>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-method-icon">📱</div>
+                                <h3>Follow Us</h3>
+                                <p>Stay updated with our latest releases and updates on social media @untrapd</p>
+                            </div>
+                        </div>
+                        
+                        <div class="response-info">
+                            <h3>Response Times</h3>
+                            <p>We typically respond within 24 hours on business days. For urgent matters, please mark your email as high priority.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-section">
+                        <h2>Send Message</h2>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select id="subject" name="subject" class="form-select" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="apps">Apps & Products</option>
+                                    <option value="templates">Marketing Templates</option>
+                                    <option value="partnership">Partnership Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us how we can help you..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="form-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Untrapd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            // Contact form handling
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = {
+                        name: this.querySelector('#name').value,
+                        email: this.querySelector('#email').value,
+                        subject: this.querySelector('#subject').value,
+                        message: this.querySelector('#message').value
+                    };
+                    
+                    if (formData.name && formData.email && formData.subject && formData.message) {
+                        alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+                        this.reset();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

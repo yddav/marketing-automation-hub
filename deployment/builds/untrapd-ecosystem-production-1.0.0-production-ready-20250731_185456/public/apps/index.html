@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps - Untrapd Hub</title>
+    <meta name="description" content="Professional apps from Untrapd. Featuring Finderr device security app and future innovative solutions.">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/apps.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="/" class="logo-link">
+                        <h1>Untrapd</h1>
+                        <span class="tagline">Apps Hub</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/apps/" class="nav-link active">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/templates/" class="nav-link">Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/shop/" class="nav-link">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="apps-hero">
+            <div class="container">
+                <h1>Innovative Apps from Untrapd</h1>
+                <p>Professional applications designed to solve real problems and enhance productivity.</p>
+            </div>
+        </section>
+
+        <section class="apps-grid">
+            <div class="container">
+                <div class="app-card featured">
+                    <div class="app-icon">🔍</div>
+                    <h2>Finderr</h2>
+                    <p>Advanced device security and remote identification. Never lose your devices again.</p>
+                    <div class="app-status">Coming Soon</div>
+                    <a href="finderr/" class="app-link">Learn More →</a>
+                </div>
+                
+                <div class="app-card coming-soon">
+                    <div class="app-icon">🚀</div>
+                    <h2>More Apps Coming</h2>
+                    <p>We're developing innovative solutions to help you work smarter and more efficiently.</p>
+                    <div class="app-status">In Development</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Untrapd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

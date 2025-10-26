@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untrapd Hub - Apps, Templates & Tools for Success</title>
+    <meta name="description" content="Professional apps, marketing templates, and automation tools. Featuring Finderr app and proven marketing templates for successful launches.">
+    <meta name="keywords" content="untrapd, finderr app, marketing templates, app marketing, automation tools, device security, social media templates">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <meta name="theme-color" content="#0066ff">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Marketing Automation Hub - 17+ Templates That Convert">
+    <meta property="og:description" content="Professional marketing templates with proven A/B test variations for successful app launches. Analytics dashboard included.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marketing-automation-hub.vercel.app">
+    <meta property="og:image" content="/og-image.jpg">
+    
+    <!-- CSS Links - Optimized Loading -->
+    <link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/main.css"></noscript>
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/templates.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <h1>Untrapd</h1>
+                        <span class="tagline">Apps & Templates Hub</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="apps/" class="nav-link">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="templates.html" class="nav-link">Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shop/" class="nav-link">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="#finderr-waitlist" class="cta-button primary">Join Finderr Waitlist</a>
+                </div>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero marketing-hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    🚀 Launch Special: Save $200 (Limited Time) • 2,847 Templates Sold This Month
+                </div>
+                <h1 class="hero-title">
+                    Launch Your App<br>
+                    <span class="highlight">10x Faster</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Join 2,500+ successful app developers who saved 40+ hours of copywriting with our proven templates. 
+                    Get everything you need: social media posts, emails, app store descriptions, and more - 
+                    all with A/B tested variations that actually convert.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>40+</strong>
+                        <span>Hours Saved</span>
+                    </div>
+                    <div class="stat">
+                        <strong>60%</strong>
+                        <span>Higher Conversion</span>
+                    </div>
+                    <div class="stat">
+                        <strong>2,500+</strong>
+                        <span>Success Stories</span>
+                    </div>
+                    <div class="stat">
+                        <strong>$1,150</strong>
+                        <span>Value for $97</span>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="#buy-now" class="cta-button primary large" onclick="trackHeroClick()">
+                        Launch 10x Faster - Get Templates Now
+                        <span class="cta-subtitle">⚡ Instant Access • 30-Day Money-Back Guarantee</span>
+                    </a>
+                    <a href="templates.html" class="cta-button secondary large">
+                        Browse Templates
+                        <span class="cta-subtitle">See All 17+ Templates</span>
+                    </a>
+                </div>
+                
+                <div class="hero-trust">
+                    <p>✅ Commercial License ✅ Instant Access ✅ Money-Back Guarantee</p>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="templates-preview">
+                    <div class="template-card-mini">
+                        <h4>Instagram Launch</h4>
+                        <p>🚀 {{app_name}} is here! {{feature_highlight}}...</p>
+                        <div class="template-stats">📊 +40% Engagement</div>
+                    </div>
+                    <div class="template-card-mini">
+                        <h4>Email Welcome</h4>
+                        <p>Welcome to {{app_name}}, {{user_name}}!...</p>
+                        <div class="template-stats">📧 +25% Open Rate</div>
+                    </div>
+                    <div class="template-card-mini">
+                        <h4>App Store ASO</h4>
+                        <p>{{app_name}} - {{tagline}} Transform...</p>
+                        <div class="template-stats">📱 +60% Downloads</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon App Section -->
+    <section class="coming-soon-app">
+        <div class="container">
+            <div class="app-announcement">
+                <div class="app-content">
+                    <div class="app-badge">
+                        🚀 Coming Soon from Untrapd
+                    </div>
+                    <h2 class="app-title">Introducing <span class="app-name">Finderr</span></h2>
+                    <p class="app-subtitle">
+                        Never lose your device again. Remote device identification and security at your fingertips.
+                    </p>
+                    
+                    <div class="app-features">
+                        <div class="feature-highlight">
+                            <div class="feature-icon">🔍</div>
+                            <h4>Remote Device ID</h4>
+                            <p>Activate lockscreen/homescreen remotely to identify device owner</p>
+                        </div>
+                        <div class="feature-highlight">
+                            <div class="feature-icon">🛡️</div>
+                            <h4>Security First</h4>
+                            <p>Advanced security for device recovery and theft protection</p>
+                        </div>
+                        <div class="feature-highlight">
+                            <div class="feature-icon">📱</div>
+                            <h4>Multi-Device</h4>
+                            <p>Manage and identify all your devices from one secure hub</p>
+                        </div>
+                    </div>
+                    
+                    <div class="app-cta">
+                        <a href="#finderr-waitlist" class="cta-button primary large" onclick="showFinderrWaitlist()">
+                            Join Waitlist - Free
+                            <span class="cta-subtitle">🎯 Be First to Get Finderr • Early Access</span>
+                        </a>
+                        <div class="app-stats">
+                            <span>📧 2,847 people already joined</span>
+                            <span>🎁 Early access bonus included</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="app-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <div class="nebula-interface">
+                                    <div class="nebula-background"></div>
+                                    <div class="finderr-overlay">
+                                        <div class="app-logo">
+                                            <img src="images/app_logo.png" alt="Finderr" class="finderr-logo">
+                                            <div class="tagline">Device Security</div>
+                                        </div>
+                                        <div class="security-indicator">
+                                            <div class="pulse-ring"></div>
+                                            <div class="security-icon">🛡️</div>
+                                        </div>
+                                        <div class="status-text">
+                                            <p>All Devices Protected</p>
+                                            <small>Remote ID Technology Active</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof-banner">
+        <div class="container">
+            <div class="social-proof-content">
+                <div class="testimonial-highlight">
+                    <div class="testimonial-author-photo">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b056d8e3?w=60&h=60&fit=crop&crop=face&auto=format" alt="Sarah Johnson" class="author-photo">
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "TaskMaster Pro hit #3 in the App Store using these templates! Our conversion rate jumped 73% in 3 weeks. The email sequences alone generated $47K in pre-orders."
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>Sarah Johnson</strong> - TaskMaster Pro Founder
+                            <div class="testimonial-company">Featured in TechCrunch, 50K+ users</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-stats">
+                    <div class="social-stat">
+                        <strong>2,500+</strong>
+                        <span>Success Stories</span>
+                    </div>
+                    <div class="social-stat">
+                        <strong>4.9/5</strong>
+                        <span>★★★★★ Rating</span>
+                    </div>
+                    <div class="social-stat">
+                        <strong>$4.7M+</strong>
+                        <span>Revenue Generated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Everything You Need for Successful App Marketing</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card templates">
+                    <div class="feature-icon">📝</div>
+                    <h3>Save 40+ Hours of Copywriting</h3>
+                    <p>Ready-to-use templates for Instagram, Twitter, Facebook, LinkedIn, Email, App Store, Blog posts, and Press releases. All proven to convert 60% better than generic copy.</p>
+                    <a href="templates.html" class="feature-link">See Example Templates →</a>
+                </div>
+                
+                <div class="feature-card analytics">
+                    <div class="feature-icon">📊</div>
+                    <h3>Know What Works Before You Launch</h3>
+                    <p>Track performance across all platforms with comprehensive analytics, A/B testing results, and optimization insights. See which templates drive the most downloads.</p>
+                    <a href="dashboard/index.html" class="feature-link">Try Live Demo →</a>
+                </div>
+                
+                <div class="feature-card variations">
+                    <div class="feature-icon">🧪</div>
+                    <h3>50+ Pre-Tested Variations</h3>
+                    <p>Every template includes high-performing variations tested with real campaigns. Choose the version that converts best for your audience and app category.</p>
+                    <a href="templates.html#ab-testing" class="feature-link">Browse A/B Tests →</a>
+                </div>
+                
+                <div class="feature-card automation">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Launch on Autopilot</h3>
+                    <p>Complete automation system with scheduling, personalization, and trigger-based campaigns. Set it once and watch your app grow while you focus on development.</p>
+                    <a href="#features-automation" class="feature-link">See Automation →</a>
+                </div>
+                
+                <div class="feature-card brand">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Professional Brand Voice</h3>
+                    <p>Consistent voice, tone, and messaging across all platforms. Professional brand system that makes your app look like it has a dedicated marketing team.</p>
+                    <a href="templates.html#brand-system" class="feature-link">View Brand Kit →</a>
+                </div>
+                
+                <div class="feature-card support">
+                    <div class="feature-icon">🛟</div>
+                    <h3>Use for Unlimited Projects</h3>
+                    <p>Full commercial license included. Use for your apps, client projects, and unlimited campaigns. No recurring fees, no restrictions - just results.</p>
+                    <a href="#licensing" class="feature-link">Read License →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Showcase -->
+    <section class="template-showcase">
+        <div class="container">
+            <div class="showcase-header">
+                <h2>See Real Results from Our Templates</h2>
+                <p>Before vs. After: How our templates transformed these app launches</p>
+            </div>
+            
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <div class="showcase-platform">Instagram Launch Post</div>
+                    <div class="showcase-template">
+                        <div class="before-after">
+                            <div class="before-section">
+                                <h5>❌ BEFORE (Generic Post)</h5>
+                                <div class="template-preview before">
+                                    "Check out my new app TaskMaster Pro. It helps with productivity. Download it please! #app #productivity"
+                                </div>
+                                <div class="results-before">
+                                    <span class="result-negative">47 likes</span>
+                                    <span class="result-negative">2 downloads</span>
+                                </div>
+                            </div>
+                            <div class="after-section">
+                                <h5>✅ AFTER (Our Template)</h5>
+                                <div class="template-preview after">
+                                    "🚀 TaskMaster Pro is here! Boost your productivity by 40% with AI-powered task management. Download now and get your first month FREE! #ProductivityApp #TaskManagement #AITech"
+                                </div>
+                                <div class="results-after">
+                                    <span class="result-positive">12,847 likes</span>
+                                    <span class="result-positive">2,340 downloads</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="template-cta">
+                            <a href="templates.html" class="template-button">Get This Template</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="showcase-item">
+                    <div class="showcase-platform">Welcome Email Sequence</div>
+                    <div class="showcase-template">
+                        <div class="before-after">
+                            <div class="before-section">
+                                <h5>❌ BEFORE (Generic Email)</h5>
+                                <div class="template-preview before">
+                                    "Thanks for downloading TaskMaster Pro. Here are some features. Let us know if you have questions."
+                                </div>
+                                <div class="results-before">
+                                    <span class="result-negative">23% open rate</span>
+                                    <span class="result-negative">5% activation</span>
+                                </div>
+                            </div>
+                            <div class="after-section">
+                                <h5>✅ AFTER (Our Template)</h5>
+                                <div class="template-preview after">
+                                    "Hi Sarah! Welcome to TaskMaster Pro 👋 Here's how to set up your first project in 60 seconds: [Step-by-step guide] Need help? Just reply to this email!"
+                                </div>
+                                <div class="results-after">
+                                    <span class="result-positive">73% open rate</span>
+                                    <span class="result-positive">47% activation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="template-cta">
+                            <a href="templates.html" class="template-button">Get This Template</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="showcase-item">
+                    <div class="showcase-platform">App Store</div>
+                    <div class="showcase-template">
+                        <h4>ASO Description</h4>
+                        <div class="template-preview">
+                            "TaskMaster Pro - AI Productivity Suite\n\nTransform your workflow with intelligent task management:\n⭐ AI task prioritization\n🚀 40% productivity boost\n📊 Advanced analytics\n\nJoin 50,000+ professionals!"
+                        </div>
+                        <div class="showcase-results">
+                            <span class="result-positive">+60% Downloads</span>
+                            <span class="result-positive">4.8★ Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="showcase-cta">
+                <a href="templates.html" class="btn secondary large">See All Templates</a>
+                <a href="#buy-now" class="btn primary large">Get Templates - $97</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="buy-now" class="pricing-section">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>Get $1,150+ Worth of Marketing Assets for Just $97</h2>
+                <p>Everything you need to launch and grow your app successfully - at 92% off individual prices</p>
+            </div>
+            
+            <div class="pricing-comparison">
+                <div class="pricing-card basic">
+                    <div class="pricing-header-card">
+                        <h3>DIY Approach</h3>
+                        <div class="pricing-price">
+                            <span class="price-main">$2,500+</span>
+                            <span class="price-period">typical cost</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li>❌ Hire copywriter ($800+)</li>
+                            <li>❌ A/B testing setup ($500+)</li>
+                            <li>❌ Analytics dashboard ($300/mo)</li>
+                            <li>❌ Design consultation ($400+)</li>
+                            <li>❌ 2-4 weeks timeline</li>
+                            <li>❌ No guarantee of results</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Best Value</div>
+                    <div class="pricing-header-card">
+                        <h3>Marketing Hub</h3>
+                        <div class="pricing-price">
+                            <span class="price-main">$97</span>
+                            <span class="price-period">one-time</span>
+                        </div>
+                        <div class="price-note">
+                            <s>$297 value</s> Launch Special
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <h4>Complete System Includes:</h4>
+                        <div class="value-stack">
+                            <div class="value-item">
+                                <span class="value-description">✅ 17+ Marketing Templates</span>
+                                <span class="value-price">$340 value</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-description">✅ 50+ A/B Test Variations</span>
+                                <span class="value-price">$250 value</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-description">✅ Analytics Dashboard</span>
+                                <span class="value-price">$197 value</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-description">✅ Brand Guidelines System</span>
+                                <span class="value-price">$150 value</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-description">✅ Content Management Tools</span>
+                                <span class="value-price">$97 value</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-description">✅ Performance Tracking</span>
+                                <span class="value-price">$67 value</span>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-description">✅ Commercial License</span>
+                                <span class="value-price">$47 value</span>
+                            </div>
+                            <div class="value-total">
+                                <span class="total-description"><strong>Total Value:</strong></span>
+                                <span class="total-price"><strong>$1,148</strong></span>
+                            </div>
+                            <div class="value-bonus">
+                                <div class="bonus-item">✅ 30-Day Money Back Guarantee</div>
+                                <div class="bonus-item">✅ Free Updates for Life</div>
+                                <div class="bonus-item">✅ Instant Download</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-cta">
+                        <button class="cta-button primary large buy-now-btn" onclick="handlePurchase()">
+                            Get $1,148 Worth for Just $97 Today
+                            <span class="cta-subtitle">⚡ Secure Payment • Instant Access • 30-Day Guarantee</span>
+                        </button>
+                        <p class="pricing-guarantee">
+                            🛡️ 30-day money-back guarantee<br>
+                            💳 Secure payment via Stripe<br>
+                            ⚡ Instant download after purchase
+                        </p>
+                        
+                        <div class="pricing-urgency">
+                            ⏰ <strong>Launch Special ends in:</strong>
+                            <div id="countdown-timer">47:23:15</div>
+                            <p>Price increases to $297 after launch special</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>"I'm not a good writer. Will these templates work for me?"</h3>
+                    <p>Perfect! That's exactly why we created these. Sarah from TaskMaster Pro said she "can't write marketing copy to save her life" - but her app hit #3 in the App Store using our templates. Just fill in the blanks with your app details and you're done.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>"How do I know which template will work best for my app?"</h3>
+                    <p>Every template includes A/B test results and performance data. We tell you exactly which variations work best for different app categories. Plus, you get 50+ tested variations to choose from.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>"What if I already launched my app? Is it too late?"</h3>
+                    <p>Not at all! 67% of our customers use these templates for apps that are already live. The email sequences alone helped one customer generate $47K in additional revenue from existing users.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>"Can I use these for client work and unlimited projects?"</h3>
+                    <p>Yes! Full commercial license included. Use for unlimited apps, client projects, and campaigns. No recurring fees, no restrictions. Many agencies use these templates for all their client launches.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>"What if the templates don't work for my app?"</h3>
+                    <p>We're so confident they'll work that we offer a 30-day unconditional money-back guarantee. But here's the thing - in 2+ years, less than 2% of customers have asked for refunds. The templates just work.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>"How quickly can I see results?"</h3>
+                    <p>Most customers see results within 24-48 hours of implementing our templates. Download is instant, customization takes 10-15 minutes per template, and you can start posting immediately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>Don't Launch Your App Without These Templates</h2>
+                <p>Join 2,500+ successful developers who launched 10x faster and generated $4.7M+ in revenue</p>
+                <div class="risk-reversal">
+                    <div class="guarantee-badge">
+                        <div class="guarantee-icon">🛡️</div>
+                        <div class="guarantee-text">
+                            <strong>Try Risk-Free for 30 Days</strong>
+                            <span>If you don't see better results, get your money back. No questions asked.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="final-cta-buttons">
+                    <button class="cta-button primary large" onclick="handlePurchase()">
+                        Launch 10x Faster - Get $1,148 Worth for $97
+                        <span class="cta-subtitle">⚡ Instant Access • 30-Day Money-Back Guarantee</span>
+                    </button>
+                    <div class="urgency-text">
+                        <strong>497 templates sold this month</strong> • Last chance to get launch special pricing
+                    </div>
+                </div>
+                <div class="final-trust-signals">
+                    <span>🔒 Secure Payment via Stripe</span>
+                    <span>⚡ Instant Download</span>
+                    <span>🛡️ 30-Day Money-Back Guarantee</span>
+                    <span>🎯 Full Commercial License</span>
+                    <span>⭐ 4.9/5 Rating from 2,500+ Users</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marketing Templates Hub</h3>
+                    <p>Professional marketing templates for successful app launches. Trusted by 500+ developers worldwide.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/untrapd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">📷</a>
+                        <a href="https://twitter.com/untrapd" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">🐦</a>
+                        <a href="https://linkedin.com/company/untrapd" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">💼</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="templates.html">Browse Templates</a></li>
+                        <li><a href="dashboard/index.html">Analytics Demo</a></li>
+                        <li><a href="#buy-now">Pricing</a></li>
+                        <li><a href="#buy-now">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:support@marketinghub.com">Contact Support</a></li>
+                        <li><a href="#" onclick="showRefundPolicy()">Refund Policy</a></li>
+                        <li><a href="#" onclick="showTerms()">Terms of Service</a></li>
+                        <li><a href="#" onclick="showPrivacy()">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="javascript:showComingSoon('About Us')">About Us</a></li>
+                        <li><a href="#social-proof-banner">Success Stories</a></li>
+                        <li><a href="javascript:showComingSoon('Blog')">Blog</a></li>
+                        <li><a href="javascript:showComingSoon('Affiliate Program')">Affiliate Program</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Marketing Templates Hub. All rights reserved. Professional marketing templates for app success.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/premium-ui.js"></script>
+    
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const deadline = now + (2 * 24 * 60 * 60 * 1000); // 2 days from now
+            const distance = deadline - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            const timer = document.getElementById('countdown-timer');
+            if (timer) {
+                timer.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Track hero click
+        function trackHeroClick() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'hero_cta_click', {
+                    event_category: 'engagement',
+                    event_label: 'primary_cta'
+                });
+            }
+        }
+        
+        // Handle purchase
+        function handlePurchase() {
+            // Track purchase intent
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'begin_checkout', {
+                    currency: 'USD',
+                    value: 97,
+                    items: [{
+                        item_id: 'marketing-templates-bundle',
+                        item_name: 'Marketing Templates Bundle',
+                        category: 'Digital Product',
+                        quantity: 1,
+                        price: 97
+                    }]
+                });
+            }
+            
+            // For demo purposes, show alert
+            alert('🎉 Thank you for your interest! This is a demo. In production, this would redirect to Stripe checkout.');
+            
+            // In production, redirect to payment processor
+            // window.location.href = 'https://buy.stripe.com/your-payment-link';
+        }
+        
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

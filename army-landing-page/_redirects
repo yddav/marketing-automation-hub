@@ -1,0 +1,22 @@
+# Redirect common paths to hub
+/hub              https://hub.untrapd.com    301!
+/app              https://hub.untrapd.com    301!
+/dashboard        https://hub.untrapd.com    301!
+/login            https://hub.untrapd.com    301!
+/signup           https://hub.untrapd.com    301!
+/register         https://hub.untrapd.com    301!
+
+# SEO redirects
+/marketing        https://hub.untrapd.com    301!
+/automation       https://hub.untrapd.com    301!
+/campaigns        https://hub.untrapd.com    301!
+
+# API endpoints redirect
+/api/*            https://hub.untrapd.com/api/:splat    301!
+
+# Social media redirects
+/twitter          https://twitter.com/untrapd         301!
+/linkedin         https://linkedin.com/company/untrapd 301!
+
+# Catch-all for SPA behavior
+/*                /index.html                         200

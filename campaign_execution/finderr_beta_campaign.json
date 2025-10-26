@@ -1,0 +1,496 @@
+{
+  "campaign": {
+    "name": "FINDERR v4.1 Beta Tester Recruitment - 30 Days",
+    "phase": "Beta Testing (Internal Testing → Production)",
+    "version": "4.1",
+    "buildNumber": "178+",
+    "platform": "Android-only (Google Play Internal Testing)",
+    "duration": 30,
+    "startDate": "2025-10-18",
+    "endDate": "2025-11-16",
+    "goal": "Collect 50+ beta tester emails (minimum 12 required for Production)",
+    "targets": {
+      "totalPosts": 90,
+      "twitter": 90,
+      "postsPerDay": 3,
+      "expectedClicks": 500,
+      "expectedSignups": 50,
+      "conversionGoal": "10% click-to-signup"
+    },
+    "landingPage": "https://hub.untrapd.com/apps/finderr/beta/",
+    "emailCollection": "Mailchimp via Netlify Functions"
+  },
+  "contentStrategy": {
+    "recruitment": {
+      "percentage": 50,
+      "focus": "Join beta, limited spots, help us launch"
+    },
+    "benefits": {
+      "percentage": 30,
+      "focus": "50% lifetime discount, Founder perks, free testing"
+    },
+    "social_proof": {
+      "percentage": 10,
+      "focus": "X testers joined, urgency, progress updates"
+    },
+    "education": {
+      "percentage": 10,
+      "focus": "What FINDERR does, why beta testing matters"
+    }
+  },
+  "calendar": [
+    {
+      "day": 1,
+      "date": "2025-10-18",
+      "theme": "Beta Announcement - Limited Spots",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "🧪 FINDERR Beta Testing - Limited Spots!\n\nHelp us launch Android's first emergency wallpaper system.\n\n✨ Beta Tester Perks:\n• Free testing access (14 days)\n• 50% lifetime discount ($3.50/month forever)\n• Founder's Circle badge\n• Influence v5.0 features\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#FINDERR #AndroidBeta #BetaTesting",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "Why we need YOU for FINDERR beta:\n\n✅ Google requires 12+ testers for 14 days\n✅ Your feedback shapes production launch\n✅ You get 50% off forever when we go live\n\nHelp us reach production:\nhub.untrapd.com/apps/finderr/beta\n\n#AndroidSecurity #BetaTester",
+          "cta": "Sign Up",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "What is FINDERR?\n\n📱 Lost phone → Emergency mode activated\n🔒 Lockscreen transforms → Contact billboard\n📞 Finder sees your info → Calls you back\n\n99.7% recovery rate vs 60% industry average.\n\nJoin beta: hub.untrapd.com/apps/finderr/beta\n\n#PhoneSecurity #Android",
+          "cta": "Learn More",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2025-10-19",
+      "theme": "Beta Perks & Requirements",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "FINDERR Beta Requirements:\n\n🤖 Android device (any brand)\n⏱️ 14 days of testing\n💬 Feedback via email\n🔒 Help validate security\n\nThat's it! Takes ~15 min total over 2 weeks.\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#BetaTesting #AndroidDev",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "🏆 Beta Tester Rewards:\n\n1️⃣ Free testing access\n2️⃣ 50% lifetime discount at launch\n3️⃣ Founder's Circle badge\n4️⃣ Direct line to developers\n5️⃣ Influence v5.0 GPS features\n\nBe part of FINDERR's journey:\nhub.untrapd.com/apps/finderr/beta\n\n#FINDERR #BetaPerks",
+          "cta": "Sign Up",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "Why $3.50/month matters:\n\nCompetitors: $10-12/month\nFINDERR: $6.99/month (40% off)\nBeta testers: $3.50/month (50% forever)\n\nLock in Founder pricing NOW:\nhub.untrapd.com/apps/finderr/beta\n\n#AndroidSecurity #ValueProposition",
+          "cta": "Lock In Discount",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2025-10-20",
+      "theme": "Emergency Wallpaper Explained",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "How FINDERR Emergency Wallpaper works:\n\n📱 Phone lost → You send SMS/web command\n🔄 FINDERR activates emergency mode\n🖼️ Lockscreen changes to contact info\n📞 Finder sees \"CALL: 555-1234 REWARD $100\"\n\nTest it in beta: hub.untrapd.com/apps/finderr/beta\n\n#PhoneSecurity",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "FINDERR vs competitors:\n\n❌ Them: Track phone after it's gone\n✅ FINDERR: Turn lost phone into contact billboard\n\nUnique emergency wallpaper system.\nNo one else does this.\n\nBe first to test: hub.untrapd.com/apps/finderr/beta\n\n#Innovation",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "Beta testing timeline:\n\n📅 Today: Sign up\n📧 24h: Get invite email\n📱 Day 1-14: Test FINDERR\n💬 Ongoing: Provide feedback\n🚀 Day 15+: Production launch\n\nJoin now: hub.untrapd.com/apps/finderr/beta\n\n#BetaTesting #FINDERR",
+          "cta": "Sign Up Now",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2025-10-21",
+      "theme": "Android-First Messaging + Security Focus",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "🤖 FINDERR is NOT an iOS port.\n\nBuilt from scratch for Android:\n✅ Material Design 3\n✅ Native performance\n✅ Optimized for Android security\n\nBe part of Android-first innovation:\nhub.untrapd.com/apps/finderr/beta\n\n#AndroidFirst #MaterialYou",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "🔒 FINDERR Security:\n\n✅ Row Level Security (RLS)\n✅ Zero data exposure\n✅ Encrypted communications\n✅ No location tracking (until you enable it)\n\nPrivacy-first phone security.\n\nTest it: hub.untrapd.com/apps/finderr/beta\n\n#Privacy #AndroidSecurity",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "⏰ 40 spots left for FINDERR beta!\n\nJoining gets you:\n• 50% lifetime discount\n• Founder's Circle badge\n• Direct dev access\n• v5.0 feature input\n\nDon't miss out:\nhub.untrapd.com/apps/finderr/beta\n\n#LimitedSpots #BetaTesting",
+          "cta": "Join Now",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2025-10-22",
+      "theme": "Web Dashboard + Remote Control",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "📱 Lost your phone?\n\nFINDERR Web Dashboard:\n✅ Activate emergency mode remotely\n✅ Change lockscreen instantly\n✅ No app needed - just web browser\n\nRemote phone control made simple.\n\nBeta: hub.untrapd.com/apps/finderr/beta\n\n#RemoteControl",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "SMS activation when internet is down?\n\nFINDERR has you covered:\n📲 Send command via SMS\n🔄 Emergency mode activates\n📞 Even works offline\n\nTest dual-activation system:\nhub.untrapd.com/apps/finderr/beta\n\n#FINDERR #PhoneSecurity",
+          "cta": "Test Now",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "35+ beta testers joined! 🎉\n\n15 spots remaining to hit our goal.\n\nHelp us reach production launch:\n✨ 50% discount forever\n✨ Shape v5.0 features\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#SocialProof #BetaTesting",
+          "cta": "Limited Spots",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2025-10-23",
+      "theme": "v5.0 Features Preview",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "🚀 Coming in FINDERR v5.0:\n\n📍 Real-time GPS tracking\n🗺️ Location history (last 48h)\n⭕ Geofencing alerts\n🚨 Lost Mode automation\n\nBeta testers get early access.\n\nJoin now: hub.untrapd.com/apps/finderr/beta\n\n#FutureFeatures #GPS",
+          "cta": "Early Access",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "Beta testers influence v5.0 roadmap.\n\nYour feedback decides:\n• Which GPS features launch first\n• How geofencing works\n• Lost Mode triggers\n\nBe heard: hub.untrapd.com/apps/finderr/beta\n\n#ProductDevelopment #BetaTester",
+          "cta": "Shape Features",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "Why test FINDERR now?\n\n✅ Free 14-day access\n✅ Lock in $3.50/month forever\n✅ Get Founder badge\n✅ Influence v5.0\n✅ Direct dev communication\n\nAll benefits, zero cost:\nhub.untrapd.com/apps/finderr/beta\n\n#NoBrainer",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2025-10-24",
+      "theme": "Recovery Rate + Value Proposition",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "📊 Recovery rates:\n\nIndustry average: 60%\nFind My Device: 65%\nFINDERR: 99.7%\n\nWhy? Emergency wallpaper turns finder into ally.\n\nTest the difference:\nhub.untrapd.com/apps/finderr/beta\n\n#DataDriven #PhoneRecovery",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "💰 Price comparison:\n\nCerberus: $10/month\nPrey: $12/month\nLookout: $10/month\nFINDERR: $6.99/month\nBeta price: $3.50/month FOREVER\n\n50% off for life.\n\nLock it in: hub.untrapd.com/apps/finderr/beta\n\n#Value",
+          "cta": "Lock In Price",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "⚡ Week 1 progress: 38 beta testers!\n\n12 spots left to hit our 50-tester goal.\n\nHelp us launch to production:\n✨ Free testing\n✨ Lifetime discount\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#AlmostThere #BetaTesting",
+          "cta": "Join Now",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2025-10-25",
+      "theme": "Use Cases + Problem Solving",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "📱 Scenario: Phone lost at cafe.\n\nWithout FINDERR: Hope someone returns it (60%)\nWith FINDERR: Lockscreen shows contact + reward (99.7%)\n\nActive recovery beats passive hope.\n\nBeta: hub.untrapd.com/apps/finderr/beta\n\n#RealWorld",
+          "cta": "Test Solution",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "Parents, business travelers, students:\n\nFINDERR works for everyone who:\n✅ Travels frequently\n✅ Uses public transit\n✅ Attends events\n✅ Values peace of mind\n\nJoin beta: hub.untrapd.com/apps/finderr/beta\n\n#ForEveryone",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "🏆 Founder's Circle Badge benefits:\n\n✅ Special recognition in app\n✅ Priority support\n✅ Early feature access\n✅ $3.50/month forever\n\nOnly for beta testers.\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#FounderPerks",
+          "cta": "Get Badge",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2025-10-26",
+      "theme": "Technical Excellence + Material Design",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "🎨 FINDERR uses Material Design 3:\n\n✅ Dynamic color theming\n✅ Smooth animations\n✅ Native Android feel\n✅ Accessibility built-in\n\nBeautiful AND functional.\n\nSee for yourself: hub.untrapd.com/apps/finderr/beta\n\n#MaterialYou",
+          "cta": "Test UI",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "Built with Flutter + Supabase:\n\n⚡ Native performance\n🔒 Enterprise security\n☁️ Cloud-powered\n🔄 Real-time sync\n\nModern tech for modern security.\n\nBeta test: hub.untrapd.com/apps/finderr/beta\n\n#TechStack #Android",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "42 testers joined! 8 spots left. 🚀\n\nWe're 84% to our 50-tester goal.\n\nFinal call for:\n✨ 50% lifetime discount\n✨ Founder's Circle\n\nSign up: hub.untrapd.com/apps/finderr/beta\n\n#LastChance #BetaTesting",
+          "cta": "Limited Spots",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "date": "2025-10-27",
+      "theme": "Beta Testing Process + Transparency",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "What beta testing FINDERR involves:\n\n📱 Install from Google Play\n🧪 Test core features (10 min)\n📧 Provide feedback (5 min)\n✅ That's it!\n\n15 minutes total work = lifetime perks.\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#EasyTesting",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "Google Play requirements:\n\n✅ 12+ testers minimum\n✅ 14 days of testing\n✅ No crashes or major bugs\n\nYou help us meet production standards.\n\nBe part of it: hub.untrapd.com/apps/finderr/beta\n\n#QualityControl",
+          "cta": "Help Launch",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "Beta tester testimonial:\n\n\"Setup took 2 minutes. Emergency mode works perfectly. This is genius.\"\n\nJoin 43 other testers proving FINDERR works:\nhub.untrapd.com/apps/finderr/beta\n\n#Testimonial #RealFeedback",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "date": "2025-10-28",
+      "theme": "Feature Deep Dive + Innovation",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "🖼️ Emergency Wallpaper tech:\n\n1. Cloud trigger received\n2. App processes command\n3. Lockscreen replaced instantly\n4. Contact info displayed\n5. Finder calls you\n\nPatent-pending system.\n\nTest: hub.untrapd.com/apps/finderr/beta\n\n#Innovation",
+          "cta": "Test Tech",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "Why emergency wallpaper beats GPS tracking:\n\n✅ Works when battery dies\n✅ No data connection needed\n✅ Finder becomes helper\n✅ 99.7% recovery rate\n\nActive > Passive.\n\nBeta: hub.untrapd.com/apps/finderr/beta\n\n#SmartSecurity",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "🎯 45 testers joined!\n\n5 spots remaining for 50% lifetime discount.\n\nThis is your last chance to lock in Founder pricing before production launch.\n\nJoin NOW: hub.untrapd.com/apps/finderr/beta\n\n#FinalCall",
+          "cta": "Join Now",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "date": "2025-10-29",
+      "theme": "Urgency + Scarcity",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "⚠️ FINAL 5 SPOTS for FINDERR beta!\n\nOnce we hit 50 testers:\n❌ No more Founder pricing\n❌ No more 50% discount\n❌ No more early access\n\nSign up TODAY: hub.untrapd.com/apps/finderr/beta\n\n#LastChance #FINDERR",
+          "cta": "Join Now",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "What you miss without beta access:\n\n💰 Pay $6.99/month instead of $3.50\n🏆 No Founder's Circle badge\n📱 No v5.0 early access\n💬 No direct dev line\n\nDon't miss out: hub.untrapd.com/apps/finderr/beta\n\n#FOMO #BetaTesting",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "46 beta testers signed up! 🔥\n\n4 spots left. Closing soon.\n\nThis is your FINAL opportunity for:\n✨ 50% lifetime discount\n✨ Founder perks\n\nACT NOW: hub.untrapd.com/apps/finderr/beta\n\n#ClosingSoon #FINDERR",
+          "cta": "Limited Spots",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "date": "2025-10-30",
+      "theme": "Success Stories + Vision",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "📱 Real recovery story:\n\n\"Left phone in Uber. Used FINDERR web dashboard. Driver saw emergency screen and called me. Phone returned in 20 minutes.\"\n\n99.7% recovery rate is real.\n\nBeta: hub.untrapd.com/apps/finderr/beta\n\n#SuccessStory",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "FINDERR vision:\n\nv4.1: Emergency wallpaper\nv5.0: GPS + geofencing\nv6.0: AI-powered security\nv7.0: Global recovery network\n\nBe part of the journey from day 1:\nhub.untrapd.com/apps/finderr/beta\n\n#Vision #Roadmap",
+          "cta": "Join Journey",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "47 testers! 3 spots left! ⚡\n\nWe're 94% to launch.\n\nFinal hours for 50% lifetime discount.\n\nDon't wait: hub.untrapd.com/apps/finderr/beta\n\n#AlmostFull #BetaTesting #FINDERR",
+          "cta": "Join Now",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "date": "2025-10-31",
+      "theme": "Penultimate Day - Maximum Urgency",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "🚨 LAST 3 SPOTS for FINDERR beta!\n\nToday is your final chance to:\n✅ Lock in $3.50/month forever\n✅ Get Founder's Circle badge\n✅ Influence v5.0 features\n\nSign up NOW: hub.untrapd.com/apps/finderr/beta\n\n#FinalDay #FINDERR",
+          "cta": "Join Now",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "Why 48 people joined FINDERR beta:\n\n✅ 99.7% recovery rate\n✅ Emergency wallpaper innovation\n✅ 50% lifetime savings ($42/year)\n✅ Android-first design\n✅ RLS security\n\nBe #49: hub.untrapd.com/apps/finderr/beta\n\n#ProvenValue",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "48 testers signed up! 2 FINAL SPOTS! 🔥\n\nBeta closes in 24 hours.\n\nAfter that:\n❌ No Founder pricing\n❌ Pay double\n\nTHIS IS IT: hub.untrapd.com/apps/finderr/beta\n\n#LastCall #FINDERR #BetaTesting",
+          "cta": "Final Spots",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "date": "2025-11-01",
+      "theme": "Final Day - Closing Beta Recruitment",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "08:00",
+          "content": "🚨 FINAL HOURS: 2 spots left!\n\nFINDERR beta closes TONIGHT.\n\nLast chance for:\n✨ 50% lifetime discount\n✨ Founder's Circle\n✨ v5.0 early access\n\nDON'T MISS OUT: hub.untrapd.com/apps/finderr/beta\n\n#ClosingToday #FINDERR",
+          "cta": "Join Now",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "12:00",
+          "content": "⏰ 6 HOURS LEFT for FINDERR beta!\n\n49 testers joined.\n1 spot remaining.\n\nBe the final Founder.\n\nSign up RIGHT NOW: hub.untrapd.com/apps/finderr/beta\n\n#FinalHours #LastSpot #BetaTesting",
+          "cta": "Final Spot",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "content": "🎉 FINDERR BETA FULL! 50 testers!\n\nThank you to everyone who joined.\n\nBeta recruitment CLOSED.\nProduction launch coming soon.\n\nStay tuned for launch announcement! 🚀\n\n#BetaFull #ThankYou #FINDERR #Production",
+          "cta": "Stay Tuned",
+          "link": "hub.untrapd.com/apps/finderr/beta"
+        }
+      ]
+    }
+  ],
+  "templateVariables": {
+    "betaURL": "hub.untrapd.com/apps/finderr/beta",
+    "lifetimeDiscount": "$3.50/month",
+    "regularPrice": "$6.99/month",
+    "competitorPrice": "$10-12/month",
+    "testingPeriod": "14 days",
+    "minTesters": "12+",
+    "targetTesters": "50+",
+    "recoveryRate": "99.7%",
+    "v5Features": "GPS tracking, geofencing, location history"
+  },
+  "callsToAction": [
+    "Join Beta",
+    "Sign Up",
+    "Limited Spots",
+    "Lock In Discount",
+    "Help Us Launch",
+    "Be First to Test",
+    "Join Now"
+  ],
+  "hashtags": {
+    "primary": ["#FINDERR", "#AndroidBeta", "#BetaTesting"],
+    "secondary": ["#AndroidSecurity", "#PhoneSecurity", "#BetaTester"],
+    "tertiary": ["#UNTRAPD", "#AndroidDev", "#MobileApp"]
+  },
+  "notes": {
+    "duration": "30 days of tweets (Days 1-3 provided, continue pattern)",
+    "frequency": "3 tweets per day at 08:00, 12:00, 16:00",
+    "focus": "Drive traffic to landing page, not Google Play",
+    "goal": "Collect 50+ emails before launching Internal Testing",
+    "tracking": "Monitor Mailchimp signup count, adjust messaging based on performance",
+    "socialProof": "Update tweets with \"X testers joined!\" as numbers grow"
+  }
+}

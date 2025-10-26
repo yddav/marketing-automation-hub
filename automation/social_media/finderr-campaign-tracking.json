@@ -1,0 +1,116 @@
+{
+  "startDate": "2025-10-25T00:00:00.000Z",
+  "currentDay": 2,
+  "totalPosts": 8,
+  "platformStats": {
+    "instagram": {
+      "posts": 2,
+      "followers": 0,
+      "engagement": 0,
+      "tokenStatus": "✅ ACTIVE - 60 days (renewed 2025-10-25)",
+      "tokenExpiry": "2025-12-24"
+    },
+    "facebook": {
+      "posts": 2,
+      "followers": 0,
+      "engagement": 0,
+      "tokenStatus": "✅ ACTIVE - 60 days (renewed 2025-10-25)",
+      "tokenExpiry": "2025-12-24"
+    },
+    "twitter": {
+      "posts": 2,
+      "followers": 0,
+      "engagement": 0,
+      "tokenStatus": "⚠️ NEEDS VERIFICATION",
+      "tokenExpiry": null
+    },
+    "tiktok": {
+      "posts": 1,
+      "followers": 0,
+      "engagement": 0,
+      "tokenStatus": "⏳ API APPROVAL PENDING",
+      "tokenExpiry": null
+    },
+    "pinterest": {
+      "posts": 1,
+      "followers": 0,
+      "engagement": 0,
+      "tokenStatus": "❓ NOT CONFIGURED",
+      "tokenExpiry": null
+    }
+  },
+  "finderrStats": {
+    "currentUsers": 150,
+    "tier1Goal": 1000,
+    "tier2Goal": 3000,
+    "tier3Goal": 5000,
+    "downloadsFromSocial": 0
+  },
+  "campaignStatus": {
+    "readyToLaunch": "READY",
+    "platforms": {
+      "instagram": "✅ READY",
+      "facebook": "✅ READY",
+      "twitter": "✅ READY - VERIFIED WORKING",
+      "tiktok": "⏳ PENDING APPROVAL",
+      "pinterest": "❌ NOT CONFIGURED"
+    },
+    "blockers": [
+      "TikTok API approval pending (optional - can launch without)"
+    ],
+    "canLaunchWith": ["instagram", "facebook", "twitter"],
+    "updated": "2025-10-25T21:52:00.000Z",
+    "twitterTestResult": {
+      "timestamp": "2025-10-25T21:52:00.000Z",
+      "status": "✅ SUCCESS",
+      "tweetId": "1982173629547761909",
+      "tweetUrl": "https://twitter.com/user/status/1982173629547761909"
+    }
+  },
+  "published": [],
+  "scheduled": [],
+  "failed": [
+    {
+      "postId": "day1-instagram-09:00",
+      "error": "Error validating access token: Session has expired on Friday, 17-Oct-25 10:00:00 PDT. The current time is Friday, 17-Oct-25 13:32:38 PDT.",
+      "timestamp": "2025-10-17T20:32:38.454Z",
+      "status": "✅ RESOLVED - Token renewed 2025-10-25"
+    },
+    {
+      "postId": "day1-instagram-09:15",
+      "error": "Error validating access token: Session has expired on Friday, 17-Oct-25 10:00:00 PDT. The current time is Friday, 17-Oct-25 13:32:40 PDT.",
+      "timestamp": "2025-10-17T20:32:40.560Z",
+      "status": "✅ RESOLVED - Token renewed 2025-10-25"
+    },
+    {
+      "postId": "day1-facebook-10:00",
+      "error": "Error validating access token: Session has expired on Friday, 17-Oct-25 10:00:00 PDT. The current time is Friday, 17-Oct-25 13:32:42 PDT.",
+      "timestamp": "2025-10-17T20:32:42.670Z",
+      "status": "✅ RESOLVED - Token renewed 2025-10-25"
+    },
+    {
+      "postId": "day1-tiktok-19:00",
+      "error": "TikTok API pending approval",
+      "timestamp": "2025-10-17T20:32:44.672Z",
+      "status": "⏳ STILL PENDING"
+    },
+    {
+      "postId": "day1-twitter-08:00",
+      "error": "You are not permitted to perform this action.",
+      "timestamp": "2025-10-17T20:32:46.864Z",
+      "status": "⚠️ NEEDS INVESTIGATION"
+    },
+    {
+      "postId": "day1-twitter-12:00",
+      "error": "You are not permitted to perform this action.",
+      "timestamp": "2025-10-17T20:32:49.029Z",
+      "status": "⚠️ NEEDS INVESTIGATION"
+    },
+    {
+      "postId": "day1-twitter-16:00",
+      "error": "You are not allowed to create a Tweet with duplicate content.",
+      "timestamp": "2025-10-17T20:32:51.218Z",
+      "status": "⚠️ NEEDS INVESTIGATION"
+    }
+  ]
+}

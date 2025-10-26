@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Marketing Templates Hub | Support & Questions</title>
+    <meta name="description" content="Get in touch with our team for support, questions, or custom template requests. We're here to help your app marketing succeed.">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/templates.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../index.html" class="logo-link">
+                        <h1>Marketing Hub</h1>
+                        <span class="tagline">Templates That Convert</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../templates.html" class="nav-link">Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../dashboard/index.html" class="nav-link">Analytics Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pricing.html" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="pricing.html#buy-now" class="cta-button primary">Buy Now - $97</a>
+                </div>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Get In Touch<br>
+                    <span class="highlight">We're Here to Help</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Questions about templates? Need support? Want custom templates for your specific needs? 
+                    Reach out to our team and we'll get back to you within 24 hours.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Support</h3>
+                    <p>Get answers to your questions via email. We typically respond within 4-6 hours.</p>
+                    <a href="mailto:support@marketinghub.com" class="contact-link">support@marketinghub.com</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>Live Chat</h3>
+                    <p>Chat with us in real-time during business hours (9 AM - 6 PM EST).</p>
+                    <button class="contact-link chat-btn" onclick="openLiveChat()">Start Chat</button>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone Support</h3>
+                    <p>Speak directly with our team for urgent questions or technical support.</p>
+                    <a href="tel:+1-555-123-4567" class="contact-link">+1 (555) 123-4567</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic...</option>
+                            <option value="general">General Question</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="billing">Billing Question</option>
+                            <option value="templates">Template Request</option>
+                            <option value="custom">Custom Template Project</option>
+                            <option value="refund">Refund Request</option>
+                            <option value="partnership">Partnership Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Please provide as much detail as possible..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkbox-custom"></span>
+                            Subscribe to our newsletter for marketing tips and template updates
+                        </label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="cta-button primary large">
+                            Send Message
+                            <span class="cta-subtitle">We'll respond within 24 hours</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How quickly will I get access after purchase?</h3>
+                    <p>Immediately! After successful payment, you'll receive an email with download links within 2-3 minutes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if I need help customizing templates?</h3>
+                    <p>We provide detailed customization guides with each template. If you need additional help, just reach out via email or chat.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can you create custom templates for my specific app?</h3>
+                    <p>Yes! We offer custom template creation services. Contact us with your requirements for a personalized quote.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer refunds?</h3>
+                    <p>Absolutely. We offer a 30-day money-back guarantee. If you're not satisfied, contact us for a full refund.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What platforms do the templates work for?</h3>
+                    <p>All major platforms: Instagram, Twitter, Facebook, LinkedIn, Email Marketing, iOS/Android App Stores, blogs, and press releases.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use these templates for client work?</h3>
+                    <p>Yes! The commercial license allows unlimited use for your own projects and client work with no additional fees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours -->
+    <section class="business-hours">
+        <div class="container">
+            <div class="hours-container">
+                <h2>Business Hours</h2>
+                <div class="hours-grid">
+                    <div class="hours-info">
+                        <h3>Support Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">9:00 AM - 6:00 PM EST</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Saturday</span>
+                                <span class="time">10:00 AM - 2:00 PM EST</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="response-times">
+                        <h3>Response Times</h3>
+                        <ul>
+                            <li><strong>Email:</strong> 4-24 hours</li>
+                            <li><strong>Live Chat:</strong> Immediate (during hours)</li>
+                            <li><strong>Phone:</strong> Immediate (during hours)</li>
+                            <li><strong>Refund Requests:</strong> 1-2 business days</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Marketing Templates Hub</h3>
+                    <p>Professional marketing templates for successful app launches. Trusted by 500+ developers worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../templates.html">Browse Templates</a></li>
+                        <li><a href="../dashboard/index.html">Analytics Demo</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:support@marketinghub.com">Email Support</a></li>
+                        <li><a href="#" onclick="showRefundPolicy()">Refund Policy</a></li>
+                        <li><a href="#" onclick="showTerms()">Terms of Service</a></li>
+                        <li><a href="#" onclick="showPrivacy()">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Success Stories</a></li>
+                        <li><a href="contact.html">Get In Touch</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Marketing Templates Hub. All rights reserved. Professional marketing templates for app success.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/templates.js"></script>
+    <script src="../js/analytics.js"></script>
+    
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            // Show success message (in production, submit to backend)
+            alert('🎉 Thank you for your message! We\'ll get back to you within 24 hours.');
+            
+            // Reset form
+            this.reset();
+            
+            // Track form submission
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', {
+                    event_category: 'contact',
+                    event_label: formObject.subject || 'general'
+                });
+            }
+        });
+        
+        // Live chat function
+        function openLiveChat() {
+            // In production, this would open your live chat widget
+            alert('💬 Live chat feature coming soon! For now, please use email: support@marketinghub.com');
+        }
+        
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

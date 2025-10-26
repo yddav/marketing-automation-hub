@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  postiz-db:
+    image: postgres:15
+    container_name: untrapd-postiz-db
+    environment:
+      POSTGRES_USER: postiz
+      POSTGRES_PASSWORD: postiz_password
+      POSTGRES_DB: postiz
+    volumes:
+      - postiz_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postiz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postiz-redis:
+    image: redis:7-alpine
+    container_name: untrapd-postiz-redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  postiz:
+    image: ghcr.io/gitroomhq/postiz-app:latest
+    container_name: untrapd-postiz
+    ports:
+      - "3000:3000"
+      - "4200:4200"
+    environment:
+      # Database Configuration
+      DATABASE_URL: postgresql://postiz:postiz_password@untrapd-postiz-db:5432/postiz
+      REDIS_URL: redis://untrapd-postiz-redis:6379
+      
+      # NextAuth Configuration
+      NEXTAUTH_SECRET: THVT576Wl3Dm/4tpC8w0FuE+KLIZ5Ho1B85h7HxaiIk=
+      NEXTAUTH_URL: http://localhost:4200
+      
+      # JWT Configuration
+      JWT_SECRET: I4m1/eUqf6TBWgeN5sUTyUW6OPH0QBS3R8V21dXQr84=
+      
+      # Application URLs
+      MAIN_URL: http://localhost:4200
+      FRONTEND_URL: http://localhost:4200
+      NEXT_PUBLIC_BACKEND_URL: http://localhost:3000
+      BACKEND_INTERNAL_URL: http://localhost:3000
+      
+      # Storage Configuration
+      STORAGE_PROVIDER: local
+      UPLOAD_DIRECTORY: /app/uploads
+      
+      # Application Settings
+      NODE_ENV: production
+      NEXT_PUBLIC_VERSION: v2.2.5
+      DISABLE_EMAIL: "true"
+      
+      # ===== OAUTH PROVIDER CONFIGURATION =====
+      # Instagram (Standalone or Business)
+      INSTAGRAM_APP_ID: "${INSTAGRAM_APP_ID:-}"
+      INSTAGRAM_APP_SECRET: "${INSTAGRAM_APP_SECRET:-}"
+      
+      # Facebook (can use same app as Instagram)
+      FACEBOOK_APP_ID: "${FACEBOOK_APP_ID:-}"
+      FACEBOOK_APP_SECRET: "${FACEBOOK_APP_SECRET:-}"
+      
+      # TikTok
+      TIKTOK_CLIENT_ID: "${TIKTOK_CLIENT_ID:-}"
+      TIKTOK_CLIENT_SECRET: "${TIKTOK_CLIENT_SECRET:-}"
+      
+    depends_on:
+      postiz-db:
+        condition: service_healthy
+      postiz-redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  postiz_db_data:

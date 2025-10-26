@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Automation Hub - Live Demo</title>
+    <meta name="description" content="Interactive demo of the complete marketing automation solution for creators and indie developers">
+    
+    <!-- Product Hunt Badge -->
+    <meta property="og:title" content="Marketing Automation Hub - Creator Edition">
+    <meta property="og:description" content="Complete marketing automation for creators & indie devs with 17+ platform templates">
+    <meta property="og:image" content="/demo/assets/demo-hero.png">
+    <meta property="og:url" content="https://marketingautomationhub.com/demo">
+    
+    <!-- Styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        .product-hunt-badge {
+            display: inline-block;
+            background: #ff6154;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .product-hunt-badge:hover {
+            background: #e55547;
+            transform: translateY(-2px);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Demo Container */
+        .demo-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        /* Navigation Tabs */
+        .demo-nav {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .demo-tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .demo-tab:hover {
+            background: #e9ecef;
+        }
+        
+        .demo-tab.active {
+            background: white;
+            border-bottom-color: #667eea;
+            color: #667eea;
+        }
+        
+        .demo-tab i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        /* Demo Content */
+        .demo-content {
+            padding: 40px;
+            min-height: 500px;
+        }
+        
+        .demo-section {
+            display: none;
+        }
+        
+        .demo-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Template Showcase */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .template-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .template-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        }
+        
+        .template-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .template-card p {
+            color: #6c757d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .template-preview {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 13px;
+            border-left: 4px solid #667eea;
+        }
+        
+        /* Dashboard Preview */
+        .dashboard-preview {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dashboard-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: #333;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .terminal-header {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 12px;
+        }
+        
+        .terminal-content {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+        
+        /* Professional Analytics Dashboard */
+        .analytics-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .analytics-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .analytics-card.primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-header h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .trend-indicator {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .trend-indicator.positive {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+        }
+        
+        .analytics-card.primary .trend-indicator.positive {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        
+        .metric-main {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        
+        .metric-period {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+        
+        .metric-details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #ffd700;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        .mini-chart {
+            font-size: 12px;
+            padding: 4px 8px;
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 12px;
+            color: #27ae60;
+        }
+        
+        .benchmark-indicator {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 12px;
+        }
+        
+        .benchmark-indicator.above {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+        }
+        
+        .achievement-badge {
+            font-size: 12px;
+            padding: 4px 8px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            color: #f39c12;
+        }
+        
+        /* Platform Performance Dashboard */
+        .platform-dashboard {
+            margin: 40px 0;
+        }
+        
+        .platform-dashboard h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .platform-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-card.instagram {
+            border-left-color: #e1306c;
+        }
+        
+        .platform-card.twitter {
+            border-left-color: #1da1f2;
+        }
+        
+        .platform-card.linkedin {
+            border-left-color: #0077b5;
+        }
+        
+        .platform-card.email {
+            border-left-color: #34495e;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+        
+        .platform-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .platform-icon {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        
+        .platform-card.instagram .platform-icon {
+            color: #e1306c;
+        }
+        
+        .platform-card.twitter .platform-icon {
+            color: #1da1f2;
+        }
+        
+        .platform-card.linkedin .platform-icon {
+            color: #0077b5;
+        }
+        
+        .platform-card.email .platform-icon {
+            color: #34495e;
+        }
+        
+        .platform-info h4 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .platform-status {
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        
+        .platform-status.active {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+        }
+        
+        .platform-trend {
+            font-size: 16px;
+            font-weight: 600;
+            color: #27ae60;
+        }
+        
+        .platform-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .metric-row span {
+            font-size: 14px;
+            color: #6c757d;
+            min-width: 120px;
+        }
+        
+        .metric-bar {
+            flex: 1;
+            height: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            position: relative;
+            margin: 0 15px;
+            overflow: hidden;
+        }
+        
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+        
+        .metric-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            min-width: 50px;
+            text-align: right;
+        }
+        
+        /* A/B Testing Section */
+        .ab-testing-section {
+            margin: 40px 0;
+        }
+        
+        .ab-testing-section h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .ab-test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .ab-test-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .test-header h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .test-status {
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        
+        .test-status.completed {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+        }
+        
+        .test-status.running {
+            background: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+        }
+        
+        .test-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .variant {
+            padding: 15px;
+            border-radius: 12px;
+            background: #f8f9fa;
+            text-align: center;
+            position: relative;
+        }
+        
+        .variant.winner {
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(46, 204, 113, 0.1));
+            border: 2px solid #27ae60;
+        }
+        
+        .variant.leading {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+            border: 2px solid #3498db;
+        }
+        
+        .variant-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .variant-metric {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .confidence {
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        /* Legacy Metrics Grid (for compatibility) */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            margin-top: 40px;
+            border-radius: 20px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            display: inline-block;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.2rem;
+        }
+        
+        .launch-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffd700;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .btn-primary:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .demo-nav {
+                flex-direction: column;
+            }
+            
+            .demo-content {
+                padding: 20px;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #00ff00;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            cursor: help;
+        }
+        
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <a href="https://www.producthunt.com/posts/marketing-automation-hub" class="product-hunt-badge" target="_blank">
+                <i class="fas fa-rocket"></i> Now Live on Product Hunt!
+            </a>
+            <h1>Marketing Automation Hub</h1>
+            <p>The complete marketing automation solution for creators and indie developers. Experience the power of unified multi-platform automation.</p>
+        </header>
+        
+        <!-- Demo Container -->
+        <div class="demo-container">
+            <!-- Navigation -->
+            <nav class="demo-nav">
+                <div class="demo-tab active" data-section="templates">
+                    <i class="fas fa-layer-group"></i>
+                    Template System
+                </div>
+                <div class="demo-tab" data-section="automation">
+                    <i class="fas fa-robot"></i>
+                    Automation Engine
+                </div>
+                <div class="demo-tab" data-section="analytics">
+                    <i class="fas fa-chart-line"></i>
+                    Analytics Dashboard
+                </div>
+                <div class="demo-tab" data-section="api">
+                    <i class="fas fa-code"></i>
+                    API Integration
+                </div>
+            </nav>
+            
+            <!-- Demo Content -->
+            <div class="demo-content">
+                <!-- Template System Section -->
+                <div class="demo-section active" id="templates">
+                    <h2>17 Platform Templates with Unified Schema</h2>
+                    <p>Our JSON-based content schema ensures consistent branding across all platforms while allowing platform-specific optimizations.</p>
+                    
+                    <div class="template-grid">
+                        <div class="template-card" onclick="showTemplatePreview('instagram')">
+                            <h4><i class="fab fa-instagram"></i> Instagram</h4>
+                            <p>7 content variations with hashtag optimization and visual content descriptions</p>
+                            <div class="template-preview">
+                                "🚀 Launching something amazing! {{app_name}} is here to revolutionize your {{industry}}. Ready to transform your workflow? #Innovation #TechLaunch"
+                            </div>
+                        </div>
+                        
+                        <div class="template-card" onclick="showTemplatePreview('twitter')">
+                            <h4><i class="fab fa-twitter"></i> Twitter</h4>
+                            <p>8 content variations optimized for engagement and thread compatibility</p>
+                            <div class="template-preview">
+                                "🧵 Thread: Why {{app_name}} is changing the game for {{target_audience}}... 1/7 #IndieHackers #ProductLaunch"
+                            </div>
+                        </div>
+                        
+                        <div class="template-card" onclick="showTemplatePreview('linkedin')">
+                            <h4><i class="fab fa-linkedin"></i> LinkedIn</h4>
+                            <p>7 professional variations for B2B engagement and thought leadership</p>
+                            <div class="template-preview">
+                                "After months of development, I'm excited to share {{app_name}} with the professional community. Here's what we learned about {{industry_insight}}..."
+                            </div>
+                        </div>
+                        
+                        <div class="template-card" onclick="showTemplatePreview('email')">
+                            <h4><i class="fas fa-envelope"></i> Email Sequences</h4>
+                            <p>16 automated email templates across welcome, launch, and retention sequences</p>
+                            <div class="template-preview">
+                                "Welcome to {{app_name}}, {{user_name}}! 🎉 You're now part of an exclusive community of {{community_size}} creators who are transforming their {{industry}}."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Automation Engine Section -->
+                <div class="demo-section" id="automation">
+                    <h2>Behavior-Driven Automation Engine</h2>
+                    <p>Smart triggers respond to user actions, time-based events, and performance metrics to deliver personalized experiences.</p>
+                    
+                    <div class="dashboard-preview">
+                        <div class="terminal-header">Marketing Automation Hub - Live Status</div>
+                        <div class="terminal-content" id="automation-log">
+                            <div>> Automation Engine Status: <span class="loading"></span> ACTIVE</div>
+                            <div>> Monitoring 17 platforms for trigger events...</div>
+                            <div>> [12:34:56] USER_SIGNUP trigger fired for user_id: 12847</div>
+                            <div>> [12:34:57] Deploying welcome sequence (5 emails)</div>
+                            <div>> [12:34:58] Scheduling social media posts across 8 platforms</div>
+                            <div>> [12:35:01] Analytics collection started for user journey</div>
+                            <div>> [12:35:02] ✅ Campaign automation complete - 14 actions executed</div>
+                            <div>> [12:35:15] FEATURE_USED trigger fired - engagement sequence activated</div>
+                            <div>> [12:35:16] A/B testing variation B selected (conversion rate: 23.4%)</div>
+                            <div>> Ready for next automation trigger...</div>
+                        </div>
+                    </div>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">94.7%</div>
+                            <div class="metric-label">Automation Success Rate</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">2.3s</div>
+                            <div class="metric-label">Average Response Time</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">17</div>
+                            <div class="metric-label">Active Platforms</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">1,247</div>
+                            <div class="metric-label">Daily Automations</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Dashboard Section -->
+                <div class="demo-section" id="analytics">
+                    <h2>Enterprise Analytics Dashboard</h2>
+                    <p>Professional-grade analytics with real-time monitoring, advanced KPIs, and executive reporting capabilities.</p>
+                    
+                    <!-- Executive Summary Cards -->
+                    <div class="analytics-summary">
+                        <div class="analytics-card primary">
+                            <div class="card-header">
+                                <h4><i class="fas fa-chart-line"></i> Revenue Performance</h4>
+                                <span class="trend-indicator positive">+24.3% <i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <div class="metric-main">$47,230</div>
+                            <div class="metric-period">This Month</div>
+                            <div class="metric-details">
+                                <span>Goal: $45K</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 105%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <div class="card-header">
+                                <h4><i class="fas fa-users"></i> Total Reach</h4>
+                                <span class="trend-indicator positive">+18.7% <i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <div class="metric-main">124.7K</div>
+                            <div class="metric-period">Active Users</div>
+                            <div class="metric-details">
+                                <span>Daily Average: 4.2K</span>
+                                <div class="mini-chart">📈 Strong growth trend</div>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <div class="card-header">
+                                <h4><i class="fas fa-heart"></i> Engagement</h4>
+                                <span class="trend-indicator positive">+12.4% <i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <div class="metric-main">23.7%</div>
+                            <div class="metric-period">Average Rate</div>
+                            <div class="metric-details">
+                                <span>Industry Avg: 18.2%</span>
+                                <div class="benchmark-indicator above">30% above industry</div>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <div class="card-header">
+                                <h4><i class="fas fa-funnel-dollar"></i> Conversion</h4>
+                                <span class="trend-indicator positive">+8.2% <i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <div class="metric-main">8.9%</div>
+                            <div class="metric-period">CVR</div>
+                            <div class="metric-details">
+                                <span>Target: 8.5%</span>
+                                <div class="achievement-badge">🎯 Goal Exceeded</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Platform Performance Dashboard -->
+                    <div class="platform-dashboard">
+                        <h3><i class="fas fa-chart-bar"></i> Multi-Platform Performance Analysis</h3>
+                        <div class="platform-grid">
+                            <div class="platform-card instagram">
+                                <div class="platform-header">
+                                    <div class="platform-icon"><i class="fab fa-instagram"></i></div>
+                                    <div class="platform-info">
+                                        <h4>Instagram</h4>
+                                        <span class="platform-status active">Active</span>
+                                    </div>
+                                    <div class="platform-trend">+23.1%</div>
+                                </div>
+                                <div class="platform-metrics">
+                                    <div class="metric-row">
+                                        <span>Engagement Rate</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 89%"></div>
+                                            <span class="metric-value">89%</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Reach</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 76%"></div>
+                                            <span class="metric-value">45.2K</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Conversions</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 82%"></div>
+                                            <span class="metric-value">387</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="platform-card twitter">
+                                <div class="platform-header">
+                                    <div class="platform-icon"><i class="fab fa-twitter"></i></div>
+                                    <div class="platform-info">
+                                        <h4>Twitter</h4>
+                                        <span class="platform-status active">Active</span>
+                                    </div>
+                                    <div class="platform-trend">+16.8%</div>
+                                </div>
+                                <div class="platform-metrics">
+                                    <div class="metric-row">
+                                        <span>Engagement Rate</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 76%"></div>
+                                            <span class="metric-value">76%</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Reach</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 68%"></div>
+                                            <span class="metric-value">32.1K</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Conversions</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 71%"></div>
+                                            <span class="metric-value">243</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="platform-card linkedin">
+                                <div class="platform-header">
+                                    <div class="platform-icon"><i class="fab fa-linkedin"></i></div>
+                                    <div class="platform-info">
+                                        <h4>LinkedIn</h4>
+                                        <span class="platform-status active">Active</span>
+                                    </div>
+                                    <div class="platform-trend">+31.2%</div>
+                                </div>
+                                <div class="platform-metrics">
+                                    <div class="metric-row">
+                                        <span>Engagement Rate</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 91%"></div>
+                                            <span class="metric-value">91%</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Reach</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 84%"></div>
+                                            <span class="metric-value">28.7K</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Conversions</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 88%"></div>
+                                            <span class="metric-value">312</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="platform-card email">
+                                <div class="platform-header">
+                                    <div class="platform-icon"><i class="fas fa-envelope"></i></div>
+                                    <div class="platform-info">
+                                        <h4>Email</h4>
+                                        <span class="platform-status active">Active</span>
+                                    </div>
+                                    <div class="platform-trend">+14.5%</div>
+                                </div>
+                                <div class="platform-metrics">
+                                    <div class="metric-row">
+                                        <span>Open Rate</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 67%"></div>
+                                            <span class="metric-value">67%</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Click Rate</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 34%"></div>
+                                            <span class="metric-value">34%</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span>Conversions</span>
+                                        <div class="metric-bar">
+                                            <div class="metric-fill" style="width: 78%"></div>
+                                            <span class="metric-value">189</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- A/B Testing Results -->
+                    <div class="ab-testing-section">
+                        <h3><i class="fas fa-flask"></i> A/B Testing Performance</h3>
+                        <div class="ab-test-grid">
+                            <div class="ab-test-card">
+                                <div class="test-header">
+                                    <h4>Email Subject Lines</h4>
+                                    <span class="test-status completed">Completed</span>
+                                </div>
+                                <div class="test-comparison">
+                                    <div class="variant winner">
+                                        <div class="variant-label">Variant A (Winner)</div>
+                                        <div class="variant-metric">34.2% Open Rate</div>
+                                        <div class="confidence">95% Confidence</div>
+                                    </div>
+                                    <div class="variant">
+                                        <div class="variant-label">Variant B</div>
+                                        <div class="variant-metric">28.7% Open Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ab-test-card">
+                                <div class="test-header">
+                                    <h4>CTA Button Colors</h4>
+                                    <span class="test-status running">Running</span>
+                                </div>
+                                <div class="test-comparison">
+                                    <div class="variant leading">
+                                        <div class="variant-label">Red Button</div>
+                                        <div class="variant-metric">12.4% CTR</div>
+                                        <div class="confidence">87% Confidence</div>
+                                    </div>
+                                    <div class="variant">
+                                        <div class="variant-label">Blue Button</div>
+                                        <div class="variant-metric">10.8% CTR</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- API Integration Section -->
+                <div class="demo-section" id="api">
+                    <h2>Production-Ready API Integration</h2>
+                    <p>Complete API documentation with authentication, rate limiting, and real-time webhooks for seamless integration.</p>
+                    
+                    <div class="dashboard-preview">
+                        <div class="terminal-header">API Endpoint Testing</div>
+                        <div class="terminal-content">
+                            <div>$ curl -X POST https://api.marketingautomationhub.com/campaign/launch \</div>
+                            <div>  -H "Authorization: Bearer YOUR_API_KEY" \</div>
+                            <div>  -H "Content-Type: application/json" \</div>
+                            <div>  -d '{</div>
+                            <div>    "campaignName": "Product Launch",</div>
+                            <div>    "platforms": ["instagram", "twitter", "linkedin"],</div>
+                            <div>    "template": "launch-sequence-v2",</div>
+                            <div>    "customizations": {</div>
+                            <div>      "app_name": "My Awesome App",</div>
+                            <div>      "launch_date": "2025-08-05"</div>
+                            <div>    }</div>
+                            <div>  }'</div>
+                            <div></div>
+                            <div style="color: #00ff00;">HTTP/1.1 200 OK</div>
+                            <div style="color: #00ff00;">{</div>
+                            <div style="color: #00ff00;">  "success": true,</div>
+                            <div style="color: #00ff00;">  "campaign_id": "camp_8f4e2a1b",</div>
+                            <div style="color: #00ff00;">  "scheduled_posts": 17,</div>
+                            <div style="color: #00ff00;">  "estimated_reach": 24700</div>
+                            <div style="color: #00ff00;">}</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <h3>Available Endpoints</h3>
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-top: 20px;">
+                            <div style="display: grid; gap: 10px; font-family: monospace; font-size: 14px;">
+                                <div><span style="color: #28a745;">POST</span> /api/campaign/launch - Launch multi-platform campaign</div>
+                                <div><span style="color: #007bff;">GET</span> /api/analytics/current - Get real-time analytics</div>
+                                <div><span style="color: #28a745;">POST</span> /api/social/multi-post - Post to multiple platforms</div>
+                                <div><span style="color: #28a745;">POST</span> /api/sequences/deploy - Deploy email sequences</div>
+                                <div><span style="color: #007bff;">GET</span> /api/templates/list - List available templates</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Automate Your Marketing?</h2>
+            <p>Join 1,000+ creators and developers who have transformed their marketing with our automation hub.</p>
+            
+            <div class="pricing-highlight">
+                <div>Launch Week Special - 40% Off!</div>
+                <div style="margin-top: 10px;">
+                    <span class="original-price">$297-$997</span>
+                    <span class="launch-price">$199-$597</span>
+                </div>
+                <div style="margin-top: 10px; font-size: 14px;">Save $12,000-$75,000 in development costs</div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="https://gumroad.com/l/marketing-automation-hub" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-shopping-cart"></i> Get Started Now
+                </a>
+                <a href="https://github.com/yourusername/marketing-automation-hub" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+            
+            <div style="margin-top: 30px; font-size: 14px; opacity: 0.8;">
+                <i class="fas fa-shield-alt"></i> 30-day money-back guarantee
+                <span style="margin: 0 20px;">•</span>
+                <i class="fas fa-download"></i> Instant download
+                <span style="margin: 0 20px;">•</span>
+                <i class="fas fa-life-ring"></i> Priority support
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Tab Navigation
+        document.querySelectorAll('.demo-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active classes
+                document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.demo-section').forEach(s => s.classList.remove('active'));
+                
+                // Add active classes
+                tab.classList.add('active');
+                const sectionId = tab.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+        
+        // Template Preview
+        function showTemplatePreview(platform) {
+            // Add interactive template preview functionality
+            console.log(`Showing ${platform} template preview`);
+        }
+        
+        // Automation Log Animation
+        function updateAutomationLog() {
+            const logElement = document.getElementById('automation-log');
+            if (!logElement) return;
+            
+            const messages = [
+                '> [' + new Date().toLocaleTimeString() + '] Processing automation queue...',
+                '> [' + new Date().toLocaleTimeString() + '] USER_ENGAGEMENT trigger detected',
+                '> [' + new Date().toLocaleTimeString() + '] Deploying follow-up sequence',
+                '> [' + new Date().toLocaleTimeString() + '] ✅ Automation completed successfully'
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            // Add new message
+            const newLine = document.createElement('div');
+            newLine.textContent = randomMessage;
+            logElement.appendChild(newLine);
+            
+            // Keep only last 10 lines
+            while (logElement.children.length > 10) {
+                logElement.removeChild(logElement.firstChild);
+            }
+        }
+        
+        // Update automation log every 5 seconds
+        setInterval(updateAutomationLog, 5000);
+        
+        // Analytics tracking
+        function trackDemoInteraction(action) {
+            // Track user interactions for Product Hunt launch analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'demo_interaction', {
+                    'action': action,
+                    'demo_version': 'launch_week_v1'
+                });
+            }
+        }
+        
+        // Track tab clicks
+        document.querySelectorAll('.demo-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                trackDemoInteraction('tab_' + tab.getAttribute('data-section'));
+            });
+        });
+        
+        // Track CTA clicks
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                trackDemoInteraction('cta_click');
+            });
+        });
+        
+        // Performance optimization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy load non-critical elements
+            setTimeout(() => {
+                // Initialize any heavy components after page load
+                console.log('Demo environment fully loaded');
+            }, 100);
+        });
+    </script>
+    
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
+</body>
+</html>

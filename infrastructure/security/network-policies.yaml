@@ -1,0 +1,297 @@
+# Network Policies for Security Hardening
+# Implements zero-trust networking in Kubernetes
+
+# Default Deny All Policy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-all
+  namespace: marketing-automation
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+
+---
+# Allow ingress from NGINX Ingress Controller
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-controller
+  namespace: marketing-automation
+spec:
+  podSelector:
+    matchLabels:
+      app: marketing-automation-hub
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-nginx
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: ingress-nginx
+    ports:
+    - protocol: TCP
+      port: 3000
+    - protocol: TCP
+      port: 9090
+
+---
+# Allow application to database communication
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-app-to-database
+  namespace: marketing-automation
+spec:
+  podSelector:
+    matchLabels:
+      app: marketing-automation-hub
+  policyTypes:
+  - Egress
+  egress:
+  # PostgreSQL communication
+  - to:
+    - podSelector:
+        matchLabels:
+          postgresql: marketing-postgres-cluster
+    ports:
+    - protocol: TCP
+      port: 5432
+  # PgBouncer communication
+  - to:
+    - podSelector:
+        matchLabels:
+          app: pgbouncer
+    ports:
+    - protocol: TCP
+      port: 5432
+  # Redis communication
+  - to:
+    - podSelector:
+        matchLabels:
+          app: marketing-redis-cluster
+    ports:
+    - protocol: TCP
+      port: 6379
+
+---
+# Allow database ingress from application
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-database-ingress
+  namespace: marketing-automation
+spec:
+  podSelector:
+    matchLabels:
+      postgresql: marketing-postgres-cluster
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: marketing-automation-hub
+    - podSelector:
+        matchLabels:
+          app: pgbouncer
+    ports:
+    - protocol: TCP
+      port: 5432
+
+---
+# Allow Redis ingress from application
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-redis-ingress
+  namespace: marketing-automation
+spec:
+  podSelector:
+    matchLabels:
+      app: marketing-redis-cluster
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: marketing-automation-hub
+    ports:
+    - protocol: TCP
+      port: 6379
+
+---
+# Allow monitoring scraping
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-monitoring-scraping
+  namespace: marketing-automation
+spec:
+  podSelector:
+    matchLabels:
+      app: marketing-automation-hub
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: monitoring
+    - podSelector:
+        matchLabels:
+          app: prometheus
+    ports:
+    - protocol: TCP
+      port: 9090
+
+---
+# Allow external API communication
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-external-apis
+  namespace: marketing-automation
+spec:
+  podSelector:
+    matchLabels:
+      app: marketing-automation-hub
+  policyTypes:
+  - Egress
+  egress:
+  # DNS resolution
+  - to: []
+    ports:
+    - protocol: UDP
+      port: 53
+    - protocol: TCP
+      port: 53
+  # HTTPS traffic for external APIs
+  - to: []
+    ports:
+    - protocol: TCP
+      port: 443
+  # HTTP traffic (minimal)
+  - to: []
+    ports:
+    - protocol: TCP
+      port: 80
+
+---
+# Monitoring namespace policies
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: monitoring-default-deny
+  namespace: monitoring
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+
+---
+# Allow Prometheus to scrape targets
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-prometheus-scraping
+  namespace: monitoring
+spec:
+  podSelector:
+    matchLabels:
+      app: prometheus
+  policyTypes:
+  - Egress
+  egress:
+  # Scrape marketing automation namespace
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: marketing-automation
+    ports:
+    - protocol: TCP
+      port: 9090
+    - protocol: TCP
+      port: 3000
+  # Scrape monitoring namespace
+  - to:
+    - podSelector: {}
+    ports:
+    - protocol: TCP
+      port: 9090
+    - protocol: TCP
+      port: 9100
+    - protocol: TCP
+      port: 9187
+  # DNS resolution
+  - to: []
+    ports:
+    - protocol: UDP
+      port: 53
+
+---
+# Allow Grafana to access Prometheus
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-grafana-prometheus
+  namespace: monitoring
+spec:
+  podSelector:
+    matchLabels:
+      app: grafana
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: prometheus
+    ports:
+    - protocol: TCP
+      port: 9090
+  # Database access
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: marketing-automation
+    - podSelector:
+        matchLabels:
+          postgresql: marketing-postgres-cluster
+    ports:
+    - protocol: TCP
+      port: 5432
+  # DNS resolution
+  - to: []
+    ports:
+    - protocol: UDP
+      port: 53
+
+---
+# Allow ingress to Grafana
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-grafana-ingress
+  namespace: monitoring
+spec:
+  podSelector:
+    matchLabels:
+      app: grafana
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-nginx
+    ports:
+    - protocol: TCP
+      port: 3000

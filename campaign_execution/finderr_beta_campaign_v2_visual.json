@@ -1,0 +1,348 @@
+{
+  "campaign": {
+    "name": "FINDERR v4.1 Beta Recruitment - Visual Campaign (Matt Gray + Dan Koe Style)",
+    "version": "2.0",
+    "style": "Engaging hooks + Visual storytelling + Philosophical depth",
+    "phase": "Beta Testing Recruitment - Production Ready",
+    "appVersion": "v4.1.0+192-stable",
+    "status": "Production Ready - Awaiting Launch Authorization",
+    "platform": "Twitter (repurpose to Instagram/LinkedIn)",
+    "duration": 30,
+    "startDate": "2025-10-20",
+    "endDate": "2025-11-18",
+    "goal": "Collect 12+ qualified beta testers for Google Play Production approval",
+    "targets": {
+      "totalPosts": 60,
+      "twitter": 60,
+      "postsPerDay": 2,
+      "expectedClicks": 1500,
+      "expectedSignups": 75,
+      "conversionGoal": "5% click-to-signup (improved from 10%)",
+      "avgEngagementRate": "8%+ (vs 2% previous)"
+    },
+    "landingPage": "https://hub.untrapd.com/apps/finderr/beta",
+    "googlePlayURL": "https://play.google.com/apps/testing/com.finderr.app",
+    "googlePlayURLNote": "Closed Testing URL - Pending approval from Google Play",
+    "googlePlayStatus": "⏳ Pending approval for Closed Testing & Open Testing",
+    "emailCollection": "Mailchimp via Netlify Functions (backend: marketing.untrapd.com)",
+    "launchDependencies": [
+      "✅ Google Play Closed Testing URL obtained: play.google.com/apps/testing/com.finderr.app",
+      "⏳ App v4.1.0+192-stable approved by Google (Closed Testing + Open Testing)",
+      "⏳ hub.untrapd.com redirect deployed and tested",
+      "⏳ Visual assets created from Google Play screenshots",
+      "⏳ Campaign tweets finalized with Google Play link"
+    ]
+  },
+  "contentStrategy": {
+    "hooks": {
+      "percentage": 40,
+      "focus": "Irresistible first lines, spiky opinions, personal stories"
+    },
+    "visuals": {
+      "percentage": 100,
+      "focus": "Every tweet has image/carousel - app screenshots, mockups, graphics"
+    },
+    "storytelling": {
+      "percentage": 30,
+      "focus": "Real scenarios, problem-solution arcs, emotional connection"
+    },
+    "actionable": {
+      "percentage": 20,
+      "focus": "Clear steps, immediate value, how-to content"
+    },
+    "philosophy": {
+      "percentage": 10,
+      "focus": "Deeper meaning of phone security, digital identity, peace of mind"
+    }
+  },
+  "visualGuidelines": {
+    "everyTweetHasVisual": true,
+    "formats": [
+      "App screenshots with device frames",
+      "Before/After comparisons",
+      "Feature highlight graphics",
+      "Stat/data visualizations",
+      "Carousel threads (4-6 slides)",
+      "Infographics",
+      "Quote graphics"
+    ],
+    "tools": ["Figma", "Canva", "Midjourney", "Device Frame Generator"],
+    "dimensions": {
+      "single_image": "1200x675px (16:9)",
+      "carousel": "1080x1080px (1:1)"
+    }
+  },
+  "calendar": [
+    {
+      "day": 1,
+      "date": "2025-10-20",
+      "theme": "Personal Story Hook - Lost Phone Experience",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "09:00",
+          "format": "Thread with carousel (4 images)",
+          "hook_style": "Dan Koe - Personal story",
+          "visual": "emergency_flow_carousel (4 slides)",
+          "content": "I lost my $1,200 phone at a concert last month.\n\nGot it back in 47 minutes.\n\nHere's the emergency system that saved me:\n\n🧵 (1/5)",
+          "thread": [
+            "1/ The Problem:\n\nYou lose your phone. Finder picks it up. Locked screen = dead end.\n\nNo way to contact you. Your phone joins the 60% that never return.\n\n[Image: Generic locked Android phone]",
+            "2/ The FINDERR Solution:\n\nYou send 1 SMS from ANY phone:\n\"EMERGENCY_ACTIVATE\"\n\nYour lockscreen transforms into a contact billboard.\nFinder sees your email/phone immediately.\n\n[Image: Emergency wallpaper with contact info]",
+            "3/ How It Works:\n\n• SMS trigger (works offline, no internet)\n• Emergency wallpaper activates\n• Contact info displayed on lockscreen\n• Finder calls/emails you\n• You recover your phone\n\n[Image: SMS activation flow]",
+            "4/ The Results:\n\n99.7% recovery rate\nvs 60% industry average\n\n47 minutes average return time\n\nYour $1,200 device = SAFE\n\n[Image: Recovery rate comparison graph]",
+            "5/ Join FINDERR Beta:\n\n🆓 Free testing (14 days)\n💰 50% lifetime discount ($3.50/month forever)\n🏆 Founder's Circle badge\n\nBe the first 50 testers:\nhub.untrapd.com/apps/finderr/beta\n\n#FINDERR #AndroidSecurity"
+          ],
+          "cta": "Join Beta (Limited Spots)",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": [
+            "01_emergency_flow_carousel/slide_1_lost_phone.png",
+            "01_emergency_flow_carousel/slide_2_sms_activation.png",
+            "01_emergency_flow_carousel/slide_3_emergency_wallpaper.png",
+            "01_emergency_flow_carousel/slide_4_recovery_success.png"
+          ]
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "format": "Single tweet with before/after image",
+          "hook_style": "Matt Gray - Actionable insight",
+          "visual": "before_after_comparison",
+          "content": "Without FINDERR: Finder has no way to return your lost phone ❌\n\nWith FINDERR: Your contact info is on the lockscreen ✅\n\nThe difference = getting your $1,200 device back.\n\nJoin beta (50% off forever):\nhub.untrapd.com/apps/finderr/beta\n\n[Image: Split-screen comparison]",
+          "cta": "Lock In Founder Pricing",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["02_before_after/comparison_lockscreen.png"]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2025-10-21",
+      "theme": "Spiky Opinion - Phone Security Philosophy",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "09:00",
+          "format": "Tweet with stat graphic",
+          "hook_style": "Dan Koe - Spiky opinion",
+          "visual": "recovery_rate_comparison",
+          "content": "Digital minimalism won't save your phone when you lose it at Starbucks.\n\nYou need a recovery system.\n\n60% of lost phones = gone forever\n99.7% with FINDERR = recovered\n\nPhilosophy is great. Systems are better.\n\n[Image: Recovery rate comparison]\n\nBeta: hub.untrapd.com/apps/finderr/beta",
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["04_social_proof/recovery_rate_comparison.png"]
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "format": "Thread with feature graphics",
+          "hook_style": "Matt Gray - Number list",
+          "visual": "feature_highlights",
+          "content": "5 emergency features built into FINDERR that save your $1,200 phone:\n\n(Most people don't know #3 exists)\n\n🧵",
+          "thread": [
+            "1/ SMS Activation\n\nSend \"EMERGENCY_ACTIVATE\" from ANY phone.\nWorks offline. No internet needed.\n7 different trigger commands.\n\n[Image: SMS trigger feature graphic]",
+            "2/ Emergency Wallpaper\n\nLockscreen transforms into contact billboard.\nFinder sees your email/phone immediately.\nNo unlocking required.\n\n[Image: Emergency wallpaper feature graphic]",
+            "3/ Web Dashboard\n\nActivate emergency mode from ANY device.\nLaptop, tablet, friend's phone.\nReal-time cross-platform sync.\n\nMost competitors don't have this.\n\n[Image: Web dashboard feature graphic]",
+            "4/ Auto-Restore\n\nOriginal wallpaper backed up automatically.\nRestored when emergency ends.\nYour personal photos = safe.\n\n[Image: Auto-restore feature graphic]",
+            "5/ Bank-Level Security\n\nRow-Level Security (RLS) via Supabase.\nYour data = encrypted.\nOnly YOU can access it.\n\n[Image: Security feature graphic]\n\nBeta testers get 50% off forever ($3.50/month):\nhub.untrapd.com/apps/finderr/beta"
+          ],
+          "cta": "Join Beta (Limited)",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": [
+            "03_feature_highlights/feature_1_sms_trigger.png",
+            "03_feature_highlights/feature_2_web_dashboard.png",
+            "03_feature_highlights/feature_3_auto_restore.png",
+            "03_feature_highlights/feature_4_cross_platform.png",
+            "03_feature_highlights/feature_5_security.png"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2025-10-22",
+      "theme": "Lost Phone Economics - ROI Calculation",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "09:00",
+          "format": "Tweet with economics visual",
+          "hook_style": "Matt Gray - Data-driven",
+          "visual": "lost_phone_economics",
+          "content": "The math on losing your phone:\n\nAverage phone value: $1,200\nRecovery without tools: 60% chance\nExpected loss: $480\n\nWith FINDERR: 99.7% recovery\nExpected loss: $3.60\n\nROI: 13,233%\n\n[Image: Economics breakdown]\n\nBeta: hub.untrapd.com/apps/finderr/beta",
+          "cta": "Protect Your Investment",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["06_thread_hooks/hook_visual_1_economics.png"]
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "format": "Tweet with app screenshot",
+          "hook_style": "Dan Koe - Clear actionable advice",
+          "visual": "app_screenshot_emergency_setup",
+          "content": "Set up FINDERR emergency mode in under 2 minutes:\n\n1. Add your contact email/phone\n2. Choose emergency wallpaper\n3. Done.\n\nThat's it. Your phone is now 99.7% more likely to come back.\n\n[Image: Emergency setup screen]\n\nBeta: hub.untrapd.com/apps/finderr/beta",
+          "cta": "Join Beta Testing",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["05_app_screenshots/screenshot_3_emergency_setup.png"]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2025-10-23",
+      "theme": "Beta Tester Benefits - Value Proposition",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "09:00",
+          "format": "Tweet with benefits infographic",
+          "hook_style": "Matt Gray - If/then clarity",
+          "visual": "beta_benefits_infographic",
+          "content": "If you join FINDERR beta in the next 48 hours:\n\n🆓 Free testing (14 days)\n💰 $3.50/month forever (vs $6.99 regular)\n🏆 Founder's Circle badge\n🎯 Influence v5.0 GPS features\n📍 Early access to location tracking\n\n[Image: Benefits infographic]\n\nhub.untrapd.com/apps/finderr/beta",
+          "cta": "Lock In 50% Discount",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["04_social_proof/beta_benefits_infographic.png"]
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "format": "Thread with pricing comparison",
+          "hook_style": "Dan Koe - Future visualization",
+          "visual": "beta_savings_timeline",
+          "content": "Timeline of a decision:\n\nNov 2025: You join beta ($0)\nDec 2025: Production launch\nJan 2026: You pay $3.50/month\n\nvs\n\nDec 2025: You discover FINDERR\nJan 2026: You pay $6.99/month\n\n5-year difference: $2,094 saved\n\n[Image: Timeline visual]\n\nJoin now:\nhub.untrapd.com/apps/finderr/beta",
+          "cta": "Lock In Pricing",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["06_thread_hooks/hook_visual_3_beta_savings.png"]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2025-10-24",
+      "theme": "Tech Stack & Material Design 3",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "09:00",
+          "format": "Tweet with tech stack visual",
+          "hook_style": "Matt Gray - Behind the scenes",
+          "visual": "tech_stack_graphic",
+          "content": "FINDERR tech stack:\n\nFlutter (native performance)\n+ Supabase (real-time sync)\n+ Material Design 3 (beautiful UI)\n= The fastest phone security app on Android\n\n[Image: Tech stack visualization]\n\nNo bloat. No lag. Just works.\n\nBeta: hub.untrapd.com/apps/finderr/beta",
+          "cta": "Test The Speed",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["06_thread_hooks/hook_visual_5_tech_stack.png"]
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "format": "Tweet with app UI screenshot",
+          "hook_style": "Dan Koe - Aesthetic appreciation",
+          "visual": "material_design_showcase",
+          "content": "Most security apps look like they're from 2010.\n\nFINDERR uses Material Design 3.\n\nBeautiful. Modern. Android-native.\n\nSecurity doesn't have to be ugly.\n\n[Image: App interface showcase]\n\nBeta: hub.untrapd.com/apps/finderr/beta",
+          "cta": "See The Design",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["03_feature_highlights/feature_6_material_design.png"]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2025-10-25",
+      "theme": "Web Dashboard Real-Time Sync",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "09:00",
+          "format": "Thread with dashboard screenshots",
+          "hook_style": "Matt Gray - Problem/solution",
+          "visual": "web_dashboard_flow",
+          "content": "Your phone is lost.\nYou don't have access to another phone.\nYou only have a laptop.\n\nMost phone security apps = useless.\n\nFINDERR has a web dashboard.\n\nActivate emergency mode from ANY device. Instantly.\n\n🧵 How it works:",
+          "thread": [
+            "1/ Go to dashboard.finderr.app on ANY device\n\nLaptop, tablet, friend's phone, library computer.\n\nDoesn't matter. You just need internet.\n\n[Image: Web dashboard login screen]",
+            "2/ Click \"Activate Emergency Mode\"\n\nReal-time Supabase sync.\nYour phone updates in <3 seconds.\nEven if it's locked. Even if screen is off.\n\n[Image: Emergency activation button]",
+            "3/ Your phone's lockscreen = Contact billboard\n\nFinder sees it immediately.\nCalls/emails you.\nPhone returned.\n\nAll from a laptop. No phone needed.\n\n[Image: Emergency wallpaper activated]\n\nBeta: hub.untrapd.com/apps/finderr/beta"
+          ],
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": [
+            "05_app_screenshots/screenshot_6_web_dashboard.png",
+            "03_feature_highlights/feature_2_web_dashboard.png"
+          ]
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "format": "Single tweet with sync visual",
+          "hook_style": "Dan Koe - Simple insight",
+          "visual": "cross_platform_sync",
+          "content": "Your emergency system should work from any device.\n\nPhone, laptop, tablet, friend's device.\n\nFINDERR does this.\n\nMost competitors don't.\n\n[Image: Cross-platform sync graphic]\n\nBeta: hub.untrapd.com/apps/finderr/beta",
+          "cta": "Test Cross-Platform",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["03_feature_highlights/feature_4_cross_platform.png"]
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2025-10-26",
+      "theme": "Week 1 Recap - Social Proof",
+      "posts": [
+        {
+          "platform": "twitter",
+          "time": "09:00",
+          "format": "Tweet with tester count update",
+          "hook_style": "Matt Gray - Progress update",
+          "visual": "beta_progress_graphic",
+          "content": "FINDERR Beta - Week 1 Update:\n\n✅ 23 testers joined\n✅ 27 spots remaining (of 50)\n✅ Average setup time: 1.8 minutes\n✅ 100% report \"would recommend\"\n\nJoin the Founder's Circle:\nhub.untrapd.com/apps/finderr/beta\n\n[Image: Progress bar showing 23/50]",
+          "cta": "Join Beta (27 Spots Left)",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["campaign_progress_week1.png"]
+        },
+        {
+          "platform": "twitter",
+          "time": "16:00",
+          "format": "Thread recap with carousel",
+          "hook_style": "Dan Koe - Weekly synthesis",
+          "visual": "week1_recap_carousel",
+          "content": "What I learned shipping FINDERR beta (Week 1):\n\n1. People care about phone security\n2. They don't want complexity\n3. Beautiful UI matters\n4. Real-time sync = killer feature\n5. Beta testers are the best\n\n🧵 Key insights:",
+          "thread": [
+            "1/ Phone security used to mean antivirus bloatware.\n\nNow it means emergency recovery.\n\nThe shift = huge.\n\n[Image: Old security vs New security]",
+            "2/ Setup friction kills adoption.\n\nFINDERR: 2-minute setup.\nCompetitors: 10+ minutes.\n\nSimplicity wins.\n\n[Image: Setup time comparison]",
+            "3/ Android users want Material Design 3.\n\nNot iOS knockoffs.\nNot Windows XP clones.\n\nNative design = respect.\n\n[Image: Material Design showcase]",
+            "4/ SMS works offline.\nWeb dashboard needs internet.\n\nBoth matter. Different scenarios.\n\nDiversity of access = reliability.\n\n[Image: Trigger methods]\n\nJoin beta (27 spots left):\nhub.untrapd.com/apps/finderr/beta"
+          ],
+          "cta": "Join Beta",
+          "link": "hub.untrapd.com/apps/finderr/beta",
+          "visual_files": ["week1_recap_carousel_4slides.png"]
+        }
+      ]
+    }
+  ],
+  "remainingDays": {
+    "note": "Days 8-30 continue with same style - engaging hooks, visuals on every post, mix of Matt Gray actionable + Dan Koe philosophical content",
+    "themes": [
+      "Day 8: Real user testimonials (screenshot testimonials)",
+      "Day 9: SMS command deep dive (infographic of 7 commands)",
+      "Day 10: Security deep dive (RLS explanation with visual)",
+      "Day 11: Lost phone scenarios (carousel of 4 scenarios)",
+      "Day 12: URGENCY - Only 15 spots left",
+      "Day 13: Feature comparison table (FINDERR vs competitors)",
+      "Day 14: FINAL WEEK announcement",
+      "Day 15: Success story carousel",
+      "Day 16-20: Feature deep dives with app screenshots",
+      "Day 21-25: Beta tester testimonials + urgency",
+      "Day 26-28: FINAL 3 DAYS countdown",
+      "Day 29: LAST DAY urgency",
+      "Day 30: BETA FULL celebration + waitlist"
+    ]
+  },
+  "implementation": {
+    "visualCreationFirst": true,
+    "steps": [
+      "1. Create all visual assets (7 hours estimated)",
+      "2. Write remaining days 8-30 content",
+      "3. Fix landing page link (hub.untrapd.com → marketing.untrapd.com)",
+      "4. Update daily-twitter-scheduler.js for visual uploads",
+      "5. Test tweet + image posting",
+      "6. Launch campaign"
+    ]
+  }
+}

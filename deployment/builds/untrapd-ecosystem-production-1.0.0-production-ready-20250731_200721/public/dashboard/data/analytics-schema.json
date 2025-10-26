@@ -1,0 +1,422 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Analytics Dashboard Data Schema",
+  "description": "Schema for tracking content performance and user engagement across all platforms",
+  "type": "object",
+  "properties": {
+    "content_performance": {
+      "type": "object",
+      "description": "Performance metrics for individual content pieces",
+      "properties": {
+        "content_id": {
+          "type": "string",
+          "description": "Reference to content template ID"
+        },
+        "platform": {
+          "type": "string",
+          "enum": ["instagram", "twitter", "facebook", "linkedin", "email", "app_store_ios", "app_store_android", "website", "blog"]
+        },
+        "campaign_id": {
+          "type": "string",
+          "description": "Campaign identifier for grouping related content"
+        },
+        "published_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "metrics": {
+          "type": "object",
+          "properties": {
+            "impressions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "reach": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "clicks": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "likes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "shares": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "comments": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "saves": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "conversions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "email_opens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "email_clicks": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "app_downloads": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "revenue_generated": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "calculated_metrics": {
+          "type": "object",
+          "properties": {
+            "engagement_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Total engagements / impressions"
+            },
+            "click_through_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Clicks / impressions"
+            },
+            "conversion_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Conversions / clicks"
+            },
+            "cost_per_acquisition": {
+              "type": "number",
+              "minimum": 0
+            },
+            "return_on_ad_spend": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "required": ["content_id", "platform", "published_at", "metrics"]
+    },
+    "ab_testing": {
+      "type": "object",
+      "description": "A/B testing performance comparison",
+      "properties": {
+        "test_id": {
+          "type": "string",
+          "description": "Unique identifier for A/B test"
+        },
+        "test_name": {
+          "type": "string",
+          "description": "Human-readable test name"
+        },
+        "test_type": {
+          "type": "string",
+          "enum": ["content_variation", "timing_test", "audience_test", "cta_test", "subject_line_test"]
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["running", "completed", "paused", "cancelled"]
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "variant_id": {
+                "type": "string",
+                "description": "A, B, C, etc."
+              },
+              "content_id": {
+                "type": "string",
+                "description": "Reference to content template variation"
+              },
+              "traffic_allocation": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Percentage of traffic allocated to this variant"
+              },
+              "performance": {
+                "$ref": "#/properties/content_performance/properties/metrics"
+              },
+              "statistical_significance": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Statistical confidence level"
+              }
+            },
+            "required": ["variant_id", "content_id", "traffic_allocation", "performance"]
+          },
+          "minItems": 2
+        },
+        "winner": {
+          "type": "object",
+          "properties": {
+            "variant_id": {
+              "type": "string"
+            },
+            "improvement": {
+              "type": "number",
+              "description": "Percentage improvement over control"
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      },
+      "required": ["test_id", "test_name", "test_type", "start_date", "variants"]
+    },
+    "user_engagement": {
+      "type": "object",
+      "description": "User behavior and engagement patterns",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "Anonymous user identifier"
+        },
+        "session_id": {
+          "type": "string",
+          "description": "User session identifier"
+        },
+        "platform": {
+          "type": "string",
+          "enum": ["instagram", "twitter", "facebook", "linkedin", "email", "app_store", "website", "mobile_app"]
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "event_type": {
+          "type": "string",
+          "enum": ["view", "click", "like", "share", "comment", "save", "download", "signup", "purchase", "email_open", "email_click"]
+        },
+        "content_id": {
+          "type": "string",
+          "description": "Content piece that triggered the event"
+        },
+        "event_properties": {
+          "type": "object",
+          "description": "Additional event-specific data",
+          "properties": {
+            "duration": {
+              "type": "integer",
+              "description": "Time spent in seconds"
+            },
+            "scroll_depth": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "How far user scrolled (0-1)"
+            },
+            "referrer": {
+              "type": "string",
+              "description": "Where user came from"
+            },
+            "device_type": {
+              "type": "string",
+              "enum": ["mobile", "tablet", "desktop"]
+            },
+            "user_agent": {
+              "type": "string"
+            }
+          }
+        },
+        "user_properties": {
+          "type": "object",
+          "properties": {
+            "first_visit": {
+              "type": "boolean"
+            },
+            "user_segment": {
+              "type": "string",
+              "enum": ["new_user", "returning_user", "power_user", "churned_user"]
+            },
+            "acquisition_channel": {
+              "type": "string",
+              "enum": ["organic_social", "paid_social", "email", "direct", "search", "referral"]
+            },
+            "lifetime_value": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "required": ["user_id", "session_id", "platform", "timestamp", "event_type"]
+    },
+    "campaign_performance": {
+      "type": "object",
+      "description": "Overall campaign performance aggregation",
+      "properties": {
+        "campaign_id": {
+          "type": "string"
+        },
+        "campaign_name": {
+          "type": "string"
+        },
+        "campaign_type": {
+          "type": "string",
+          "enum": ["product_launch", "feature_announcement", "user_acquisition", "retention", "brand_awareness"]
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "budget": {
+          "type": "number",
+          "minimum": 0
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["instagram", "twitter", "facebook", "linkedin", "email", "app_store", "website", "blog"]
+          }
+        },
+        "content_pieces": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Content IDs included in campaign"
+          }
+        },
+        "aggregate_metrics": {
+          "$ref": "#/properties/content_performance/properties/metrics"
+        },
+        "roi_metrics": {
+          "type": "object",
+          "properties": {
+            "total_spent": {
+              "type": "number",
+              "minimum": 0
+            },
+            "total_revenue": {
+              "type": "number",
+              "minimum": 0
+            },
+            "roi_percentage": {
+              "type": "number"
+            },
+            "cost_per_acquisition": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "required": ["campaign_id", "campaign_name", "campaign_type", "start_date", "platforms"]
+    },
+    "platform_insights": {
+      "type": "object",
+      "description": "Platform-specific performance insights and trends",
+      "properties": {
+        "platform": {
+          "type": "string",
+          "enum": ["instagram", "twitter", "facebook", "linkedin", "email", "app_store", "website", "blog"]
+        },
+        "date_range": {
+          "type": "object",
+          "properties": {
+            "start_date": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "end_date": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": ["start_date", "end_date"]
+        },
+        "performance_trends": {
+          "type": "object",
+          "properties": {
+            "engagement_trend": {
+              "type": "string",
+              "enum": ["increasing", "decreasing", "stable"]
+            },
+            "reach_trend": {
+              "type": "string",
+              "enum": ["increasing", "decreasing", "stable"]
+            },
+            "conversion_trend": {
+              "type": "string",
+              "enum": ["increasing", "decreasing", "stable"]
+            }
+          }
+        },
+        "top_performing_content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "content_id": {
+                "type": "string"
+              },
+              "metric_value": {
+                "type": "number"
+              },
+              "metric_type": {
+                "type": "string",
+                "enum": ["engagement_rate", "click_through_rate", "conversion_rate", "reach"]
+              }
+            }
+          }
+        },
+        "optimal_posting_times": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "day_of_week": {
+                "type": "string",
+                "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+              },
+              "hour": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 23
+              },
+              "engagement_score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
+        }
+      },
+      "required": ["platform", "date_range"]
+    }
+  }
+}

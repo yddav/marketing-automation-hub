@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Marketing Analytics Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -13,7 +16,21 @@
     <!-- Header -->
     <header class="dashboard-header">
         <div class="header-content">
-            <h1>App Marketing Analytics Hub</h1>
+            <div class="header-left">
+                <nav class="main-nav">
+                    <a href="../public/index.html" class="nav-back">
+                        <i data-lucide="arrow-left"></i>
+                        <span>Back to Hub</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <div class="breadcrumb">
+                        <a href="../public/index.html" class="breadcrumb-item">Home</a>
+                        <i data-lucide="chevron-right" class="breadcrumb-separator"></i>
+                        <span class="breadcrumb-item current">Analytics</span>
+                    </div>
+                </nav>
+                <h1>App Marketing Analytics Hub</h1>
+            </div>
             <div class="header-controls">
                 <div class="time-selector">
                     <select id="timeRange">
@@ -29,6 +46,20 @@
                         Refresh
                     </button>
                     <span class="last-updated">Last updated: <span id="lastUpdated">--</span></span>
+                </div>
+                <div class="quick-nav">
+                    <a href="../public/dashboard/index.html" class="quick-nav-item" title="Main Dashboard">
+                        <i data-lucide="layout-dashboard"></i>
+                    </a>
+                    <a href="../public/templates.html" class="quick-nav-item" title="Content Templates">
+                        <i data-lucide="file-text"></i>
+                    </a>
+                    <a href="../public/pages/pricing.html" class="quick-nav-item" title="Pricing">
+                        <i data-lucide="credit-card"></i>
+                    </a>
+                    <a href="../public/pages/contact.html" class="quick-nav-item" title="Contact">
+                        <i data-lucide="mail"></i>
+                    </a>
                 </div>
             </div>
         </div>

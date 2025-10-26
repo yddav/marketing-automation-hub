@@ -1,0 +1,357 @@
+/* Apps Hub Specific Styles */
+
+/* Reset and Layout Fixes */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* Account for fixed header */
+    font-family: var(--font-primary, 'Inter', sans-serif);
+    line-height: 1.6;
+    color: var(--text-primary, #0f172a);
+    background: var(--gray-50, #f8fafc);
+}
+
+.container {
+    max-width: var(--container-max-width, 1280px);
+    margin: 0 auto;
+    padding: 0 var(--container-padding, 1.5rem);
+}
+
+/* Apps Hero Section */
+.apps-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 0 60px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.apps-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+    z-index: 1;
+}
+
+.apps-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.apps-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.apps-hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Apps Grid Section */
+.apps-grid {
+    padding: 80px 0;
+    background: var(--gray-50, #f8fafc);
+}
+
+.apps-grid .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+}
+
+/* App Cards */
+.app-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+    overflow: hidden;
+}
+
+.app-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #0066ff 0%, #004dc7 100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 102, 255, 0.1);
+}
+
+.app-card:hover::before {
+    opacity: 1;
+}
+
+.app-card.featured {
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.03) 0%, rgba(255, 255, 255, 1) 100%);
+    border-color: rgba(0, 102, 255, 0.15);
+    position: relative;
+}
+
+.app-card.featured::before {
+    opacity: 1;
+    background: linear-gradient(135deg, #0066ff 0%, #00c851 100%);
+}
+
+.app-card.featured::after {
+    content: '⭐ Featured';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #0066ff 0%, #004dc7 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.app-card.coming-soon {
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.03) 0%, rgba(255, 255, 255, 1) 100%);
+    border-color: rgba(100, 116, 139, 0.1);
+}
+
+.app-card.coming-soon::before {
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+}
+
+/* App Card Content */
+.app-icon {
+    font-size: 4rem;
+    margin-bottom: 24px;
+    display: block;
+    line-height: 1;
+}
+
+.app-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary, #0f172a);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.app-card p {
+    font-size: 1.1rem;
+    color: var(--text-secondary, #334155);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* App Status Badge */
+.app-status {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.app-card.featured .app-status {
+    background: linear-gradient(135deg, rgba(0, 200, 81, 0.1) 0%, rgba(0, 160, 67, 0.1) 100%);
+    color: var(--secondary-dark, #00a043);
+    border: 1px solid rgba(0, 200, 81, 0.2);
+}
+
+.app-card.coming-soon .app-status {
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.1) 0%, rgba(71, 85, 105, 0.1) 100%);
+    color: var(--gray-600, #475569);
+    border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+/* App Link */
+.app-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color, #0066ff);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 12px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.app-link:hover {
+    color: var(--primary-dark, #004dc7);
+    border-bottom-color: currentColor;
+    transform: translateX(4px);
+}
+
+/* Footer */
+.main-footer {
+    background: var(--gray-900, #0f172a);
+    color: white;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.main-footer .container {
+    text-align: center;
+}
+
+.main-footer p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* Mobile Navigation Fixes */
+.nav-menu {
+    display: flex;
+}
+
+.hamburger {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(24px);
+        border-bottom: 1px solid var(--gray-200, #e2e8f0);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: var(--shadow-lg, 0 8px 32px rgba(26, 29, 35, 0.16));
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-item {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--gray-100, #f1f5f9);
+        width: 100%;
+    }
+    
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+    
+    .hamburger .bar {
+        width: 24px;
+        height: 3px;
+        background: var(--text-primary, #0f172a);
+        margin: 2px 0;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .apps-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .apps-grid .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .app-card {
+        padding: 30px;
+    }
+    
+    .app-card.featured::after {
+        top: 15px;
+        right: 15px;
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .apps-hero {
+        padding: 60px 0 40px;
+    }
+    
+    .apps-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .apps-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .apps-grid {
+        padding: 60px 0;
+    }
+    
+    .app-card {
+        padding: 24px;
+    }
+    
+    .app-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    
+    .app-card h2 {
+        font-size: 1.75rem;
+    }
+}

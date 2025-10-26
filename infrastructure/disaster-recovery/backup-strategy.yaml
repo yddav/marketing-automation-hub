@@ -1,0 +1,327 @@
+# Disaster Recovery and Backup Strategy
+# Comprehensive backup and recovery configuration
+
+# Velero for Kubernetes cluster backups
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: marketing-automation-daily-backup
+  namespace: velero
+spec:
+  schedule: "0 2 * * *"  # Daily at 2 AM
+  template:
+    includedNamespaces:
+    - marketing-automation
+    - monitoring
+    excludedResources:
+    - nodes
+    - events
+    - events.events.k8s.io
+    storageLocation: aws-s3-backup
+    volumeSnapshotLocations:
+    - aws-ebs-snapshots
+    ttl: 720h0m0s  # 30 days retention
+    metadata:
+      labels:
+        backup-type: daily
+        environment: production
+
+---
+# Weekly full cluster backup
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: marketing-automation-weekly-backup
+  namespace: velero
+spec:
+  schedule: "0 3 * * 0"  # Weekly on Sunday at 3 AM
+  template:
+    includedNamespaces:
+    - marketing-automation
+    - monitoring
+    - kube-system
+    - ingress-nginx
+    storageLocation: aws-s3-backup
+    volumeSnapshotLocations:
+    - aws-ebs-snapshots
+    ttl: 2160h0m0s  # 90 days retention
+    metadata:
+      labels:
+        backup-type: weekly
+        environment: production
+
+---
+# Database backup using CloudNativePG
+apiVersion: postgresql.cnpg.io/v1
+kind: ScheduledBackup
+metadata:
+  name: marketing-postgres-backup
+  namespace: marketing-automation
+spec:
+  schedule: "0 1 * * *"  # Daily at 1 AM
+  backupOwnerReference: self
+  cluster:
+    name: marketing-postgres-cluster
+  immediate: false
+  suspend: false
+
+---
+# Redis backup configuration
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: redis-backup
+  namespace: marketing-automation
+  labels:
+    app: redis-backup
+spec:
+  schedule: "0 3 * * *"  # Daily at 3 AM
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: redis-backup
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: redis-backup
+            image: redis:7-alpine
+            command:
+            - /bin/sh
+            - -c
+            - |
+              # Create backup directory
+              mkdir -p /backup
+              
+              # Generate backup filename
+              BACKUP_FILE="/backup/redis-backup-$(date +%Y%m%d-%H%M%S).rdb"
+              
+              # Create Redis backup
+              redis-cli -h marketing-redis-cluster -p 6379 --rdb $BACKUP_FILE
+              
+              # Upload to S3
+              aws s3 cp $BACKUP_FILE s3://marketing-automation-backups/redis/
+              
+              # Cleanup local files older than 7 days
+              find /backup -name "redis-backup-*.rdb" -mtime +7 -delete
+              
+              echo "Redis backup completed: $BACKUP_FILE"
+            env:
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: backup-credentials
+                  key: ACCESS_KEY_ID
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: backup-credentials
+                  key: SECRET_ACCESS_KEY
+            - name: AWS_DEFAULT_REGION
+              value: "us-west-2"
+            volumeMounts:
+            - name: backup-storage
+              mountPath: /backup
+          volumes:
+          - name: backup-storage
+            emptyDir: {}
+
+---
+# Application data backup
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: app-data-backup
+  namespace: marketing-automation
+  labels:
+    app: app-data-backup
+spec:
+  schedule: "0 4 * * *"  # Daily at 4 AM
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: app-data-backup
+        spec:
+          restartPolicy: OnFailure
+          serviceAccountName: backup-service-account
+          containers:
+          - name: app-backup
+            image: alpine/aws-cli:2.13.0
+            command:
+            - /bin/sh
+            - -c
+            - |
+              # Backup content templates
+              kubectl get configmap -n marketing-automation -o yaml > /backup/configmaps-$(date +%Y%m%d).yaml
+              
+              # Backup secrets (metadata only for security)
+              kubectl get secrets -n marketing-automation -o yaml | grep -v 'data:' > /backup/secrets-metadata-$(date +%Y%m%d).yaml
+              
+              # Upload to S3
+              aws s3 sync /backup/ s3://marketing-automation-backups/app-data/
+              
+              # Cleanup local files
+              rm -rf /backup/*
+              
+              echo "Application data backup completed"
+            env:
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: backup-credentials
+                  key: ACCESS_KEY_ID
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: backup-credentials
+                  key: SECRET_ACCESS_KEY
+            - name: AWS_DEFAULT_REGION
+              value: "us-west-2"
+            volumeMounts:
+            - name: backup-storage
+              mountPath: /backup
+          volumes:
+          - name: backup-storage
+            emptyDir: {}
+
+---
+# Backup verification job
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-verification
+  namespace: marketing-automation
+  labels:
+    app: backup-verification
+spec:
+  schedule: "0 6 * * *"  # Daily at 6 AM
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: backup-verification
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: backup-verify
+            image: alpine/aws-cli:2.13.0
+            command:
+            - /bin/sh
+            - -c
+            - |
+              # Verify database backups
+              DB_BACKUP_COUNT=$(aws s3 ls s3://marketing-automation-backups/postgres/ | wc -l)
+              if [ $DB_BACKUP_COUNT -lt 7 ]; then
+                echo "WARNING: Less than 7 database backups found"
+                exit 1
+              fi
+              
+              # Verify Redis backups
+              REDIS_BACKUP_COUNT=$(aws s3 ls s3://marketing-automation-backups/redis/ | wc -l)
+              if [ $REDIS_BACKUP_COUNT -lt 7 ]; then
+                echo "WARNING: Less than 7 Redis backups found"
+                exit 1
+              fi
+              
+              # Verify Velero backups
+              kubectl get backups -n velero --no-headers | grep Completed | wc -l
+              
+              # Test restore capability (dry run)
+              echo "All backup verifications passed"
+            env:
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: backup-credentials
+                  key: ACCESS_KEY_ID
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: backup-credentials
+                  key: SECRET_ACCESS_KEY
+            - name: AWS_DEFAULT_REGION
+              value: "us-west-2"
+
+---
+# Service Account for backup operations
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: backup-service-account
+  namespace: marketing-automation
+  labels:
+    app: backup
+
+---
+# RBAC for backup service account
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: marketing-automation
+  name: backup-role
+rules:
+- apiGroups: [""]
+  resources: ["configmaps", "secrets", "persistentvolumes", "persistentvolumeclaims"]
+  verbs: ["get", "list", "create", "update", "patch"]
+- apiGroups: ["apps"]
+  resources: ["deployments", "replicasets"]
+  verbs: ["get", "list"]
+- apiGroups: ["batch"]
+  resources: ["jobs", "cronjobs"]
+  verbs: ["get", "list", "create"]
+
+---
+# RoleBinding for backup service account
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: backup-role-binding
+  namespace: marketing-automation
+subjects:
+- kind: ServiceAccount
+  name: backup-service-account
+  namespace: marketing-automation
+roleRef:
+  kind: Role
+  name: backup-role
+  apiGroup: rbac.authorization.k8s.io
+
+---
+# PersistentVolume for backup storage
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: backup-storage-pv
+  labels:
+    type: backup
+spec:
+  capacity:
+    storage: 100Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: backup-storage
+  awsElasticBlockStore:
+    volumeID: vol-xxxxxxxxx  # Replace with actual EBS volume ID
+    fsType: ext4
+
+---
+# PersistentVolumeClaim for backup storage
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: backup-storage-pvc
+  namespace: marketing-automation
+  labels:
+    app: backup
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: backup-storage
+  resources:
+    requests:
+      storage: 100Gi

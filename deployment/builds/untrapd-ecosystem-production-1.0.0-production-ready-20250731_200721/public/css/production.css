@@ -1,0 +1,6 @@
+/* Production CSS - Minified and optimized */
+/* This file would contain minified versions of all CSS in production */
+/* For demo purposes, we reference the existing files */
+@import url('main.css');
+@import url('responsive.css');
+@import url('templates.css');

@@ -1,0 +1,45 @@
+# Global headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# HTML files
+/*.html
+  Cache-Control: public, max-age=300, s-maxage=300
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hub.untrapd.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+
+# Static assets
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: text/css
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/javascript
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Service Worker
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Manifest
+/site.webmanifest
+  Cache-Control: public, max-age=86400
+  Content-Type: application/manifest+json

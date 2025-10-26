@@ -1,0 +1,193 @@
+{
+  "version": "1.0",
+  "campaign": "FINDERR v4.1 3-Tier Early Adopter Program",
+  "total_sequences": 4,
+  "total_emails": 12,
+  "created": "2025-10-15",
+
+  "sequences": {
+    "tier1_founders_circle": {
+      "name": "Tier 1: Founder's Circle Welcome Sequence",
+      "tier": 1,
+      "subscriber_range": "1-1,000",
+      "trigger": "subscription_confirmed AND tier_1_eligible",
+      "email_count": 3,
+
+      "emails": [
+        {
+          "id": "tier1_email1",
+          "day": 0,
+          "subject": "<Æ Welcome to FINDERR Founder's Circle - You're #{{subscriber_number}} of 1,000",
+          "preview_text": "Exclusive lifetime benefits unlocked. You're part of FINDERR history.",
+          "from_name": "FINDERR Team",
+          "from_email": "founders@finderr.app",
+
+          "body_html": "<html><body style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;'><div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 20px; text-align: center;'><h1 style='color: white; margin: 0;'><Æ FOUNDER'S CIRCLE</h1><p style='color: white; font-size: 18px;'>You're Subscriber #{{subscriber_number}} of 1,000</p></div><div style='padding: 30px 20px;'><h2>Welcome to FINDERR History, {{first_name}}!</h2><p>You've secured one of only 1,000 Founder's Circle spots worldwide. This is a lifetime achievement that will never be offered again.</p><h3><‰ Your Exclusive Founder Benefits:</h3><ul style='line-height: 1.8;'><li><strong>v5.0 GPS Tracking</strong> - FREE FOREVER (launching Q1 2026)</li><li><strong>v6.0 Mesh Network</strong> - FREE FOREVER (launching Q2 2026)</li><li><strong>v7.0 Early Access</strong> - Beta test 6 months before public release</li><li><strong>Lifetime Price Lock</strong> - $6.99/month FOREVER (never increases)</li><li><strong>Founder Badge</strong> - Exclusive in-app recognition</li><li><strong>Priority Support</strong> - 24-hour response time guaranteed</li><li><strong>Feature Voting</strong> - Direct input on v7.0+ development</li></ul><h3>=ñ What You Get Today (v4.1):</h3><p><strong>Emergency Wallpaper System</strong> - Turn your lost phone's lockscreen into an emergency contact billboard.</p><ul><li>Display your email + phone on lockscreen</li><li>SMS activation (7 commands: EMERGENCY_ON, FINDERR_ON, etc.)</li><li>Web dashboard activation from any browser</li><li>Real-time emergency state sync</li><li>Automatic wallpaper backup & restore</li><li>99.9% uptime (bulletproof persistence)</li></ul><h3>=. What's Coming Next:</h3><p><strong>v5.0 (Q1 2026)</strong> - GPS tracking, location history, geofencing, Lost Mode<br><strong>v6.0 (Q2 2026)</strong> - Bluetooth mesh network, offline recovery, community detection<br><strong>v7.0 (Q3 2026)</strong> - You'll beta test this FIRST!</p><div style='background: #f8f9fa; border-left: 4px solid #667eea; padding: 20px; margin: 30px 0;'><p style='margin: 0;'><strong>=° Your Lifetime Savings:</strong></p><p style='margin: 10px 0 0 0;'>Founder's Circle value: $6.99/month FOREVER<br>After 5,000: $12.97/month ($6.99 + $3 v5.0 + $4 v6.0)<br><strong>You save: $72/year = $720 over 10 years</strong></p></div><h3>=€ Next Steps:</h3><ol><li>Download FINDERR from Google Play (if you haven't)</li><li>Complete your account setup</li><li>Activate emergency wallpaper system</li><li>Join our Founder's Circle Discord community</li></ol><div style='text-align: center; margin: 40px 0;'><a href='https://play.google.com/store/apps/details?id=com.untrapd.finderr' style='display: inline-block; background: #667eea; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold;'>Download FINDERR</a></div><p>Thank you for believing in FINDERR from day one. You're not just a subscriber - you're a Founder.</p><p>We're building something special together.</p><p style='margin-top: 40px;'>>à The FINDERR Team<br><small>UNTRAPD.COM - Intelligence Hub Unleashed</small></p></div><div style='background: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #666;'><p>You're receiving this because you subscribed to FINDERR Founder's Circle (Tier 1).</p><p><a href='{{unsubscribe_url}}' style='color: #667eea;'>Unsubscribe</a> | <a href='https://hub.untrapd.com/privacy' style='color: #667eea;'>Privacy Policy</a></p></div></body></html>",
+
+          "body_text": "<Æ FOUNDER'S CIRCLE - Welcome to FINDERR History!\n\nYou're Subscriber #{{subscriber_number}} of 1,000\n\nHi {{first_name}},\n\nYou've secured one of only 1,000 Founder's Circle spots worldwide. This is a lifetime achievement that will never be offered again.\n\n<‰ YOUR EXCLUSIVE FOUNDER BENEFITS:\n\n" v5.0 GPS Tracking - FREE FOREVER (Q1 2026)\n" v6.0 Mesh Network - FREE FOREVER (Q2 2026)\n" v7.0 Early Access - Beta test 6 months early\n" Lifetime Price Lock - $6.99/month FOREVER\n" Founder Badge - Exclusive in-app recognition\n" Priority Support - 24-hour response guaranteed\n" Feature Voting - Direct input on v7.0+ development\n\n=ñ WHAT YOU GET TODAY (v4.1):\n\nEmergency Wallpaper System - Turn your lost phone's lockscreen into an emergency contact billboard.\n\n" Display email + phone on lockscreen\n" SMS activation (EMERGENCY_ON, FINDERR_ON, etc.)\n" Web dashboard activation\n" Real-time emergency state sync\n" Automatic wallpaper backup & restore\n" 99.9% uptime (bulletproof persistence)\n\n=. WHAT'S COMING:\n\nv5.0 (Q1 2026) - GPS tracking, location history, geofencing, Lost Mode\nv6.0 (Q2 2026) - Bluetooth mesh, offline recovery, community detection\nv7.0 (Q3 2026) - You'll beta test FIRST!\n\n=° YOUR LIFETIME SAVINGS:\n\nFounder's Circle: $6.99/month FOREVER\nAfter 5,000: $12.97/month ($6.99 + $3 v5.0 + $4 v6.0)\nYou save: $72/year = $720 over 10 years\n\n=€ NEXT STEPS:\n\n1. Download FINDERR from Google Play\n2. Complete your account setup\n3. Activate emergency wallpaper system\n4. Join Founder's Circle Discord community\n\nDownload: https://play.google.com/store/apps/details?id=com.untrapd.finderr\n\nThank you for believing in FINDERR from day one. You're not just a subscriber - you're a Founder.\n\n>à The FINDERR Team\nUNTRAPD.COM - Intelligence Hub Unleashed\n\n---\nUnsubscribe: {{unsubscribe_url}}"
+        },
+
+        {
+          "id": "tier1_email2",
+          "day": 3,
+          "subject": "<– Your FINDERR Founder Badge is Ready + Priority Support Access",
+          "preview_text": "Display your Founder status. Exclusive support portal now open.",
+          "from_name": "FINDERR Team",
+          "from_email": "founders@finderr.app",
+
+          "body_html": "<html><body style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;'><div style='padding: 30px 20px;'><h2>Your Founder Badge is Ready, {{first_name}}! <–</h2><p>Day 3 of your Founder's Circle journey. Time to claim your exclusive benefits.</p><h3><– 1. Display Your Founder Badge</h3><p>Open FINDERR ’ Settings ’ Profile ’ Founder Badge (ON)</p><p>Your profile now shows the exclusive Founder's Circle badge that only 1,000 people worldwide will ever have. This is permanent and transfers across all future FINDERR versions.</p><h3>=á 2. Priority Support Access</h3><p>As a Founder, you get 24-hour priority support:</p><ul><li><strong>Email</strong>: founders@finderr.app (24h response)</li><li><strong>Discord</strong>: #founders-support channel (real-time)</li><li><strong>Direct Line</strong>: Feature requests go straight to development team</li></ul><div style='background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0;'><p style='margin: 0;'><strong>¡ Pro Tip:</strong> Having issues? Message us in Discord for fastest response. The dev team actively monitors the Founder's channel.</p></div><h3>=ó 3. Feature Voting Portal</h3><p>You now have access to vote on v7.0 features:</p><p><a href='https://finderr.app/founders/voting' style='color: #667eea;'>Access Feature Voting Portal ’</a></p><p>Current v7.0 proposals you can vote on:</p><ul><li>Smart custom messages with QR codes</li><li>Cryptocurrency wallet recovery integration</li><li>Multi-device family plans</li><li>Enterprise features (company-wide deployment)</li></ul><p><strong>Your vote counts 3x more than standard users.</strong></p><h3>=Ê Founder's Circle Status</h3><p>Spots filled: {{tier1_filled}}/1,000<br>Your number: #{{subscriber_number}}<br>Next tier opens at: 1,000 subscribers</p><h3>=. v5.0 Preview (Q1 2026)</h3><p>Since you're a Founder, here's an exclusive preview of what's coming in GPS tracking:</p><ul><li><strong>Real-time Location Tracking</strong> - See your phone on a map with <15-second updates</li><li><strong>Location History</strong> - 7-30 day playback (you choose retention)</li><li><strong>Geofencing</strong> - Custom zones with entry/exit alerts (home, work, school)</li><li><strong>Lost Mode</strong> - Remote lock with custom message on lockscreen</li><li><strong>Emergency Location Sharing</strong> - Auto-share location with emergency contacts</li><li><strong>Location Export</strong> - KML, GPX, CSV formats for analysis</li></ul><p><strong>Beta Access</strong>: You'll get v5.0 beta invite 4-6 weeks before public launch (December 2025).</p><div style='text-align: center; margin: 40px 0;'><a href='https://discord.gg/finderr-founders' style='display: inline-block; background: #5865F2; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold;'>Join Founder's Discord</a></div><p>Questions? Reply to this email or message us in Discord.</p><p>>à The FINDERR Team</p></div></body></html>",
+
+          "body_text": "<– Your FINDERR Founder Badge is Ready!\n\nHi {{first_name}},\n\nDay 3 of your Founder's Circle journey. Time to claim your exclusive benefits.\n\n<– 1. DISPLAY YOUR FOUNDER BADGE\n\nOpen FINDERR ’ Settings ’ Profile ’ Founder Badge (ON)\n\nYour profile now shows the exclusive Founder's Circle badge that only 1,000 people worldwide will ever have.\n\n=á 2. PRIORITY SUPPORT ACCESS\n\nAs a Founder, you get 24-hour priority support:\n\n" Email: founders@finderr.app (24h response)\n" Discord: #founders-support channel (real-time)\n" Direct Line: Feature requests go straight to dev team\n\n¡ Pro Tip: Message us in Discord for fastest response.\n\n=ó 3. FEATURE VOTING PORTAL\n\nVote on v7.0 features: https://finderr.app/founders/voting\n\nCurrent proposals:\n" Smart custom messages with QR codes\n" Cryptocurrency wallet recovery\n" Multi-device family plans\n" Enterprise features\n\nYour vote counts 3x more than standard users.\n\n=Ê FOUNDER'S CIRCLE STATUS\n\nSpots filled: {{tier1_filled}}/1,000\nYour number: #{{subscriber_number}}\n\n=. v5.0 PREVIEW (Q1 2026)\n\nExclusive preview of GPS tracking features:\n" Real-time location (<15s updates)\n" Location history (7-30 days)\n" Geofencing (custom zones)\n" Lost Mode (remote lock)\n" Emergency location sharing\n" Location export (KML, GPX, CSV)\n\nBeta Access: December 2025 (4-6 weeks before public)\n\nJoin Founder's Discord: https://discord.gg/finderr-founders\n\nQuestions? Reply to this email.\n\n>à The FINDERR Team"
+        },
+
+        {
+          "id": "tier1_email3",
+          "day": 7,
+          "subject": "=€ Maximize Your Founder Benefits - Emergency Wallpaper Tutorial + Roadmap",
+          "preview_text": "Master v4.1 features and see what's coming in v5.0/v6.0/v7.0",
+          "from_name": "FINDERR Team",
+          "from_email": "founders@finderr.app",
+
+          "body_html": "<html><body style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;'><div style='padding: 30px 20px;'><h2>Week 1 Complete, {{first_name}}! <‰</h2><p>Let's make sure you're getting maximum value from your Founder's Circle membership.</p><h3>=ñ Master the Emergency Wallpaper System</h3><p><strong>Setup (One-time, 2 minutes):</strong></p><ol><li>Open FINDERR app</li><li>Go to Emergency Settings</li><li>Enter your emergency email and phone number</li><li>Enable Emergency Wallpaper feature</li><li>Done! Your contact info is now ready to display when needed</li></ol><p><strong>Activation Methods:</strong></p><p><em>Method 1: SMS Trigger (from any phone)</em></p><p>Text any of these commands to your phone:<br><code style='background: #f8f9fa; padding: 2px 6px;'>EMERGENCY_ON</code>, <code style='background: #f8f9fa; padding: 2px 6px;'>FINDERR_ON</code>, <code style='background: #f8f9fa; padding: 2px 6px;'>EMERGENCY_ACTIVATE</code></p><p><em>Method 2: Web Dashboard (from any browser)</em></p><p>Visit <a href='https://finderr.app/dashboard'>finderr.app/dashboard</a> ’ Click \"Activate Emergency Mode\"</p><p><strong>What Happens:</strong></p><ul><li>Your phone's wallpaper instantly changes to display your emergency contact info</li><li>Anyone who finds your phone sees how to contact you</li><li>No unlocking needed - visible on lockscreen</li><li>Original wallpaper automatically backed up</li></ul><p><strong>Restoration:</strong></p><p>Text <code style='background: #f8f9fa; padding: 2px 6px;'>EMERGENCY_OFF</code> or use web dashboard to restore original wallpaper.</p><div style='background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0;'><p style='margin: 0;'><strong> Founder Advantage:</strong> Your emergency wallpaper system has 99.9% uptime with bulletproof persistence. It survives phone restarts, crashes, and battery drain. This is engineering excellence you can trust.</p></div><h3>=ú FINDERR Roadmap (Founder Preview)</h3><p><strong>v5.0 - GPS Tracking Suite (Q1 2026 - FREE for you)</strong></p><ul><li>Real-time location tracking on map</li><li>7-30 day location history with playback</li><li>Custom geofencing zones (home, work, school)</li><li>Lost Mode with remote device lock</li><li>Emergency location sharing with contacts</li><li>Location export (KML, GPX, CSV)</li></ul><p>After 5,000: +$3/month | <strong>Founders: FREE</strong></p><p><strong>v6.0 - Mesh Network (Q2 2026 - FREE for you)</strong></p><ul><li>Crowdsourced Bluetooth mesh network</li><li>Offline phone recovery via community</li><li>Emergency super-beacon (enhanced BLE broadcast)</li><li>Private family/company mesh networks</li><li>Community karma system (points for helping)</li></ul><p>After 5,000: +$4/month | <strong>Founders: FREE</strong></p><p><strong>v7.0 - Advanced Features (Q3 2026 - EARLY ACCESS)</strong></p><ul><li>You'll beta test 6 months before public</li><li>Vote on features NOW: <a href='https://finderr.app/founders/voting'>Feature Voting Portal</a></li><li>50% of Founder votes determine final feature set</li></ul><p>After 5,000: Standard price | <strong>Founders: Early access + priority feature requests</strong></p><h3>=° Your Total Lifetime Value</h3><table style='width: 100%; border-collapse: collapse; margin: 20px 0;'><tr style='background: #f8f9fa;'><th style='padding: 10px; text-align: left; border: 1px solid #dee2e6;'>Version</th><th style='padding: 10px; text-align: left; border: 1px solid #dee2e6;'>Founder Price</th><th style='padding: 10px; text-align: left; border: 1px solid #dee2e6;'>After 5,000</th><th style='padding: 10px; text-align: left; border: 1px solid #dee2e6;'>You Save</th></tr><tr><td style='padding: 10px; border: 1px solid #dee2e6;'>v4.1 Base</td><td style='padding: 10px; border: 1px solid #dee2e6;'>$6.99/mo</td><td style='padding: 10px; border: 1px solid #dee2e6;'>$6.99/mo</td><td style='padding: 10px; border: 1px solid #dee2e6;'>$0</td></tr><tr><td style='padding: 10px; border: 1px solid #dee2e6;'>v5.0 GPS</td><td style='padding: 10px; border: 1px solid #dee2e6;'><strong>FREE</strong></td><td style='padding: 10px; border: 1px solid #dee2e6;'>+$3/mo</td><td style='padding: 10px; border: 1px solid #dee2e6;'>$36/year</td></tr><tr><td style='padding: 10px; border: 1px solid #dee2e6;'>v6.0 Mesh</td><td style='padding: 10px; border: 1px solid #dee2e6;'><strong>FREE</strong></td><td style='padding: 10px; border: 1px solid #dee2e6;'>+$4/mo</td><td style='padding: 10px; border: 1px solid #dee2e6;'>$48/year</td></tr><tr style='background: #d4edda; font-weight: bold;'><td style='padding: 10px; border: 1px solid #dee2e6;'>TOTAL</td><td style='padding: 10px; border: 1px solid #dee2e6;'>$6.99/mo</td><td style='padding: 10px; border: 1px solid #dee2e6;'>$12.97/mo</td><td style='padding: 10px; border: 1px solid #dee2e6;'>$84/year</td></tr></table><p><strong>10-Year Savings: $840</strong> (plus v7.0 early access value)</p><h3><¯ Action Items This Week</h3><ol><li> Test emergency wallpaper activation (SMS or web)</li><li> Join Founder's Discord: <a href='https://discord.gg/finderr-founders'>discord.gg/finderr-founders</a></li><li> Vote on v7.0 features: <a href='https://finderr.app/founders/voting'>finderr.app/founders/voting</a></li><li> Invite friends to join before Tier 1 fills (earn referral bonuses)</li></ol><p>You're part of FINDERR history. Thank you for being a Founder.</p><p>>à The FINDERR Team<br><small>P.S. Reply to this email with feedback. Founders get direct access to our dev team.</small></p></div></body></html>",
+
+          "body_text": "=€ Week 1 Complete - Maximize Your Founder Benefits!\n\nHi {{first_name}},\n\nLet's make sure you're getting maximum value from your Founder's Circle membership.\n\n=ñ MASTER THE EMERGENCY WALLPAPER SYSTEM\n\nSetup (2 minutes):\n1. Open FINDERR app\n2. Go to Emergency Settings\n3. Enter emergency email and phone\n4. Enable Emergency Wallpaper feature\n5. Done!\n\nActivation Methods:\n\nMethod 1: SMS (from any phone)\nText: EMERGENCY_ON, FINDERR_ON, or EMERGENCY_ACTIVATE\n\nMethod 2: Web Dashboard\nVisit finderr.app/dashboard ’ Click \"Activate Emergency Mode\"\n\nWhat Happens:\n" Wallpaper instantly shows your emergency contact info\n" Anyone who finds your phone sees how to contact you\n" No unlocking needed - visible on lockscreen\n" Original wallpaper automatically backed up\n\nRestoration:\nText EMERGENCY_OFF or use web dashboard\n\n Founder Advantage: 99.9% uptime with bulletproof persistence. Survives restarts, crashes, battery drain.\n\n=ú FINDERR ROADMAP (Founder Preview)\n\nv5.0 - GPS TRACKING (Q1 2026 - FREE for you)\n" Real-time location tracking\n" 7-30 day location history\n" Custom geofencing zones\n" Lost Mode (remote lock)\n" Emergency location sharing\n" Location export (KML, GPX, CSV)\n\nAfter 5,000: +$3/month | Founders: FREE\n\nv6.0 - MESH NETWORK (Q2 2026 - FREE for you)\n" Crowdsourced Bluetooth mesh\n" Offline phone recovery\n" Emergency super-beacon\n" Private family/company networks\n" Community karma system\n\nAfter 5,000: +$4/month | Founders: FREE\n\nv7.0 - ADVANCED FEATURES (Q3 2026 - EARLY ACCESS)\n" Beta test 6 months early\n" Vote NOW: finderr.app/founders/voting\n" 50% of Founder votes determine features\n\n=° YOUR LIFETIME VALUE\n\nVersion | Founder Price | After 5,000 | You Save\nv4.1    | $6.99/mo     | $6.99/mo   | $0\nv5.0    | FREE         | +$3/mo     | $36/year\nv6.0    | FREE         | +$4/mo     | $48/year\nTOTAL   | $6.99/mo     | $12.97/mo  | $84/year\n\n10-Year Savings: $840 (plus v7.0 early access)\n\n<¯ ACTION ITEMS THIS WEEK\n\n1. Test emergency wallpaper (SMS or web)\n2. Join Founder's Discord: discord.gg/finderr-founders\n3. Vote on v7.0: finderr.app/founders/voting\n4. Invite friends (earn referral bonuses)\n\nYou're part of FINDERR history. Thank you for being a Founder.\n\n>à The FINDERR Team\n\nP.S. Reply with feedback. Founders get direct dev team access."
+        }
+      ]
+    },
+
+    "tier2_early_adopter": {
+      "name": "Tier 2: Early Adopter Welcome Sequence",
+      "tier": 2,
+      "subscriber_range": "1,001-3,000",
+      "trigger": "subscription_confirmed AND tier_2_eligible",
+      "email_count": 3,
+
+      "emails": [
+        {
+          "id": "tier2_email1",
+          "day": 0,
+          "subject": "P Welcome to FINDERR Early Adopter Program - You're In!",
+          "preview_text": "Tier 2 benefits unlocked. v5.0 & v6.0 FREE when they launch.",
+          "body_html": "<!-- Similar structure to Tier 1 with Tier 2-specific benefits -->",
+          "body_text": "P EARLY ADOPTER - Welcome!\n\nBenefits:\n" v5.0 & v6.0 FREE (lifetime)\n" v7.0 features 50% off\n" Early Adopter badge\n" Feature voting rights\n\nYou save $84/year vs subscribers after 5,000."
+        },
+        {
+          "id": "tier2_email2",
+          "day": 3,
+          "subject": "=ñ Get Started with FINDERR - Your Early Adopter Guide",
+          "preview_text": "Emergency wallpaper setup + feature voting access",
+          "body_html": "<!-- Setup tutorial + Early Adopter benefits -->",
+          "body_text": "=ñ Get Started Guide\n\n1. Download FINDERR\n2. Setup emergency wallpaper\n3. Access feature voting portal\n4. Join Early Adopter community"
+        },
+        {
+          "id": "tier2_email3",
+          "day": 7,
+          "subject": "=. What's Coming: v5.0 & v6.0 Preview (FREE for You)",
+          "preview_text": "GPS tracking Q1 2026, mesh network Q2 2026 - both FREE",
+          "body_html": "<!-- Roadmap preview + savings calculation -->",
+          "body_text": "=. What's Coming\n\nv5.0 (Q1 2026): GPS tracking - FREE for you\nv6.0 (Q2 2026): Mesh network - FREE for you\nv7.0: 50% off when released\n\nYour savings: $84/year"
+        }
+      ]
+    },
+
+    "tier3_launch_supporter": {
+      "name": "Tier 3: Launch Supporter Welcome Sequence",
+      "tier": 3,
+      "subscriber_range": "3,001-5,000",
+      "trigger": "subscription_confirmed AND tier_3_eligible",
+      "email_count": 3,
+
+      "emails": [
+        {
+          "id": "tier3_email1",
+          "day": 0,
+          "subject": "<¯ Welcome to FINDERR - You're a Launch Supporter!",
+          "preview_text": "Last chance for FREE v5.0 & v6.0 upgrades. You're in!",
+          "body_html": "<!-- Tier 3 benefits focused on \"last chance\" messaging -->",
+          "body_text": "<¯ LAUNCH SUPPORTER\n\nYou secured one of the last spots for FREE upgrades!\n\nBenefits:\n" v5.0 & v6.0 FREE when they launch\n" Launch Supporter badge\n" $84/year savings"
+        },
+        {
+          "id": "tier3_email2",
+          "day": 3,
+          "subject": "=ñ Emergency Wallpaper Setup - Your FINDERR Quick Start",
+          "preview_text": "Get protected in 2 minutes. Step-by-step tutorial.",
+          "body_html": "<!-- Emergency wallpaper tutorial -->",
+          "body_text": "=ñ Quick Start\n\n1. Download FINDERR\n2. Setup emergency contacts\n3. Test SMS activation\n4. You're protected!"
+        },
+        {
+          "id": "tier3_email3",
+          "day": 7,
+          "subject": "= You're Locked In - FREE v5.0 & v6.0 Confirmed",
+          "preview_text": "Congrats! You secured lifetime savings before the 5,000 cutoff.",
+          "body_html": "<!-- Congratulations + roadmap + savings -->",
+          "body_text": "= You're Locked In!\n\nCongratulations! You secured your spot before 5,000.\n\nYour lifetime benefits:\n" v5.0 GPS (Q1 2026): FREE\n" v6.0 Mesh (Q2 2026): FREE\n" Savings: $84/year forever\n\nAfter 5,000: $12.97/month\nYou: $6.99/month (forever)"
+        }
+      ]
+    },
+
+    "post5k_standard": {
+      "name": "Post-5,000 Standard Onboarding",
+      "tier": "standard",
+      "subscriber_range": "5,001+",
+      "trigger": "subscription_confirmed AND after_5000_milestone",
+      "email_count": 3,
+
+      "emails": [
+        {
+          "id": "standard_email1",
+          "day": 0,
+          "subject": "=ñ Welcome to FINDERR - Your Android Phone Security Starts Now",
+          "preview_text": "Emergency wallpaper system active. Upgrade to full suite anytime.",
+          "body_html": "<!-- Standard welcome + upgrade options -->",
+          "body_text": "=ñ Welcome to FINDERR!\n\nYou get:\n" v4.1 Emergency wallpaper ($6.99/month)\n\nUpgrade anytime:\n" v5.0 GPS tracking: +$3/month\n" v6.0 Mesh network: +$4/month\n" Full suite: $12.97/month"
+        },
+        {
+          "id": "standard_email2",
+          "day": 3,
+          "subject": "=€ Get Started - Emergency Wallpaper Tutorial",
+          "preview_text": "Protect your phone in 2 minutes. Step-by-step guide.",
+          "body_html": "<!-- Setup tutorial -->",
+          "body_text": "=€ Get Started\n\n1. Setup emergency contacts\n2. Test SMS activation\n3. Explore web dashboard\n4. You're protected!"
+        },
+        {
+          "id": "standard_email3",
+          "day": 7,
+          "subject": " Upgrade to Full Suite - GPS Tracking + Mesh Network",
+          "preview_text": "Get the complete FINDERR experience. $12.97/month for everything.",
+          "body_html": "<!-- Upgrade pitch with benefits -->",
+          "body_text": " Upgrade to Full Suite\n\nGet everything:\n" v4.1 Emergency wallpaper\n" v5.0 GPS tracking\n" v6.0 Mesh network\n\nFull suite: $12.97/month\n(vs $6.99 + $3 + $4 separately)\n\nUpgrade: finderr.app/upgrade"
+        }
+      ]
+    }
+  },
+
+  "automation_triggers": {
+    "tier_assignment": {
+      "tier_1": "subscriber_count <= 1000",
+      "tier_2": "subscriber_count > 1000 AND subscriber_count <= 3000",
+      "tier_3": "subscriber_count > 3000 AND subscriber_count <= 5000",
+      "standard": "subscriber_count > 5000"
+    },
+
+    "send_schedule": {
+      "email_1": "immediate_after_subscription",
+      "email_2": "72_hours_after_email_1",
+      "email_3": "168_hours_after_email_1"
+    }
+  },
+
+  "personalization_variables": {
+    "required": ["first_name", "subscriber_number", "tier"],
+    "optional": ["tier1_filled", "tier2_filled", "tier3_filled", "total_subscribers", "unsubscribe_url"]
+  },
+
+  "integration_notes": {
+    "email_service": "Use Mailchimp, SendGrid, or similar ESP",
+    "api_endpoint": "/api/finderr/email/send-tier-sequence",
+    "trigger_webhook": "/api/finderr/webhooks/subscription-confirmed",
+    "personalization": "Replace {{variable}} with actual subscriber data",
+    "html_fallback": "Always include plain text version for email clients",
+    "unsubscribe": "Required by CAN-SPAM Act - must be functional",
+    "tracking": "Include open tracking pixel and link click tracking"
+  }
+}

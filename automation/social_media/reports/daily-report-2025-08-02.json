@@ -1,0 +1,30 @@
+{
+  "date": "2025-08-02",
+  "posting": {
+    "totalPosts": 1,
+    "byPlatform": {
+      "facebook": 1
+    }
+  },
+  "followers": {
+    "followers": 0,
+    "posts": 0
+  },
+  "finderrStats": {
+    "currentUsers": 1247,
+    "lifetimeSlots": 753,
+    "newUsersToday": 23
+  },
+  "lastContent": {
+    "content": "🧠 Your intelligence hub unleashed! 📱 FINDERR keeps your devices secure.\n\n💡 Community engagement, user appreciation",
+    "mediaUrl": null,
+    "type": "community",
+    "theme": "Community Weekend",
+    "hashtags": [
+      "#Community",
+      "#UserStories",
+      "#WeekendVibes"
+    ]
+  },
+  "timestamp": "2025-08-02T17:25:02.866Z"
+}
