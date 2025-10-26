@@ -1,1 +1,57 @@
-.env\nnode_modules/\nlogs/*.log\n.DS_Store\n*.tmp
+# Environment files with secrets (NEVER COMMIT ACTUAL CREDENTIALS)
+.env
+.env.local
+.env.*.local
+.env.mailchimp
+.env.production
+.env.staging
+.env.development
+**/.env
+**/.env.*
+
+# Allow template/example files
+!.env.example
+!.env.template
+!.env.production.template
+!.env.staging.template
+!**/.env.example
+!**/.env.template
+!**/.env.*.template
+
+# Node
+node_modules/
+
+# Logs
+logs/*.log
+*.log
+
+# OS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Secrets and sensitive data
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
