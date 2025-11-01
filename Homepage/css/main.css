@@ -578,6 +578,20 @@ a:hover {
   z-index: 2;
 }
 
+/* Position mockup on left, text on right */
+.ecosystem-badge {
+  grid-column: 1 / -1; /* Span both columns */
+  order: 0;
+}
+
+.hero-visual {
+  order: 1;
+}
+
+.hero-content {
+  order: 2;
+}
+
 .hero-title {
   font-size: var(--text-6xl);
   font-weight: 800;
