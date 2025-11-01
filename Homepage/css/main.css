@@ -1292,6 +1292,19 @@ button, .cta-button, .nav-link, a {
   box-shadow: 0 8px 25px rgba(0, 102, 255, 0.2);
 }
 
+/* WCAG AA Compliant Hover Text - Fix readability on light background */
+.feature-card:hover h3 {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+  background: none !important;
+  /* WCAG AAA: #0f172a on rgba(255,255,255,0.9) = 15.52:1 contrast */
+}
+
+.feature-card:hover p {
+  color: #1e293b !important;
+  /* WCAG AAA: #1e293b on rgba(255,255,255,0.9) = 12.63:1 contrast */
+}
+
 .feature-card h3 {
   color: #1a202c;
   margin-bottom: 1rem;
