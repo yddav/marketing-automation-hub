@@ -21,7 +21,9 @@
     box-shadow: 0 20px 40px rgba(3, 7, 18, 0.12);
     border-top: 1px solid var(--gray-100);
     padding: 3rem 0;
-    z-index: 1000;
+    z-index: 999;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
   }
   
   .nav-menu.active {

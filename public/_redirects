@@ -1,0 +1,9 @@
+# UNTRAPD Hub - Netlify Redirects
+# Clean branded URLs redirect to marketing infrastructure
+
+# FINDERR Beta Landing Page
+/apps/finderr/beta  https://marketing.untrapd.com/apps/finderr/beta/  301
+/apps/finderr/beta/  https://marketing.untrapd.com/apps/finderr/beta/  301
+
+# Future redirects can be added here
+# /apps/[app-name]/[page]  https://marketing.untrapd.com/apps/[app-name]/[page]/  301

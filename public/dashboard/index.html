@@ -4,13 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Marketing Analytics Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../index.html" class="logo-link">
+                        <h1>Marketing Hub</h1>
+                        <span class="tagline">Templates That Convert</span>
+                    </a>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Hub</a>
+                    </li>
+                    <li class="nav-item featured">
+                        <a href="../apps/finderr/" class="nav-link">
+                            FINDERR
+                            <span class="nav-badge">Beta Now</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../apps/" class="nav-link">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../templates.html" class="nav-link">Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../dashboard/index.html" class="nav-link active">Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../pages/contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav-cta">
+                    <a href="../pages/pricing.html#buy-now" class="cta-button primary">Buy Now - $97</a>
+                </div>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Header -->
     <header class="dashboard-header">
         <div class="header-content">
             <h1>App Marketing Analytics Hub</h1>
@@ -299,13 +348,24 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
-        
+
         // Track dashboard view
         document.addEventListener('DOMContentLoaded', () => {
             trackContentView('analytics_dashboard', {
                 dashboard_section: 'overview',
                 time_range: document.getElementById('timeRange').value
             });
+
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
         });
     </script>
 </body>

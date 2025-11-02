@@ -84,41 +84,53 @@ function updateActiveNavigation() {
     });
 }
 
-// Scroll Effects
+// Enhanced Scroll Effects
 function initializeScrollEffects() {
-    // Header background on scroll
+    // Professional header behavior on scroll
     const header = document.querySelector('.main-header');
+    let scrolled = false;
     
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.backdropFilter = 'blur(20px)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
+        const shouldAddClass = window.scrollY > 80;
+        
+        if (shouldAddClass && !scrolled) {
+            header.classList.add('scrolled');
+            scrolled = true;
+        } else if (!shouldAddClass && scrolled) {
+            header.classList.remove('scrolled');
+            scrolled = false;
         }
     });
     
-    // Intersection Observer for animations
+    // Professional Intersection Observer for animations
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
     
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('animate-in');
             }
         });
     }, observerOptions);
     
-    // Observe elements for animation
-    document.querySelectorAll('.feature-card, .integration-step').forEach(el => {
+    // Professional scroll animations for all cards and sections
+    const animateElements = document.querySelectorAll(`
+        .feature-card, 
+        .integration-step, 
+        .pricing-card, 
+        .testimonial-card,
+        .showcase-item,
+        .faq-item
+    `);
+    
+    animateElements.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(40px)';
+        el.style.transition = 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+        el.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(el);
     });
 }
@@ -359,6 +371,232 @@ function trackEvent(eventName, properties = {}) {
     localStorage.setItem('untrapd_events', JSON.stringify(events));
 }
 
+// Finderr Waitlist Modal
+function showFinderrWaitlist() {
+    const modal = createModal('Join Finderr Waitlist', `
+        <div class="finderr-waitlist-content">
+            <div class="waitlist-header">
+                <div class="app-icon">🔍</div>
+                <h3>Be First to Get <span class="app-name">Finderr</span></h3>
+                <p>Revolutionary device identification technology. Never lose your device again.</p>
+            </div>
+            
+            <div class="waitlist-benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-text">
+                        <strong>Early Access</strong>
+                        <span>Get Finderr before public release</span>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎁</div>
+                    <div class="benefit-text">
+                        <strong>Launch Bonus</strong>
+                        <span>Exclusive features for early adopters</span>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💎</div>
+                    <div class="benefit-text">
+                        <strong>Premium Discount</strong>
+                        <span>50% off premium security features</span>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="finderr-waitlist-form" onsubmit="joinFinderrWaitlist(event)">
+                <div class="form-group">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="cta-button primary">
+                        Join Waitlist - Free
+                        <span class="cta-subtitle">🔒 We'll never spam you</span>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="waitlist-stats">
+                <span>📧 2,847 people already joined</span>
+                <span>⚡ Average wait time: 2 weeks</span>
+            </div>
+        </div>
+    `);
+    
+    // Add custom styles for Finderr modal
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.style.maxWidth = '500px';
+    
+    const waitlistContent = modal.querySelector('.finderr-waitlist-content');
+    waitlistContent.style.cssText = `
+        text-align: center;
+    `;
+    
+    const waitlistHeader = modal.querySelector('.waitlist-header');
+    waitlistHeader.style.cssText = `
+        margin-bottom: 2rem;
+    `;
+    
+    const appIcon = modal.querySelector('.app-icon');
+    appIcon.style.cssText = `
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+    `;
+    
+    const appName = modal.querySelector('.app-name');
+    appName.style.cssText = `
+        background: linear-gradient(135deg, #0066ff 0%, #004dc7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: bold;
+    `;
+    
+    const waitlistBenefits = modal.querySelector('.waitlist-benefits');
+    waitlistBenefits.style.cssText = `
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        text-align: left;
+    `;
+    
+    const benefitItems = modal.querySelectorAll('.benefit-item');
+    benefitItems.forEach(item => {
+        item.style.cssText = `
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        `;
+        
+        const icon = item.querySelector('.benefit-icon');
+        icon.style.cssText = `
+            font-size: 1.5rem;
+        `;
+        
+        const text = item.querySelector('.benefit-text');
+        text.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        `;
+        
+        const strong = text.querySelector('strong');
+        if (strong) {
+            strong.style.cssText = `
+                color: #1f2937;
+                font-weight: 600;
+            `;
+        }
+        
+        const span = text.querySelector('span');
+        if (span) {
+            span.style.cssText = `
+                color: #6b7280;
+                font-size: 0.875rem;
+            `;
+        }
+    });
+    
+    const form = modal.querySelector('.finderr-waitlist-form');
+    form.style.cssText = `
+        margin-bottom: 1.5rem;
+    `;
+    
+    const formGroup = modal.querySelector('.form-group');
+    formGroup.style.cssText = `
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    `;
+    
+    const input = modal.querySelector('input[type="email"]');
+    input.style.cssText = `
+        padding: 1rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    `;
+    
+    input.addEventListener('focus', function() {
+        this.style.borderColor = '#0066ff';
+    });
+    
+    input.addEventListener('blur', function() {
+        this.style.borderColor = '#e5e7eb';
+    });
+    
+    const waitlistStats = modal.querySelector('.waitlist-stats');
+    waitlistStats.style.cssText = `
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.875rem;
+        color: #6b7280;
+        padding-top: 1rem;
+        border-top: 1px solid #e5e7eb;
+    `;
+    
+    trackEvent('finderr_waitlist_modal_opened');
+}
+
+// Finderr Waitlist form submission
+function joinFinderrWaitlist(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const email = form.querySelector('input[type="email"]').value;
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    // Show loading state
+    submitButton.innerHTML = 'Joining...';
+    submitButton.disabled = true;
+    form.classList.add('loading');
+    
+    // Simulate API call (replace with actual Supabase integration)
+    setTimeout(() => {
+        if (validateEmail(email)) {
+            // Success
+            showFormSuccess(form, '🎉 Welcome to Finderr! Check your email for early access details.');
+            
+            // Track conversion
+            trackEvent('finderr_waitlist_signup', {
+                email: email,
+                source: 'modal',
+                timestamp: new Date().toISOString()
+            });
+            
+            // Update stats (simulate)
+            const statsElement = document.querySelector('.waitlist-stats span:first-child');
+            if (statsElement) {
+                statsElement.textContent = '📧 2,848 people already joined';
+            }
+            
+            // Close modal after success
+            setTimeout(() => {
+                const modal = form.closest('.modal-overlay');
+                if (modal) {
+                    modal.remove();
+                }
+            }, 2000);
+            
+            // Reset form
+            form.reset();
+        } else {
+            showFormError(form, 'Please enter a valid email address.');
+        }
+        
+        // Reset button
+        submitButton.innerHTML = 'Join Waitlist - Free <span class="cta-subtitle">🔒 We\'ll never spam you</span>';
+        submitButton.disabled = false;
+        form.classList.remove('loading');
+    }, 1500);
+}
+
 // Privacy Policy Modal
 function showPrivacyPolicy() {
     const modal = createModal('Privacy Policy', `
@@ -386,6 +624,41 @@ function showPrivacyPolicy() {
     trackEvent('privacy_policy_viewed');
 }
 
+// Refund Policy Modal
+function showRefundPolicy() {
+    const modal = createModal('Refund Policy', `
+        <div class="refund-content">
+            <h3>30-Day Money-Back Guarantee</h3>
+            <p><strong>Last updated:</strong> January 2025</p>
+            
+            <h4>Our Promise</h4>
+            <p>We stand behind our Marketing Templates Hub with a 30-day unconditional money-back guarantee. If you're not completely satisfied with your purchase, we'll refund your money, no questions asked.</p>
+            
+            <h4>How to Get a Refund</h4>
+            <ol>
+                <li>Contact us at refunds@marketinghub.com within 30 days of purchase</li>
+                <li>Include your order number and reason for refund (optional)</li>
+                <li>We'll process your refund within 2-3 business days</li>
+            </ol>
+            
+            <h4>What You Get to Keep</h4>
+            <p>Even if you request a refund, you can keep any templates you've already downloaded and customized. We believe in providing value, even when things don't work out.</p>
+            
+            <h4>Refund Processing</h4>
+            <ul>
+                <li>Credit card refunds: 2-3 business days</li>
+                <li>PayPal refunds: 1-2 business days</li>
+                <li>Bank transfers: 3-5 business days</li>
+            </ul>
+            
+            <h4>Contact Us</h4>
+            <p>Questions about refunds? Email us at <strong>refunds@marketinghub.com</strong> or use our <a href="pages/contact.html">contact form</a>.</p>
+        </div>
+    `);
+    
+    trackEvent('refund_policy_viewed');
+}
+
 // Terms of Service Modal
 function showTerms() {
     const modal = createModal('Terms of Service', `
@@ -411,6 +684,93 @@ function showTerms() {
     `);
     
     trackEvent('terms_of_service_viewed');
+}
+
+// Coming Soon modal for placeholder pages
+function showComingSoon(pageName) {
+    const modal = createModal(`${pageName} - Coming Soon`, `
+        <div class="coming-soon-content">
+            <div class="coming-soon-icon">🚧</div>
+            <h3>${pageName} Coming Soon</h3>
+            <p>We're working hard to bring you the best ${pageName.toLowerCase()} experience. This section will be available soon!</p>
+            
+            <div class="coming-soon-features">
+                <p><strong>What to expect:</strong></p>
+                <ul>
+                    ${getComingSoonFeatures(pageName)}
+                </ul>
+            </div>
+            
+            <div class="coming-soon-cta">
+                <p>Want to be notified when ${pageName} is ready?</p>
+                <button onclick="showFinderrWaitlist()" class="cta-button primary">
+                    Join Our Updates List
+                </button>
+            </div>
+        </div>
+    `);
+    
+    // Add custom styles
+    const comingSoonContent = modal.querySelector('.coming-soon-content');
+    comingSoonContent.style.cssText = `
+        text-align: center;
+        padding: 2rem;
+    `;
+    
+    const icon = modal.querySelector('.coming-soon-icon');
+    icon.style.cssText = `
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        display: block;
+    `;
+    
+    const features = modal.querySelector('.coming-soon-features');
+    features.style.cssText = `
+        text-align: left;
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background: #f8fafc;
+        border-radius: 8px;
+    `;
+    
+    const cta = modal.querySelector('.coming-soon-cta');
+    cta.style.cssText = `
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e5e7eb;
+    `;
+    
+    trackEvent('coming_soon_viewed', { page: pageName });
+}
+
+function getComingSoonFeatures(pageName) {
+    const features = {
+        'About Us': `
+            <li>Company story and mission</li>
+            <li>Team profiles and expertise</li>
+            <li>Our journey in app marketing</li>
+            <li>Values and commitment to quality</li>
+        `,
+        'Blog': `
+            <li>Marketing strategy guides</li>
+            <li>App launch case studies</li>
+            <li>Industry insights and trends</li>
+            <li>Template optimization tips</li>
+        `,
+        'Affiliate Program': `
+            <li>Earn 30% commission on referrals</li>
+            <li>Marketing materials and support</li>
+            <li>Real-time tracking dashboard</li>
+            <li>Monthly payouts via PayPal</li>
+        `
+    };
+    
+    return features[pageName] || `
+        <li>Comprehensive ${pageName.toLowerCase()} features</li>
+        <li>User-friendly interface</li>
+        <li>Professional support</li>
+        <li>Regular updates and improvements</li>
+    `;
 }
 
 // Modal utility function
