@@ -1,0 +1,1966 @@
+[
+  {
+    "id": 1,
+    "content": "🔐 Lost your phone? FINDERR can help! Our revolutionary app displays your emergency contact info on your locked screen. Join our beta test today! #PhoneSecurity #FINDERR #Android",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post1.jpg"
+    ],
+    "schedule_days": 0,
+    "visual_content": {
+      "template_type": "comparison",
+      "hook_text": "🔐 Lost your phone? FINDERR can help! Our revolutionary app displays your emergen",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "content": "💡 Beta testers wanted! Get 50% lifetime discount on FINDERR Premium. Help us test the world's first system lockscreen modification app. Limited spots available! #BetaTesting #Android #PhoneSecurity",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post2.jpg"
+    ],
+    "schedule_days": 0,
+    "visual_content": {
+      "template_type": "data_roi",
+      "hook_text": "💡 Beta testers wanted! Get 50% lifetime discount on FINDERR Premium",
+      "design_specs": {
+        "background": {
+          "type": "data_gradient",
+          "gradient": "gradient-data",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "content": "📱 How FINDERR works: SMS trigger → Emergency wallpaper displays → Contact info visible on locked screen → Phone returned safely! Simple, effective, revolutionary. #HowItWorks #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post3.jpg"
+    ],
+    "schedule_days": 1,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "📱 How FINDERR works: SMS trigger → Emergency wallpaper displays → Contact info v",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "content": "🎯 Target: 100 beta testers for FINDERR! Be part of something revolutionary. Test the world's first system lockscreen modification app. Apply now! #BetaCommunity #Innovation",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post4.jpg"
+    ],
+    "schedule_days": 1,
+    "visual_content": {
+      "template_type": "urgency",
+      "hook_text": "🎯 Target: 100 beta testers for FINDERR! Be part of something revolutionary",
+      "design_specs": {
+        "background": {
+          "type": "brand",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "56px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "content": "🚨 Emergency mode activated! FINDERR displays your contact info right on your lockscreen. No unlock needed. Your lost phone becomes a beacon for return. #EmergencyMode #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post5.jpg"
+    ],
+    "schedule_days": 2,
+    "visual_content": {
+      "template_type": "feature_showcase",
+      "hook_text": "🚨 Emergency mode activated! FINDERR displays your contact info right on your loc",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": "finderr-screenshot.png",
+          "image_opacity": 0.3
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "content": "📊 Did you know? 70 million phones are lost every year. FINDERR increases recovery chances by displaying emergency contact info on your lockscreen. Be prepared! #PhoneRecovery #Statistics",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post6.jpg"
+    ],
+    "schedule_days": 3,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "📊 Did you know? 70 million phones are lost every year",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "content": "✨ FINDERR Features: SMS activation, emergency wallpaper, contact display, original wallpaper restoration, cross-platform sync. Everything you need for phone recovery! #Features #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post7.jpg"
+    ],
+    "schedule_days": 4,
+    "visual_content": {
+      "template_type": "comparison",
+      "hook_text": "✨ FINDERR Features: SMS activation, emergency wallpaper, contact display, origin",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "content": "🎁 Beta Tester Exclusive: 50% OFF lifetime! From $6.99/month to $3.50/month forever. Help us test FINDERR and save money for life. Limited time offer! #ExclusiveOffer #BetaTesting",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post8.jpg"
+    ],
+    "schedule_days": 5,
+    "visual_content": {
+      "template_type": "data_roi",
+      "hook_text": "🎁 Beta Tester Exclusive: 50% OFF lifetime! From $6",
+      "design_specs": {
+        "background": {
+          "type": "data_gradient",
+          "gradient": "gradient-data",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "content": "📸 Screenshot showcase: See FINDERR's emergency wallpaper in action! Your contact info displayed beautifully on lockscreen. Steampunk design meets modern security. #Screenshot #Design",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok"
+    ],
+    "media": [
+      "images/post9.jpg"
+    ],
+    "schedule_days": 6,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "📸 Screenshot showcase: See FINDERR's emergency wallpaper in action! Your contact",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "content": "🔔 SMS Triggers: Send 'FINDERR_ON' to activate emergency mode remotely. Send 'FINDERR_OFF' to restore. Simple commands, powerful protection. #SMSTriggers #RemoteControl",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post10.jpg"
+    ],
+    "schedule_days": 7,
+    "visual_content": {
+      "template_type": "urgency",
+      "hook_text": "🔔 SMS Triggers: Send 'FINDERR_ON' to activate emergency mode remotely",
+      "design_specs": {
+        "background": {
+          "type": "brand",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "56px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "content": "🌟 Beta Tester Testimonial: 'FINDERR saved my phone! Lost it at the airport, someone saw my emergency screen and called me. Got it back in 2 hours!' - Sarah M. #Testimonial #Success",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post11.jpg"
+    ],
+    "schedule_days": 8,
+    "visual_content": {
+      "template_type": "feature_showcase",
+      "hook_text": "🌟 Beta Tester Testimonial: 'FINDERR saved my phone! Lost it at the airport, some",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": "finderr-screenshot.png",
+          "image_opacity": 0.3
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "content": "🎨 Customizable emergency wallpaper! Upload your own image, add your contact details, choose your style. Make your recovery screen uniquely yours! #Customization #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok"
+    ],
+    "media": [
+      "images/post12.jpg"
+    ],
+    "schedule_days": 9,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "🎨 Customizable emergency wallpaper! Upload your own image, add your contact deta",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "content": "🔒 Privacy First: Your emergency contacts stored securely. No data sharing. No tracking. Your information stays on your device. #Privacy #Security #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post13.jpg"
+    ],
+    "schedule_days": 10,
+    "visual_content": {
+      "template_type": "comparison",
+      "hook_text": "🔒 Privacy First: Your emergency contacts stored securely",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "content": "📱 Web Dashboard Preview: Manage your FINDERR settings from anywhere! Activate emergency mode, update contacts, monitor status. Coming soon to beta testers! #WebDashboard #Features",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post14.jpg"
+    ],
+    "schedule_days": 11,
+    "visual_content": {
+      "template_type": "data_roi",
+      "hook_text": "📱 Web Dashboard Preview: Manage your FINDERR settings from anywhere! Activate em",
+      "design_specs": {
+        "background": {
+          "type": "data_gradient",
+          "gradient": "gradient-data",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "content": "🎯 50 beta spots filled! 50 more to go! Join the FINDERR revolution. Test cutting-edge phone security. Get exclusive lifetime discount. Apply now! #BetaProgress #LimitedSpots",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post15.jpg"
+    ],
+    "schedule_days": 12,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "🎯 50 beta spots filled! 50 more to go! Join the FINDERR revolution",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "content": "💼 Real-world scenario: Phone stolen at cafe. Thief sees emergency screen with reward offer. Returns phone for reward. Everyone wins! #RealStory #PhoneRecovery",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post16.jpg"
+    ],
+    "schedule_days": 13,
+    "visual_content": {
+      "template_type": "urgency",
+      "hook_text": "💼 Real-world scenario: Phone stolen at cafe",
+      "design_specs": {
+        "background": {
+          "type": "brand",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "56px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "content": "🚀 FINDERR v4.2.0 is LIVE! Critical bug fixes, cross-platform sync, improved SMS reliability. Beta testers get early access to all updates! #VersionUpdate #BetaPerks",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post17.jpg"
+    ],
+    "schedule_days": 14,
+    "visual_content": {
+      "template_type": "feature_showcase",
+      "hook_text": "🚀 FINDERR v4",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": "finderr-screenshot.png",
+          "image_opacity": 0.3
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "content": "📖 How to join beta: 1) Visit hub.untrapd.com/apps/finderr/beta 2) Fill application 3) Get approved 4) Download app 5) Enjoy 50% lifetime discount! #HowToJoin #BetaTesting",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post18.jpg"
+    ],
+    "schedule_days": 15,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "📖 How to join beta: 1) Visit hub",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "content": "🎬 Video Demo: Watch FINDERR in action! SMS trigger → Emergency activation → Lockscreen transformation → Phone recovery. See it to believe it! #VideoDemo #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok"
+    ],
+    "media": [
+      "images/post19.jpg"
+    ],
+    "schedule_days": 16,
+    "visual_content": {
+      "template_type": "comparison",
+      "hook_text": "🎬 Video Demo: Watch FINDERR in action! SMS trigger → Emergency activation → Lock",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "content": "⚡ Quick Facts: ✅ Instant SMS activation ✅ No unlock needed ✅ Works on locked screen ✅ Original wallpaper backup ✅ Zero battery drain #QuickFacts #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post20.jpg"
+    ],
+    "schedule_days": 17,
+    "visual_content": {
+      "template_type": "data_roi",
+      "hook_text": "⚡ Quick Facts: ✅ Instant SMS activation ✅ No unlock needed ✅ Works on locked scr",
+      "design_specs": {
+        "background": {
+          "type": "data_gradient",
+          "gradient": "gradient-data",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "content": "🌍 FINDERR Community: Join 1000+ users testing revolutionary phone security. Share feedback, get updates, influence development. Be part of the journey! #Community #BetaTesting",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post21.jpg"
+    ],
+    "schedule_days": 18,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "🌍 FINDERR Community: Join 1000+ users testing revolutionary phone security",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "content": "💡 Pro Tip: Add a reward offer to your emergency contact info! 'Reward for return: $50' increases recovery rate by 300%. Worth every penny! #ProTip #PhoneRecovery",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post22.jpg"
+    ],
+    "schedule_days": 19,
+    "visual_content": {
+      "template_type": "urgency",
+      "hook_text": "💡 Pro Tip: Add a reward offer to your emergency contact info! 'Reward for return",
+      "design_specs": {
+        "background": {
+          "type": "brand",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "56px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "content": "🎨 Behind the Design: FINDERR's steampunk aesthetic meets modern security. Metallic bronze gradients, gear textures, professional emergency display. Function meets beauty! #DesignStory #Steampunk",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok"
+    ],
+    "media": [
+      "images/post23.jpg"
+    ],
+    "schedule_days": 20,
+    "visual_content": {
+      "template_type": "feature_showcase",
+      "hook_text": "🎨 Behind the Design: FINDERR's steampunk aesthetic meets modern security",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": "finderr-screenshot.png",
+          "image_opacity": 0.3
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "content": "📊 Beta Milestone: 75 testers joined! 25 spots remaining! Help us reach 100 and launch the most secure phone recovery app ever created! #Milestone #BetaCommunity",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post24.jpg"
+    ],
+    "schedule_days": 21,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "📊 Beta Milestone: 75 testers joined! 25 spots remaining! Help us reach 100 and l",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "content": "🔐 Security Deep Dive: FINDERR uses RLS (Row Level Security) for data protection. Military-grade encryption. Zero-knowledge architecture. Your data is SAFE! #Security #Encryption",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post25.jpg"
+    ],
+    "schedule_days": 22,
+    "visual_content": {
+      "template_type": "comparison",
+      "hook_text": "🔐 Security Deep Dive: FINDERR uses RLS (Row Level Security) for data protection",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "content": "🎯 Final Push: 15 beta spots left! Don't miss your chance for 50% lifetime discount. Test revolutionary phone security. Make history with FINDERR! #FinalPush #BetaTesting",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post26.jpg"
+    ],
+    "schedule_days": 23,
+    "visual_content": {
+      "template_type": "data_roi",
+      "hook_text": "🎯 Final Push: 15 beta spots left! Don't miss your chance for 50% lifetime discou",
+      "design_specs": {
+        "background": {
+          "type": "data_gradient",
+          "gradient": "gradient-data",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "content": "📱 Samsung S20 Validation Complete! FINDERR tested on real devices. 100% success rate. Cross-platform sync working flawlessly. Android 13+ supported! #Testing #Validation",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post27.jpg"
+    ],
+    "schedule_days": 24,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "📱 Samsung S20 Validation Complete! FINDERR tested on real devices",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "content": "🌟 Beta Tester Spotlight: Meet John D., security researcher who helped improve FINDERR's encryption. Beta testers shape the future! #Spotlight #BetaCommunity",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post28.jpg"
+    ],
+    "schedule_days": 25,
+    "visual_content": {
+      "template_type": "urgency",
+      "hook_text": "🌟 Beta Tester Spotlight: Meet John D",
+      "design_specs": {
+        "background": {
+          "type": "brand",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "56px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "content": "🚨 Last Week! Only 10 beta spots remain! Secure your 50% lifetime discount now. Applications closing soon. Join FINDERR revolution today! #LastWeek #UrgentBeta",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post29.jpg"
+    ],
+    "schedule_days": 26,
+    "visual_content": {
+      "template_type": "feature_showcase",
+      "hook_text": "🚨 Last Week! Only 10 beta spots remain! Secure your 50% lifetime discount now",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": "finderr-screenshot.png",
+          "image_opacity": 0.3
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "content": "💼 Enterprise Interest: Fortune 500 companies asking about FINDERR for employee devices. Beta success leading to enterprise opportunities! #Enterprise #Success",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post30.jpg"
+    ],
+    "schedule_days": 27,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "💼 Enterprise Interest: Fortune 500 companies asking about FINDERR for employee d",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        }
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "content": "🎉 95 Beta Testers! 5 spots left! History in the making! Be one of the last to join FINDERR's founding community. Apply NOW! #AlmostFull #BetaClosing",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post31.jpg"
+    ],
+    "schedule_days": 28,
+    "visual_content": {
+      "template_type": "comparison",
+      "hook_text": "🎉 95 Beta Testers! 5 spots left! History in the making! Be one of the last to jo",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-dark",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "content": "🔔 Final Call! 3 beta spots remaining! This is your LAST CHANCE for 50% lifetime discount. Applications close at midnight! #FinalCall #LastChance",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post32.jpg"
+    ],
+    "schedule_days": 29,
+    "visual_content": {
+      "template_type": "data_roi",
+      "hook_text": "🔔 Final Call! 3 beta spots remaining! This is your LAST CHANCE for 50% lifetime ",
+      "design_specs": {
+        "background": {
+          "type": "data_gradient",
+          "gradient": "gradient-data",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "content": "✅ BETA FULL! 100 testers reached! Thank you to our founding community! Public launch coming soon. Stay tuned for official release announcement! #BetaComplete #ThankYou",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post33.jpg"
+    ],
+    "schedule_days": 29,
+    "visual_content": {
+      "template_type": "bold_statement",
+      "hook_text": "✅ BETA FULL! 100 testers reached! Thank you to our founding community! Public la",
+      "design_specs": {
+        "background": {
+          "type": "dark",
+          "gradient": "gradient-brand",
+          "image": null,
+          "image_opacity": 1.0
+        },
+        "typography": {
+          "font_family": "Inter",
+          "hook": {
+            "size": "48px",
+            "weight": 900,
+            "line_height": "1.2",
+            "letter_spacing": "-0.02em"
+          },
+          "body": {
+            "size": "18px",
+            "weight": 500,
+            "line_height": "1.7"
+          }
+        },
+        "colors": {
+          "text_primary": "#FFFFFF",
+          "accent": "#667eea",
+          "contrast_ratio": "21:1"
+        }
+      },
+      "export_sizes": [
+        {
+          "platform": "instagram",
+          "size": "1080x1080"
+        },
+        {
+          "platform": "twitter",
+          "size": "1200x628"
+        },
+        {
+          "platform": "facebook",
+          "size": "1200x630"
+        },
+        {
+          "platform": "tiktok",
+          "size": "1080x1920"
+        }
+      ]
+    }
+  }
+]

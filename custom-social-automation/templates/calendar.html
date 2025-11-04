@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Scheduler - Custom Social Automation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/calendar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark-theme.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>🚀 Social Automation</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/preview">Preview</a>
+            <a href="/calendar" class="active">Calendar</a>
+            <a href="/posts">Posts</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="calendar-header">
+            <button id="prevMonth" class="btn btn-secondary">← Previous</button>
+            <h2 id="currentMonth"></h2>
+            <button id="nextMonth" class="btn btn-secondary">Next →</button>
+        </div>
+
+        <div class="calendar-controls">
+            <button id="todayBtn" class="btn btn-primary">Today</button>
+            <button id="newPostBtn" class="btn btn-success">+ New Post</button>
+
+            <div class="platform-filters">
+                <label><input type="checkbox" value="instagram" checked> Instagram</label>
+                <label><input type="checkbox" value="facebook" checked> Facebook</label>
+                <label><input type="checkbox" value="twitter" checked> Twitter</label>
+                <label><input type="checkbox" value="tiktok" checked> TikTok</label>
+                <label><input type="checkbox" value="pinterest" checked> Pinterest</label>
+            </div>
+        </div>
+
+        <div id="calendar" class="calendar-grid">
+            <!-- Calendar will be generated here by JavaScript -->
+        </div>
+
+        <div class="calendar-stats">
+            <div class="stat-card">
+                <h3>Scheduled Posts</h3>
+                <p id="scheduledCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>This Week</h3>
+                <p id="weekCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>This Month</h3>
+                <p id="monthCount">0</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Editor Modal -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Create New Post</h2>
+
+            <form id="postForm">
+                <input type="hidden" id="postId" name="postId">
+
+                <div class="form-group">
+                    <label for="postText">Post Content</label>
+                    <textarea id="postText" name="text" rows="6" required
+                              placeholder="What's on your mind?"></textarea>
+                    <div class="char-count">
+                        <span id="charCount">0</span> / <span id="maxChars">280</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Platforms</label>
+                    <div class="platform-select">
+                        <label><input type="checkbox" name="platforms" value="instagram"> Instagram</label>
+                        <label><input type="checkbox" name="platforms" value="facebook"> Facebook</label>
+                        <label><input type="checkbox" name="platforms" value="twitter"> Twitter</label>
+                        <label><input type="checkbox" name="platforms" value="tiktok"> TikTok</label>
+                        <label><input type="checkbox" name="platforms" value="pinterest"> Pinterest</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="postImage">Images (Optional - multiple allowed)</label>
+                    <input type="file" id="postImage" name="images" accept="image/*" multiple>
+                    <div id="imagePreview" class="image-preview"></div>
+                    <p class="help-text">Select multiple images for carousel posts (Instagram, Facebook)</p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="scheduledDate">Date</label>
+                        <input type="date" id="scheduledDate" name="scheduled_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduledTime">Time</label>
+                        <input type="time" id="scheduledTime" name="scheduled_time" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="previewBtn">Preview</button>
+                    <button type="submit" class="btn btn-success">Schedule Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Post Details Modal -->
+    <div id="postDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Post Details</h2>
+            <div id="postDetails">
+                <!-- Post details will be loaded here -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="editPostBtn">Edit</button>
+                <button class="btn btn-danger" id="deletePostBtn">Delete</button>
+                <button class="btn btn-primary" id="closeDetailsBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+</body>
+</html>

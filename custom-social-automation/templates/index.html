@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Social Media Automation Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark-theme.css') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            padding: 24px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .feature-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 40px 0;
+            padding: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            color: white;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .roadmap {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .roadmap h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #333;
+        }
+
+        .roadmap-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .roadmap-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .roadmap-item.completed {
+            background: #d4edda;
+        }
+
+        .roadmap-item.in-progress {
+            background: #fff3cd;
+        }
+
+        .roadmap-status {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        .roadmap-text {
+            flex: 1;
+            font-size: 15px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>🚀 Social Automation</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/" class="active">Dashboard</a>
+            <a href="/preview">Preview</a>
+            <a href="/calendar">Calendar</a>
+            <a href="/posts">Posts</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>🚀 Custom Social Media Automation</h1>
+            <p class="subtitle">Your Own Platform with Visual Previews & Scheduling</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">5</div>
+                <div class="stat-label">Platforms</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">$0</div>
+                <div class="stat-label">Monthly Cost</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Your Control</div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <div class="feature-title">Visual Previews</div>
+                <div class="feature-description">See exactly how posts will look on each platform</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <div class="feature-title">Image Management</div>
+                <div class="feature-description">Upload and organize post images easily</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <div class="feature-title">Automated Scheduling</div>
+                <div class="feature-description">Set-and-forget 30-day campaigns</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <div class="feature-title">Full Customization</div>
+                <div class="feature-description">Build exactly what you need</div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="/preview" class="btn btn-primary">🎨 Platform Previews</a>
+            <a href="/calendar" class="btn btn-secondary">📅 Calendar View</a>
+            <a href="/posts" class="btn btn-secondary">📝 Posts Manager</a>
+        </div>
+
+        <div class="roadmap">
+            <h2>Development Roadmap</h2>
+            <div class="roadmap-items">
+                <div class="roadmap-item completed">
+                    <span class="roadmap-status">✅</span>
+                    <span class="roadmap-text">Phase 1: Platform Preview System (COMPLETED)</span>
+                </div>
+                <div class="roadmap-item in-progress">
+                    <span class="roadmap-status">🔄</span>
+                    <span class="roadmap-text">Phase 2: Scheduling System (IN PROGRESS)</span>
+                </div>
+                <div class="roadmap-item">
+                    <span class="roadmap-status">⏳</span>
+                    <span class="roadmap-text">Phase 3: Image Management</span>
+                </div>
+                <div class="roadmap-item">
+                    <span class="roadmap-status">⏳</span>
+                    <span class="roadmap-text">Phase 4: Polish & Launch</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; color: #666; font-size: 14px;">
+            <p>Built for FINDERR Beta Campaign • 45 Posts • 30 Days • 5 Platforms</p>
+            <p style="margin-top: 8px;">Created: 2025-10-29</p>
+        </div>
+    </div>
+</body>
+</html>

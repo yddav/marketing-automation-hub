@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Preview - Custom Social Automation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/finderr-visual-content.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/platform-previews.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark-theme.css') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: url('{{ url_for('static', filename='images/cosmic-nebula-background.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .preview-controls {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .preview-controls h2 {
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .preview-controls textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .preview-controls textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .platform-tabs {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .platform-tab {
+            padding: 12px 24px;
+            border-radius: 24px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .platform-tab:hover {
+            background: #f5f5f5;
+        }
+
+        .platform-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .platform-preview-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .platform-preview-card h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .char-count {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .char-count.warning {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 32px;
+            padding: 14px 28px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 24px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>🚀 Social Automation</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/preview" class="active">Preview</a>
+            <a href="/calendar">Calendar</a>
+            <a href="/posts">Posts</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>🎨 Platform Preview</h1>
+            <p>See exactly how your post will appear on each social media platform</p>
+        </header>
+
+        <div class="preview-controls">
+            <h2>📝 Post Content</h2>
+            <textarea id="post-text" placeholder="Enter your post text here...">{{ post.text }}</textarea>
+
+            <div class="platform-tabs">
+                <button class="platform-tab active" data-platform="all">All Platforms</button>
+                <button class="platform-tab" data-platform="instagram">📸 Instagram</button>
+                <button class="platform-tab" data-platform="facebook">👥 Facebook</button>
+                <button class="platform-tab" data-platform="twitter">🐦 Twitter</button>
+                <button class="platform-tab" data-platform="tiktok">🎵 TikTok</button>
+                <button class="platform-tab" data-platform="pinterest">📌 Pinterest</button>
+            </div>
+        </div>
+
+        <div class="platform-grid">
+            <!-- Instagram Preview -->
+            <div class="platform-preview-card" data-platform="instagram">
+                <h3>📸 Instagram</h3>
+                <div class="instagram-preview">
+                    <div class="instagram-header">
+                        <div class="instagram-avatar"></div>
+                        <div class="instagram-username">finderr_official</div>
+                    </div>
+                    <div class="instagram-image">
+                        {% if post.image_url %}
+                        <img src="{{ post.image_url }}" alt="Post image">
+                        {% else %}
+                        <span class="preview-placeholder-text">Upload image</span>
+                        {% endif %}
+                    </div>
+                    <div class="instagram-actions">
+                        <button class="instagram-action-btn">♡</button>
+                        <button class="instagram-action-btn">💬</button>
+                        <button class="instagram-action-btn">✈️</button>
+                    </div>
+                    <div class="instagram-caption">
+                        <span class="instagram-caption-username">finderr_official</span>
+                        <span id="instagram-text">{{ post.text }}</span>
+                    </div>
+                </div>
+                <div class="char-count" id="instagram-count">{{ post.text|length }} characters</div>
+            </div>
+
+            <!-- Facebook Preview -->
+            <div class="platform-preview-card" data-platform="facebook">
+                <h3>👥 Facebook</h3>
+                <div class="facebook-preview">
+                    <div class="facebook-header">
+                        <div class="facebook-avatar"></div>
+                        <div class="facebook-user-info">
+                            <div class="facebook-username">FINDERR</div>
+                            <div class="facebook-timestamp">Just now · 🌐</div>
+                        </div>
+                    </div>
+                    <div class="facebook-content" id="facebook-text">{{ post.text }}</div>
+                    <div class="facebook-image">
+                        {% if post.image_url %}
+                        <img src="{{ post.image_url }}" alt="Post image">
+                        {% else %}
+                        <span class="preview-placeholder-text">Upload image</span>
+                        {% endif %}
+                    </div>
+                    <div class="facebook-actions">
+                        <button class="facebook-action-btn">👍 Like</button>
+                        <button class="facebook-action-btn">💬 Comment</button>
+                        <button class="facebook-action-btn">🔗 Share</button>
+                    </div>
+                </div>
+                <div class="char-count" id="facebook-count">{{ post.text|length }} characters</div>
+            </div>
+
+            <!-- Twitter Preview -->
+            <div class="platform-preview-card" data-platform="twitter">
+                <h3>🐦 Twitter/X</h3>
+                <div class="twitter-preview">
+                    <div class="twitter-header">
+                        <div class="twitter-avatar"></div>
+                        <div class="twitter-user-info">
+                            <div class="twitter-username">FINDERR</div>
+                            <div class="twitter-handle">@finderr_app · now</div>
+                        </div>
+                    </div>
+                    <div class="twitter-content" id="twitter-text">{{ post.text }}</div>
+                    {% if post.image_url %}
+                    <div class="twitter-image">
+                        <img src="{{ post.image_url }}" alt="Post image">
+                    </div>
+                    {% endif %}
+                    <div class="twitter-actions">
+                        <button class="twitter-action-btn">💬</button>
+                        <button class="twitter-action-btn">🔁</button>
+                        <button class="twitter-action-btn">♡</button>
+                        <button class="twitter-action-btn">📊</button>
+                    </div>
+                </div>
+                <div class="char-count" id="twitter-count">{{ post.text|length }} / 280 characters</div>
+            </div>
+
+            <!-- TikTok Preview -->
+            <div class="platform-preview-card" data-platform="tiktok">
+                <h3>🎵 TikTok</h3>
+                <div class="tiktok-preview">
+                    <div class="tiktok-video-container">
+                        {% if post.image_url %}
+                        <img src="{{ post.image_url }}" alt="Video thumbnail" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+                        {% else %}
+                        <span class="tiktok-video-placeholder">▶️</span>
+                        {% endif %}
+                        <div class="tiktok-sidebar">
+                            <div class="tiktok-action">
+                                <div class="tiktok-action-icon">♡</div>
+                                <div class="tiktok-action-count">12.3K</div>
+                            </div>
+                            <div class="tiktok-action">
+                                <div class="tiktok-action-icon">💬</div>
+                                <div class="tiktok-action-count">234</div>
+                            </div>
+                            <div class="tiktok-action">
+                                <div class="tiktok-action-icon">🔗</div>
+                                <div class="tiktok-action-count">567</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tiktok-caption">
+                        <div class="tiktok-username">@finderr_app</div>
+                        <div class="tiktok-description" id="tiktok-text">{{ post.text }}</div>
+                    </div>
+                    <div class="tiktok-music">
+                        <span class="tiktok-music-icon">🎵</span>
+                        Original Sound - FINDERR
+                    </div>
+                </div>
+                <div class="char-count" id="tiktok-count">{{ post.text|length }} characters</div>
+            </div>
+
+            <!-- Pinterest Preview -->
+            <div class="platform-preview-card" data-platform="pinterest">
+                <h3>📌 Pinterest</h3>
+                <div class="pinterest-preview">
+                    <div class="pinterest-overlay">
+                        <div class="pinterest-image">
+                            {% if post.image_url %}
+                            <img src="{{ post.image_url }}" alt="Pin image" style="width:100%;height:100%;object-fit:cover;">
+                            {% else %}
+                            <span class="preview-placeholder-text">Upload image<br>(2:3 aspect ratio)</span>
+                            {% endif %}
+                        </div>
+                        <button class="pinterest-save-btn">Save</button>
+                    </div>
+                    <div class="pinterest-content">
+                        <div class="pinterest-title">FINDERR - Phone Security App</div>
+                        <div class="pinterest-description" id="pinterest-text">{{ post.text }}</div>
+                        <div class="pinterest-user">
+                            <div class="pinterest-user-avatar"></div>
+                            <div class="pinterest-username">FINDERR Official</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="char-count" id="pinterest-count">{{ post.text|length }} characters</div>
+            </div>
+        </div>
+
+        <center>
+            <a href="/" class="back-link">← Back to Dashboard</a>
+        </center>
+    </div>
+
+    <script>
+        // Real-time preview updates
+        const postText = document.getElementById('post-text');
+        const platforms = ['instagram', 'facebook', 'twitter', 'tiktok', 'pinterest'];
+
+        postText.addEventListener('input', function() {
+            const text = this.value;
+
+            // Update all platform previews
+            platforms.forEach(platform => {
+                const textElement = document.getElementById(`${platform}-text`);
+                const countElement = document.getElementById(`${platform}-count`);
+
+                if (textElement) {
+                    textElement.textContent = text;
+                }
+
+                if (countElement) {
+                    const length = text.length;
+                    let countText = `${length} characters`;
+
+                    // Platform-specific character limits
+                    if (platform === 'twitter') {
+                        countText = `${length} / 280 characters`;
+                        countElement.classList.toggle('warning', length > 280);
+                    } else if (platform === 'instagram') {
+                        countElement.classList.toggle('warning', length > 2200);
+                    }
+
+                    countElement.textContent = countText;
+                }
+            });
+        });
+
+        // Platform filtering
+        const platformTabs = document.querySelectorAll('.platform-tab');
+        const platformCards = document.querySelectorAll('.platform-preview-card');
+
+        platformTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const platform = this.dataset.platform;
+
+                // Update active tab
+                platformTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                // Show/hide platform cards
+                platformCards.forEach(card => {
+                    if (platform === 'all' || card.dataset.platform === platform) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

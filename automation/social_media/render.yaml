@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: finderr-campaign-preview
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PREVIEW_USERNAME
+        sync: false
+      - key: PREVIEW_PASSWORD
+        sync: false
