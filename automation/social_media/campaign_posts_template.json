@@ -1,0 +1,69 @@
+{
+  "campaign": "FINDERR Beta Recruitment",
+  "duration_days": 30,
+  "total_posts": 180,
+  "platforms": {
+    "facebook": {"frequency": "1/day", "total": 30},
+    "instagram": {"frequency": "2/day", "total": 60},
+    "twitter": {"frequency": "3/day", "total": 90}
+  },
+
+  "facebook": [
+    {
+      "id": 1,
+      "schedule": "2025-11-01 10:00:00",
+      "message": "🚀 Introducing FINDERR: The world's first emergency lockscreen system for lost phones.\n\nYour phone holds your life. But if you lose it, finders can't reach you.\n\nFINDERR changes that. Emergency wallpaper displays YOUR contact info on the lockscreen - no unlock needed.\n\n✅ SMS & web triggers\n✅ Works offline\n✅ Wallpaper backup & restore\n\n100 beta spots available | 50% lifetime discount\n\nJoin beta → https://hub.untrapd.com/apps/finderr/beta",
+      "link": "https://hub.untrapd.com/apps/finderr/beta",
+      "category": "announcement"
+    },
+    {
+      "id": 2,
+      "schedule": "2025-11-02 10:00:00",
+      "message": "Lost your phone at the airport? In a taxi? At a café?\n\nWith FINDERR, the person who finds it can see your emergency contact on the lockscreen.\n\nNo unlock required. No security compromise.\n\nJust instant connection.\n\nBeta testing starts now → https://hub.untrapd.com/apps/finderr/beta",
+      "link": "https://hub.untrapd.com/apps/finderr/beta",
+      "category": "problem-solution"
+    }
+  ],
+
+  "instagram": [
+    {
+      "id": 1,
+      "filename": "01_feature_emergency_wallpaper_preview.jpg",
+      "schedule": "2025-11-01 10:00:00",
+      "image_url": "https://finderr-campaign.netlify.app/images/instagram/01_feature_emergency_wallpaper_preview.jpg",
+      "caption": "Lost phone? FINDERR displays YOUR contact info on the lockscreen - no unlock needed. 🔐\n\n✅ Emergency wallpaper\n✅ SMS + Web triggers\n✅ Zero security compromise\n\nJoin Beta → 50% lifetime discount\n100 spots available\n\nLink in bio 👆\n\n#PhoneSecurity #DigitalNomad #BetaTesting #FINDERR #LostPhone #TechForGood #AndroidApp #PhoneRecovery",
+      "hashtags": "#PhoneSecurity #DigitalNomad #BetaTesting #FINDERR #LostPhone #TechForGood #AndroidApp #PhoneRecovery",
+      "category": "feature"
+    },
+    {
+      "id": 2,
+      "filename": "02_feature_sms_trigger_activation.jpg",
+      "schedule": "2025-11-01 18:00:00",
+      "image_url": "https://finderr-campaign.netlify.app/images/instagram/02_feature_sms_trigger_activation.jpg",
+      "caption": "Activate emergency mode with a single SMS. No app open required. ⚡\n\n\"FINDERR_ON\" → Emergency wallpaper in 2-7 seconds.\n\nBeta live now 👉 Link in bio\n\n#FINDERR #PhoneSecurity #SMSTrigger #EmergencyMode #TechInnovation #DigitalNomad #AndroidDev",
+      "hashtags": "#FINDERR #PhoneSecurity #SMSTrigger #EmergencyMode #TechInnovation #DigitalNomad #AndroidDev",
+      "category": "feature"
+    }
+  ],
+
+  "twitter": [
+    {
+      "id": 1,
+      "schedule": "2025-11-01 09:00:00",
+      "text": "🚀 FINDERR Beta is LIVE!\n\nWorld's first emergency lockscreen system for lost phones.\n\n✅ Your contact info on lockscreen - no unlock needed\n✅ SMS & web dashboard triggers\n✅ 50% lifetime discount for beta testers\n\nOnly 100 spots available. Join now 👇\nhttps://hub.untrapd.com/apps/finderr/beta\n\n#PhoneSecurity #DigitalNomad #BetaTesting #LostPhone",
+      "category": "announcement"
+    },
+    {
+      "id": 2,
+      "schedule": "2025-11-01 13:00:00",
+      "text": "Lost your phone? That instant panic feeling... we've all been there.\n\nWhat if your lost phone could display YOUR contact info on the lockscreen?\n\nFINDERR makes it possible.\n\nBeta live | 100 spots | 50% off lifetime\n\nhttps://hub.untrapd.com/apps/finderr/beta\n\n#PhoneSecurity #FINDERR",
+      "category": "problem-solution"
+    },
+    {
+      "id": 3,
+      "schedule": "2025-11-01 18:00:00",
+      "text": "FINDERR v4.2.0+243 Beta 🧪\n\nSystem-level lockscreen modification for Android.\nEmergency wallpaper with contact info.\n\nTech:\n• Flutter + Kotlin native\n• SMS + Web triggers\n• Real-time sync\n• Zero unlock required\n\n100 beta testers wanted\n50% lifetime discount\n\nhttps://hub.untrapd.com/apps/finderr/beta\n\n#Flutter #AndroidDev",
+      "category": "technical"
+    }
+  ]
+}

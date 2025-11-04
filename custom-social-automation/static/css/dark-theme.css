@@ -1,0 +1,317 @@
+/* Dark Theme Override - Professional Dark Mode */
+
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #f0f6fc;
+    --text-secondary: #c9d1d9;
+    --text-muted: #8b949e;
+    --border-color: #30363d;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-red: #f85149;
+    --accent-yellow: #d29922;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Override all white backgrounds */
+.calendar-header,
+.calendar-controls,
+.calendar-day,
+.calendar-stats .stat-card,
+.posts-header,
+.filters,
+.posts-stats .stat-card,
+#postsTable,
+.empty-state,
+.card,
+.modal-content {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Text colors - High contrast for better visibility */
+h1, h2, h3, h4, h5, h6,
+.calendar-header h2,
+.day-number,
+label,
+th {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+}
+
+p, span, td, .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+/* Card titles - Make them stand out */
+.stat-card h3,
+.feature-title,
+.posts-header h2 {
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+}
+
+/* Stat values - Make them pop */
+.stat-card p,
+.stat-value {
+    color: var(--accent-blue) !important;
+}
+
+/* Tables */
+thead {
+    background: var(--bg-tertiary) !important;
+}
+
+tbody tr {
+    border-bottom-color: var(--border-color) !important;
+}
+
+tbody tr:hover {
+    background: var(--bg-tertiary) !important;
+}
+
+/* Form elements */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="file"],
+input[type="checkbox"],
+select,
+textarea {
+    background: var(--bg-tertiary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Calendar specific */
+.calendar-day.today {
+    background: #1a3a5a !important;
+    border-color: var(--accent-blue) !important;
+}
+
+.calendar-day.other-month {
+    opacity: 0.3;
+}
+
+/* Modal */
+.modal {
+    background-color: rgba(0,0,0,0.7) !important;
+}
+
+/* ========================================
+   PLATFORM PREVIEW MOCKUPS - KEEP ORIGINAL LIGHT STYLING
+   These should look like the actual platforms
+   ======================================== */
+
+/* Platform preview cards - Keep light background */
+.instagram-preview,
+.facebook-preview,
+.twitter-preview,
+.tiktok-preview,
+.pinterest-preview {
+    background: white !important;
+    border-color: #e0e0e0 !important;
+    color: #333 !important;
+}
+
+/* Platform preview text - Keep dark text on light background */
+.instagram-preview .post-content,
+.instagram-preview .instagram-caption,
+.instagram-preview .instagram-username,
+.facebook-preview .post-content,
+.facebook-preview .facebook-content,
+.facebook-preview .facebook-username,
+.twitter-preview .tweet-text,
+.twitter-preview .twitter-content,
+.twitter-preview .twitter-username,
+.tiktok-preview .video-caption,
+.tiktok-preview .tiktok-description,
+.tiktok-preview .tiktok-username,
+.pinterest-preview .pin-description,
+.pinterest-preview .pinterest-description,
+.pinterest-preview .pinterest-title {
+    color: #333 !important;
+    background: transparent !important;
+}
+
+/* Platform preview headers - Keep original styling */
+.instagram-header,
+.facebook-header,
+.twitter-header {
+    background: white !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+/* Platform usernames and timestamps */
+.instagram-username,
+.facebook-username,
+.twitter-username,
+.twitter-handle,
+.facebook-timestamp {
+    color: #333 !important;
+}
+
+/* Keep platform action buttons light */
+.instagram-action-btn,
+.facebook-action-btn,
+.twitter-action-btn {
+    background: transparent !important;
+    color: #666 !important;
+}
+
+/* Status badges - keep their colors */
+.status-badge.draft {
+    background: #6c757d !important;
+}
+
+.status-badge.scheduled {
+    background: #fbbf24 !important;
+    color: #000 !important;
+}
+
+.status-badge.posted {
+    background: #4ade80 !important;
+}
+
+.status-badge.failed {
+    background: #ef4444 !important;
+}
+
+/* Post items on calendar - keep their brand colors */
+.post-item.instagram,
+.post-item.facebook,
+.post-item.twitter,
+.post-item.tiktok,
+.post-item.pinterest {
+    /* Keep original brand colors */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4a4a4a;
+}
+
+/* Help text and hints */
+.help-text,
+.char-count,
+.upload-hint {
+    color: var(--text-muted) !important;
+}
+
+/* Import Modal Specific */
+.import-preview {
+    background: var(--bg-tertiary) !important;
+    margin-top: 20px !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    border: 2px solid var(--accent-blue) !important;
+}
+
+.import-preview h3 {
+    color: var(--accent-blue) !important;
+    margin-bottom: 15px !important;
+}
+
+.import-preview p,
+.import-preview strong {
+    color: var(--text-primary) !important;
+}
+
+.import-preview hr {
+    border-color: var(--border-color) !important;
+    margin: 15px 0 !important;
+}
+
+.import-preview-item {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 12px !important;
+    margin-bottom: 10px !important;
+    border-radius: 6px !important;
+}
+
+.import-preview-item strong {
+    color: var(--accent-green) !important;
+}
+
+.import-preview-item small {
+    color: var(--text-muted) !important;
+}
+
+.import-options {
+    color: var(--text-primary) !important;
+}
+
+.import-separator {
+    color: var(--text-secondary) !important;
+}
+
+.import-separator::before,
+.import-separator::after {
+    background: var(--border-color) !important;
+}
+
+/* File upload label */
+.file-upload-label {
+    background: var(--accent-blue) !important;
+}
+
+.file-upload-label:hover {
+    background: #3a8eef !important;
+}
+
+/* Modal action buttons - Make import button stand out */
+.modal-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    border-top: 2px solid var(--border-color) !important;
+}
+
+.modal-actions .btn-success {
+    background: var(--accent-green) !important;
+    font-size: 16px !important;
+    padding: 12px 24px !important;
+    font-weight: 700 !important;
+    animation: pulse 2s infinite !important;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.modal-actions .btn-success:hover {
+    background: #2f8e3f !important;
+    transform: scale(1.1) !important;
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINDERR Visual Content Templates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/finderr-visual-content.css') }}">
+</head>
+<body style="background: url('{{ url_for('static', filename='images/cosmic-nebula-background.jpg') }}') no-repeat center center fixed; background-size: cover; padding: 40px 20px; position: relative;">
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: -1;"></div>
+
+    <!-- Template 1: Matt Gray Comparison Card -->
+    <div class="visual-content-card dark matt-gray-comparison" id="comparison-card">
+        <div class="card-hook">
+            Lost Phone Recovery: Traditional vs FINDERR
+        </div>
+        <div class="comparison-grid">
+            <div class="comparison-column negative">
+                <div class="column-label">❌ Without FINDERR</div>
+                <div class="comparison-item">😰 No contact info visible</div>
+                <div class="comparison-item">💸 Pay $10-12/month</div>
+                <div class="comparison-item">🍎 iOS-focused apps</div>
+                <div class="comparison-item">❓ Limited recovery options</div>
+            </div>
+            <div class="comparison-column positive">
+                <div class="column-label">✅ With FINDERR</div>
+                <div class="comparison-item">📱 Emergency wallpaper</div>
+                <div class="comparison-item">💰 Only $6.99/month</div>
+                <div class="comparison-item">🤖 100% Android optimized</div>
+                <div class="comparison-item">🔮 GPS tracking Q1 2026</div>
+            </div>
+        </div>
+        <div class="card-cta">
+            Join 100 beta testers → hub.untrapd.com
+        </div>
+    </div>
+
+    <!-- Template 2: Dan Koe Bold Statement -->
+    <div class="visual-content-card dark dan-koe-bold" id="bold-statement-card">
+        <div class="bold-hook">
+            Your lost Android phone becomes a beacon for return
+        </div>
+        <div class="bold-body">
+            <p>Emergency wallpaper displays contact info automatically</p>
+            <p>SMS activation from any phone</p>
+            <p>Web dashboard control from anywhere</p>
+        </div>
+        <div class="bold-stats">
+            <div class="stat">$6.99/month<br><small style="font-size:14px; font-weight:500;">FINDERR</small></div>
+            <div class="stat" style="opacity:0.6;">$10-12<br><small style="font-size:14px; font-weight:500;">Competitors</small></div>
+        </div>
+        <div class="bold-cta">
+            Join beta testing →
+        </div>
+    </div>
+
+    <!-- Template 3: Data/ROI Card -->
+    <div class="visual-content-card data-card" id="roi-card">
+        <div class="data-header">
+            Beta Tester Math: ROI Breakdown
+        </div>
+        <div class="data-columns">
+            <div class="data-column">
+                <div class="data-label">Regular User</div>
+                <div class="data-value">$6.99</div>
+                <div class="data-context">per month</div>
+                <div class="data-value" style="font-size:32px; margin-top:20px;">$84</div>
+                <div class="data-context">per year</div>
+                <div class="data-value" style="font-size:32px; margin-top:20px;">$420</div>
+                <div class="data-context">5 years</div>
+            </div>
+            <div class="data-column data-highlight">
+                <div class="data-label">🎉 Beta Tester</div>
+                <div class="data-value">$3.50</div>
+                <div class="data-context">per month (50% off)</div>
+                <div class="data-value" style="font-size:32px; margin-top:20px;">$42</div>
+                <div class="data-context">per year</div>
+                <div class="data-value" style="font-size:32px; margin-top:20px;">$210</div>
+                <div class="data-context">5 years</div>
+            </div>
+        </div>
+        <div class="data-savings">
+            💰 Save $210 over 5 years • 85 spots left → hub.untrapd.com
+        </div>
+    </div>
+
+    <!-- Template 4: Urgency/Countdown Card -->
+    <div class="visual-content-card urgency-card" id="urgency-card">
+        <div class="urgency-icon">🚨</div>
+        <div class="urgency-headline">
+            85 BETA SPOTS<br>REMAINING
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 15%;">
+                <span class="progress-text">15/100</span>
+            </div>
+        </div>
+        <div class="progress-label">Only 85 spots left for 50% lifetime discount</div>
+
+        <div class="benefits-list">
+            <div class="benefit-item">✅ 50% lifetime discount ($3.50/month forever)</div>
+            <div class="benefit-item">✅ Free GPS tracking upgrade (v5.0)</div>
+            <div class="benefit-item">✅ UNTRAPD contributor status</div>
+            <div class="benefit-item">✅ Early access to all features</div>
+        </div>
+
+        <div class="countdown-timer">
+            ⏰ Applications close in 12 days
+        </div>
+
+        <div class="urgency-cta">
+            hub.untrapd.com/apps/finderr/beta
+        </div>
+    </div>
+
+    <!-- Template 5: Feature Showcase with Background -->
+    <div class="visual-content-card dark feature-showcase" id="feature-showcase"
+         style="background-image: linear-gradient(135deg, rgba(10, 14, 26, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%), url('{{ url_for('static', filename='images/finderr-screenshot.png') }}');">
+        <div class="feature-hook">
+            Lost your phone?<br>FINDERR makes it returnable
+        </div>
+        <div class="feature-list">
+            <div class="feature-item">
+                📱 <strong>Emergency wallpaper</strong> displays your contact info on the locked screen
+            </div>
+            <div class="feature-item">
+                💬 <strong>SMS activation</strong> from any phone - no internet needed
+            </div>
+            <div class="feature-item">
+                🌐 <strong>Web dashboard</strong> control from anywhere in the world
+            </div>
+            <div class="feature-item">
+                🔐 <strong>100% Android native</strong> - no iOS dependency
+            </div>
+        </div>
+        <div class="feature-cta">
+            Join 100 beta testers → $3.50/month (50% lifetime)
+        </div>
+    </div>
+
+    <!-- Variant: Light Theme Comparison Card -->
+    <div class="visual-content-card light matt-gray-comparison" id="comparison-card-light">
+        <div class="card-hook" style="color: #0F172A;">
+            FINDERR vs Traditional Phone Security
+        </div>
+        <div class="comparison-grid">
+            <div class="comparison-column negative">
+                <div class="column-label" style="color: #0F172A;">❌ Old Way</div>
+                <div class="comparison-item" style="color: #334155;">😰 Hope someone calls</div>
+                <div class="comparison-item" style="color: #334155;">📞 No way to show info</div>
+                <div class="comparison-item" style="color: #334155;">🔒 Locked = unreachable</div>
+                <div class="comparison-item" style="color: #334155;">😔 Low return rate</div>
+            </div>
+            <div class="comparison-column positive">
+                <div class="column-label" style="color: #0F172A;">✅ FINDERR Way</div>
+                <div class="comparison-item" style="color: #334155;">📱 Auto-display contact</div>
+                <div class="comparison-item" style="color: #334155;">💬 SMS or web activation</div>
+                <div class="comparison-item" style="color: #334155;">🔓 Info visible when locked</div>
+                <div class="comparison-item" style="color: #334155;">🎉 Higher return rate</div>
+            </div>
+        </div>
+        <div class="card-cta">
+            Join beta at hub.untrapd.com
+        </div>
+    </div>
+
+    <!-- Variant: Bold Statement with Gradient Background -->
+    <div class="visual-content-card brand dan-koe-bold" id="bold-statement-brand">
+        <div class="bold-hook">
+            The first app that makes your locked screen save your phone
+        </div>
+        <div class="bold-body">
+            <p>Remote emergency wallpaper activation</p>
+            <p>SMS triggers from any device</p>
+            <p>Cross-platform dashboard control</p>
+            <p>Built for Android, by Android users</p>
+        </div>
+        <div class="bold-stats">
+            <div class="stat">100<br><small style="font-size:14px; font-weight:500;">Beta Spots</small></div>
+            <div class="stat">50%<br><small style="font-size:14px; font-weight:500;">Lifetime Off</small></div>
+        </div>
+        <div class="bold-cta">
+            hub.untrapd.com/apps/finderr/beta
+        </div>
+    </div>
+
+    <style>
+        /* Additional page styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+        }
+
+        /* Export button */
+        .export-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .export-btn {
+            display: block;
+            padding: 12px 24px;
+            margin-bottom: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .export-btn:hover {
+            background: #764ba2;
+        }
+
+        .card-label {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+        }
+    </style>
+
+    <!-- Export Controls -->
+    <div class="export-controls">
+        <h3 style="margin: 0 0 15px 0; font-size: 16px;">Export Templates</h3>
+        <button class="export-btn" onclick="exportCard('comparison-card', '1080x1080')">
+            📸 Comparison (Instagram)
+        </button>
+        <button class="export-btn" onclick="exportCard('bold-statement-card', '1200x628')">
+            📸 Bold Statement (Twitter)
+        </button>
+        <button class="export-btn" onclick="exportCard('roi-card', '1080x1080')">
+            📸 ROI Card (Facebook)
+        </button>
+        <button class="export-btn" onclick="exportCard('urgency-card', '1080x1920')">
+            📸 Urgency (TikTok)
+        </button>
+    </div>
+
+    <div class="card-label">Template 1: Matt Gray Comparison Card (Dark)</div>
+    <div class="card-label" style="margin-top: 80px;">Template 2: Dan Koe Bold Statement</div>
+    <div class="card-label" style="margin-top: 80px;">Template 3: Data/ROI Card</div>
+    <div class="card-label" style="margin-top: 80px;">Template 4: Urgency/Countdown Card</div>
+    <div class="card-label" style="margin-top: 80px;">Template 5: Feature Showcase</div>
+    <div class="card-label" style="margin-top: 80px;">Variant: Light Theme Comparison</div>
+    <div class="card-label" style="margin-top: 80px;">Variant: Brand Gradient Bold Statement</div>
+
+    <script>
+        function exportCard(cardId, size) {
+            // This would integrate with html2canvas or similar library
+            // For now, just alert the user
+            alert(`Exporting ${cardId} at ${size}. This would generate a downloadable image.`);
+
+            // Placeholder for future implementation:
+            // html2canvas(document.getElementById(cardId)).then(canvas => {
+            //     const link = document.createElement('a');
+            //     link.download = `finderr-${cardId}-${size}.png`;
+            //     link.href = canvas.toDataURL();
+            //     link.click();
+            // });
+        }
+    </script>
+</body>
+</html>

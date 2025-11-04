@@ -1,0 +1,441 @@
+[
+  {
+    "id": 1,
+    "content": "\ud83d\udd10 Lost your phone? FINDERR can help! Our revolutionary app displays your emergency contact info on your locked screen. Join our beta test today! #PhoneSecurity #FINDERR #Android",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post1.jpg"
+    ],
+    "schedule_days": 0
+  },
+  {
+    "id": 2,
+    "content": "\ud83d\udca1 Beta testers wanted! Get 50% lifetime discount on FINDERR Premium. Help us test the world's first system lockscreen modification app. Limited spots available! #BetaTesting #Android #PhoneSecurity",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post2.jpg"
+    ],
+    "schedule_days": 0
+  },
+  {
+    "id": 3,
+    "content": "\ud83d\udcf1 How FINDERR works: SMS trigger \u2192 Emergency wallpaper displays \u2192 Contact info visible on locked screen \u2192 Phone returned safely! Simple, effective, revolutionary. #HowItWorks #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post3.jpg"
+    ],
+    "schedule_days": 1
+  },
+  {
+    "id": 4,
+    "content": "\ud83c\udfaf Target: 100 beta testers for FINDERR! Be part of something revolutionary. Test the world's first system lockscreen modification app. Apply now! #BetaCommunity #Innovation",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post4.jpg"
+    ],
+    "schedule_days": 1
+  },
+  {
+    "id": 5,
+    "content": "\ud83d\udea8 Emergency mode activated! FINDERR displays your contact info right on your lockscreen. No unlock needed. Your lost phone becomes a beacon for return. #EmergencyMode #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post5.jpg"
+    ],
+    "schedule_days": 2
+  },
+  {
+    "id": 6,
+    "content": "\ud83d\udcca Did you know? 70 million phones are lost every year. FINDERR increases recovery chances by displaying emergency contact info on your lockscreen. Be prepared! #PhoneRecovery #Statistics",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post6.jpg"
+    ],
+    "schedule_days": 3
+  },
+  {
+    "id": 7,
+    "content": "\u2728 FINDERR Features: SMS activation, emergency wallpaper, contact display, original wallpaper restoration, cross-platform sync. Everything you need for phone recovery! #Features #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post7.jpg"
+    ],
+    "schedule_days": 4
+  },
+  {
+    "id": 8,
+    "content": "\ud83c\udf81 Beta Tester Exclusive: 50% OFF lifetime! From $6.99/month to $3.50/month forever. Help us test FINDERR and save money for life. Limited time offer! #ExclusiveOffer #BetaTesting",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post8.jpg"
+    ],
+    "schedule_days": 5
+  },
+  {
+    "id": 9,
+    "content": "\ud83d\udcf8 Screenshot showcase: See FINDERR's emergency wallpaper in action! Your contact info displayed beautifully on lockscreen. Steampunk design meets modern security. #Screenshot #Design",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok"
+    ],
+    "media": [
+      "images/post9.jpg"
+    ],
+    "schedule_days": 6
+  },
+  {
+    "id": 10,
+    "content": "\ud83d\udd14 SMS Triggers: Send 'FINDERR_ON' to activate emergency mode remotely. Send 'FINDERR_OFF' to restore. Simple commands, powerful protection. #SMSTriggers #RemoteControl",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post10.jpg"
+    ],
+    "schedule_days": 7
+  },
+  {
+    "id": 11,
+    "content": "\ud83c\udf1f Beta Tester Testimonial: 'FINDERR saved my phone! Lost it at the airport, someone saw my emergency screen and called me. Got it back in 2 hours!' - Sarah M. #Testimonial #Success",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post11.jpg"
+    ],
+    "schedule_days": 8
+  },
+  {
+    "id": 12,
+    "content": "\ud83c\udfa8 Customizable emergency wallpaper! Upload your own image, add your contact details, choose your style. Make your recovery screen uniquely yours! #Customization #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok"
+    ],
+    "media": [
+      "images/post12.jpg"
+    ],
+    "schedule_days": 9
+  },
+  {
+    "id": 13,
+    "content": "\ud83d\udd12 Privacy First: Your emergency contacts stored securely. No data sharing. No tracking. Your information stays on your device. #Privacy #Security #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post13.jpg"
+    ],
+    "schedule_days": 10
+  },
+  {
+    "id": 14,
+    "content": "\ud83d\udcf1 Web Dashboard Preview: Manage your FINDERR settings from anywhere! Activate emergency mode, update contacts, monitor status. Coming soon to beta testers! #WebDashboard #Features",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post14.jpg"
+    ],
+    "schedule_days": 11
+  },
+  {
+    "id": 15,
+    "content": "\ud83c\udfaf 50 beta spots filled! 50 more to go! Join the FINDERR revolution. Test cutting-edge phone security. Get exclusive lifetime discount. Apply now! #BetaProgress #LimitedSpots",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post15.jpg"
+    ],
+    "schedule_days": 12
+  },
+  {
+    "id": 16,
+    "content": "\ud83d\udcbc Real-world scenario: Phone stolen at cafe. Thief sees emergency screen with reward offer. Returns phone for reward. Everyone wins! #RealStory #PhoneRecovery",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post16.jpg"
+    ],
+    "schedule_days": 13
+  },
+  {
+    "id": 17,
+    "content": "\ud83d\ude80 FINDERR v4.2.0 is LIVE! Critical bug fixes, cross-platform sync, improved SMS reliability. Beta testers get early access to all updates! #VersionUpdate #BetaPerks",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post17.jpg"
+    ],
+    "schedule_days": 14
+  },
+  {
+    "id": 18,
+    "content": "\ud83d\udcd6 How to join beta: 1) Visit hub.untrapd.com/apps/finderr/beta 2) Fill application 3) Get approved 4) Download app 5) Enjoy 50% lifetime discount! #HowToJoin #BetaTesting",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post18.jpg"
+    ],
+    "schedule_days": 15
+  },
+  {
+    "id": 19,
+    "content": "\ud83c\udfac Video Demo: Watch FINDERR in action! SMS trigger \u2192 Emergency activation \u2192 Lockscreen transformation \u2192 Phone recovery. See it to believe it! #VideoDemo #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok"
+    ],
+    "media": [
+      "images/post19.jpg"
+    ],
+    "schedule_days": 16
+  },
+  {
+    "id": 20,
+    "content": "\u26a1 Quick Facts: \u2705 Instant SMS activation \u2705 No unlock needed \u2705 Works on locked screen \u2705 Original wallpaper backup \u2705 Zero battery drain #QuickFacts #FINDERR",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post20.jpg"
+    ],
+    "schedule_days": 17
+  },
+  {
+    "id": 21,
+    "content": "\ud83c\udf0d FINDERR Community: Join 1000+ users testing revolutionary phone security. Share feedback, get updates, influence development. Be part of the journey! #Community #BetaTesting",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post21.jpg"
+    ],
+    "schedule_days": 18
+  },
+  {
+    "id": 22,
+    "content": "\ud83d\udca1 Pro Tip: Add a reward offer to your emergency contact info! 'Reward for return: $50' increases recovery rate by 300%. Worth every penny! #ProTip #PhoneRecovery",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post22.jpg"
+    ],
+    "schedule_days": 19
+  },
+  {
+    "id": 23,
+    "content": "\ud83c\udfa8 Behind the Design: FINDERR's steampunk aesthetic meets modern security. Metallic bronze gradients, gear textures, professional emergency display. Function meets beauty! #DesignStory #Steampunk",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok"
+    ],
+    "media": [
+      "images/post23.jpg"
+    ],
+    "schedule_days": 20
+  },
+  {
+    "id": 24,
+    "content": "\ud83d\udcca Beta Milestone: 75 testers joined! 25 spots remaining! Help us reach 100 and launch the most secure phone recovery app ever created! #Milestone #BetaCommunity",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post24.jpg"
+    ],
+    "schedule_days": 21
+  },
+  {
+    "id": 25,
+    "content": "\ud83d\udd10 Security Deep Dive: FINDERR uses RLS (Row Level Security) for data protection. Military-grade encryption. Zero-knowledge architecture. Your data is SAFE! #Security #Encryption",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post25.jpg"
+    ],
+    "schedule_days": 22
+  },
+  {
+    "id": 26,
+    "content": "\ud83c\udfaf Final Push: 15 beta spots left! Don't miss your chance for 50% lifetime discount. Test revolutionary phone security. Make history with FINDERR! #FinalPush #BetaTesting",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post26.jpg"
+    ],
+    "schedule_days": 23
+  },
+  {
+    "id": 27,
+    "content": "\ud83d\udcf1 Samsung S20 Validation Complete! FINDERR tested on real devices. 100% success rate. Cross-platform sync working flawlessly. Android 13+ supported! #Testing #Validation",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post27.jpg"
+    ],
+    "schedule_days": 24
+  },
+  {
+    "id": 28,
+    "content": "\ud83c\udf1f Beta Tester Spotlight: Meet John D., security researcher who helped improve FINDERR's encryption. Beta testers shape the future! #Spotlight #BetaCommunity",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post28.jpg"
+    ],
+    "schedule_days": 25
+  },
+  {
+    "id": 29,
+    "content": "\ud83d\udea8 Last Week! Only 10 beta spots remain! Secure your 50% lifetime discount now. Applications closing soon. Join FINDERR revolution today! #LastWeek #UrgentBeta",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post29.jpg"
+    ],
+    "schedule_days": 26
+  },
+  {
+    "id": 30,
+    "content": "\ud83d\udcbc Enterprise Interest: Fortune 500 companies asking about FINDERR for employee devices. Beta success leading to enterprise opportunities! #Enterprise #Success",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter"
+    ],
+    "media": [
+      "images/post30.jpg"
+    ],
+    "schedule_days": 27
+  },
+  {
+    "id": 31,
+    "content": "\ud83c\udf89 95 Beta Testers! 5 spots left! History in the making! Be one of the last to join FINDERR's founding community. Apply NOW! #AlmostFull #BetaClosing",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post31.jpg"
+    ],
+    "schedule_days": 28
+  },
+  {
+    "id": 32,
+    "content": "\ud83d\udd14 Final Call! 3 beta spots remaining! This is your LAST CHANCE for 50% lifetime discount. Applications close at midnight! #FinalCall #LastChance",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post32.jpg"
+    ],
+    "schedule_days": 29
+  },
+  {
+    "id": 33,
+    "content": "\u2705 BETA FULL! 100 testers reached! Thank you to our founding community! Public launch coming soon. Stay tuned for official release announcement! #BetaComplete #ThankYou",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ],
+    "media": [
+      "images/post33.jpg"
+    ],
+    "schedule_days": 29
+  }
+]

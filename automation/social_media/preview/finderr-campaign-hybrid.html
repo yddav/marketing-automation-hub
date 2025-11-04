@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 FINDERR Beta Campaign - Hybrid Preview System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header h1 .badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Statistics Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Controls */
+        .nav-controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: white;
+            color: #333;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Day Selector */
+        .day-selector {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .day-selector select {
+            padding: 10px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            background: white;
+        }
+
+        /* Platform Filters */
+        .platform-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .platform-btn {
+            padding: 8px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .platform-btn.instagram.active {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .platform-btn.facebook.active {
+            background: #1877f2;
+            color: white;
+            border-color: transparent;
+        }
+
+        .platform-btn.twitter.active {
+            background: #1da1f2;
+            color: white;
+            border-color: transparent;
+        }
+
+        .platform-btn.tiktok.active {
+            background: linear-gradient(135deg, #000000, #ee1d52, #69c9d0);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Platform Cards */
+        .platform-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .platform-card.hidden {
+            display: none;
+        }
+
+        /* Platform Headers */
+        .platform-header {
+            padding: 15px;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .platform-header.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .platform-header.facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .platform-header.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .platform-header.tiktok {
+            background: linear-gradient(135deg, #000000, #ee1d52, #69c9d0);
+            color: white;
+        }
+
+        /* Instagram Card */
+        .instagram-card {
+            padding: 0;
+        }
+
+        .instagram-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .instagram-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .instagram-username {
+            font-weight: 600;
+            font-size: 14px;
+            color: #262626;
+        }
+
+        .instagram-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .instagram-actions {
+            display: flex;
+            gap: 15px;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .instagram-action {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .instagram-caption {
+            padding: 12px 15px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #262626;
+        }
+
+        .instagram-caption strong {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .instagram-hashtags {
+            color: #00376b;
+            display: block;
+            margin-top: 8px;
+        }
+
+        /* Facebook Card */
+        .facebook-card {
+            padding: 0;
+        }
+
+        .facebook-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .facebook-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .facebook-info {
+            flex: 1;
+        }
+
+        .facebook-name {
+            font-weight: 600;
+            font-size: 15px;
+            color: #050505;
+        }
+
+        .facebook-time {
+            font-size: 13px;
+            color: #65676b;
+        }
+
+        .facebook-content {
+            padding: 15px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #050505;
+            white-space: pre-wrap;
+        }
+
+        .facebook-actions {
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 15px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .facebook-action {
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .facebook-action:hover {
+            background: #f0f2f5;
+        }
+
+        /* Twitter Card */
+        .twitter-card {
+            padding: 15px;
+        }
+
+        .twitter-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .twitter-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .twitter-info {
+            flex: 1;
+        }
+
+        .twitter-name {
+            font-weight: 700;
+            font-size: 15px;
+            color: #0f1419;
+        }
+
+        .twitter-handle {
+            font-size: 15px;
+            color: #536471;
+        }
+
+        .twitter-content {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #0f1419;
+            margin-bottom: 12px;
+            white-space: pre-wrap;
+        }
+
+        .twitter-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #eff3f4;
+            color: #536471;
+            font-size: 13px;
+        }
+
+        .twitter-stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* TikTok Card */
+        .tiktok-card {
+            padding: 0;
+            background: #000;
+            color: white;
+        }
+
+        .tiktok-video {
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: linear-gradient(135deg, #000000, #ee1d52, #69c9d0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .tiktok-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        }
+
+        .tiktok-username {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .tiktok-caption {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* Pillar Badge */
+        .pillar-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .pillar-badge.awareness {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .pillar-badge.betaRecruitment {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .pillar-badge.valueProposition {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .pillar-badge.socialProof {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                🚀 FINDERR Beta Campaign
+                <span class="badge">Hybrid Preview</span>
+            </h1>
+            <p>Dynamic campaign preview loading from finderr-prelaunch-templates.js • 45 posts across 30 days</p>
+
+            <!-- Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number" id="stat-posts">-</div>
+                    <div class="label">Total Posts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="stat-days">30</div>
+                    <div class="label">Days</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="stat-platforms">4</div>
+                    <div class="label">Platforms</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="stat-quality">8.4/10</div>
+                    <div class="label">Hook Strength</div>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="nav-controls">
+                <!-- Day Selector -->
+                <div class="day-selector">
+                    <label style="font-weight: 600; color: #333;">Day:</label>
+                    <select id="day-selector">
+                        <option value="all">All Days</option>
+                    </select>
+                </div>
+
+                <!-- Platform Filters -->
+                <div class="platform-filters">
+                    <button class="platform-btn instagram active" data-platform="instagram">
+                        📸 Instagram
+                    </button>
+                    <button class="platform-btn facebook active" data-platform="facebook">
+                        👥 Facebook
+                    </button>
+                    <button class="platform-btn twitter active" data-platform="twitter">
+                        🐦 Twitter
+                    </button>
+                    <button class="platform-btn tiktok active" data-platform="tiktok">
+                        🎵 TikTok
+                    </button>
+                </div>
+
+                <!-- Pillar Filters -->
+                <div class="platform-filters">
+                    <button class="btn active" data-pillar="all">All Content</button>
+                    <button class="btn" data-pillar="awareness">Awareness</button>
+                    <button class="btn" data-pillar="betaRecruitment">Beta Recruitment</button>
+                    <button class="btn" data-pillar="valueProposition">Value Proposition</button>
+                    <button class="btn" data-pillar="socialProof">Social Proof</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div id="content-grid" class="content-grid">
+            <div class="loading">Loading campaign content...</div>
+        </div>
+    </div>
+
+    <!-- Load Campaign Templates -->
+    <script src="../finderr-prelaunch-templates.js"></script>
+
+    <script>
+        // State
+        let currentFilters = {
+            day: 'all',
+            platforms: ['instagram', 'facebook', 'twitter', 'tiktok'],
+            pillar: 'all'
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof finderrPreLaunchTemplates === 'undefined') {
+                document.getElementById('content-grid').innerHTML = '<div class="loading">❌ Error: Campaign templates not loaded. Check if finderr-prelaunch-templates.js exists.</div>';
+                return;
+            }
+
+            loadCampaign();
+            setupEventListeners();
+        });
+
+        function loadCampaign() {
+            const templates = finderrPreLaunchTemplates;
+
+            // Update statistics
+            const totalPosts = countTotalPosts(templates);
+            document.getElementById('stat-posts').textContent = totalPosts;
+
+            // Populate day selector
+            const daySelector = document.getElementById('day-selector');
+            for (let i = 1; i <= 30; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = `Day ${i}`;
+                daySelector.appendChild(option);
+            }
+
+            // Render content
+            renderContent(templates);
+        }
+
+        function countTotalPosts(templates) {
+            let count = 0;
+            const sections = ['awareness', 'betaRecruitment', 'valueProposition', 'socialProof'];
+
+            sections.forEach(section => {
+                if (templates[section]) {
+                    Object.keys(templates[section]).forEach(theme => {
+                        if (templates[section][theme]) {
+                            ['instagram', 'facebook', 'twitter', 'tiktok'].forEach(platform => {
+                                if (templates[section][theme][platform]) {
+                                    count++;
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+
+            return count;
+        }
+
+        function renderContent(templates) {
+            const grid = document.getElementById('content-grid');
+            grid.innerHTML = '';
+
+            const sections = [
+                { key: 'awareness', themes: ['problem', 'solution', 'brand'] },
+                { key: 'betaRecruitment', themes: ['urgency', 'incentives', 'progress'] },
+                { key: 'valueProposition', themes: ['android', 'pricing', 'features'] },
+                { key: 'socialProof', themes: ['testimonials', 'milestones', 'community'] }
+            ];
+
+            sections.forEach(section => {
+                section.themes.forEach(theme => {
+                    const content = templates[section.key]?.[theme];
+                    if (!content) return;
+
+                    ['instagram', 'facebook', 'twitter', 'tiktok'].forEach(platform => {
+                        const platformContent = content[platform];
+                        if (!platformContent) return;
+
+                        const card = createPlatformCard(platform, platformContent, section.key, theme);
+                        if (card) grid.appendChild(card);
+                    });
+                });
+            });
+        }
+
+        function createPlatformCard(platform, content, pillar, theme) {
+            const card = document.createElement('div');
+            card.className = `platform-card ${platform}-card`;
+            card.dataset.platform = platform;
+            card.dataset.pillar = pillar;
+            card.dataset.theme = theme;
+
+            const pillarBadge = `<div class="pillar-badge ${pillar}">${pillar.replace(/([A-Z])/g, ' $1').trim()}</div>`;
+
+            if (platform === 'instagram') {
+                card.innerHTML = `
+                    <div class="platform-header instagram">📸 Instagram - ${capitalize(theme)}</div>
+                    <div class="instagram-header">
+                        <div class="instagram-avatar">U</div>
+                        <div class="instagram-username">@untrapd.hub</div>
+                    </div>
+                    <div class="instagram-image">📱 FINDERR App Screenshot</div>
+                    <div class="instagram-actions">
+                        <span class="instagram-action">❤️</span>
+                        <span class="instagram-action">💬</span>
+                        <span class="instagram-action">📤</span>
+                    </div>
+                    <div class="instagram-caption">
+                        ${pillarBadge}
+                        <strong>@untrapd.hub</strong> ${formatContent(content.content)}
+                        <span class="instagram-hashtags">${content.hashtags?.join(' ') || ''}</span>
+                    </div>
+                `;
+            } else if (platform === 'facebook') {
+                card.innerHTML = `
+                    <div class="platform-header facebook">👥 Facebook - ${capitalize(theme)}</div>
+                    <div class="facebook-header">
+                        <div class="facebook-avatar">U</div>
+                        <div class="facebook-info">
+                            <div class="facebook-name">UNTRAPD Hub</div>
+                            <div class="facebook-time">Just now · 🌐</div>
+                        </div>
+                    </div>
+                    <div class="facebook-content">
+                        ${pillarBadge}
+                        ${formatContent(content.content)}
+                    </div>
+                    <div class="facebook-actions">
+                        <div class="facebook-action">👍 Like</div>
+                        <div class="facebook-action">💬 Comment</div>
+                        <div class="facebook-action">↗️ Share</div>
+                    </div>
+                `;
+            } else if (platform === 'twitter') {
+                const charCount = content.content?.length || 0;
+                card.innerHTML = `
+                    <div class="platform-header twitter">🐦 Twitter - ${capitalize(theme)}</div>
+                    <div class="twitter-header">
+                        <div class="twitter-avatar">U</div>
+                        <div class="twitter-info">
+                            <div class="twitter-name">UNTRAPD Hub</div>
+                            <div class="twitter-handle">@untrapd_hub · Now</div>
+                        </div>
+                    </div>
+                    ${pillarBadge}
+                    <div class="twitter-content">${formatContent(content.content)}</div>
+                    <div class="twitter-stats">
+                        <span class="twitter-stat">💬 0</span>
+                        <span class="twitter-stat">🔁 0</span>
+                        <span class="twitter-stat">❤️ 0</span>
+                        <span class="twitter-stat">📊 ${charCount}/280</span>
+                    </div>
+                `;
+            } else if (platform === 'tiktok') {
+                card.innerHTML = `
+                    <div class="platform-header tiktok">🎵 TikTok - ${capitalize(theme)}</div>
+                    <div class="tiktok-video">
+                        <div class="tiktok-overlay">
+                            ${pillarBadge}
+                            <div class="tiktok-username">@untrapd.hub</div>
+                            <div class="tiktok-caption">${formatContent(content.content)}</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            return card;
+        }
+
+        function formatContent(text) {
+            if (!text) return '';
+            return text.replace(/\n/g, '<br>');
+        }
+
+        function capitalize(text) {
+            return text.charAt(0).toUpperCase() + text.slice(1);
+        }
+
+        function setupEventListeners() {
+            // Platform filters
+            document.querySelectorAll('.platform-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const platform = btn.dataset.platform;
+                    btn.classList.toggle('active');
+
+                    if (currentFilters.platforms.includes(platform)) {
+                        currentFilters.platforms = currentFilters.platforms.filter(p => p !== platform);
+                    } else {
+                        currentFilters.platforms.push(platform);
+                    }
+
+                    applyFilters();
+                });
+            });
+
+            // Pillar filters
+            document.querySelectorAll('[data-pillar]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('[data-pillar]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilters.pillar = btn.dataset.pillar;
+                    applyFilters();
+                });
+            });
+
+            // Day selector
+            document.getElementById('day-selector').addEventListener('change', (e) => {
+                currentFilters.day = e.target.value;
+                applyFilters();
+            });
+        }
+
+        function applyFilters() {
+            document.querySelectorAll('.platform-card').forEach(card => {
+                const platform = card.dataset.platform;
+                const pillar = card.dataset.pillar;
+
+                const platformMatch = currentFilters.platforms.includes(platform);
+                const pillarMatch = currentFilters.pillar === 'all' || currentFilters.pillar === pillar;
+
+                if (platformMatch && pillarMatch) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

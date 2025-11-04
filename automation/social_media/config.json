@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "app_id": "738653215879612",
+    "app_secret": "be8297b868a6762ad54d4530545428fd",
+    "access_token": "YOUR_META_ACCESS_TOKEN_HERE",
+    "instagram_account_id": "YOUR_INSTAGRAM_BUSINESS_ACCOUNT_ID",
+    "facebook_page_id": "YOUR_FACEBOOK_PAGE_ID"
+  },
+  "twitter": {
+    "api_key": "YOUR_TWITTER_API_KEY",
+    "api_secret": "YOUR_TWITTER_API_SECRET",
+    "access_token": "YOUR_TWITTER_ACCESS_TOKEN",
+    "access_token_secret": "YOUR_TWITTER_ACCESS_TOKEN_SECRET"
+  },
+  "tiktok": {
+    "client_key": "awzpr6gs8tayotje",
+    "client_secret": "zMeV70hup8dxHGstbS474TiQLIty5lAf",
+    "access_token": "YOUR_TIKTOK_ACCESS_TOKEN"
+  },
+  "campaign": {
+    "posts_file": "campaign_posts.json",
+    "schedule_start_date": "2025-01-15",
+    "posts_per_day": 2,
+    "platforms": [
+      "instagram",
+      "facebook",
+      "twitter",
+      "tiktok"
+    ]
+  }
+}
