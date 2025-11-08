@@ -24,12 +24,12 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4W61MX38C"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+        gtag('config', 'G-K4W61MX38C');
     </script>
 </head>
 <body>
@@ -140,11 +140,11 @@
                 <div class="phone-mockup-large">
                     <div class="phone-frame">
                         <div class="phone-screen">
-                            <!-- FINDERR Nebula Splash Screen -->
-                            <img src="../../images/finderr-nebula-splash.png"
-                                 alt="FINDERR Nebula Splash Screen - Device Security with Shield"
+                            <!-- FINDERR App Mockup -->
+                            <img src="../../images/finderr-mockup-new.png"
+                                 alt="FINDERR App Interface"
                                  class="phone-wallpaper-mockup"
-                                 style="width: 100%; height: 100%; object-fit: cover;">
+                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                     </div>
                 </div>
@@ -385,17 +385,19 @@
             const interest = form.querySelector('#interest').value;
 
             try {
-                // Call Mailchimp webhook to collect email
-                const response = await fetch('/.netlify/functions/mailchimp-webhook', {
+                // Call Supabase email signup endpoint (FREE infrastructure)
+                const response = await fetch('/.netlify/functions/beta-signup-supabase', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
                         email: email,
-                        name: firstName,
+                        firstName: firstName,
+                        deviceType: deviceType,
+                        interest: interest,
                         source: 'finderr-beta-signup',
-                        tags: ['finderr-beta', 'android-tester', deviceType, interest]
+                        language: 'en'
                     })
                 });
 
