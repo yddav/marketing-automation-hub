@@ -29,12 +29,12 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4W61MX38C"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+        gtag('config', 'G-K4W61MX38C');
     </script>
 </head>
 <body>
@@ -382,19 +382,33 @@
             submitBtn.disabled = true;
             
             // Collect form data
-            const formData = {
-                email: form.querySelector('#emailFr').value,
-                firstName: form.querySelector('#firstNameFr').value,
-                deviceType: form.querySelector('#deviceTypeFr').value,
-                interest: form.querySelector('#interestFr').value,
-                source: 'finderr-page-fr',
-                language: 'fr',
-                timestamp: new Date().toISOString()
-            };
-            
+            const email = form.querySelector('#emailFr').value;
+            const firstName = form.querySelector('#firstNameFr').value;
+            const deviceType = form.querySelector('#deviceTypeFr').value;
+            const interest = form.querySelector('#interestFr').value;
+
             try {
-                // Simulate API call - replace with real endpoint
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Call Supabase email signup endpoint (FREE infrastructure)
+                const response = await fetch('/.netlify/functions/beta-signup-supabase', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        firstName: firstName,
+                        deviceType: deviceType,
+                        interest: interest,
+                        source: 'finderr-page-fr',
+                        language: 'fr'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Échec de l\'inscription');
+                }
                 
                 // Success state
                 submitBtn.innerHTML = '🎉 Bienvenue dans la Bêta !';
