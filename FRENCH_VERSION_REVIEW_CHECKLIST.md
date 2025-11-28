@@ -20,13 +20,13 @@ Line 106: Protégez tous vos appareils depuis un hub sécurisé
 ```
 
 **Your Correction Example**:
-- ❌ "proteger votre mobile" (auto-translate)
-- ✅ "protège votre appareil" (natural French)
+- ❌ "proteger votre appareil" (auto-translate, awkward)
+- ✅ "protège votre mobile" (natural French)
 
 **Recommendation**:
-- Currently uses "Protégez tous vos appareils" (line 106) ✅ CORRECT
-- Uses "votre appareil" consistently ✅ CORRECT
-- No instances of "votre mobile" found ✅ GOOD
+- Changed "Protégez tous vos appareils" → "Protégez tous vos mobiles" ✅ CORRECTED
+- Changed "votre appareil" → "votre mobile" consistently ✅ CORRECTED
+- Now uses natural "mobile" terminology throughout ✅ GOOD
 
 ---
 
@@ -72,13 +72,13 @@ Line 140: ✅ 99,7% Taux Récupération ✅ Technologie ID à Distance
 - ✅ Conjugated forms (protège, sécurise)
 
 ### 2. **Article Usage**
-- ❌ "proteger votre mobile"
-- ✅ "protège votre appareil"
+- ❌ "proteger votre appareil"
+- ✅ "protège votre mobile"
 - ✅ "Rejoindre la bêta" (with article)
 
-### 3. **Possessive Pronouns**
-- ❌ "votre mobile" (too casual/technical)
-- ✅ "votre appareil" (professional, correct) ✅ USED
+### 3. **Device Terminology**
+- ❌ "votre appareil" (too generic/technical)
+- ✅ "votre mobile" (natural, conversational French) ✅ USED
 
 ### 4. **Capitalization**
 - French titles: Only first word capitalized
@@ -152,12 +152,12 @@ Based on your example "protège votre appareil":
 
 | Auto-Translate ❌ | Natural French ✅ |
 |-------------------|-------------------|
-| proteger votre mobile | protège votre appareil |
-| sécuriser votre mobile | sécurise votre appareil |
+| proteger votre appareil | protège votre mobile |
+| sécuriser votre appareil | sécurise votre mobile |
 | Taux Récupération | Taux de récupération |
 | Rejoindre Bêta | Rejoindre la bêta |
-| Multi-Appareils | Multi-appareils |
-| Support Multi-Appareils | Assistance multi-appareils |
+| Multi-Appareils | Multi-mobile |
+| Support Multi-Appareils | Assistance multi-mobile |
 | Hub | Centre / Hub (both acceptable) |
 
 ---
