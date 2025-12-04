@@ -5,8 +5,9 @@
 
 set -e
 
-SUPABASE_URL="https://zdceeulkqfpzdjeyekgs.supabase.co"
-SUPABASE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkY2VldWxrcWZwemRqZXlla2dzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0OTQ4NTE0NiwiZXhwIjoyMDY1MDYxMTQ2fQ.waTWz-6b9x7hK8cQLn_nxzLoN6RaJ5Fw9A6eqqdK3yo"
+# Load from environment variables (never commit secrets!)
+SUPABASE_URL="${SUPABASE_URL:-https://zdceeulkqfpzdjeyekgs.supabase.co}"
+SUPABASE_KEY="${SUPABASE_KEY:?Error: SUPABASE_KEY environment variable is required}"
 
 echo "🚀 Deploying Email Marketing Infrastructure to Supabase..."
 echo "Project: zdceeulkqfpzdjeyekgs"
