@@ -1,6 +1,6 @@
 # FINDERR Beta Campaign - Social Media Automation
 
-**Campaign**: FINDERR v4.2.0+243 Beta Recruitment
+**Campaign**: FINDERR v4.3.0+267 Beta Recruitment
 **Status**: Ready for launch (3 platforms) - ON HOLD pending FINDERR fix
 **Last Updated**: 2025-10-31
 

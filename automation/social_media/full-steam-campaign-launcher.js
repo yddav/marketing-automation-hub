@@ -317,7 +317,7 @@ class FullSteamCampaignLauncher {
         hashtags: ['PhoneSecurity', 'FINDERR', 'LostPhone', 'Android', 'TechTips']
       },
       feature: {
-        text: `🚀 FINDERR Feature Spotlight:\n\nEMERGENCY WALLPAPER SYSTEM\n\n• Remote activation via SMS or web\n• Custom emergency contact display\n• Original wallpaper backup & restore\n• Works on locked devices\n• No unlock required\n\nYour phone's best recovery system!\n\nGet FINDERR: $6.99/month (Android)\n\n#FINDERR #PhoneRecovery #AndroidApp #TechInnovation`,
+        text: `🚀 FINDERR Feature Spotlight:\n\nEMERGENCY WALLPAPER SYSTEM\n\n• Remote activation via SMS or web\n• Custom emergency contact display\n• Original wallpaper backup & restore\n• Works on locked devices\n• No unlock required\n\nYour phone's best recovery system!\n\nGet FINDERR: $8.99/month (Android)\n\n#FINDERR #PhoneRecovery #AndroidApp #TechInnovation`,
         hashtags: ['FINDERR', 'PhoneRecovery', 'AndroidApp', 'TechInnovation']
       },
       testimonial: {
@@ -325,7 +325,7 @@ class FullSteamCampaignLauncher {
         hashtags: ['FINDERR', 'Testimonial', 'PhoneSecurity', 'BetaTesting']
       },
       milestone: {
-        text: `🎉 MILESTONE UPDATE:\n\n${this.state.finderrStats.currentUsers} users protecting their phones with FINDERR!\n\nNext goal: ${this.state.finderrStats.tier1Goal} users\n\nJoin the UNTRAPD ecosystem:\n✅ FINDERR: Phone recovery ($6.99/month)\n✅ Hub: Coming soon\n\n50% OFF for first 5,000 subscribers!\n\n#FINDERR #Milestone #UNTRAPD #PhoneSecurity`,
+        text: `🎉 MILESTONE UPDATE:\n\n${this.state.finderrStats.currentUsers} users protecting their phones with FINDERR!\n\nNext goal: ${this.state.finderrStats.tier1Goal} users\n\nJoin the UNTRAPD ecosystem:\n✅ FINDERR: Phone recovery ($8.99/month)\n✅ Hub: Coming soon\n\n50% OFF for first 5,000 subscribers!\n\n#FINDERR #Milestone #UNTRAPD #PhoneSecurity`,
         hashtags: ['FINDERR', 'Milestone', 'UNTRAPD', 'PhoneSecurity']
       },
       ecosystem: {

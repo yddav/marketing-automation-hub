@@ -103,8 +103,8 @@ FINDERR: 99.7% 🎯
 **Graphic 2: Beta Tester Benefits**
 Infographic style:
 ```
-🆓 Free 14-day testing
-💰 50% lifetime discount ($3.50/month)
+🆓 Free 7-day testing
+💰 50% lifetime discount ($4.50/month)
 🏆 Founder's Circle badge
 🎯 Influence v5.0 features
 📍 Early GPS tracking access
@@ -113,8 +113,8 @@ Infographic style:
 **Graphic 3: Pricing Comparison**
 ```
 Competitors:  $10-12/month
-FINDERR:      $6.99/month (40% off)
-Beta Testers: $3.50/month (50% forever)
+FINDERR:      $8.99/month (40% off)
+Beta Testers: $4.50/month (50% forever)
               ↑
               Lock in NOW
 ```
@@ -167,8 +167,8 @@ Nov 2025: Beta testing (you)
 Dec 2025: Production launch
 Jan 2026: Regular pricing
 
-Beta = $3.50/month forever
-Regular = $6.99/month
+Beta = $4.50/month forever
+Regular = $8.99/month
 
 Lifetime savings: $1,678
 ```

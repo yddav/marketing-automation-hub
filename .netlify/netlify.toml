@@ -1,18 +1,17 @@
-headersOrigin = "config"
 redirectsOrigin = "config"
 plugins = []
+headers = []
 
 [functions]
 
 [functions."*"]
 
 [build]
-publish = "/media/wolfy/D260DD2060DD0BDB/Datas/2025 Projects/AppBuildFlutterVscodiumClaude/Hub_App_Shop_Integ/Homepage"
+publish = "/media/wolfy/D260DD2060DD0BDB/Datas/2025 Projects/AppBuildFlutterVscodiumClaude/Hub_App_Shop_Integ/public"
 publishOrigin = "config"
 
 [build.environment]
 NODE_ENV = "production"
-TOML_ENV = "production"
 
 [build.processing]
 
@@ -26,33 +25,29 @@ TOML_ENV = "production"
 
 [build.services]
 
-[[headers]]
-for = "/*"
+[[redirects]]
+from = "/apps/finderr/beta"
+to = "https://marketing.untrapd.com/apps/finderr/beta/"
+status = 301.0
+force = false
 
-[headers.values]
-X-Frame-Options = "DENY"
-X-Content-Type-Options = "nosniff"
-X-XSS-Protection = "1; mode=block"
-Referrer-Policy = "strict-origin-when-cross-origin"
+[redirects.query]
 
-[[headers]]
-for = "/css/*"
+[redirects.conditions]
 
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
+[redirects.headers]
 
-[[headers]]
-for = "/js/*"
+[[redirects]]
+from = "/apps/finderr/beta/"
+to = "https://marketing.untrapd.com/apps/finderr/beta/"
+status = 301.0
+force = false
 
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
+[redirects.query]
 
-[[headers]]
-for = "/content_templates/*"
+[redirects.conditions]
 
-[headers.values]
-Cache-Control = "public, max-age=3600"
-Content-Type = "application/json"
+[redirects.headers]
 
 [[redirects]]
 from = "/"
@@ -81,114 +76,6 @@ force = false
 [[redirects]]
 from = "/dashboard"
 to = "/dashboard/index.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]
-
-[[redirects]]
-from = "/analytics"
-to = "/dashboard/index.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]
-
-[[redirects]]
-from = "/privacy"
-to = "/privacy.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]
-
-[[redirects]]
-from = "/privacy-policy"
-to = "/privacy.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]
-
-[[redirects]]
-from = "/terms"
-to = "/terms.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]
-
-[[redirects]]
-from = "/terms-of-service"
-to = "/terms.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]
-
-[[redirects]]
-from = "/tos"
-to = "/terms.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]
-
-[[redirects]]
-from = "/data-deletion"
-to = "/data-deletion.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]
-
-[[redirects]]
-from = "/delete-data"
-to = "/data-deletion.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]
-
-[[redirects]]
-from = "/deletion"
-to = "/data-deletion.html"
 status = 200.0
 force = false
 

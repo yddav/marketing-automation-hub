@@ -77,7 +77,7 @@ community through educational security content.
 Current permissions: pins:read, boards:read, user_accounts:read
 Requested permissions: pins:write, boards:write
 
-Business model: Freemium app with premium subscription ($6.99/month Android)
+Business model: Freemium app with premium subscription ($8.99/month Android)
 Compliance: GDPR compliant, privacy-first design, no data sharing with third parties
 ```
 

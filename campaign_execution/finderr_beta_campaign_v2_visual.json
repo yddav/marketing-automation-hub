@@ -1,10 +1,10 @@
 {
   "campaign": {
-    "name": "FINDERR v4.1 Beta Recruitment - Visual Campaign (Matt Gray + Dan Koe Style)",
+    "name": "FINDERR v4.3.0 Beta Recruitment - Visual Campaign (Matt Gray + Dan Koe Style)",
     "version": "2.0",
     "style": "Engaging hooks + Visual storytelling + Philosophical depth",
     "phase": "Beta Testing Recruitment - Production Ready",
-    "appVersion": "v4.1.0+192-stable",
+    "appVersion": "v4.3.0.0+192-stable",
     "status": "Production Ready - Awaiting Launch Authorization",
     "platform": "Twitter (repurpose to Instagram/LinkedIn)",
     "duration": 30,
@@ -27,7 +27,7 @@
     "emailCollection": "Mailchimp via Netlify Functions (backend: marketing.untrapd.com)",
     "launchDependencies": [
       "✅ Google Play Closed Testing URL obtained: play.google.com/apps/testing/com.finderr.app",
-      "⏳ App v4.1.0+192-stable approved by Google (Closed Testing + Open Testing)",
+      "⏳ App v4.3.0.0+192-stable approved by Google (Closed Testing + Open Testing)",
       "⏳ hub.untrapd.com redirect deployed and tested",
       "⏳ Visual assets created from Google Play screenshots",
       "⏳ Campaign tweets finalized with Google Play link"
@@ -90,7 +90,7 @@
             "2/ The FINDERR Solution:\n\nYou send 1 SMS from ANY phone:\n\"EMERGENCY_ACTIVATE\"\n\nYour lockscreen transforms into a contact billboard.\nFinder sees your email/phone immediately.\n\n[Image: Emergency wallpaper with contact info]",
             "3/ How It Works:\n\n• SMS trigger (works offline, no internet)\n• Emergency wallpaper activates\n• Contact info displayed on lockscreen\n• Finder calls/emails you\n• You recover your phone\n\n[Image: SMS activation flow]",
             "4/ The Results:\n\n99.7% recovery rate\nvs 60% industry average\n\n47 minutes average return time\n\nYour $1,200 device = SAFE\n\n[Image: Recovery rate comparison graph]",
-            "5/ Join FINDERR Beta:\n\n🆓 Free testing (14 days)\n💰 50% lifetime discount ($3.50/month forever)\n🏆 Founder's Circle badge\n\nBe the first 50 testers:\nhub.untrapd.com/apps/finderr/beta\n\n#FINDERR #AndroidSecurity"
+            "5/ Join FINDERR Beta:\n\n🆓 Free testing (14 days)\n💰 50% lifetime discount ($4.50/month forever)\n🏆 Founder's Circle badge\n\nBe the first 50 testers:\nhub.untrapd.com/apps/finderr/beta\n\n#FINDERR #AndroidSecurity"
           ],
           "cta": "Join Beta (Limited Spots)",
           "link": "hub.untrapd.com/apps/finderr/beta",
@@ -142,7 +142,7 @@
             "2/ Emergency Wallpaper\n\nLockscreen transforms into contact billboard.\nFinder sees your email/phone immediately.\nNo unlocking required.\n\n[Image: Emergency wallpaper feature graphic]",
             "3/ Web Dashboard\n\nActivate emergency mode from ANY device.\nLaptop, tablet, friend's phone.\nReal-time cross-platform sync.\n\nMost competitors don't have this.\n\n[Image: Web dashboard feature graphic]",
             "4/ Auto-Restore\n\nOriginal wallpaper backed up automatically.\nRestored when emergency ends.\nYour personal photos = safe.\n\n[Image: Auto-restore feature graphic]",
-            "5/ Bank-Level Security\n\nRow-Level Security (RLS) via Supabase.\nYour data = encrypted.\nOnly YOU can access it.\n\n[Image: Security feature graphic]\n\nBeta testers get 50% off forever ($3.50/month):\nhub.untrapd.com/apps/finderr/beta"
+            "5/ Bank-Level Security\n\nRow-Level Security (RLS) via Supabase.\nYour data = encrypted.\nOnly YOU can access it.\n\n[Image: Security feature graphic]\n\nBeta testers get 50% off forever ($4.50/month):\nhub.untrapd.com/apps/finderr/beta"
           ],
           "cta": "Join Beta (Limited)",
           "link": "hub.untrapd.com/apps/finderr/beta",
@@ -196,7 +196,7 @@
           "format": "Tweet with benefits infographic",
           "hook_style": "Matt Gray - If/then clarity",
           "visual": "beta_benefits_infographic",
-          "content": "If you join FINDERR beta in the next 48 hours:\n\n🆓 Free testing (14 days)\n💰 $3.50/month forever (vs $6.99 regular)\n🏆 Founder's Circle badge\n🎯 Influence v5.0 GPS features\n📍 Early access to location tracking\n\n[Image: Benefits infographic]\n\nhub.untrapd.com/apps/finderr/beta",
+          "content": "If you join FINDERR beta in the next 48 hours:\n\n🆓 Free testing (14 days)\n💰 $4.50/month forever (vs $8.99 regular)\n🏆 Founder's Circle badge\n🎯 Influence v5.0 GPS features\n📍 Early access to location tracking\n\n[Image: Benefits infographic]\n\nhub.untrapd.com/apps/finderr/beta",
           "cta": "Lock In 50% Discount",
           "link": "hub.untrapd.com/apps/finderr/beta",
           "visual_files": ["04_social_proof/beta_benefits_infographic.png"]
@@ -207,7 +207,7 @@
           "format": "Thread with pricing comparison",
           "hook_style": "Dan Koe - Future visualization",
           "visual": "beta_savings_timeline",
-          "content": "Timeline of a decision:\n\nNov 2025: You join beta ($0)\nDec 2025: Production launch\nJan 2026: You pay $3.50/month\n\nvs\n\nDec 2025: You discover FINDERR\nJan 2026: You pay $6.99/month\n\n5-year difference: $2,094 saved\n\n[Image: Timeline visual]\n\nJoin now:\nhub.untrapd.com/apps/finderr/beta",
+          "content": "Timeline of a decision:\n\nNov 2025: You join beta ($0)\nDec 2025: Production launch\nJan 2026: You pay $4.50/month\n\nvs\n\nDec 2025: You discover FINDERR\nJan 2026: You pay $8.99/month\n\n5-year difference: $2,094 saved\n\n[Image: Timeline visual]\n\nJoin now:\nhub.untrapd.com/apps/finderr/beta",
           "cta": "Lock In Pricing",
           "link": "hub.untrapd.com/apps/finderr/beta",
           "visual_files": ["06_thread_hooks/hook_visual_3_beta_savings.png"]

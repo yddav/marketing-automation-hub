@@ -124,7 +124,7 @@ cat .env | grep -E "(FACEBOOK|INSTAGRAM|TWITTER)_"
 
 **Content Theme**: FINDERR v4.2.0+243 Beta Recruitment
 **Target**: 100 beta testers
-**Incentive**: 50% lifetime discount ($3.50/month)
+**Incentive**: 50% lifetime discount ($4.50/month)
 
 ---
 

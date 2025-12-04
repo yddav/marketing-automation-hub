@@ -227,7 +227,7 @@ v6.0 (Q2 2026): Mesh Network Recovery
         name: 'Day 26 Founder\'s Circle - Expand benefits',
         old: `✅ Free v5.0 & v6.0 upgrades`,
         new: `✅ v5.0 (GPS Suite) & v6.0 (Mesh Network) - FREE
-✅ Lifetime price lock at $6.99/month`
+✅ Lifetime price lock at $8.99/month`
     },
 
     {

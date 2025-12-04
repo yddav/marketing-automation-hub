@@ -1,7 +1,7 @@
 # 🚀 FINDERR Beta Campaign - Launch Checklist
 
 **Campaign**: Visual Beta Recruitment (Matt Gray + Dan Koe Style)
-**App Version**: v4.1.0+182-stable
+**App Version**: v4.3.0.0+182-stable
 **Target**: 12+ qualified beta testers for Google Play Production
 **Status**: ⏳ WAITING FOR GOOGLE PLAY APPROVAL
 
@@ -10,7 +10,7 @@
 ## 🔴 **CRITICAL DEPENDENCIES** (Must Complete BEFORE Launch)
 
 ### 1. Google Play Internal Testing Approval ⏳
-- [ ] App v4.1.0+182-stable uploaded to Google Play Console
+- [ ] App v4.3.0.0+182-stable uploaded to Google Play Console
 - [ ] Google Play review completed (1-7 days typical)
 - [ ] Internal Testing track approved
 - [ ] **Google Play URL obtained** (format: `play.google.com/apps/testing/com.finderr.app`)
@@ -113,7 +113,7 @@ campaign_execution/visuals/
 
 ### 4. Campaign Content Finalization ⏳
 
-- [x] Campaign JSON updated with v4.1.0+182-stable
+- [x] Campaign JSON updated with v4.3.0.0+182-stable
 - [x] All URLs changed to hub.untrapd.com
 - [ ] Google Play URL added to tweets (when available)
 - [ ] Days 8-30 content written (currently only Days 1-7 complete)
@@ -267,7 +267,7 @@ Google Play Approved?
 ## 📋 **QUICK STATUS CHECK**
 
 **Current Blockers:**
-1. ⏳ Google Play Internal Testing approval (v4.1.0+182-stable)
+1. ⏳ Google Play Internal Testing approval (v4.3.0.0+182-stable)
 2. ⏳ Visual assets creation (25+ images)
 3. ⏳ hub.untrapd.com redirect deployment
 4. ⏳ Twitter image upload implementation
