@@ -263,3 +263,92 @@ This project now integrates with the **FINDERR phone security app** (Flutter-bas
 - Milestone-driven marketing automation
 
 The foundation is established for complete ecosystem integration between Hub automation and FINDERR app with measurable performance optimization and systematic documentation management.
+
+---
+
+## UNTRAPD Ecosystem Architecture 2026
+
+**This project is part of the UNTRAPD ecosystem** - a centralized umbrella for all related projects.
+
+### Ecosystem Structure
+
+```
+                    ┌─────────────────────────────────┐
+                    │     UNTRAPD Organization        │
+                    │   (GitHub: UNTRAPD/hub-website) │
+                    │                                 │
+                    │   Central Management Layer      │
+                    │   - Public-facing umbrella      │
+                    │   - Cross-project coordination  │
+                    │   - 2026 Launch orchestration   │
+                    └───────────────┬─────────────────┘
+                                    │
+        ┌───────────────────────────┼───────────────────────────┐
+        │                           │                           │
+        ▼                           ▼                           ▼
+┌───────────────┐         ┌─────────────────┐         ┌─────────────────┐
+│   FINDERR     │         │  Hub_App_Shop   │  ← YOU  │   Automation    │
+│   (Flutter)   │         │    _Integ       │   ARE   │  Social Media   │
+│               │         │                 │   HERE  │                 │
+│ Phone Recovery│         │ Landing Pages   │         │ Python Scripts  │
+│ Android App   │         │ Marketing Hub   │         │ Native APIs     │
+│ v4.3.0+267    │         │ Content System  │         │ FB/IG/TW/Pin    │
+└───────────────┘         └─────────────────┘         └─────────────────┘
+        │                           │                           │
+        └───────────────────────────┴───────────────────────────┘
+                                    │
+                    ┌───────────────┴───────────────┐
+                    │                               │
+                    ▼                               ▼
+            ┌───────────────┐             ┌─────────────────┐
+            │   Campaign    │             │    Preview      │
+            │  Automation   │             │    Generator    │
+            └───────────────┘             └─────────────────┘
+```
+
+### Project Roles in Ecosystem
+
+| Project | Role | Git Repository |
+|---------|------|----------------|
+| **UNTRAPD** | Central umbrella, public face, coordination | `UNTRAPD/hub-website` (org) |
+| **Hub_App_Shop_Integ** | Marketing hub, landing pages, content | This project |
+| **FINDERR** | Android phone recovery app | `Finderr_Clean/` |
+| **Automation** | Social media Python scripts (native APIs) | `automation/social_media/` |
+| **Campaign** | Marketing campaign automation | Integrated in Hub |
+| **Preview** | Visual asset generator | Integrated in Hub |
+
+### Cross-Project Integration Points
+
+**Hub → FINDERR**:
+- Marketing content templates for FINDERR launches
+- Landing pages (hub.untrapd.com/apps/finderr)
+- Email sequences for user onboarding
+- Campaign automation triggers
+
+**Hub → Automation**:
+- Social media scheduling via Python native APIs
+- Facebook Graph API, Instagram API, Twitter OAuth 1.0a
+- No external dependencies (in-house solution)
+
+**Hub → UNTRAPD Org**:
+- Public website at hub.untrapd.com
+- Centralized branding and messaging
+- Cross-project documentation coordination
+
+### Git Repository Strategy
+
+**Central (UNTRAPD Org)**:
+```bash
+git clone git@github.com:UNTRAPD/hub-website.git
+```
+
+**Local Development**:
+- Each project maintained independently
+- Integration via shared documentation
+- Handoff files for cross-session continuity
+
+### Key Documentation Files
+
+- `SESSION_HANDOFF_UNTRAPD_CENTRALIZATION_2025-12-04.md` - Master handoff
+- `DOCUMENTATION_TREE_2025-01-14.md` - Complete doc hierarchy
+- `docs/navigation/README_2025-01-14.md` - Role-based navigation
