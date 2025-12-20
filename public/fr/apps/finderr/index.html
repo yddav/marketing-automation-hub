@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finderr - Sécurité Mobile Révolutionnaire & Technologie ID à Distance</title>
-    <meta name="description" content="Ne perdez plus jamais votre appareil. Finderr offre une sécurité mobile révolutionnaire avec 99,7% de taux de récupération, technologie ID à distance et protection avancée.">
+    <meta name="description" content="Ne perdez plus jamais votre mobile. Finderr offre une sécurité mobile révolutionnaire avec 99,7% de taux de récupération, technologie ID à distance et protection avancée.">
     <meta name="keywords" content="sécurité mobile, ID mobile à distance, récupération mobile, protection vol, suivi mobile, application finderr, écosystème untrapd">
     
     <!-- Open Graph Meta Tags -->
@@ -29,12 +29,12 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4W61MX38C"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+        gtag('config', 'G-K4W61MX38C');
     </script>
 </head>
 <body>
@@ -98,37 +98,37 @@
                 </div>
                 <h1 class="hero-title">
                     Ne Perdez Plus Jamais<br>
-                    <span class="highlight">Votre Appareil</span>
+                    <span class="highlight">Votre Mobile</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Sécurité mobile révolutionnaire avec <strong>99,7% de taux de récupération</strong>. 
-                    Identification d'appareils à distance et sécurité avancée à portée de main. 
-                    Protégez tous vos appareils depuis un hub sécurisé.
+                    À partir de <strong>8,99$/mois</strong> avec <strong>99,7% de taux de récupération</strong>.
+                    Plans Individuel ou Familial (14,99$). Identification de mobiles à distance et sécurité avancée.
+                    <strong>7 jours d'essai gratuit</strong> - testez sans risque.
                 </p>
-                
+
                 <div class="hero-stats">
+                    <div class="stat">
+                        <strong>8,99$</strong>
+                        <span>Individuel</span>
+                    </div>
+                    <div class="stat">
+                        <strong>7 Jours</strong>
+                        <span>Essai Gratuit</span>
+                    </div>
                     <div class="stat">
                         <strong>99,7%</strong>
                         <span>Taux Récupération</span>
                     </div>
                     <div class="stat">
-                        <strong>5 847+</strong>
-                        <span>Utilisateurs Bêta</span>
-                    </div>
-                    <div class="stat">
-                        <strong>24/7</strong>
-                        <span>Protection</span>
-                    </div>
-                    <div class="stat">
-                        <strong>Multi-Appareils</strong>
+                        <strong>Multi-Mobile</strong>
                         <span>Support</span>
                     </div>
                 </div>
                 
                 <div class="hero-cta">
                     <a href="#rejoindre-beta" class="cta-button primary large" onclick="trackBetaSignup()">
-                        Rejoindre Bêta - Gratuit
-                        <span class="cta-subtitle">🎁 Premium Gratuit à Vie pour Utilisateurs Bêta</span>
+                        Rejoindre Test Bêta
+                        <span class="cta-subtitle">🎁 Offre Bêta: 149$ à vie (valeur 299$, limité à 50)</span>
                     </a>
                     <a href="#fonctionnalites" class="cta-button secondary large">
                         Voir Fonctionnalités
@@ -257,7 +257,7 @@
                         <div class="form-group">
                             <label for="deviceTypeFr">Appareil Principal</label>
                             <select id="deviceTypeFr" name="deviceType" required>
-                                <option value="">Sélectionner votre appareil</option>
+                                <option value="">Sélectionner votre mobile</option>
                                 <option value="ios">iPhone/iPad</option>
                                 <option value="android">Téléphone/Tablette Android</option>
                                 <option value="windows">PC Windows</option>
@@ -285,8 +285,8 @@
                     </div>
                     
                     <button type="submit" class="beta-submit-btn">
-                        Rejoindre Programme Bêta - Gratuit
-                        <span class="btn-subtitle">🎁 Premium Gratuit à Vie</span>
+                        Rejoindre Programme Bêta
+                        <span class="btn-subtitle">🎁 Offre Bêta: 149$ à vie (limité à 50 testeurs)</span>
                     </button>
                     
                     <div class="privacy-note">
@@ -303,7 +303,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Finderr</h3>
-                    <p>Technologie révolutionnaire de sécurité et récupération mobile. Ne perdez plus jamais votre appareil avec 99,7% de taux de récupération.</p>
+                    <p>Technologie révolutionnaire de sécurité et récupération mobile. Ne perdez plus jamais votre mobile avec 99,7% de taux de récupération.</p>
                     <div class="social-links">
                         <a href="https://instagram.com/untrapd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">📷</a>
                         <a href="https://twitter.com/untrapd" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">🐦</a>
@@ -382,19 +382,33 @@
             submitBtn.disabled = true;
             
             // Collect form data
-            const formData = {
-                email: form.querySelector('#emailFr').value,
-                firstName: form.querySelector('#firstNameFr').value,
-                deviceType: form.querySelector('#deviceTypeFr').value,
-                interest: form.querySelector('#interestFr').value,
-                source: 'finderr-page-fr',
-                language: 'fr',
-                timestamp: new Date().toISOString()
-            };
-            
+            const email = form.querySelector('#emailFr').value;
+            const firstName = form.querySelector('#firstNameFr').value;
+            const deviceType = form.querySelector('#deviceTypeFr').value;
+            const interest = form.querySelector('#interestFr').value;
+
             try {
-                // Simulate API call - replace with real endpoint
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Call Supabase email signup endpoint (FREE infrastructure)
+                const response = await fetch('/.netlify/functions/beta-signup-supabase', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        firstName: firstName,
+                        deviceType: deviceType,
+                        interest: interest,
+                        source: 'finderr-page-fr',
+                        language: 'fr'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Échec de l\'inscription');
+                }
                 
                 // Success state
                 submitBtn.innerHTML = '🎉 Bienvenue dans la Bêta !';

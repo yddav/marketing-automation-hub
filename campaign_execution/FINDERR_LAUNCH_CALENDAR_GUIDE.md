@@ -1,4 +1,4 @@
-# FINDERR v4.1 30-Day Launch Calendar Guide
+# FINDERR v4.3.0 30-Day Launch Calendar Guide
 
 **Campaign Period**: October 15 - November 13, 2025
 **Goal**: 100+ paying subscribers from social traffic
@@ -38,7 +38,7 @@
 
 **Content Strategy**:
 - High-energy launch messaging
-- Emphasize 14-day free trial
+- Emphasize 7-day free trial
 - Focus on Google Play availability
 - Highlight Android-first benefits
 - Share initial download numbers
@@ -55,7 +55,7 @@
 **Focus**: Convert interest into trial signups, demonstrate value
 
 **Key Themes**:
-- Day 8: 14-day free trial spotlight
+- Day 8: 7-day free trial spotlight
 - Day 9: Feature-by-feature comparison with competitors
 - Day 10: Savings calculator (annual cost comparison)
 - Day 11: Android-only benefits deep dive
@@ -474,7 +474,7 @@ node campaign_orchestrator.js --report daily
 - Run limited-time promotions
 
 ### If Conversions are Low
-- Emphasize 14-day free trial more heavily
+- Emphasize 7-day free trial more heavily
 - Create comparison content vs competitors
 - Share more user testimonials
 - Offer limited-time annual plan discount
@@ -521,7 +521,7 @@ node campaign_orchestrator.js --report daily
 This 30-day calendar is designed for maximum efficiency and conversion. Each post has been strategically planned to:
 
 1. **Build awareness** of FINDERR and UNTRAPD.COM
-2. **Drive trial signups** through free 14-day offers
+2. **Drive trial signups** through free 7-day offers
 3. **Convert trials** into paying subscribers
 4. **Create social proof** through user testimonials
 5. **Educate** Android users about phone security

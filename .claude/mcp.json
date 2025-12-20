@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["/home/wolfy/.local/lib/supabase-mcp-server/server.mjs"],
+      "env": {
+        "SUPABASE_URL": "https://zdceeulkqfpzdjeyekgs.supabase.co",
+        "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkY2VldWxrcWZwemRqZXlla2dzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0OTQ4NTE0NiwiZXhwIjoyMDY1MDYxMTQ2fQ.waTWz-6b9x7hK8cQLn_nxzLoN6RaJ5Fw9A6eqqdK3yo"
+      }
+    }
+  }
+}

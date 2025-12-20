@@ -250,7 +250,7 @@ node token-refresh-automation.js refresh-all
 **FINDERR Impact**:
 - App downloads from social: 150-250
 - Beta tester sign-ups: 50-100
-- Paid subscriptions: 25-50 ($6.99/month)
+- Paid subscriptions: 25-50 ($8.99/month)
 - Revenue from social: $175-$350/month
 
 **Tier Progression**:

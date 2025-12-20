@@ -98,14 +98,14 @@ n = (1.96² × 0.5 × 0.5) / 0.10² = 96.04 ≈ 100 testers
 
 **Financial Impact of 50% Lifetime Discount**:
 
-**Scenario**: 100 beta testers at $3.50/month (vs $6.99 regular)
+**Scenario**: 100 beta testers at $4.50/month (vs $8.99 regular)
 
 **Revenue Loss**:
 - **Per beta tester**: $3.49/month discount × 12 months = $41.88/year
 - **100 beta testers**: $41.88 × 100 = $4,188/year revenue loss
 
 **Revenue Gain** (vs no beta program):
-- **100 beta testers at $3.50/month**: $3.50 × 12 × 100 = $4,200/year
+- **100 beta testers at $4.50/month**: $4.50 × 12 × 100 = $4,200/year
 - **Alternative (no beta, delayed launch)**: $0/year during beta period + delayed word-of-mouth
 
 **Break-Even Analysis**:

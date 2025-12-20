@@ -12,7 +12,7 @@ let changesApplied = [];
 const urgencyInstagramOld = `⏰ CURRENT STATUS: 15 out of 100 spots filled
 
 Why RLS validation matters:
-Before launching FINDERR v4.1 to production, we need real-world testing to ensure enterprise-grade security.`;
+Before launching FINDERR v4.3.0 to production, we need real-world testing to ensure enterprise-grade security.`;
 
 const urgencyInstagramNew = `🏆 3-TIER EARLY ADOPTER PROGRAM:
 
@@ -30,7 +30,7 @@ const urgencyInstagramNew = `🏆 3-TIER EARLY ADOPTER PROGRAM:
 ⏰ ONLY 85 SPOTS LEFT (15/100 filled)
 
 Why RLS validation matters:
-🔒 Before launching FINDERR v4.1 to production, we need real-world testing to ensure enterprise-grade security.`;
+🔒 Before launching FINDERR v4.3.0 to production, we need real-world testing to ensure enterprise-grade security.`;
 
 if (content.includes(urgencyInstagramOld)) {
   content = content.replace(urgencyInstagramOld, urgencyInstagramNew);
@@ -127,15 +127,15 @@ if (content.includes(incentivesTwitterOld)) {
 
 // 6. UPDATE PROGRESS.INSTAGRAM TEMPLATE
 const progressInstagramOld = `🎁 BETA REWARDS:
-• 50% lifetime discount ($3.50/month forever)
-• Free v4.1 testing access
+• 50% lifetime discount ($4.50/month forever)
+• Free v4.3.0 testing access
 • UNTRAPD ecosystem contributor status
 
 🧠 From UNTRAPD.COM - Building Android security right`;
 
 const progressInstagramNew = `🎁 BETA REWARDS:
-• 50% lifetime discount ($3.50/month forever)
-• Free v4.1 testing access
+• 50% lifetime discount ($4.50/month forever)
+• Free v4.3.0 testing access
 • UNTRAPD ecosystem contributor status
 • Secure your tier NOW for FREE v5.0 & v6.0 upgrades
 

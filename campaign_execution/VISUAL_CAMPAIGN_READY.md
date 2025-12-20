@@ -2,7 +2,7 @@
 
 **Date**: 2025-10-18
 **Status**: ✅ VISUALS ACQUIRED - Ready for Campaign Integration
-**App Version**: v4.1.0+182-stable
+**App Version**: v4.3.0.0+182-stable
 **Google Play**: Pending approval (Closed + Open Testing)
 
 ---
@@ -194,7 +194,7 @@ Beta: hub.untrapd.com/apps/finderr/beta
 **3. Beta Benefits Infographic** (30 min)
 - List with icons:
   ```
-  🆓 Free 14-day testing
+  🆓 Free 7-day testing
   💰 50% lifetime discount
   🏆 Founder's Circle badge
   🎯 Influence v5.0 features
@@ -207,8 +207,8 @@ Beta: hub.untrapd.com/apps/finderr/beta
 **4. Pricing Comparison** (20 min)
 ```
 Competitors: $10-12/month
-FINDERR: $6.99/month (40% off)
-Beta: $3.50/month (50% forever)
+FINDERR: $8.99/month (40% off)
+Beta: $4.50/month (50% forever)
 ```
 
 **5. Lost Phone Economics** (20 min)
@@ -328,7 +328,7 @@ https://youtube.com/shorts/GfMJbGSTeLs
 
 99.7% recovery rate.
 Works offline via SMS.
-$3.50/month for beta testers.
+$4.50/month for beta testers.
 
 Join: hub.untrapd.com/apps/finderr/beta
 ```

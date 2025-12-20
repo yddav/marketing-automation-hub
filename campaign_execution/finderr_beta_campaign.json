@@ -1,6 +1,6 @@
 {
   "campaign": {
-    "name": "FINDERR v4.1 Beta Tester Recruitment - 30 Days",
+    "name": "FINDERR v4.3.0 Beta Tester Recruitment - 30 Days",
     "phase": "Beta Testing (Internal Testing → Production)",
     "version": "4.1",
     "buildNumber": "178+",
@@ -47,7 +47,7 @@
         {
           "platform": "twitter",
           "time": "08:00",
-          "content": "🧪 FINDERR Beta Testing - Limited Spots!\n\nHelp us launch Android's first emergency wallpaper system.\n\n✨ Beta Tester Perks:\n• Free testing access (14 days)\n• 50% lifetime discount ($3.50/month forever)\n• Founder's Circle badge\n• Influence v5.0 features\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#FINDERR #AndroidBeta #BetaTesting",
+          "content": "🧪 FINDERR Beta Testing - Limited Spots!\n\nHelp us launch Android's first emergency wallpaper system.\n\n✨ Beta Tester Perks:\n• Free testing access (14 days)\n• 50% lifetime discount ($4.50/month forever)\n• Founder's Circle badge\n• Influence v5.0 features\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#FINDERR #AndroidBeta #BetaTesting",
           "cta": "Join Beta",
           "link": "hub.untrapd.com/apps/finderr/beta"
         },
@@ -89,7 +89,7 @@
         {
           "platform": "twitter",
           "time": "16:00",
-          "content": "Why $3.50/month matters:\n\nCompetitors: $10-12/month\nFINDERR: $6.99/month (40% off)\nBeta testers: $3.50/month (50% forever)\n\nLock in Founder pricing NOW:\nhub.untrapd.com/apps/finderr/beta\n\n#AndroidSecurity #ValueProposition",
+          "content": "Why $4.50/month matters:\n\nCompetitors: $10-12/month\nFINDERR: $8.99/month (40% off)\nBeta testers: $4.50/month (50% forever)\n\nLock in Founder pricing NOW:\nhub.untrapd.com/apps/finderr/beta\n\n#AndroidSecurity #ValueProposition",
           "cta": "Lock In Discount",
           "link": "hub.untrapd.com/apps/finderr/beta"
         }
@@ -201,7 +201,7 @@
         {
           "platform": "twitter",
           "time": "16:00",
-          "content": "Why test FINDERR now?\n\n✅ Free 14-day access\n✅ Lock in $3.50/month forever\n✅ Get Founder badge\n✅ Influence v5.0\n✅ Direct dev communication\n\nAll benefits, zero cost:\nhub.untrapd.com/apps/finderr/beta\n\n#NoBrainer",
+          "content": "Why test FINDERR now?\n\n✅ Free 7-day access\n✅ Lock in $4.50/month forever\n✅ Get Founder badge\n✅ Influence v5.0\n✅ Direct dev communication\n\nAll benefits, zero cost:\nhub.untrapd.com/apps/finderr/beta\n\n#NoBrainer",
           "cta": "Join Beta",
           "link": "hub.untrapd.com/apps/finderr/beta"
         }
@@ -222,7 +222,7 @@
         {
           "platform": "twitter",
           "time": "12:00",
-          "content": "💰 Price comparison:\n\nCerberus: $10/month\nPrey: $12/month\nLookout: $10/month\nFINDERR: $6.99/month\nBeta price: $3.50/month FOREVER\n\n50% off for life.\n\nLock it in: hub.untrapd.com/apps/finderr/beta\n\n#Value",
+          "content": "💰 Price comparison:\n\nCerberus: $10/month\nPrey: $12/month\nLookout: $10/month\nFINDERR: $8.99/month\nBeta price: $4.50/month FOREVER\n\n50% off for life.\n\nLock it in: hub.untrapd.com/apps/finderr/beta\n\n#Value",
           "cta": "Lock In Price",
           "link": "hub.untrapd.com/apps/finderr/beta"
         },
@@ -257,7 +257,7 @@
         {
           "platform": "twitter",
           "time": "16:00",
-          "content": "🏆 Founder's Circle Badge benefits:\n\n✅ Special recognition in app\n✅ Priority support\n✅ Early feature access\n✅ $3.50/month forever\n\nOnly for beta testers.\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#FounderPerks",
+          "content": "🏆 Founder's Circle Badge benefits:\n\n✅ Special recognition in app\n✅ Priority support\n✅ Early feature access\n✅ $4.50/month forever\n\nOnly for beta testers.\n\nJoin: hub.untrapd.com/apps/finderr/beta\n\n#FounderPerks",
           "cta": "Get Badge",
           "link": "hub.untrapd.com/apps/finderr/beta"
         }
@@ -362,7 +362,7 @@
         {
           "platform": "twitter",
           "time": "12:00",
-          "content": "What you miss without beta access:\n\n💰 Pay $6.99/month instead of $3.50\n🏆 No Founder's Circle badge\n📱 No v5.0 early access\n💬 No direct dev line\n\nDon't miss out: hub.untrapd.com/apps/finderr/beta\n\n#FOMO #BetaTesting",
+          "content": "What you miss without beta access:\n\n💰 Pay $8.99/month instead of $4.50\n🏆 No Founder's Circle badge\n📱 No v5.0 early access\n💬 No direct dev line\n\nDon't miss out: hub.untrapd.com/apps/finderr/beta\n\n#FOMO #BetaTesting",
           "cta": "Join Beta",
           "link": "hub.untrapd.com/apps/finderr/beta"
         },
@@ -390,7 +390,7 @@
         {
           "platform": "twitter",
           "time": "12:00",
-          "content": "FINDERR vision:\n\nv4.1: Emergency wallpaper\nv5.0: GPS + geofencing\nv6.0: AI-powered security\nv7.0: Global recovery network\n\nBe part of the journey from day 1:\nhub.untrapd.com/apps/finderr/beta\n\n#Vision #Roadmap",
+          "content": "FINDERR vision:\n\nv4.3.0: Emergency wallpaper\nv5.0: GPS + geofencing\nv6.0: AI-powered security\nv7.0: Global recovery network\n\nBe part of the journey from day 1:\nhub.untrapd.com/apps/finderr/beta\n\n#Vision #Roadmap",
           "cta": "Join Journey",
           "link": "hub.untrapd.com/apps/finderr/beta"
         },
@@ -411,7 +411,7 @@
         {
           "platform": "twitter",
           "time": "08:00",
-          "content": "🚨 LAST 3 SPOTS for FINDERR beta!\n\nToday is your final chance to:\n✅ Lock in $3.50/month forever\n✅ Get Founder's Circle badge\n✅ Influence v5.0 features\n\nSign up NOW: hub.untrapd.com/apps/finderr/beta\n\n#FinalDay #FINDERR",
+          "content": "🚨 LAST 3 SPOTS for FINDERR beta!\n\nToday is your final chance to:\n✅ Lock in $4.50/month forever\n✅ Get Founder's Circle badge\n✅ Influence v5.0 features\n\nSign up NOW: hub.untrapd.com/apps/finderr/beta\n\n#FinalDay #FINDERR",
           "cta": "Join Now",
           "link": "hub.untrapd.com/apps/finderr/beta"
         },
@@ -462,8 +462,8 @@
   ],
   "templateVariables": {
     "betaURL": "hub.untrapd.com/apps/finderr/beta",
-    "lifetimeDiscount": "$3.50/month",
-    "regularPrice": "$6.99/month",
+    "lifetimeDiscount": "$4.50/month",
+    "regularPrice": "$8.99/month",
     "competitorPrice": "$10-12/month",
     "testingPeriod": "14 days",
     "minTesters": "12+",

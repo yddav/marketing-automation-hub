@@ -341,7 +341,7 @@ class UntrapdHubLauncher {
                    '✅ 1,000 Android users secured:\n' +
                    '• v5.0 & v6.0 FREE (lifetime)\n' +
                    '• v7.0 early access\n' +
-                   '• Lifetime price lock at $6.99\n\n' +
+                   '• Lifetime price lock at $8.99\n\n' +
                    '🚀 Tier 2 (Early Adopter) NOW OPEN!\n' +
                    '2,000 spots available for next wave.\n\n' +
                    '#FINDERR #AndroidSecurity #MilestoneReached',
@@ -372,10 +372,10 @@ class UntrapdHubLauncher {
                    '• 2,000 Early Adopters (Tier 2)\n' +
                    '• 2,000 Launch Supporters (Tier 3)\n\n' +
                    '🚨 NEW PRICING EFFECTIVE NOW:\n' +
-                   '• v4.1 Base: $6.99/mo\n' +
+                   '• v4.3.0 Base: $8.99/mo\n' +
                    '• v5.0 GPS Tracking: +$3/mo\n' +
                    '• v6.0 Mesh Network: +$4/mo\n' +
-                   '• Full Suite: $12.97/mo\n\n' +
+                   '• Full Suite: $14.97/mo\n\n' +
                    'Join 5,000+ happy FINDERR users! 🚀\n\n' +
                    '#FINDERR #AndroidSecurity #5000Subscribers #MilestoneReached',
           hashtags: ['#FINDERR', '#Milestone', '#5000Subscribers', '#AndroidSecurity', '#LaunchSuccess']

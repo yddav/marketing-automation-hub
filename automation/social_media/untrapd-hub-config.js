@@ -122,10 +122,10 @@ const untrapdHubConfig = {
     }
   },
 
-  // FINDERR Integration Configuration - v4.1 Android Pre-Launch
+  // FINDERR Integration Configuration - v4.3.0 Android Pre-Launch
   finderrIntegration: {
     // App version info
-    appVersion: "4.1 (Build 178)",
+    appVersion: "4.3.0 (Build 267)",
     platform: "Android-only",
     status: "pre-launch-beta",
 
@@ -139,30 +139,30 @@ const untrapdHubConfig = {
       milestones: "subscriber_milestone_celebrations"
     },
 
-    // Android-only revenue model (v4.1)
+    // Android-only revenue model (v4.3.0)
     pricing: {
-      monthly: "$6.99/month",
-      annual: "$69.99/year",
-      freeTrial: "14 days",
-      competitiveSavings: "Save 30-40% vs $10-12/month competitors",
+      monthly: "$8.99/month",
+      annual: "$107.88/year",
+      freeTrial: "7 days",
+      competitiveSavings: "Save 20-30% vs $10-12/month competitors",
       messaging: {
-        value: "$6.99/month Android phone security with 99.7% recovery rate",
-        comparison: "Professional features at 30-40% less than competitors",
-        trial: "14 days free trial - longer than any competitor",
+        value: "$8.99/month Android phone security with 99.7% recovery rate",
+        comparison: "Professional features at 20-30% less than competitors",
+        trial: "7 days free trial - try before you commit",
         platform: "100% Android optimized - no iOS bloat"
       }
     },
 
     // Pre-launch beta campaign
     betaCampaign: {
-      name: "FINDERR v4.1 Beta Testing",
+      name: "FINDERR v4.3.0 Beta Testing",
       phase: "pre-launch-awareness",
       betaGoal: 100,
       messaging: {
-        recruitment: "Join 100 beta testers for FINDERR v4.1 launch",
+        recruitment: "Join 100 beta testers for FINDERR v4.3.0 launch",
         urgency: "Only {beta_slots_remaining} beta spots available",
         security: "Help validate security (RLS) before production launch",
-        rewards: "50% lifetime discount ($3.50/month) for beta testers",
+        rewards: "50% lifetime discount ($4.50/month) for beta testers",
         ecosystem: "Part of the UNTRAPD ecosystem"
       }
     },
@@ -188,9 +188,9 @@ const untrapdHubConfig = {
 
     // Competitive messaging
     competitiveMessaging: {
-      price: "$6.99/month vs $12+ competitors - same professional features",
+      price: "$8.99/month vs $12+ competitors - same professional features",
       platform: "Made for Android, optimized for Android - no iOS compromises",
-      trial: "14 days free - longer trial than any competitor",
+      trial: "7 days free - try before you commit",
       features: "99.7% recovery rate with professional security features"
     }
   },

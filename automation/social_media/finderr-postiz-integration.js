@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * FINDERR v4.1 → POSTIZ INTEGRATION
+ * FINDERR v4.3.0 → POSTIZ INTEGRATION
  *
  * Loads FINDERR 210-post content calendar into Postiz platform
  * Enables native API posting to Instagram, Facebook, TikTok, Twitter

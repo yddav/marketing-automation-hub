@@ -8,8 +8,12 @@
 const https = require('https');
 const http = require('http');
 
-// Session cookie from our successful API login
-const AUTH_COOKIE = 'auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4YmE4ZDUzLTliOWItNGQ0Zi1hMzBmLTZmNmUzYmZjOWJjMyIsImVtYWlsIjoiYWRtaW5AdW50cmFwZC5odWIiLCJwYXNzd29yZCI6IiQyYiQxMCRSRlc0L0JBYVJHcmlWVE85Mnlyek9lMDl3V1pndWgzZFpWNEl0REtqZWFNQWpIMVBBUHA5QyIsInByb3ZpZGVyTmFtZSI6IkxPQ0FMIiwibmFtZSI6bnVsbCwibGFzdE5hbWUiOm51bGwsImlzU3VwZXJBZG1pbiI6ZmFsc2UsImJpbyI6bnVsbCwiYXVkaWVuY2UiOjAsInBpY3R1cmVJZCI6bnVsbCwicHJvdmlkZXJJZCI6IiIsInRpbWV6b25lIjowLCJjcmVhdGVkQXQiOiIyMDI1LTEwLTI3VDIzOjA1OjM4LjkxNVoiLCJ1cGRhdGVkQXQiOiIyMDI1LTEwLTI3VDIzOjA1OjM4LjkxNVoiLCJsYXN0UmVhZE5vdGlmaWNhdGlvbnMiOiIyMDI1LTEwLTI3VDIzOjA1OjM4LjkxNVoiLCJpbnZpdGVJZCI6bnVsbCwiYWN0aXZhdGVkIjp0cnVlLCJtYXJrZXRwbGFjZSI6dHJ1ZSwiYWNjb3VudCI6bnVsbCwiY29ubmVjdGVkQWNjb3VudCI6ZmFsc2UsImxhc3RPbmxpbmUiOiIyMDI1LTEwLTI3VDIzOjA1OjM4LjkxNVoiLCJpcCI6IjE3Mi4xOC4wLjEiLCJhZ2VudCI6Ik1vemlsbGEvNS4wIChYMTE7IFVidW50dTsgTGludXggeDg2XzY0OyBydjoxNDQuMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC8xNDQuMCIsInBpY3R1cmUiOm51bGwsImlhdCI6MTc2MTYwODM4OX0.qSjYHfgXgwgmLWCdUgi-kpVjUikci-4GELoQKSGu6-Q';
+// Session cookie from environment variable (never commit secrets!)
+const AUTH_COOKIE = process.env.POSTIZ_AUTH_COOKIE || '';
+if (!AUTH_COOKIE) {
+    console.error('Error: POSTIZ_AUTH_COOKIE environment variable is required');
+    process.exit(1);
+}
 
 const BASE_URL = 'http://localhost:3000';
 

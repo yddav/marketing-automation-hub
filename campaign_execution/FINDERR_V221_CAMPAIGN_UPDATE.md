@@ -2,7 +2,7 @@
 
 **Date**: 2025-10-24
 **Current Version**: v4.2.0+221 (Latest)
-**Previous Campaign Version**: v4.1.0+192 (Outdated)
+**Previous Campaign Version**: v4.3.0.0+192 (Outdated)
 **Status**: ✅ Ready to Update Campaign Materials
 
 ---
@@ -11,7 +11,7 @@
 
 ### Version Change
 **Old Campaign** (finderr_beta_campaign_v2_visual.json):
-- App Version: `v4.1.0+192-stable`
+- App Version: `v4.3.0.0+192-stable`
 - Last Updated: 2025-10-20
 
 **New Reality**:
@@ -94,7 +94,7 @@
 
 **Current Campaign JSON** (`finderr_beta_campaign_v2_visual.json`):
 ```json
-"appVersion": "v4.1.0+192-stable"
+"appVersion": "v4.3.0.0+192-stable"
 ```
 
 **Must Update To**:
@@ -304,7 +304,7 @@
 
 1. **Update Campaign JSON** ✅
    - File: `finderr_beta_campaign_v2_visual.json`
-   - Change: `appVersion: "v4.1.0+192-stable"` → `"v4.2.0+221"`
+   - Change: `appVersion: "v4.3.0.0+192-stable"` → `"v4.2.0+221"`
    - Add: `premiumTier: { enabled: false, waitlistActive: true }`
 
 2. **Revise Day 2 Content** 🔴 CRITICAL

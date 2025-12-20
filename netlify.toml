@@ -18,3 +18,16 @@
   from = "/dashboard"
   to = "/dashboard/index.html"
   status = 200
+
+# ============================================
+# FINDERR Beta Email Automation - Scheduled Functions
+# ============================================
+
+# Daily email sequence scheduler - sends follow-up emails
+# Runs daily at 9:00 AM UTC (10:00 AM CET / 4:00 AM EST)
+[functions."email-sequence-scheduler"]
+  schedule = "0 9 * * *"
+
+# Alternative: Run every 6 hours for faster follow-ups
+# [functions."email-sequence-scheduler"]
+#   schedule = "0 */6 * * *"
