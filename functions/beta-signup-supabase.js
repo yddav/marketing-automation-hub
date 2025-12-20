@@ -301,7 +301,7 @@ function generateWelcomeEmail(user, betaUrl) {
       <h2 style="margin-top: 0; color: #667eea; font-size: 20px;">📱 Next Steps:</h2>
       <ol style="margin: 15px 0; padding-left: 20px;">
         <li style="margin-bottom: 10px;">Click the button below to become a tester</li>
-        <li style="margin-bottom: 10px;">Download FINDERR v4.2.0+241 from Google Play</li>
+        <li style="margin-bottom: 10px;">Download FINDERR v4.3 from Google Play</li>
         <li style="margin-bottom: 10px;">Test emergency activation & wallpaper features</li>
         <li>Share feedback via email or in-app support</li>
       </ol>
@@ -340,7 +340,7 @@ Thank you for joining the FINDERR Beta Testing program!
 NEXT STEPS:
 1. Open this link on your Android device: ${betaUrl}
 2. Click "Become a Tester"
-3. Download FINDERR v4.2.0+241 from Google Play
+3. Download FINDERR v4.3 from Google Play
 4. Test emergency activation & wallpaper features
 5. Share feedback via email or in-app support
 

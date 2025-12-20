@@ -158,7 +158,7 @@
                 DEVICE: device,
                 FOCUS: focus || 'General testing',
                 SIGNUP_DATE: new Date().toISOString(),
-                BETA_VERSION: 'v4.1.0+178'
+                BETA_VERSION: 'v4.3'
             }
         };
 

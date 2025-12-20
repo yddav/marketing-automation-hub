@@ -1,7 +1,7 @@
 {
   "sequence_name": "FINDERR Beta Tester Welcome",
   "sequence_id": "finderr-beta-welcome-2025",
-  "description": "Automated email sequence for FINDERR v4.1 beta testers with Google Play download instructions",
+  "description": "Automated email sequence for FINDERR v4.3 beta testers with Google Play download instructions",
   "target_audience": "Beta testers who signed up via hub.untrapd.com/apps/finderr",
   "mailchimp_tag": "finderr-beta",
   "trigger": "Beta signup form submission",
@@ -13,7 +13,7 @@
       "email_number": 1,
       "send_delay": "0 minutes (immediate)",
       "subject": "🎉 Welcome to FINDERR Beta - Download Link Inside!",
-      "preview_text": "Get FINDERR v4.1 on your Android device in 3 easy steps",
+      "preview_text": "Get FINDERR v4.3 on your Android device in 3 easy steps",
       "from_name": "UNTRAPD Team",
       "from_email": "beta@untrapd.com",
       "reply_to": "support@untrapd.com",
@@ -21,7 +21,7 @@
       "content": {
         "greeting": "Hi *|FNAME|*,",
 
-        "opening": "🚀 **Thank you for joining the FINDERR Beta Testing Program!**\n\nYou're now part of an exclusive group helping us validate FINDERR v4.1 before the official Android launch. Your feedback will shape the final product and help hundreds of thousands of users protect their devices.",
+        "opening": "🚀 **Thank you for joining the FINDERR Beta Testing Program!**\n\nYou're now part of an exclusive group helping us validate FINDERR v4.3 before the official Android launch. Your feedback will shape the final product and help hundreds of thousands of users protect their devices.",
 
         "beta_access_section": {
           "title": "📱 Get FINDERR on Your Android Device",
@@ -51,7 +51,7 @@
         "beta_benefits": {
           "title": "🎁 Your Beta Tester Benefits",
           "benefits": [
-            "**Free v4.1 Testing Access** - Full Android app with all features unlocked",
+            "**Free v4.3 Testing Access** - Full Android app with all features unlocked",
             "**50% Lifetime Discount** - Only $3.50/month at production launch (regular $6.99/month)",
             "**Direct Support Channel** - Priority access to the development team",
             "**Contributor Recognition** - Listed as UNTRAPD ecosystem beta contributor"
@@ -167,7 +167,7 @@
       "email_number": 3,
       "send_delay": "14 days",
       "subject": "FINDERR Beta Complete - Claim Your 50% Lifetime Discount!",
-      "preview_text": "Thank you for testing FINDERR v4.1 - here's your exclusive launch offer",
+      "preview_text": "Thank you for testing FINDERR v4.3 - here's your exclusive launch offer",
       "from_name": "UNTRAPD Team",
       "from_email": "beta@untrapd.com",
       "reply_to": "support@untrapd.com",
@@ -175,12 +175,12 @@
       "content": {
         "greeting": "Hi *|FNAME|*,",
 
-        "opening": "🎉 **The FINDERR Beta Testing Period is Complete!**\n\nThank you for being one of the first Android users to test FINDERR v4.1. Your feedback has been invaluable in helping us validate security, fix bugs, and refine the user experience before our official production launch.",
+        "opening": "🎉 **The FINDERR Beta Testing Period is Complete!**\n\nThank you for being one of the first Android users to test FINDERR v4.3. Your feedback has been invaluable in helping us validate security, fix bugs, and refine the user experience before our official production launch.",
 
         "impact_section": {
           "title": "🚀 Your Contribution to FINDERR",
           "stats": [
-            "**100 Beta Testers** helped validate FINDERR v4.1",
+            "**100 Beta Testers** helped validate FINDERR v4.3",
             "**350+ Test Sessions** across different Android devices",
             "**47 Bugs Fixed** based on beta tester reports",
             "**99.7% Security Validation** - RLS and data isolation confirmed"
