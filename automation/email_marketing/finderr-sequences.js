@@ -1,7 +1,7 @@
 /**
  * FINDERR Email Marketing Automation Sequences
  *
- * Three automated email sequences for FINDERR v4.1:
+ * Three automated email sequences for FINDERR v4.3:
  * 1. Trial Welcome Sequence (14-day journey)
  * 2. Monthly Subscriber Retention Sequence
  * 3. Annual VIP Subscriber Sequence
@@ -687,7 +687,7 @@ The UNTRAPD.COM Team
 P.S. Know someone who needs phone security? Refer a friend and you both get 1 month free. {{link: "Refer a Friend"}}
 
 ---
-*FINDERR v4.1 - Android 8.0+ - Updates monthly*`,
+*FINDERR v4.3 - Android 8.0+ - Updates monthly*`,
           cta: {
             primary: "Check My Usage Stats",
             secondary: "Refer a Friend",
