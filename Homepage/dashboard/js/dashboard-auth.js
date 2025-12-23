@@ -9,8 +9,8 @@
 const SUPABASE_URL = 'https://zdceeulkqfpzdjeyekgs.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_UOURsZSevFyKJJljIO9FDg_In2B0hdv';
 
-// Initialize Supabase client
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Initialize Supabase client (use different name to avoid conflicts)
+const supabaseAuth = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Allowed users whitelist (email addresses that can access the dashboard)
 // Add your email(s) here
@@ -36,7 +36,7 @@ const DashboardAuth = {
         }
 
         // Listen for auth state changes
-        supabase.auth.onAuthStateChange((event, session) => {
+        supabaseAuth.auth.onAuthStateChange((event, session) => {
             console.log('Auth state changed:', event);
             if (event === 'SIGNED_IN' && session) {
                 this.handleSignIn(session);
@@ -71,7 +71,7 @@ const DashboardAuth = {
      */
     async checkExistingSession() {
         try {
-            const { data: { session }, error } = await supabase.auth.getSession();
+            const { data: { session }, error } = await supabaseAuth.auth.getSession();
 
             if (session && !error) {
                 // User is already logged in, check if allowed
@@ -79,7 +79,7 @@ const DashboardAuth = {
                     window.location.href = 'index.html';
                 } else {
                     this.showError('Access denied. Your email is not authorized.');
-                    await supabase.auth.signOut();
+                    await supabaseAuth.auth.signOut();
                 }
             }
         } catch (err) {
@@ -92,7 +92,7 @@ const DashboardAuth = {
      */
     async checkAuth() {
         try {
-            const { data: { session }, error } = await supabase.auth.getSession();
+            const { data: { session }, error } = await supabaseAuth.auth.getSession();
 
             if (error || !session) {
                 this.redirectToLogin();
@@ -102,7 +102,7 @@ const DashboardAuth = {
             // Check if user is in whitelist
             if (!this.isUserAllowed(session.user.email)) {
                 this.redirectToLogin('Access denied. Your email is not authorized.');
-                await supabase.auth.signOut();
+                await supabaseAuth.auth.signOut();
                 return false;
             }
 
@@ -131,7 +131,7 @@ const DashboardAuth = {
      */
     async signInWithGoogle() {
         try {
-            const { data, error } = await supabase.auth.signInWithOAuth({
+            const { data, error } = await supabaseAuth.auth.signInWithOAuth({
                 provider: 'google',
                 options: {
                     redirectTo: window.location.origin + '/dashboard/index.html'
@@ -171,7 +171,7 @@ const DashboardAuth = {
         submitBtn.innerHTML = '<span class="loading-spinner"></span>Sending...';
 
         try {
-            const { data, error } = await supabase.auth.signInWithOtp({
+            const { data, error } = await supabaseAuth.auth.signInWithOtp({
                 email: email,
                 options: {
                     emailRedirectTo: window.location.origin + '/dashboard/index.html'
@@ -206,7 +206,7 @@ const DashboardAuth = {
             }
         } else {
             this.showError('Access denied. Your email is not authorized.');
-            await supabase.auth.signOut();
+            await supabaseAuth.auth.signOut();
         }
     },
 
@@ -236,7 +236,7 @@ const DashboardAuth = {
      */
     async signOut() {
         try {
-            await supabase.auth.signOut();
+            await supabaseAuth.auth.signOut();
             this.redirectToLogin();
         } catch (err) {
             console.error('Sign out error:', err);
