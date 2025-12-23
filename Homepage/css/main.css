@@ -959,6 +959,47 @@ button, .cta-button, .nav-link, a {
   overflow: hidden;
 }
 
+/* Dual Mockups Container - Side by Side on Desktop */
+.dual-mockups-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dual-mockups-container .phone-mockup-large {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.dual-mockups-container .phone-frame {
+  width: 220px;
+  height: 440px;
+}
+
+.mockup-label {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+  .dual-mockups-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .dual-mockups-container .phone-frame {
+    width: 200px;
+    height: 400px;
+  }
+}
+
 .app-interface {
   height: 100%;
   display: flex;
@@ -1237,6 +1278,70 @@ button, .cta-button, .nav-link, a {
   gap: 2rem;
 }
 
+/* FINDERR Quick Features Section - Dark Background with Light Text */
+.finderr-quick-features {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  padding: 80px 0;
+}
+
+.finderr-quick-features .section-title {
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: unset !important;
+}
+
+.finderr-quick-features .section-title::after {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.features-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature-card-compact {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card-compact:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card-compact .feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card-compact h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card-compact p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.finderr-quick-features .cta-center {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .feature-card {
   background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%);
   padding: 3rem 2.5rem;
@@ -1318,7 +1423,7 @@ button, .cta-button, .nav-link, a {
 }
 
 .feature-card p {
-  color: #4a5568;
+  color: #1f2937;  /* Improved contrast: WCAG AA compliant on white */
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
   line-height: 1.7;
@@ -3094,6 +3199,158 @@ button, .cta-button, .nav-link, a {
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+/* Apps Page - Coming Soon Section - Enhanced Contrast */
+.coming-soon-apps {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 80px 0;
+}
+
+.coming-soon-apps .section-title {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.coming-soon-apps .section-subtitle {
+  color: rgba(255, 255, 255, 0.8);  /* WCAG AA: Better contrast */
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.apps-grid-future {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.app-card.coming-soon {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  padding: 40px 30px;
+  transition: all 0.3s ease;
+}
+
+.app-card.coming-soon:hover {
+  transform: translateY(-8px);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 16px 40px rgba(59, 130, 246, 0.2);
+}
+
+.app-card.coming-soon .app-status {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.app-card.coming-soon .app-icon-large {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.app-card.coming-soon h3 {
+  color: #ffffff;  /* White for dark background */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.app-card.coming-soon p {
+  color: rgba(255, 255, 255, 0.85);  /* WCAG AA: High contrast on dark */
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.app-card.coming-soon .app-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.app-card.coming-soon .tag {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;  /* Light blue for readability */
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.app-card.coming-soon .btn.secondary {
+  background: transparent;
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.app-card.coming-soon .btn.secondary:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #60a5fa;
+}
+
+/* Why UNTRAPD Section - Contrast Fix */
+.why-untrapd {
+  background: #0f172a;
+  padding: 80px 0;
+}
+
+.why-untrapd h2 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.reason-card {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.reason-card .reason-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.reason-card h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.reason-card p {
+  color: rgba(255, 255, 255, 0.8);  /* WCAG AA compliant */
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Enhanced Footer Bottom */
