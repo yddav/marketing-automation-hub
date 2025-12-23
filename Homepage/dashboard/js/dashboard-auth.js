@@ -15,7 +15,7 @@ const supabaseAuth = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KE
 // Allowed users whitelist (email addresses that can access the dashboard)
 // Add your email(s) here
 const ALLOWED_USERS = [
-    'untrap77@gmail.com',
+    'untrapd77@gmail.com',
     'e.linetools@gmail.com',
     // Add more allowed emails as needed
 ];
