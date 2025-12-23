@@ -43,6 +43,9 @@ class AnalyticsDashboard {
   }
 
   async initializeComponents() {
+    // Initialize theme toggle FIRST (before any data loading)
+    this.setupThemeToggle();
+
     // Initialize time range selector
     const timeRangeSelect = document.getElementById('timeRange');
     if (timeRangeSelect) {
@@ -51,10 +54,13 @@ class AnalyticsDashboard {
 
     // Initialize platform tabs
     this.setupPlatformTabs();
-    
+
+    // Initialize ecosystem tabs
+    this.setupEcosystemTabs();
+
     // Initialize metric selectors
     this.setupMetricSelectors();
-    
+
     // Set initial update time
     this.updateLastRefreshTime();
   }
@@ -276,6 +282,54 @@ class AnalyticsDashboard {
         this.refreshDashboard(); // Refresh when page becomes visible
       }
     });
+
+    // Theme toggle
+    this.setupThemeToggle();
+  }
+
+  setupThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) return;
+
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('dashboard-theme') || 'light';
+    this.setTheme(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      this.setTheme(newTheme);
+      localStorage.setItem('dashboard-theme', newTheme);
+
+      if (typeof trackEvent === 'function') {
+        trackEvent('theme_changed', { theme: newTheme });
+      }
+    });
+  }
+
+  setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
+
+    // Update theme toggle icon
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      const icon = themeToggle.querySelector('img');
+      if (icon) {
+        icon.style.filter = theme === 'dark' ? 'invert(1)' : 'none';
+      }
+    }
+
+    // Update Chart.js colors if charts are initialized
+    if (window.AnalyticsVisualizations && typeof window.AnalyticsVisualizations.updateChartTheme === 'function') {
+      try {
+        window.AnalyticsVisualizations.updateChartTheme(theme);
+      } catch (e) {
+        console.log('Chart theme update skipped:', e.message);
+      }
+    }
+
+    console.log('Theme set to:', theme);
   }
 
   setupPlatformTabs() {
@@ -301,6 +355,436 @@ class AnalyticsDashboard {
   setupMetricSelectors() {
     // Setup any additional metric selectors here
     console.log('Metric selectors initialized');
+  }
+
+  // === ECOSYSTEM TAB HANDLING ===
+
+  setupEcosystemTabs() {
+    const ecosystemTabs = document.querySelectorAll('.ecosystem-tab-btn');
+    const ecosystemPanels = document.querySelectorAll('.ecosystem-content');
+
+    if (ecosystemTabs.length === 0) {
+      console.log('No ecosystem tabs found - skipping ecosystem setup');
+      return;
+    }
+
+    ecosystemTabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        // Update active tab
+        ecosystemTabs.forEach(t => t.classList.remove('active'));
+        e.target.classList.add('active');
+
+        // Show corresponding panel
+        const targetPanel = e.target.dataset.ecosystem;
+        ecosystemPanels.forEach(panel => {
+          panel.classList.remove('active');
+          if (panel.id === `ecosystem-${targetPanel}`) {
+            panel.classList.add('active');
+          }
+        });
+
+        // Load ecosystem data for the selected tab
+        this.loadEcosystemTab(targetPanel);
+
+        // Track tab click
+        if (typeof trackEvent === 'function') {
+          trackEvent('ecosystem_tab_clicked', { tab: targetPanel });
+        }
+      });
+    });
+
+    // Load initial ecosystem overview
+    this.loadEcosystemTab('overview');
+    console.log('Ecosystem tabs initialized');
+  }
+
+  async loadEcosystemTab(tab) {
+    // Check if ecosystem adapters are available
+    if (!window.EcosystemAdapters) {
+      console.warn('EcosystemAdapters not loaded - using placeholder data');
+      return;
+    }
+
+    try {
+      switch (tab) {
+        case 'overview':
+          await this.loadEcosystemOverview();
+          break;
+        case 'finderr':
+          await this.loadFinderrData();
+          break;
+        case 'campaign':
+          await this.loadCampaignData();
+          break;
+        case 'superarmy':
+          await this.loadSuperArmyData();
+          break;
+        case 'untrapd':
+          await this.loadUntrapdData();
+          break;
+        case 'revenue':
+          await this.loadRevenueData();
+          break;
+        default:
+          console.warn(`Unknown ecosystem tab: ${tab}`);
+      }
+    } catch (error) {
+      console.error(`Error loading ecosystem ${tab} data:`, error);
+    }
+  }
+
+  async loadEcosystemOverview() {
+    try {
+      const overview = await window.EcosystemAdapters.getEcosystemOverview();
+
+      // Update FINDERR card
+      this.updateElement('eco-finderr-version', overview.finderr.version);
+      this.updateElement('eco-finderr-status', overview.finderr.status);
+      this.updateStatusBadge('eco-finderr-badge', overview.finderr.status === 'Production Ready');
+
+      // Update Campaign card
+      this.updateElement('eco-campaign-day', `Day ${overview.campaign.day}/${overview.campaign.totalDays}`);
+      this.updateElement('eco-campaign-posts', `${overview.campaign.postsRemaining} posts remaining`);
+      this.updateStatusBadge('eco-campaign-badge', overview.campaign.day <= overview.campaign.totalDays);
+
+      // Update SuperArmy card
+      this.updateElement('eco-superarmy-tier', `Tier ${overview.superarmy.tier}: ${overview.superarmy.tierName}`);
+      this.updateElement('eco-superarmy-patterns', `${overview.superarmy.patterns} patterns`);
+      this.updateStatusBadge('eco-superarmy-badge', overview.superarmy.trustScore >= 0.8);
+
+      // Update Hub card
+      this.updateElement('eco-hub-status', overview.hub.status);
+      this.updateElement('eco-hub-url', overview.hub.url);
+      this.updateStatusBadge('eco-hub-badge', overview.hub.status === 'live');
+
+      // Update last sync time
+      this.updateElement('eco-last-sync', new Date(overview.lastUpdated).toLocaleTimeString());
+
+      console.log('Ecosystem overview loaded');
+    } catch (error) {
+      console.error('Error loading ecosystem overview:', error);
+    }
+  }
+
+  async loadFinderrData() {
+    try {
+      const finderrData = await window.EcosystemAdapters.getFinderrData();
+
+      // App info
+      this.updateElement('finderr-version', finderrData.app.version);
+      this.updateElement('finderr-status', finderrData.app.status);
+
+      // Beta testers
+      this.updateElement('finderr-beta-count', finderrData.betaTesters.count);
+      this.updateElement('finderr-beta-today', finderrData.betaTesters.dailySignups?.length > 0
+        ? finderrData.betaTesters.dailySignups[finderrData.betaTesters.dailySignups.length - 1].count
+        : 0);
+
+      // Active users
+      this.updateElement('finderr-active-users', finderrData.activeUsers.total);
+      this.updateElement('finderr-emergency-active', finderrData.activeUsers.emergencyActive);
+
+      // Sources breakdown
+      if (finderrData.betaTesters.sources) {
+        this.updateSourcesDisplay(finderrData.betaTesters.sources);
+      }
+
+      console.log('FINDERR data loaded');
+    } catch (error) {
+      console.error('Error loading FINDERR data:', error);
+    }
+  }
+
+  async loadCampaignData() {
+    try {
+      const campaignData = await window.EcosystemAdapters.getCampaignData();
+
+      // Campaign overview
+      this.updateElement('campaign-day', campaignData.posts.currentDay);
+      this.updateElement('campaign-total-posts', campaignData.posts.totalPosts);
+      this.updateElement('campaign-posts-remaining', campaignData.posts.postsRemaining);
+      this.updateElement('campaign-posts-today', campaignData.posts.postsToday);
+
+      // Platform breakdown
+      if (campaignData.posts.platforms) {
+        this.updateElement('campaign-twitter', campaignData.posts.platforms.twitter);
+        this.updateElement('campaign-instagram', campaignData.posts.platforms.instagram);
+        this.updateElement('campaign-facebook', campaignData.posts.platforms.facebook);
+      }
+
+      // Schedule
+      this.updateCampaignSchedule(campaignData.schedule);
+
+      // Tracking
+      if (campaignData.tracking) {
+        this.updateElement('campaign-executed', campaignData.tracking.executedPosts);
+        this.updateElement('campaign-success-rate', `${(campaignData.tracking.successRate * 100).toFixed(0)}%`);
+      }
+
+      console.log('Campaign data loaded');
+    } catch (error) {
+      console.error('Error loading campaign data:', error);
+    }
+  }
+
+  async loadSuperArmyData() {
+    try {
+      const superarmyData = await window.EcosystemAdapters.getSuperArmyData();
+
+      // Autonomy status
+      this.updateElement('superarmy-tier', superarmyData.autonomy.currentTier);
+      this.updateElement('superarmy-tier-name', superarmyData.autonomy.tierName);
+      this.updateElement('superarmy-tier-desc', superarmyData.autonomy.description);
+      this.updateElement('superarmy-trust', `${(superarmyData.autonomy.trustScore * 100).toFixed(0)}%`);
+
+      // Pattern stats
+      this.updateElement('superarmy-patterns', superarmyData.patterns.totalPatterns);
+      this.updateElement('superarmy-recent', superarmyData.patterns.recentAdditions);
+      this.updateElement('superarmy-confidence', `${(superarmyData.patterns.avgConfidence * 100).toFixed(0)}%`);
+
+      // Agent status
+      this.updateAgentStatusGrid(superarmyData.agents);
+
+      // Top patterns
+      this.updateTopPatternsDisplay(superarmyData.patterns.topPatterns);
+
+      // Interactions
+      this.updateElement('superarmy-interactions', superarmyData.interactions.total);
+      this.updateElement('superarmy-success', `${(superarmyData.interactions.successRate * 100).toFixed(0)}%`);
+
+      console.log('SuperArmy data loaded');
+    } catch (error) {
+      console.error('Error loading SuperArmy data:', error);
+    }
+  }
+
+  async loadUntrapdData() {
+    try {
+      // UNTRAPD data is mostly static identity info + Hub website status
+      const hubData = await window.EcosystemAdapters.getHubData();
+
+      // Identity info (static)
+      this.updateElement('untrapd-mission', 'Like-Minded People, Authentic Brand, Location-Independent Life');
+      this.updateElement('untrapd-status', 'Building Community');
+
+      // Projects under umbrella
+      this.updateElement('untrapd-finderr-status', 'v4.3.0+271 Ready');
+      this.updateElement('untrapd-hub-status', hubData.website.status === 'live' ? 'Live' : 'Development');
+      this.updateElement('untrapd-automation-status', 'Active');
+      this.updateElement('untrapd-superarmy-status', 'Operational');
+
+      // Hub website
+      this.updateElement('untrapd-hub-url', hubData.website.url);
+      this.updateElement('untrapd-hub-deploy', hubData.website.lastDeploy);
+
+      console.log('UNTRAPD data loaded');
+    } catch (error) {
+      console.error('Error loading UNTRAPD data:', error);
+    }
+  }
+
+  async loadRevenueData() {
+    try {
+      const revenueData = await window.EcosystemAdapters.getRevenueOverview();
+
+      // Ensure kpis object exists with defaults
+      const kpis = revenueData?.kpis || {};
+      const mrr = kpis.mrr ?? 0;
+      const mrrChange = kpis.mrrChange ?? 0;
+      const totalSubscribers = kpis.totalSubscribers ?? 0;
+      const subscriberChange = kpis.subscriberChange ?? 0;
+      const monthlyRevenue = kpis.monthlyRevenue ?? 0;
+      const revenueChange = kpis.revenueChange ?? 0;
+      const ltv = kpis.ltv ?? 0;
+      const ltvChange = kpis.ltvChange ?? 0;
+
+      // KPIs (using camelCase IDs matching HTML)
+      this.updateElement('revenueMrr', `€${mrr.toLocaleString()}`);
+      this.updateElement('revenueMrrGrowth', `${mrrChange >= 0 ? '+' : ''}${mrrChange.toFixed(1)}%`);
+      this.updateElement('revenueSubscribers', totalSubscribers.toLocaleString());
+      this.updateElement('revenueTrials', `${subscriberChange} trials`);
+      this.updateElement('revenueMonthly', `€${monthlyRevenue.toLocaleString()}`);
+      this.updateElement('revenueMonthlyGrowth', `${revenueChange >= 0 ? '+' : ''}${revenueChange.toFixed(1)}%`);
+      this.updateElement('revenueLtv', `€${ltv.toLocaleString()}`);
+      this.updateElement('revenueArpu', `ARPU: €${ltvChange.toLocaleString()}`);
+
+      // Add change classes for positive/negative styling
+      this.setChangeClass('revenueMrrGrowth', mrrChange);
+      this.setChangeClass('revenueMonthlyGrowth', revenueChange);
+
+      // Subscription tiers from RevenueCat (using camelCase IDs)
+      if (revenueData?.revenuecat?.tiers) {
+        const tiers = revenueData.revenuecat.tiers;
+
+        this.updateElement('tierFamilyCount', tiers.family?.activeSubscribers || 0);
+        this.updateElement('tierFamilyMrr', `€${(tiers.family?.mrr || 0).toFixed(0)}`);
+
+        this.updateElement('tierPremiumCount', tiers.premium?.activeSubscribers || 0);
+        this.updateElement('tierPremiumMrr', `€${(tiers.premium?.mrr || 0).toFixed(0)}`);
+
+        this.updateElement('tierLifetimeCount', tiers.lifetime?.totalPurchases || 0);
+        this.updateElement('tierLifetimeRevenue', `€${(tiers.lifetime?.totalRevenue || 0).toFixed(0)}`);
+
+        this.updateElement('tierFounderCount', tiers.founder?.totalPurchases || 0);
+        this.updateElement('tierFounderRevenue', `€${(tiers.founder?.totalRevenue || 0).toFixed(0)}`);
+      }
+
+      // Health metrics (using camelCase IDs)
+      const metrics = revenueData?.revenuecat?.metrics || {};
+      const successRate = (metrics.paymentSuccessRate ?? 0.95) * 100;
+      const conversionRate = (metrics.trialConversionRate ?? 0.25) * 100;
+      const retentionRate = (metrics.monthlyRetention ?? 0.92) * 100;
+      const refundRate = (metrics.refundRate ?? 0.02) * 100;
+
+      // Update health bars
+      const successBar = document.getElementById('healthSuccessBar');
+      const successValue = document.getElementById('healthSuccessRate');
+      if (successBar) successBar.style.width = `${successRate}%`;
+      if (successValue) successValue.textContent = `${successRate.toFixed(0)}%`;
+
+      const conversionBar = document.getElementById('healthConversionBar');
+      const conversionValue = document.getElementById('healthConversion');
+      if (conversionBar) conversionBar.style.width = `${conversionRate}%`;
+      if (conversionValue) conversionValue.textContent = `${conversionRate.toFixed(0)}%`;
+
+      const retentionBar = document.getElementById('healthRetentionBar');
+      const retentionValue = document.getElementById('healthRetention');
+      if (retentionBar) retentionBar.style.width = `${retentionRate}%`;
+      if (retentionValue) retentionValue.textContent = `${retentionRate.toFixed(0)}%`;
+
+      const refundBar = document.getElementById('healthRefundBar');
+      const refundValue = document.getElementById('healthRefund');
+      if (refundBar) refundBar.style.width = `${refundRate}%`;
+      if (refundValue) refundValue.textContent = `${refundRate.toFixed(0)}%`;
+
+      console.log('Revenue data loaded');
+    } catch (error) {
+      console.error('Error loading Revenue data:', error);
+    }
+  }
+
+  setChangeClass(elementId, value) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.classList.remove('positive', 'negative');
+      element.classList.add(value >= 0 ? 'positive' : 'negative');
+    }
+  }
+
+  updateHealthBar(prefix, percentage, inverted = false) {
+    const barFill = document.getElementById(`${prefix}-fill`);
+    const valueEl = document.getElementById(`${prefix}-value`);
+
+    if (barFill) {
+      barFill.style.width = `${Math.min(percentage, 100)}%`;
+      // Set bar class based on health level
+      barFill.classList.remove('excellent', 'good', 'warning', 'critical');
+      if (inverted) {
+        // For refund rate: lower is better
+        if (percentage <= 2) barFill.classList.add('excellent');
+        else if (percentage <= 5) barFill.classList.add('good');
+        else if (percentage <= 10) barFill.classList.add('warning');
+        else barFill.classList.add('critical');
+      } else {
+        // For other metrics: higher is better
+        if (percentage >= 90) barFill.classList.add('excellent');
+        else if (percentage >= 70) barFill.classList.add('good');
+        else if (percentage >= 50) barFill.classList.add('warning');
+        else barFill.classList.add('critical');
+      }
+    }
+
+    if (valueEl) {
+      valueEl.textContent = `${percentage.toFixed(1)}%`;
+    }
+  }
+
+  updateAPIStatus(elementId, isSample) {
+    const badge = document.getElementById(elementId);
+    if (!badge) return;
+
+    const dot = badge.querySelector('.status-dot');
+    const text = badge.querySelector('span:last-child') || badge;
+
+    if (dot) {
+      dot.classList.remove('connected', 'sample', 'disconnected');
+      dot.classList.add(isSample ? 'sample' : 'connected');
+    }
+
+    // Update status text
+    const statusText = isSample ? 'Sample Data' : 'Connected';
+    if (text && text.textContent) {
+      // Keep the original service name
+    }
+  }
+
+  // Ecosystem helper methods
+  updateElement(id, value) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.textContent = value;
+    }
+  }
+
+  updateStatusBadge(id, isGood) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.className = `status-badge ${isGood ? 'status-live' : 'status-pending'}`;
+      element.textContent = isGood ? '✓' : '○';
+    }
+  }
+
+  updateSourcesDisplay(sources) {
+    const container = document.getElementById('finderr-sources');
+    if (!container) return;
+
+    const total = Object.values(sources).reduce((a, b) => a + b, 0) || 1;
+    container.innerHTML = Object.entries(sources).map(([source, count]) => `
+      <div class="source-item">
+        <span class="source-name">${source}</span>
+        <span class="source-count">${count}</span>
+        <div class="source-bar" style="width: ${(count / total) * 100}%"></div>
+      </div>
+    `).join('');
+  }
+
+  updateCampaignSchedule(schedule) {
+    const container = document.getElementById('campaign-schedule');
+    if (!container || !schedule) return;
+
+    container.innerHTML = schedule.slice(0, 7).map(day => `
+      <div class="schedule-day ${day.status}">
+        <span class="day-num">Day ${day.day}</span>
+        <span class="day-date">${day.date}</span>
+        <span class="day-posts">${day.postsCount} posts</span>
+        <span class="day-status">${day.status}</span>
+      </div>
+    `).join('');
+  }
+
+  updateAgentStatusGrid(agents) {
+    const container = document.getElementById('superarmy-agents');
+    if (!container || !agents) return;
+
+    container.innerHTML = Object.entries(agents).map(([name, info]) => `
+      <div class="agent-card ${info.status}">
+        <span class="agent-name">${name.toUpperCase()}</span>
+        <span class="agent-status">${info.status}</span>
+        ${info.tier ? `<span class="agent-tier">Tier ${info.tier}</span>` : ''}
+      </div>
+    `).join('');
+  }
+
+  updateTopPatternsDisplay(patterns) {
+    const container = document.getElementById('superarmy-top-patterns');
+    if (!container || !patterns) return;
+
+    container.innerHTML = patterns.slice(0, 5).map(p => `
+      <div class="pattern-item">
+        <span class="pattern-name">${p.name}</span>
+        <span class="pattern-confidence">${(p.confidence * 100).toFixed(0)}%</span>
+      </div>
+    `).join('');
   }
 
   updateMetricCard(cardId, value, change, suffix = '') {

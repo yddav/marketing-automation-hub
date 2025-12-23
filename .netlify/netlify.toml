@@ -4,10 +4,13 @@ headers = []
 
 [functions]
 
+[functions.email-sequence-scheduler]
+schedule = "0 9 * * *"
+
 [functions."*"]
 
 [build]
-publish = "/media/wolfy/D260DD2060DD0BDB/Datas/2025 Projects/AppBuildFlutterVscodiumClaude/Hub_App_Shop_Integ/public"
+publish = "/home/wolfy/Projects/2025/Hub_App_Shop_Integ/public"
 publishOrigin = "config"
 
 [build.environment]

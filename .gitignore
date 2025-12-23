@@ -56,3 +56,6 @@ coverage/
 secrets/
 credentials/
 .claude/mcp.json
+
+# Local Netlify folder
+.netlify
