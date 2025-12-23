@@ -708,6 +708,173 @@
             text-transform: uppercase;
         }
 
+        /* Tab sections */
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        /* Section header */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-title .icon {
+            font-size: 1.5rem;
+        }
+
+        .section-badge {
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .section-badge.cyan { background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); }
+        .section-badge.purple { background: rgba(99, 102, 241, 0.15); color: var(--accent-primary); }
+        .section-badge.green { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
+
+        /* Detail cards */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .detail-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .detail-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .info-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        .info-value.success { color: var(--accent-emerald); }
+        .info-value.warning { color: var(--accent-amber); }
+        .info-value.primary { color: var(--accent-primary); }
+
+        /* Action buttons */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn.primary {
+            background: var(--gradient-primary);
+            border: none;
+            color: white;
+        }
+
+        .action-btn.primary:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--glow-primary);
+        }
+
+        .action-btn.secondary {
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+        }
+
+        .action-btn.secondary:hover {
+            border-color: var(--border-glow);
+            background: var(--bg-tertiary);
+        }
+
+        /* Coming soon placeholder */
+        .coming-soon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .coming-soon .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .coming-soon p {
+            color: var(--text-muted);
+            max-width: 400px;
+        }
+
         /* Responsive */
         @media (max-width: 1400px) {
             .projects-grid {
@@ -774,7 +941,7 @@
             </div>
 
             <nav class="sidebar-nav">
-                <div class="nav-item active" title="Dashboard">
+                <div class="nav-item active" data-tab="overview" title="Dashboard" onclick="switchTab('overview')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="3" y="3" width="7" height="7" rx="1"/>
                         <rect x="14" y="3" width="7" height="7" rx="1"/>
@@ -782,13 +949,13 @@
                         <rect x="14" y="14" width="7" height="7" rx="1"/>
                     </svg>
                 </div>
-                <div class="nav-item" title="FINDERR">
+                <div class="nav-item" data-tab="finderr" title="FINDERR" onclick="switchTab('finderr')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="5" y="2" width="14" height="20" rx="2"/>
                         <line x1="12" y1="18" x2="12" y2="18"/>
                     </svg>
                 </div>
-                <div class="nav-item" title="Hub">
+                <div class="nav-item" data-tab="hub" title="Hub" onclick="switchTab('hub')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"/>
                         <circle cx="12" cy="12" r="3"/>
@@ -798,19 +965,19 @@
                         <line x1="19" y1="12" x2="22" y2="12"/>
                     </svg>
                 </div>
-                <div class="nav-item" title="Automation">
+                <div class="nav-item" data-tab="automation" title="Automation" onclick="switchTab('automation')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
                     </svg>
                 </div>
-                <div class="nav-item" title="Analytics">
+                <div class="nav-item" data-tab="analytics" title="Analytics" onclick="switchTab('analytics')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="18" y1="20" x2="18" y2="10"/>
                         <line x1="12" y1="20" x2="12" y2="4"/>
                         <line x1="6" y1="20" x2="6" y2="14"/>
                     </svg>
                 </div>
-                <div class="nav-item" title="Settings">
+                <div class="nav-item" data-tab="settings" title="Settings" onclick="switchTab('settings')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="3"/>
                         <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
@@ -848,6 +1015,9 @@
                     </div>
                 </div>
             </header>
+
+            <!-- Overview Section (Default) -->
+            <div id="overview-section" class="tab-section active">
 
             <!-- Projects Grid -->
             <section class="projects-grid">
@@ -1078,11 +1248,407 @@
                     </div>
                 </div>
             </section>
+
+            </div><!-- End Overview Section -->
+
+            <!-- FINDERR Section -->
+            <div id="finderr-section" class="tab-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span class="icon">📱</span>
+                        <h2>FINDERR</h2>
+                        <span class="section-badge cyan">Beta Live</span>
+                    </div>
+                </div>
+
+                <div class="detail-grid">
+                    <div class="detail-card">
+                        <h3>📊 App Metrics</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Version</span>
+                                <span class="info-value">v4.3.0+271</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Total Users</span>
+                                <span class="info-value" id="finderrDetailUsers">--</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Beta Testers</span>
+                                <span class="info-value primary" id="finderrDetailBeta">--</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Premium Users</span>
+                                <span class="info-value success" id="finderrDetailPremium">0</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">MRR</span>
+                                <span class="info-value success" id="finderrDetailMRR">€0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>🚀 Deployment Status</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Google Play</span>
+                                <span class="info-value success">Ready for Upload</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Build Status</span>
+                                <span class="info-value success">Passed</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">RLS Auth</span>
+                                <span class="info-value success">Fixed</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">RevenueCat</span>
+                                <span class="info-value success">Configured</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">OAuth</span>
+                                <span class="info-value success">Google + Apple</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>💳 Revenue Tiers</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Family Plan</span>
+                                <span class="info-value">€17.99/mo</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Premium</span>
+                                <span class="info-value">€8.99/mo</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Lifetime</span>
+                                <span class="info-value">€149</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Founder</span>
+                                <span class="info-value primary">€299</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>📱 Recent Activity</h3>
+                        <div class="info-list" id="finderrActivity">
+                            <div class="info-row">
+                                <span class="info-label">v4.3.0+271</span>
+                                <span class="info-value">RLS Bearer Auth Fix</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Today</span>
+                                <span class="info-value">Beta Launch Day</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Testing</span>
+                                <span class="info-value success">All Tests Passed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="https://play.google.com/console" target="_blank" class="action-btn primary">
+                        📦 Open Play Console
+                    </a>
+                    <a href="https://app.revenuecat.com" target="_blank" class="action-btn secondary">
+                        💰 RevenueCat Dashboard
+                    </a>
+                    <a href="https://zdceeulkqfpzdjeyekgs.supabase.co" target="_blank" class="action-btn secondary">
+                        🗄️ Supabase
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hub Section -->
+            <div id="hub-section" class="tab-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span class="icon">🌐</span>
+                        <h2>Marketing Hub</h2>
+                        <span class="section-badge purple">Live</span>
+                    </div>
+                </div>
+
+                <div class="detail-grid">
+                    <div class="detail-card">
+                        <h3>📈 Website Analytics</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Domain</span>
+                                <span class="info-value">hub.untrapd.com</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Visitors (7d)</span>
+                                <span class="info-value" id="hubDetailVisitors">--</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Page Views</span>
+                                <span class="info-value" id="hubDetailPageViews">--</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Bounce Rate</span>
+                                <span class="info-value" id="hubDetailBounce">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>📄 Landing Pages</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Homepage</span>
+                                <span class="info-value success">Live</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">FINDERR App</span>
+                                <span class="info-value success">Live</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Dashboard</span>
+                                <span class="info-value success">Live (Auth)</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">About</span>
+                                <span class="info-value success">Live</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>🎨 Design System</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Theme</span>
+                                <span class="info-value">Glassmorphism</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Languages</span>
+                                <span class="info-value">EN, FR</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Mobile</span>
+                                <span class="info-value success">Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>🔧 Deployment</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Host</span>
+                                <span class="info-value">Netlify</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">SSL</span>
+                                <span class="info-value success">Active</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">CDN</span>
+                                <span class="info-value success">Global</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="https://hub.untrapd.com" target="_blank" class="action-btn primary">
+                        🌐 Visit Website
+                    </a>
+                    <a href="https://app.netlify.com/projects/main-hub-landingpage-untrapd" target="_blank" class="action-btn secondary">
+                        📊 Netlify Dashboard
+                    </a>
+                </div>
+            </div>
+
+            <!-- Automation Section -->
+            <div id="automation-section" class="tab-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span class="icon">⚡</span>
+                        <h2>Social Automation</h2>
+                        <span class="section-badge green">Ready</span>
+                    </div>
+                </div>
+
+                <div class="detail-grid">
+                    <div class="detail-card">
+                        <h3>📅 Campaign Status</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Campaign</span>
+                                <span class="info-value">FINDERR Beta</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Duration</span>
+                                <span class="info-value">Dec 22 - Jan 5</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Total Posts</span>
+                                <span class="info-value primary">81</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Published</span>
+                                <span class="info-value" id="autoDetailPublished">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>📱 Platform Distribution</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Twitter/X</span>
+                                <span class="info-value">~20 posts</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Facebook</span>
+                                <span class="info-value">~16 posts</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Instagram</span>
+                                <span class="info-value">~28 posts</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Pinterest</span>
+                                <span class="info-value">~17 posts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>🔌 API Integration</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Twitter API</span>
+                                <span class="info-value success">Connected</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Meta API</span>
+                                <span class="info-value success">Connected</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Pinterest API</span>
+                                <span class="info-value success">Connected</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">TikTok API</span>
+                                <span class="info-value warning">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>📊 Engagement</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Total Reach</span>
+                                <span class="info-value" id="autoDetailReach">--</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Avg. Engagement</span>
+                                <span class="info-value" id="autoDetailEngagement">--</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Click-throughs</span>
+                                <span class="info-value" id="autoDetailClicks">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn primary" onclick="alert('Campaign automation coming soon!')">
+                        🚀 Run Campaign
+                    </button>
+                    <button class="action-btn secondary" onclick="alert('Preview posts coming soon!')">
+                        👁️ Preview Posts
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analytics Section -->
+            <div id="analytics-section" class="tab-section">
+                <div class="detail-card">
+                    <div class="coming-soon">
+                        <span class="icon">📊</span>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Comprehensive analytics across all platforms coming soon. Track users, engagement, revenue, and growth in one place.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settings-section" class="tab-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <span class="icon">⚙️</span>
+                        <h2>Settings</h2>
+                    </div>
+                </div>
+
+                <div class="detail-grid">
+                    <div class="detail-card">
+                        <h3>👤 Account</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Email</span>
+                                <span class="info-value" id="settingsEmail">--</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Role</span>
+                                <span class="info-value primary">Admin</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Auth Provider</span>
+                                <span class="info-value">Supabase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h3>🔗 Connections</h3>
+                        <div class="info-list">
+                            <div class="info-row">
+                                <span class="info-label">Supabase</span>
+                                <span class="info-value success">Connected</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Netlify</span>
+                                <span class="info-value success">Connected</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">RevenueCat</span>
+                                <span class="info-value success">Connected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn secondary" onclick="DashboardAuth.signOut()">
+                        🚪 Sign Out
+                    </button>
+                </div>
+            </div>
+
         </main>
     </div>
 
     <!-- Auth Script -->
     <script src="js/dashboard-auth.js"></script>
+
+    <!-- Data Fetching Script -->
+    <script src="js/dashboard-data.js"></script>
 
     <!-- Dashboard Script -->
     <script>
@@ -1105,10 +1671,11 @@
             }, 1000);
         });
 
-        // Growth Chart
+        // Growth Chart - store reference for data updates
         const growthCtx = document.getElementById('growthChart');
+        let growthChart = null;
         if (growthCtx) {
-            new Chart(growthCtx.getContext('2d'), {
+            growthChart = new Chart(growthCtx.getContext('2d'), {
                 type: 'line',
                 data: {
                     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -1213,8 +1780,71 @@
                 if (userEmail && user && user.email) {
                     userEmail.textContent = user.email;
                 }
+                // Also update settings email
+                const settingsEmail = document.getElementById('settingsEmail');
+                if (settingsEmail && user && user.email) {
+                    settingsEmail.textContent = user.email;
+                }
             };
         }
+
+        // Tab switching function
+        function switchTab(tabName) {
+            // Hide all sections
+            document.querySelectorAll('.tab-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Deactivate all nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Show selected section
+            const section = document.getElementById(tabName + '-section');
+            if (section) {
+                section.classList.add('active');
+            }
+
+            // Activate selected nav item
+            const navItem = document.querySelector(`.nav-item[data-tab="${tabName}"]`);
+            if (navItem) {
+                navItem.classList.add('active');
+            }
+
+            // Update header subtitle based on tab
+            const headerSubtitle = document.querySelector('.header-left p');
+            if (headerSubtitle) {
+                const tabTitles = {
+                    'overview': 'Ecosystem Overview',
+                    'finderr': 'FINDERR Phone Recovery',
+                    'hub': 'Marketing Hub',
+                    'automation': 'Social Automation',
+                    'analytics': 'Analytics Dashboard',
+                    'settings': 'Account Settings'
+                };
+                const dateStr = document.getElementById('currentDate').textContent;
+                headerSubtitle.innerHTML = `${tabTitles[tabName] || 'Dashboard'} • <span id="currentDate">${dateStr}</span>`;
+            }
+
+            // Update FINDERR detail metrics when switching to FINDERR tab
+            if (tabName === 'finderr' && typeof DashboardData !== 'undefined') {
+                const totalUsers = document.getElementById('finderrUsers')?.textContent;
+                const detailUsers = document.getElementById('finderrDetailUsers');
+                if (detailUsers && totalUsers) detailUsers.textContent = totalUsers;
+
+                const betaTesters = document.getElementById('finderrBetaTesters')?.textContent;
+                const detailBeta = document.getElementById('finderrDetailBeta');
+                if (detailBeta && betaTesters) detailBeta.textContent = betaTesters;
+            }
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                switchTab('overview');
+            }
+        });
     </script>
 </body>
 </html>

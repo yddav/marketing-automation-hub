@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Feedback - FINDERR | UNTRAPD</title>
+    <meta name="description" content="Submit feedback, report bugs, or request features for FINDERR beta. Help us improve Android phone security.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="../css/finderr.css">
+
+    <style>
+        .feedback-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+
+        .feedback-hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .feedback-hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feedback-container {
+            max-width: 800px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
+
+        .feedback-form-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: white;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feedback-type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .feedback-type-option {
+            position: relative;
+        }
+
+        .feedback-type-option input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .feedback-type-option label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #fafafa;
+        }
+
+        .feedback-type-option input:checked + label {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .feedback-type-option label:hover {
+            border-color: #667eea;
+        }
+
+        .feedback-type-option .icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .feedback-type-option .text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .severity-options {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .severity-option {
+            position: relative;
+        }
+
+        .severity-option input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .severity-option label {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .severity-option input:checked + label {
+            color: white;
+        }
+
+        .severity-option.low input:checked + label {
+            background: #27ae60;
+            border-color: #27ae60;
+        }
+
+        .severity-option.medium input:checked + label {
+            background: #f39c12;
+            border-color: #f39c12;
+        }
+
+        .severity-option.high input:checked + label {
+            background: #e67e22;
+            border-color: #e67e22;
+        }
+
+        .severity-option.critical input:checked + label {
+            background: #e74c3c;
+            border-color: #e74c3c;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #feedback-message {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            display: none;
+            white-space: pre-line;
+        }
+
+        .tips-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .tip-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: #667eea;
+        }
+
+        .tip-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../../../index.html" class="logo-link">
+                        <h1>UNTRAPD</h1>
+                        <span class="tagline">Automation Hub</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../../../index.html" class="nav-link">Hub</a></li>
+                    <li class="nav-item"><a href="../../" class="nav-link">Apps</a></li>
+                    <li class="nav-item"><a href="../" class="nav-link">FINDERR</a></li>
+                    <li class="nav-item"><a href="./" class="nav-link">Beta</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="feedback-hero">
+        <h1>Beta Feedback</h1>
+        <p>Help us make FINDERR better. Report bugs, request features, or share your thoughts.</p>
+    </section>
+
+    <!-- Feedback Form -->
+    <div class="feedback-container">
+        <div class="feedback-form-card">
+            <form id="feedback-form">
+                <!-- Email -->
+                <div class="form-group">
+                    <label>Email Address <span class="required">*</span></label>
+                    <input type="email" id="feedback-email" required placeholder="your.email@example.com">
+                </div>
+
+                <!-- Feedback Type -->
+                <div class="form-group">
+                    <label>Feedback Type <span class="required">*</span></label>
+                    <div class="feedback-type-grid">
+                        <div class="feedback-type-option">
+                            <input type="radio" name="feedback_type" id="type-bug" value="bug" required>
+                            <label for="type-bug">
+                                <span class="icon">🐛</span>
+                                <span class="text">Bug Report</span>
+                            </label>
+                        </div>
+                        <div class="feedback-type-option">
+                            <input type="radio" name="feedback_type" id="type-feature" value="feature_request">
+                            <label for="type-feature">
+                                <span class="icon">💡</span>
+                                <span class="text">Feature Request</span>
+                            </label>
+                        </div>
+                        <div class="feedback-type-option">
+                            <input type="radio" name="feedback_type" id="type-usability" value="usability">
+                            <label for="type-usability">
+                                <span class="icon">👆</span>
+                                <span class="text">Usability</span>
+                            </label>
+                        </div>
+                        <div class="feedback-type-option">
+                            <input type="radio" name="feedback_type" id="type-performance" value="performance">
+                            <label for="type-performance">
+                                <span class="icon">⚡</span>
+                                <span class="text">Performance</span>
+                            </label>
+                        </div>
+                        <div class="feedback-type-option">
+                            <input type="radio" name="feedback_type" id="type-general" value="general">
+                            <label for="type-general">
+                                <span class="icon">💬</span>
+                                <span class="text">General</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group">
+                    <label>Subject <span class="required">*</span></label>
+                    <input type="text" id="feedback-subject" required placeholder="Brief summary of your feedback">
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label>Description <span class="required">*</span></label>
+                    <textarea id="feedback-description" required placeholder="Please describe your feedback in detail. For bugs, include steps to reproduce."></textarea>
+                </div>
+
+                <!-- Severity (for bugs) -->
+                <div class="form-group" id="severity-group" style="display: none;">
+                    <label>Severity</label>
+                    <div class="severity-options">
+                        <div class="severity-option low">
+                            <input type="radio" name="severity" id="severity-low" value="low">
+                            <label for="severity-low">Low</label>
+                        </div>
+                        <div class="severity-option medium">
+                            <input type="radio" name="severity" id="severity-medium" value="medium">
+                            <label for="severity-medium">Medium</label>
+                        </div>
+                        <div class="severity-option high">
+                            <input type="radio" name="severity" id="severity-high" value="high">
+                            <label for="severity-high">High</label>
+                        </div>
+                        <div class="severity-option critical">
+                            <input type="radio" name="severity" id="severity-critical" value="critical">
+                            <label for="severity-critical">Critical</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device Info -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Device Model</label>
+                        <input type="text" id="feedback-device" placeholder="e.g., Samsung Galaxy S23">
+                    </div>
+                    <div class="form-group">
+                        <label>App Version</label>
+                        <input type="text" id="feedback-version" placeholder="e.g., v4.3.0+271" value="v4.3.0">
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+
+                <div id="feedback-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tips Section -->
+    <section class="tips-section">
+        <h2 style="text-align: center; margin-bottom: 40px;">How to Submit Great Feedback</h2>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h4>🐛 For Bug Reports</h4>
+                <p>Include steps to reproduce the issue, what you expected to happen, and what actually happened. Screenshots help!</p>
+            </div>
+            <div class="tip-card">
+                <h4>💡 For Feature Requests</h4>
+                <p>Describe the problem you're trying to solve and why this feature would help you. Real use cases are valuable.</p>
+            </div>
+            <div class="tip-card">
+                <h4>👆 For Usability Feedback</h4>
+                <p>Tell us what was confusing or difficult. What would make it easier? Your first impressions matter.</p>
+            </div>
+            <div class="tip-card">
+                <h4>⚡ For Performance Issues</h4>
+                <p>Note when the issue occurs (startup, during use, etc.) and how long operations take. Battery impact is helpful too.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FINDERR Beta</h3>
+                    <p>Help us launch Android's first emergency wallpaper system.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../">FINDERR Home</a></li>
+                        <li><a href="./">Beta Signup</a></li>
+                        <li><a href="../../../index.html">UNTRAPD Hub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:beta@untrapd.com">beta@untrapd.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UNTRAPD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../../js/main.js"></script>
+    <script src="beta-feedback.js"></script>
+</body>
+</html>

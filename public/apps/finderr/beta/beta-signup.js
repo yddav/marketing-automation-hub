@@ -1,8 +1,42 @@
 // FINDERR Beta Tester Signup Integration
-// Connects beta form to Mailchimp via Netlify Functions
+// Saves beta signups directly to Supabase beta_users table
 
 (function() {
     'use strict';
+
+    // Supabase Configuration
+    const SUPABASE_URL = 'https://zdceeulkqfpzdjeyekgs.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_UOURsZSevFyKJJljIO9FDg_In2B0hdv';
+
+    // Initialize Supabase client (lazy load)
+    let supabaseClient = null;
+
+    async function getSupabase() {
+        if (supabaseClient) return supabaseClient;
+
+        // Wait for Supabase library to load
+        if (typeof window.supabase === 'undefined') {
+            // Dynamically load Supabase
+            await loadSupabaseScript();
+        }
+
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        return supabaseClient;
+    }
+
+    function loadSupabaseScript() {
+        return new Promise((resolve, reject) => {
+            if (typeof window.supabase !== 'undefined') {
+                resolve();
+                return;
+            }
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+    }
 
     // Wait for DOM
     function ready(fn) {
@@ -131,7 +165,7 @@
     }
 
     // Handle beta signup submission
-    function handleBetaSubmit(e) {
+    async function handleBetaSubmit(e) {
         e.preventDefault();
 
         var form = e.target;
@@ -139,76 +173,92 @@
         var originalText = submitBtn.textContent;
 
         // Get form data
-        var email = document.getElementById('beta-email').value;
-        var name = document.getElementById('beta-name').value;
-        var device = document.getElementById('beta-device').value;
-        var focus = document.getElementById('beta-focus').value;
+        var email = document.getElementById('beta-email').value.trim().toLowerCase();
+        var name = document.getElementById('beta-name').value.trim();
+        var device = document.getElementById('beta-device').value.trim();
+        var focus = document.getElementById('beta-focus').value.trim();
 
         // Show loading state
         submitBtn.textContent = 'Joining Beta...';
         submitBtn.disabled = true;
 
-        // Prepare data for Mailchimp
-        var data = {
-            email: email,
-            name: name,
-            source: 'finderr_beta',
-            tags: ['FINDERR Beta Tester', 'Android User'],
-            custom_fields: {
-                DEVICE: device,
-                FOCUS: focus || 'General testing',
-                SIGNUP_DATE: new Date().toISOString(),
-                BETA_VERSION: 'v4.3'
-            }
-        };
+        try {
+            // Get Supabase client
+            const supabase = await getSupabase();
 
-        // Submit to Mailchimp webhook
-        fetch('/.netlify/functions/mailchimp-webhook', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(result) {
-            if (result.success) {
-                showMessage('success',
-                    '🎉 Welcome to FINDERR Beta!\n\n' +
-                    'You\'ve been added to our beta tester list. We\'ll send you an email with:\n' +
-                    '• Google Play testing link (when errors are fixed)\n' +
-                    '• Beta testing guidelines\n' +
-                    '• How to provide feedback\n\n' +
-                    'Check your inbox in the next 24-48 hours!'
-                );
-                form.reset();
-
-                // Track event
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'beta_signup', {
-                        'event_category': 'engagement',
-                        'event_label': 'FINDERR Beta',
-                        'value': 1
-                    });
+            // Prepare data for Supabase beta_users table
+            const betaUserData = {
+                email: email,
+                first_name: name,
+                device_type: device,
+                interest: focus || 'General testing',
+                status: 'subscribed',
+                source: 'finderr-beta-signup',
+                language: navigator.language?.split('-')[0] || 'en',
+                tags: ['finderr-beta', 'android-tester', 'website-signup'],
+                metadata: {
+                    signup_date: new Date().toISOString(),
+                    beta_version: 'v4.3',
+                    user_agent: navigator.userAgent,
+                    referrer: document.referrer || 'direct'
                 }
-            } else {
-                throw new Error(result.message || 'Signup failed');
+            };
+
+            // Insert into Supabase
+            const { data, error } = await supabase
+                .from('beta_users')
+                .insert([betaUserData])
+                .select();
+
+            if (error) {
+                // Check if duplicate email
+                if (error.code === '23505' || error.message?.includes('duplicate')) {
+                    showMessage('info',
+                        '📧 You\'re already signed up!\n\n' +
+                        'This email is already registered for FINDERR beta testing.\n' +
+                        'Check your inbox for the Google Play testing invite.\n\n' +
+                        'Questions? Email us at beta@untrapd.com'
+                    );
+                    return;
+                }
+                throw error;
             }
-        })
-        .catch(function(error) {
+
+            // Success!
+            showMessage('success',
+                '🎉 Welcome to FINDERR Beta!\n\n' +
+                'You\'ve been added to our beta tester list. Here\'s what happens next:\n\n' +
+                '1. We\'ll add you to Google Play internal testing\n' +
+                '2. You\'ll receive an opt-in email (check spam!)\n' +
+                '3. Accept the invite to download FINDERR\n\n' +
+                'Expect the invite within 24-48 hours!\n\n' +
+                '📱 Opt-in link: play.google.com/apps/testing/com.finderr.app'
+            );
+            form.reset();
+
+            // Track event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'beta_signup', {
+                    'event_category': 'engagement',
+                    'event_label': 'FINDERR Beta',
+                    'value': 1
+                });
+            }
+
+            console.log('Beta signup successful:', data);
+
+        } catch (error) {
             console.error('Beta signup error:', error);
             showMessage('error',
                 '❌ Something went wrong.\n\n' +
-                'Please try again or email us directly at beta@untrapd.com'
+                'Please try again or email us directly at beta@untrapd.com\n\n' +
+                'Error: ' + (error.message || 'Unknown error')
             );
-        })
-        .finally(function() {
+        } finally {
             // Restore button
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        });
+        }
     }
 
     // Show message
@@ -224,17 +274,21 @@
             messageDiv.style.background = 'rgba(76, 175, 80, 0.1)';
             messageDiv.style.border = '2px solid rgba(76, 175, 80, 0.3)';
             messageDiv.style.color = '#4CAF50';
+        } else if (type === 'info') {
+            messageDiv.style.background = 'rgba(33, 150, 243, 0.1)';
+            messageDiv.style.border = '2px solid rgba(33, 150, 243, 0.3)';
+            messageDiv.style.color = '#2196F3';
         } else {
             messageDiv.style.background = 'rgba(244, 67, 54, 0.1)';
             messageDiv.style.border = '2px solid rgba(244, 67, 54, 0.3)';
             messageDiv.style.color = '#f44336';
         }
 
-        // Auto-hide success messages after 10 seconds
-        if (type === 'success') {
+        // Auto-hide success/info messages after 15 seconds
+        if (type === 'success' || type === 'info') {
             setTimeout(function() {
                 messageDiv.style.display = 'none';
-            }, 10000);
+            }, 15000);
         }
     }
 
