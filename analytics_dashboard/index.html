@@ -48,6 +48,10 @@
                     <span class="last-updated">Last updated: <span id="lastUpdated">--</span></span>
                 </div>
                 <div class="quick-nav">
+                    <button id="themeToggle" class="theme-toggle" title="Toggle Dark Mode">
+                        <i data-lucide="moon" class="theme-icon-dark"></i>
+                        <i data-lucide="sun" class="theme-icon-light"></i>
+                    </button>
                     <a href="../public/dashboard/index.html" class="quick-nav-item" title="Main Dashboard">
                         <i data-lucide="layout-dashboard"></i>
                     </a>
@@ -310,6 +314,593 @@
                 </div>
             </div>
         </section>
+
+        <!-- ============================================ -->
+        <!-- ECOSYSTEM DASHBOARD SECTION -->
+        <!-- ============================================ -->
+        <section class="ecosystem-section">
+            <div class="card ecosystem-card">
+                <div class="card-header ecosystem-header">
+                    <h3>🌐 UNTRAPD Ecosystem Status</h3>
+                    <div class="ecosystem-tabs">
+                        <button class="ecosystem-tab-btn active" data-ecosystem="overview">Overview</button>
+                        <button class="ecosystem-tab-btn" data-ecosystem="finderr">FINDERR</button>
+                        <button class="ecosystem-tab-btn" data-ecosystem="campaign">Campaign</button>
+                        <button class="ecosystem-tab-btn" data-ecosystem="superarmy">SuperArmy</button>
+                        <button class="ecosystem-tab-btn" data-ecosystem="revenue">Revenue</button>
+                        <button class="ecosystem-tab-btn" data-ecosystem="untrapd">UNTRAPD</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <!-- Ecosystem Overview Tab -->
+                    <div class="ecosystem-content active" id="ecosystem-overview">
+                        <div class="ecosystem-overview-grid">
+                            <div class="ecosystem-card-mini finderr-status">
+                                <div class="mini-card-header">
+                                    <i data-lucide="smartphone"></i>
+                                    <span>FINDERR App</span>
+                                </div>
+                                <div class="mini-card-content">
+                                    <div class="status-badge" id="finderrStatus">v4.3.0+271</div>
+                                    <div class="mini-metric">
+                                        <span class="label">Beta Testers</span>
+                                        <span class="value" id="betaTesterCount">0</span>
+                                    </div>
+                                    <div class="mini-metric">
+                                        <span class="label">Active Users</span>
+                                        <span class="value" id="activeUserCount">0</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ecosystem-card-mini campaign-status">
+                                <div class="mini-card-header">
+                                    <i data-lucide="megaphone"></i>
+                                    <span>Campaign</span>
+                                </div>
+                                <div class="mini-card-content">
+                                    <div class="status-badge campaign" id="campaignDay">Day 1/15</div>
+                                    <div class="mini-metric">
+                                        <span class="label">Total Posts</span>
+                                        <span class="value" id="totalPosts">81</span>
+                                    </div>
+                                    <div class="mini-metric">
+                                        <span class="label">Remaining</span>
+                                        <span class="value" id="postsRemaining">--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ecosystem-card-mini superarmy-status">
+                                <div class="mini-card-header">
+                                    <i data-lucide="brain"></i>
+                                    <span>SuperArmy</span>
+                                </div>
+                                <div class="mini-card-content">
+                                    <div class="status-badge superarmy" id="autonomyTier">Tier 1: Guided</div>
+                                    <div class="mini-metric">
+                                        <span class="label">Patterns</span>
+                                        <span class="value" id="patternCount">72</span>
+                                    </div>
+                                    <div class="mini-metric">
+                                        <span class="label">Trust Score</span>
+                                        <span class="value" id="trustScore">85%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ecosystem-card-mini hub-status">
+                                <div class="mini-card-header">
+                                    <i data-lucide="globe"></i>
+                                    <span>Hub Website</span>
+                                </div>
+                                <div class="mini-card-content">
+                                    <div class="status-badge hub" id="hubStatus">Live ✅</div>
+                                    <div class="mini-metric">
+                                        <span class="label">URL</span>
+                                        <a href="https://hub.untrapd.com" target="_blank" class="hub-link">hub.untrapd.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FINDERR Tab -->
+                    <div class="ecosystem-content" id="ecosystem-finderr">
+                        <div class="finderr-dashboard">
+                            <div class="finderr-info-section">
+                                <h4>📱 App Information</h4>
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <span class="label">Version</span>
+                                        <span class="value" id="finderrVersion">v4.3.0+271</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Status</span>
+                                        <span class="value status-ready">Production Ready</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Package</span>
+                                        <span class="value">com.finderr.app</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="finderr-metrics-section">
+                                <h4>👥 Beta Testers</h4>
+                                <div class="beta-metrics">
+                                    <div class="beta-metric-card">
+                                        <span class="big-number" id="betaTotalCount">0</span>
+                                        <span class="label">Total Signups</span>
+                                    </div>
+                                    <div class="beta-sources">
+                                        <h5>Signup Sources</h5>
+                                        <div class="source-bars" id="betaSources">
+                                            <div class="source-bar">
+                                                <span class="source-name">Organic</span>
+                                                <div class="bar-container"><div class="bar" style="width: 0%"></div></div>
+                                                <span class="source-count">0</span>
+                                            </div>
+                                            <div class="source-bar">
+                                                <span class="source-name">Twitter</span>
+                                                <div class="bar-container"><div class="bar" style="width: 0%"></div></div>
+                                                <span class="source-count">0</span>
+                                            </div>
+                                            <div class="source-bar">
+                                                <span class="source-name">Instagram</span>
+                                                <div class="bar-container"><div class="bar" style="width: 0%"></div></div>
+                                                <span class="source-count">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="finderr-chart-section">
+                                <h4>📈 Daily Signups</h4>
+                                <canvas id="betaSignupsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campaign Tab -->
+                    <div class="ecosystem-content" id="ecosystem-campaign">
+                        <div class="campaign-dashboard">
+                            <div class="campaign-progress-section">
+                                <h4>📅 Campaign Progress</h4>
+                                <div class="campaign-progress-bar">
+                                    <div class="progress-track">
+                                        <div class="progress-fill" id="campaignProgress" style="width: 0%"></div>
+                                    </div>
+                                    <div class="progress-labels">
+                                        <span>Day <span id="currentDay">1</span> of 15</span>
+                                        <span><span id="completedPosts">0</span> / 81 posts</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="campaign-platforms-section">
+                                <h4>📱 Platform Distribution</h4>
+                                <div class="platform-cards">
+                                    <div class="platform-card twitter">
+                                        <i data-lucide="twitter"></i>
+                                        <span class="platform-name">Twitter</span>
+                                        <span class="platform-count">35 posts</span>
+                                    </div>
+                                    <div class="platform-card instagram">
+                                        <i data-lucide="instagram"></i>
+                                        <span class="platform-name">Instagram</span>
+                                        <span class="platform-count">25 posts</span>
+                                    </div>
+                                    <div class="platform-card facebook">
+                                        <i data-lucide="facebook"></i>
+                                        <span class="platform-name">Facebook</span>
+                                        <span class="platform-count">21 posts</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="campaign-schedule-section">
+                                <h4>🗓️ Daily Schedule</h4>
+                                <div class="schedule-grid" id="campaignSchedule">
+                                    <!-- Schedule will be populated by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SuperArmy Tab -->
+                    <div class="ecosystem-content" id="ecosystem-superarmy">
+                        <div class="superarmy-dashboard">
+                            <div class="autonomy-section">
+                                <h4>🤖 Autonomy Status</h4>
+                                <div class="autonomy-display">
+                                    <div class="tier-badge" id="currentTierBadge">
+                                        <span class="tier-number">1</span>
+                                        <span class="tier-name">Guided</span>
+                                    </div>
+                                    <div class="tier-description">
+                                        <p id="tierDescription">PA suggests, you confirm</p>
+                                    </div>
+                                    <div class="tier-meter">
+                                        <div class="tier-levels">
+                                            <div class="tier-level" data-tier="0">0</div>
+                                            <div class="tier-level active" data-tier="1">1</div>
+                                            <div class="tier-level" data-tier="2">2</div>
+                                            <div class="tier-level" data-tier="3">3</div>
+                                            <div class="tier-level" data-tier="4">4</div>
+                                        </div>
+                                        <div class="tier-labels">
+                                            <span>Full Control</span>
+                                            <span>Full Auto</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="patterns-section">
+                                <h4>🧠 Learning Patterns</h4>
+                                <div class="patterns-stats">
+                                    <div class="pattern-stat">
+                                        <span class="stat-number" id="totalPatterns">72</span>
+                                        <span class="stat-label">Total Patterns</span>
+                                    </div>
+                                    <div class="pattern-stat">
+                                        <span class="stat-number" id="recentPatterns">+6</span>
+                                        <span class="stat-label">Recent Additions</span>
+                                    </div>
+                                    <div class="pattern-stat">
+                                        <span class="stat-number" id="avgConfidence">89%</span>
+                                        <span class="stat-label">Avg Confidence</span>
+                                    </div>
+                                </div>
+                                <div class="pattern-categories" id="patternCategories">
+                                    <div class="category-bar">
+                                        <span class="cat-name">Workflow</span>
+                                        <div class="cat-bar-container"><div class="cat-bar" style="width: 25%"></div></div>
+                                        <span class="cat-count">18</span>
+                                    </div>
+                                    <div class="category-bar">
+                                        <span class="cat-name">Communication</span>
+                                        <div class="cat-bar-container"><div class="cat-bar" style="width: 21%"></div></div>
+                                        <span class="cat-count">15</span>
+                                    </div>
+                                    <div class="category-bar">
+                                        <span class="cat-name">Problem Solving</span>
+                                        <div class="cat-bar-container"><div class="cat-bar" style="width: 17%"></div></div>
+                                        <span class="cat-count">12</span>
+                                    </div>
+                                    <div class="category-bar">
+                                        <span class="cat-name">Technical</span>
+                                        <div class="cat-bar-container"><div class="cat-bar" style="width: 37%"></div></div>
+                                        <span class="cat-count">27</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="agents-section">
+                                <h4>🎖️ Agent Status</h4>
+                                <div class="agents-grid" id="agentsGrid">
+                                    <div class="agent-card">
+                                        <span class="agent-name">Alpha</span>
+                                        <span class="agent-status ready">Ready</span>
+                                    </div>
+                                    <div class="agent-card">
+                                        <span class="agent-name">Beta</span>
+                                        <span class="agent-status ready">Ready</span>
+                                    </div>
+                                    <div class="agent-card">
+                                        <span class="agent-name">Gamma</span>
+                                        <span class="agent-status ready">Ready</span>
+                                    </div>
+                                    <div class="agent-card">
+                                        <span class="agent-name">Delta</span>
+                                        <span class="agent-status ready">Ready</span>
+                                    </div>
+                                    <div class="agent-card">
+                                        <span class="agent-name">Epsilon</span>
+                                        <span class="agent-status ready">Ready</span>
+                                    </div>
+                                    <div class="agent-card pa">
+                                        <span class="agent-name">PA</span>
+                                        <span class="agent-status active">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Tab -->
+                    <div class="ecosystem-content" id="ecosystem-revenue">
+                        <div class="revenue-dashboard">
+                            <!-- Revenue KPIs -->
+                            <div class="revenue-kpis-section">
+                                <h4>💰 Revenue KPIs</h4>
+                                <div class="revenue-kpis-grid">
+                                    <div class="revenue-kpi-card mrr">
+                                        <div class="kpi-icon"><i data-lucide="trending-up"></i></div>
+                                        <div class="kpi-content">
+                                            <span class="kpi-label">MRR</span>
+                                            <span class="kpi-value" id="revenueMrr">€0</span>
+                                            <span class="kpi-change positive" id="revenueMrrGrowth">+0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="revenue-kpi-card subscribers">
+                                        <div class="kpi-icon"><i data-lucide="users"></i></div>
+                                        <div class="kpi-content">
+                                            <span class="kpi-label">Active Subscribers</span>
+                                            <span class="kpi-value" id="revenueSubscribers">0</span>
+                                            <span class="kpi-change" id="revenueTrials">0 trials</span>
+                                        </div>
+                                    </div>
+                                    <div class="revenue-kpi-card revenue">
+                                        <div class="kpi-icon"><i data-lucide="credit-card"></i></div>
+                                        <div class="kpi-content">
+                                            <span class="kpi-label">Monthly Revenue</span>
+                                            <span class="kpi-value" id="revenueMonthly">€0</span>
+                                            <span class="kpi-change" id="revenueMonthlyGrowth">+0%</span>
+                                        </div>
+                                    </div>
+                                    <div class="revenue-kpi-card ltv">
+                                        <div class="kpi-icon"><i data-lucide="heart"></i></div>
+                                        <div class="kpi-content">
+                                            <span class="kpi-label">LTV</span>
+                                            <span class="kpi-value" id="revenueLtv">€0</span>
+                                            <span class="kpi-change" id="revenueArpu">ARPU: €0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Subscription Tiers -->
+                            <div class="revenue-tiers-section">
+                                <h4>📊 Subscription Tiers (RevenueCat)</h4>
+                                <div class="tiers-grid">
+                                    <div class="tier-card family">
+                                        <div class="tier-header">
+                                            <span class="tier-name">Family Plan</span>
+                                            <span class="tier-price">€17.99/mo</span>
+                                        </div>
+                                        <div class="tier-stats">
+                                            <div class="tier-stat">
+                                                <span class="stat-value" id="tierFamilyCount">0</span>
+                                                <span class="stat-label">subscribers</span>
+                                            </div>
+                                            <div class="tier-stat">
+                                                <span class="stat-value" id="tierFamilyMrr">€0</span>
+                                                <span class="stat-label">MRR</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tier-card premium">
+                                        <div class="tier-header">
+                                            <span class="tier-name">Premium</span>
+                                            <span class="tier-price">€8.99/mo</span>
+                                        </div>
+                                        <div class="tier-stats">
+                                            <div class="tier-stat">
+                                                <span class="stat-value" id="tierPremiumCount">0</span>
+                                                <span class="stat-label">subscribers</span>
+                                            </div>
+                                            <div class="tier-stat">
+                                                <span class="stat-value" id="tierPremiumMrr">€0</span>
+                                                <span class="stat-label">MRR</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tier-card lifetime">
+                                        <div class="tier-header">
+                                            <span class="tier-name">Lifetime</span>
+                                            <span class="tier-price">€149</span>
+                                        </div>
+                                        <div class="tier-stats">
+                                            <div class="tier-stat">
+                                                <span class="stat-value" id="tierLifetimeCount">0</span>
+                                                <span class="stat-label">purchases</span>
+                                            </div>
+                                            <div class="tier-stat">
+                                                <span class="stat-value" id="tierLifetimeRevenue">€0</span>
+                                                <span class="stat-label">total</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tier-card founder">
+                                        <div class="tier-header">
+                                            <span class="tier-name">Founder</span>
+                                            <span class="tier-price">€299</span>
+                                        </div>
+                                        <div class="tier-stats">
+                                            <div class="tier-stat">
+                                                <span class="stat-value" id="tierFounderCount">0</span>
+                                                <span class="stat-label">founders</span>
+                                            </div>
+                                            <div class="tier-stat">
+                                                <span class="stat-value" id="tierFounderRevenue">€0</span>
+                                                <span class="stat-label">total</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Health Metrics -->
+                            <div class="revenue-health-section">
+                                <h4>🩺 Revenue Health (Stripe)</h4>
+                                <div class="health-grid">
+                                    <div class="health-metric">
+                                        <div class="health-label">Payment Success Rate</div>
+                                        <div class="health-bar">
+                                            <div class="health-fill success" id="healthSuccessBar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="health-value" id="healthSuccessRate">0%</div>
+                                    </div>
+                                    <div class="health-metric">
+                                        <div class="health-label">Trial Conversion</div>
+                                        <div class="health-bar">
+                                            <div class="health-fill conversion" id="healthConversionBar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="health-value" id="healthConversion">0%</div>
+                                    </div>
+                                    <div class="health-metric">
+                                        <div class="health-label">Customer Retention</div>
+                                        <div class="health-bar">
+                                            <div class="health-fill retention" id="healthRetentionBar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="health-value" id="healthRetention">0%</div>
+                                    </div>
+                                    <div class="health-metric">
+                                        <div class="health-label">Refund Rate</div>
+                                        <div class="health-bar">
+                                            <div class="health-fill refund" id="healthRefundBar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="health-value" id="healthRefund">0%</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Payment Stats -->
+                            <div class="revenue-payments-section">
+                                <h4>💳 Payment Statistics</h4>
+                                <div class="payments-stats">
+                                    <div class="payment-stat">
+                                        <span class="stat-icon success"><i data-lucide="check-circle"></i></span>
+                                        <span class="stat-value" id="paymentsSuccessful">0</span>
+                                        <span class="stat-label">Successful</span>
+                                    </div>
+                                    <div class="payment-stat">
+                                        <span class="stat-icon failed"><i data-lucide="x-circle"></i></span>
+                                        <span class="stat-value" id="paymentsFailed">0</span>
+                                        <span class="stat-label">Failed</span>
+                                    </div>
+                                    <div class="payment-stat">
+                                        <span class="stat-icon refunded"><i data-lucide="rotate-ccw"></i></span>
+                                        <span class="stat-value" id="paymentsRefunded">0</span>
+                                        <span class="stat-label">Refunded</span>
+                                    </div>
+                                    <div class="payment-stat">
+                                        <span class="stat-icon pending"><i data-lucide="clock"></i></span>
+                                        <span class="stat-value" id="paymentsPending">0</span>
+                                        <span class="stat-label">Pending</span>
+                                    </div>
+                                    <div class="payment-stat">
+                                        <span class="stat-icon customers"><i data-lucide="users"></i></span>
+                                        <span class="stat-value" id="customersTotal">0</span>
+                                        <span class="stat-label">Customers</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- API Status -->
+                            <div class="revenue-api-status">
+                                <div class="api-badge revenuecat" id="apiRevenueCat">
+                                    <span class="api-icon">🔄</span>
+                                    <span class="api-name">RevenueCat</span>
+                                    <span class="api-status">Sample Data</span>
+                                </div>
+                                <div class="api-badge stripe" id="apiStripe">
+                                    <span class="api-icon">🔄</span>
+                                    <span class="api-name">Stripe</span>
+                                    <span class="api-status">Sample Data</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UNTRAPD Tab -->
+                    <div class="ecosystem-content" id="ecosystem-untrapd">
+                        <div class="untrapd-dashboard">
+                            <div class="untrapd-identity-section">
+                                <h4>🌐 UNTRAPD Identity</h4>
+                                <div class="identity-card">
+                                    <div class="identity-header">
+                                        <span class="brand-name">UNTRAPD</span>
+                                        <span class="tagline">Like-Minded People, Authentic Brand, Location-Independent Life</span>
+                                    </div>
+                                    <div class="identity-values">
+                                        <div class="value-item">
+                                            <i data-lucide="globe"></i>
+                                            <span>Location Independence</span>
+                                        </div>
+                                        <div class="value-item">
+                                            <i data-lucide="heart"></i>
+                                            <span>Authentic Living</span>
+                                        </div>
+                                        <div class="value-item">
+                                            <i data-lucide="users"></i>
+                                            <span>Community First</span>
+                                        </div>
+                                        <div class="value-item">
+                                            <i data-lucide="rocket"></i>
+                                            <span>Lifelong Learning</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="untrapd-projects-section">
+                                <h4>📦 Project Portfolio</h4>
+                                <div class="projects-grid">
+                                    <div class="project-card finderr">
+                                        <div class="project-icon">📱</div>
+                                        <div class="project-info">
+                                            <span class="project-name">FINDERR</span>
+                                            <span class="project-desc">Phone Recovery App</span>
+                                            <span class="project-status ready">Production Ready</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card hub">
+                                        <div class="project-icon">🌐</div>
+                                        <div class="project-info">
+                                            <span class="project-name">Hub Website</span>
+                                            <span class="project-desc">Marketing & Landing</span>
+                                            <span class="project-status live">Live</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card automation">
+                                        <div class="project-icon">⚙️</div>
+                                        <div class="project-info">
+                                            <span class="project-name">Automation</span>
+                                            <span class="project-desc">Social Media Scripts</span>
+                                            <span class="project-status ready">Ready</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-card superarmy">
+                                        <div class="project-icon">🤖</div>
+                                        <div class="project-info">
+                                            <span class="project-name">SuperArmy</span>
+                                            <span class="project-desc">AI Assistant System</span>
+                                            <span class="project-status active">Active</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="untrapd-links-section">
+                                <h4>🔗 Quick Links</h4>
+                                <div class="links-grid">
+                                    <a href="https://hub.untrapd.com" target="_blank" class="quick-link">
+                                        <i data-lucide="external-link"></i>
+                                        <span>Hub Website</span>
+                                    </a>
+                                    <a href="https://hub.untrapd.com/apps/finderr" target="_blank" class="quick-link">
+                                        <i data-lucide="external-link"></i>
+                                        <span>FINDERR Page</span>
+                                    </a>
+                                    <a href="https://hub.untrapd.com/apps/finderr/beta" target="_blank" class="quick-link">
+                                        <i data-lucide="external-link"></i>
+                                        <span>Beta Signup</span>
+                                    </a>
+                                    <a href="https://youtube.com/@untrapd77" target="_blank" class="quick-link">
+                                        <i data-lucide="youtube"></i>
+                                        <span>YouTube</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Loading Overlay -->
@@ -325,6 +916,7 @@
     <script src="js/visualizations.js"></script>
     <script src="js/ab-testing.js"></script>
     <script src="js/analytics-api.js"></script>
+    <script src="js/ecosystem-adapters.js"></script>
     <script src="js/dashboard.js"></script>
 
     <script>
